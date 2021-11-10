@@ -27,20 +27,8 @@
 <!-- Toast -->
 <!-- <script src="<?= base_url('assets/'); ?>js/toast.js"></script> -->
 
-<!-- filepond validation -->
-<script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-file-validate-size.js"></script>
-<script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-file-validate-type.js"></script>
-
-<!-- image editor -->
-<script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-file-validate-size.js"></script>
-<script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-file-validate-type.js"></script>
-<script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-image-exif-orientation.js"></script>
-<script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-image-crop.js"></script>
-<script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-image-filter.js"></script>
-<script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-image-preview.js"></script>
-<script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-image-resize.js"></script>
-<script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond.js"></script>
-<script src="<?= base_url('assets/') ?>js/myimage-uploader.js"></script>
+<!-- Instascan JS -->
+<script src="<?= base_url('assets/js/myinstascan.js') ?>"></script>
 
 <script>
   // Jquery Datatable

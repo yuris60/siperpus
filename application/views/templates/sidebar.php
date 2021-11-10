@@ -37,8 +37,10 @@
             <span>Anggota</span>
           </a>
         </li>
-        <li class="sidebar-item">
-          <a href="index.html" class='sidebar-link'>
+        <li class="sidebar-item <?php if ($this->uri->segment(1) == 'buku') {
+                                  echo 'active';
+                                } ?>">
+          <a href="<?= base_url('buku') ?>" class='sidebar-link'>
             <i class="bi bi-book-half"></i>
             <span>Buku</span>
           </a>
@@ -51,14 +53,18 @@
             <span>Jenis Buku</span>
           </a>
         </li>
-        <li class="sidebar-item">
-          <a href="index.html" class='sidebar-link'>
+        <li class="sidebar-item <?php if ($this->uri->segment(1) == 'klasifikasiddc') {
+                                  echo 'active';
+                                } ?>">
+          <a href="<?= base_url('klasifikasiddc') ?>" class='sidebar-link'>
             <i class="bi bi-list-ol"></i>
             <span>Klasifikasi DDC</span>
           </a>
         </li>
-        <li class="sidebar-item">
-          <a href="index.html" class='sidebar-link'>
+        <li class="sidebar-item <?php if ($this->uri->segment(1) == 'sumberbuku') {
+                                  echo 'active';
+                                } ?>">
+          <a href="<?= base_url('sumberbuku') ?>" class='sidebar-link'>
             <i class="bi bi-journals"></i>
             <span>Sumber Buku</span>
           </a>
@@ -99,13 +105,3 @@
     <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
   </div>
 </div>
-<div id="main">
-  <header class="mb-3">
-    <a href="#" class="burger-btn d-block d-xl-none">
-      <i class="bi bi-justify fs-3"></i>
-    </a>
-  </header>
-  <p>Waktu Sekarang : <span id="clock"></span></p>
-  <hr>
-
-  <div class="page-heading">

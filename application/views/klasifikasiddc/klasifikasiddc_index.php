@@ -64,7 +64,7 @@
   <div class="card">
     <div class="card-header">
       <h4 class="card-title"><i class="fas fa-database"></i> Data
-        <a href="<?= base_url('jenisbuku/create') ?>" class="float-end"><button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah Data"><i class="fas fa-plus"></i></button></a>
+        <a href="<?= base_url('klasifikasiddc/create') ?>" class="float-end"><button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah Data"><i class="fas fa-plus"></i></button></a>
       </h4>
     </div>
     <div class="card-body">
@@ -72,23 +72,23 @@
         <thead>
           <tr>
             <th>No</th>
-            <th>Kode</th>
-            <th>Nama Jenis</th>
+            <th>Kode DDC</th>
+            <th>Kategori</th>
             <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
           <?php $no = 1;
-          foreach ($jenisbuku as $jb) : ?>
+          foreach ($klasifikasiddc as $kd) : ?>
             <tr>
               <td><?= $no; ?></td>
-              <td><?= $jb['kode_jenisbuku']; ?></td>
-              <td><?= $jb['nm_jenisbuku']; ?></td>
+              <td><?= $kd['kode_ddc']; ?></td>
+              <td><?= $kd['kategori_ddc']; ?></td>
               <td>
-                <a href="<?= base_url('jenisbuku/update/') . $jb['id_jenisbuku']; ?>">
+                <a href="<?= base_url('klasifikasiddc/update/') . $kd['id_ddc']; ?>">
                   <button class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
                 </a>
-                <a href="<?= base_url('jenisbuku/delete/') . $jb['id_jenisbuku']; ?>" class="tombol-hapus">
+                <a href="<?= base_url('klasifikasiddc/delete/') . $kd['id_ddc']; ?>" class="tombol-hapus">
                   <button class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></button>
                 </a>
               </td>

@@ -9,7 +9,7 @@
       <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="<?= base_url() ?>"><span class="badge bg-white text-dark">Dashboard</span></a></li>
-          <li class="breadcrumb-item"><a href="<?= base_url('jenisbuku') ?>"><span class="badge bg-white text-dark"><?= $menu ?></span></a></li>
+          <li class="breadcrumb-item"><a href="<?= base_url('klasifikasiddc') ?>"><span class="badge bg-white text-dark"><?= $menu ?></span></a></li>
           <li class="breadcrumb-item active" aria-current="page"><span class="badge text-white"><?= $submenu ?></span></li>
         </ol>
       </nav>
@@ -37,21 +37,21 @@
       </div>
       <div class="card-body">
 
-        <input type="hidden" name="id_jenisbuku" value="<?= $jenisbuku['id_jenisbuku']; ?>">
+        <input type="hidden" name="id_ddc" value="<?= $klasifikasiddc['id_ddc']; ?>">
 
         <div class=" form-group">
           <label>Kode Jenis Buku</label>
-          <input type="text" maxlength="1" autocapitalize="on" class="form-control <?= form_error('kode_jenisbuku') ? 'is-invalid' : '' ?>" name="kode_jenisbuku" id="kode_jenisbuku" value="<?= $jenisbuku['kode_jenisbuku']; ?>">
+          <input type="text" maxlength="1" autocapitalize="on" class="form-control <?= form_error('kode_ddc') ? 'is-invalid' : '' ?>" name="kode_ddc" id="kode_ddc" value="<?= $klasifikasiddc['kode_ddc']; ?>">
           <div class=" invalid-feedback">
-            <?= form_error('kode_jenisbuku'); ?>
+            <?= form_error('kode_ddc'); ?>
           </div>
         </div>
 
         <div class="form-group">
           <label>Nama Jenis Buku</label>
-          <input type="text" class="form-control <?= form_error('nm_jenisbuku') ? 'is-invalid' : '' ?>" name="nm_jenisbuku" id="nm_jenisbuku" value="<?= $jenisbuku['nm_jenisbuku']; ?>">
+          <input type="text" class="form-control <?= form_error('kategori_ddc') ? 'is-invalid' : '' ?>" name="kategori_ddc" id="kategori_ddc" value="<?= $klasifikasiddc['kategori_ddc']; ?>">
           <div class="invalid-feedback">
-            <?= form_error('nm_jenisbuku'); ?>
+            <?= form_error('kategori_ddc'); ?>
           </div>
         </div>
 
@@ -59,7 +59,7 @@
       <div class="card-footer">
         <button type="submit" class="btn btn-warning"><i class="fas fa-save"></i> Perbarui</button>
         <!-- <a href="<?= base_url() . 'admin/' . strtolower($menu) ?>"><button type="button" class="btn btn-dark"><i class="fas fa-reply"></i> Kembali</button></a> -->
-        <a href="<?= base_url() . 'jenisbuku' ?>"><button type="button" class="btn btn-dark"><i class="fas fa-reply"></i> Kembali</button></a>
+        <a href="<?= base_url() . 'klasifikasiddc' ?>"><button type="button" class="btn btn-dark"><i class="fas fa-reply"></i> Kembali</button></a>
       </div>
     </div>
   </form>

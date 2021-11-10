@@ -37,21 +37,21 @@
       </div>
       <div class="card-body">
 
-        <input type="hidden" name="id_jenisbuku" value="<?= $jenisbuku['id_jenisbuku']; ?>">
+        <input type="hidden" name="id_sumberbuku" value="<?= $sumberbuku['id_sumberbuku']; ?>">
 
         <div class=" form-group">
           <label>Kode Jenis Buku</label>
-          <input type="text" maxlength="1" autocapitalize="on" class="form-control <?= form_error('kode_jenisbuku') ? 'is-invalid' : '' ?>" name="kode_jenisbuku" id="kode_jenisbuku" value="<?= $jenisbuku['kode_jenisbuku']; ?>">
+          <input type="text" maxlength="1" autocapitalize="on" class="form-control <?= form_error('kode_sumberbuku') ? 'is-invalid' : '' ?>" name="kode_sumberbuku" id="kode_sumberbuku" value="<?= $sumberbuku['kode_sumberbuku']; ?>">
           <div class=" invalid-feedback">
-            <?= form_error('kode_jenisbuku'); ?>
+            <?= form_error('kode_sumberbuku'); ?>
           </div>
         </div>
 
         <div class="form-group">
           <label>Nama Jenis Buku</label>
-          <input type="text" class="form-control <?= form_error('nm_jenisbuku') ? 'is-invalid' : '' ?>" name="nm_jenisbuku" id="nm_jenisbuku" value="<?= $jenisbuku['nm_jenisbuku']; ?>">
+          <input type="text" class="form-control <?= form_error('nm_sumberbuku') ? 'is-invalid' : '' ?>" name="nm_sumberbuku" id="nm_sumberbuku" value="<?= $sumberbuku['nm_sumberbuku']; ?>">
           <div class="invalid-feedback">
-            <?= form_error('nm_jenisbuku'); ?>
+            <?= form_error('nm_sumberbuku'); ?>
           </div>
         </div>
 
@@ -59,7 +59,7 @@
       <div class="card-footer">
         <button type="submit" class="btn btn-warning"><i class="fas fa-save"></i> Perbarui</button>
         <!-- <a href="<?= base_url() . 'admin/' . strtolower($menu) ?>"><button type="button" class="btn btn-dark"><i class="fas fa-reply"></i> Kembali</button></a> -->
-        <a href="<?= base_url() . 'jenisbuku' ?>"><button type="button" class="btn btn-dark"><i class="fas fa-reply"></i> Kembali</button></a>
+        <a href="<?= base_url() . 'sumberbuku' ?>"><button type="button" class="btn btn-dark"><i class="fas fa-reply"></i> Kembali</button></a>
       </div>
     </div>
   </form>

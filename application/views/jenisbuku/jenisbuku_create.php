@@ -2,15 +2,15 @@
 <div class="page-title">
   <div class="row">
     <div class="col-12 col-md-6 order-md-1 order-last">
-      <h3><?= $submenu . " " . $menu ?></h3>
+      <h3 class="text-white"><i class="<?= $icon ?>"></i> <?= $submenu . " " . $menu ?></h3>
       <p class="text-subtitle text-muted"></p>
     </div>
     <div class="col-12 col-md-6 order-md-2 order-first">
       <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="<?= base_url() ?>"><span class="badge bg-primary">Dashboard</span></a></li>
-          <li class="breadcrumb-item"><a href="<?= base_url('jenisbuku') ?>"><span class="badge bg-primary"><?= $menu ?></span></a></li>
-          <li class="breadcrumb-item active" aria-current="page"><span class="badge bg-secondary"><?= $submenu ?></span></li>
+          <li class="breadcrumb-item"><a href="<?= base_url() ?>"><span class="badge bg-white text-dark">Dashboard</span></a></li>
+          <li class="breadcrumb-item"><a href="<?= base_url('jenisbuku') ?>"><span class="badge bg-white text-dark"><?= $menu ?></span></a></li>
+          <li class="breadcrumb-item active" aria-current="page"><span class="badge text-white"><?= $submenu ?></span></li>
         </ol>
       </nav>
     </div>
@@ -39,7 +39,7 @@
 
         <div class="form-group">
           <label>Kode Jenis Buku</label>
-          <input type="text" maxlength="1" autocapitalize="on" class="form-control <?= form_error('kode_jenisbuku') ? 'is-invalid' : '' ?>" name="kode_jenisbuku" id="kode_jenisbuku">
+          <input type="text" maxlength="1" autocapitalize="on" class="form-control <?= form_error('kode_jenisbuku') ? 'is-invalid' : '' ?>" name="kode_jenisbuku" id="kode_jenisbuku" value="<?php echo set_value('kode_jenisbuku'); ?>">
           <div class="invalid-feedback">
             <?= form_error('kode_jenisbuku'); ?>
           </div>
@@ -47,7 +47,7 @@
 
         <div class="form-group">
           <label>Nama Jenis Buku</label>
-          <input type="text" class="form-control <?= form_error('nm_jenisbuku') ? 'is-invalid' : '' ?>" name="nm_jenisbuku" id="nm_jenisbuku">
+          <input type="text" class="form-control <?= form_error('nm_jenisbuku') ? 'is-invalid' : '' ?>" name="nm_jenisbuku" id="nm_jenisbuku" value="<?php echo set_value('nm_jenisbuku'); ?>">
           <div class="invalid-feedback">
             <?= form_error('nm_jenisbuku'); ?>
           </div>

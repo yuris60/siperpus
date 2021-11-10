@@ -17,10 +17,14 @@
   <link rel="shortcut icon" href="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/images/favicon.svg" type="image/x-icon">
 
   <!-- Datatables -->
-  <link rel="stylesheet" href="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/simple-datatables/style.css">
+  <link rel="stylesheet" href="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/jquery-datatables/jquery.dataTables.bootstrap5.min.css">
 
   <!-- Sweetalert -->
   <!-- <link rel="stylesheet" href="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/sweetalert2/sweetalert2.min.css"> -->
+
+  <!-- File Uploader -->
+  <link href="<?= base_url('assets/'); ?>vendor/image-uploader/css/filepond.css" rel="stylesheet">
+  <link href="<?= base_url('assets/'); ?>vendor/image-uploader/css/filepond-plugin-image-preview.css" rel="stylesheet">
 
   <!-- <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/toast.css"> -->
 </head>
