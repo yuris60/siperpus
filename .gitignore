@@ -37,3 +37,4 @@ user_guide_src/cilexer/pycilexer.egg-info/*
  clean = git-lfs clean -- %f
  smudge = git-lfs smudge -- %f
  process = git-lfs filter-process
+assets/vendor/mazer/
