@@ -7,9 +7,6 @@ class Dashboard extends CI_Controller
   {
     parent::__construct();
     $this->load->helper('tglindo');
-    // $this->load->model('admin/beranda_model');
-    // $this->load->model('admin/login_model');
-    // $this->load->helper('formatrupiah_helper');
   }
 
   public function index()
@@ -19,10 +16,10 @@ class Dashboard extends CI_Controller
     $data['menu'] = "Beranda";
     $data['icon'] = "home";
 
-    $this->load->view('templates/header', $data);
-    $this->load->view('templates/sidebar');
+    $this->load->view('templates/header');
     $this->load->view('templates/topbar');
-    // $this->load->view('templates/beranda', $data);
+    $this->load->view('templates/navbar');
+    $this->load->view('dashboard', $data);
     $this->load->view('templates/footer');
     $this->load->view('templates/js');
   }
