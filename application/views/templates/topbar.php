@@ -1,7 +1,7 @@
 <div class="header-top">
   <div class="container">
-    <div class="logo">
-      <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo" srcset=""></a>
+    <div class="text-center">
+      <a href="index.html"><img src="<?= base_url('assets/img/topbar.png'); ?>" width="35%" alt="Logo" srcset=""></a>
     </div>
     <div class="header-top-right">
 

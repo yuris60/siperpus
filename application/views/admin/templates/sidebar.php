@@ -6,7 +6,7 @@
         <!-- <li style="margin-left: -10px;"><img src="<?= base_url('assets/img/sidebar.jpg'); ?>" width="100%" class="" alt=""></li> -->
         <li class="sidebar-title">Menu</li>
 
-        <li class="sidebar-item <?php if ($this->uri->segment(1) == 'dashboard' || $this->uri->segment(1) == '') {
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'dashboard' || $this->uri->segment(2) == '') {
                                   echo 'active';
                                 } ?>">
           <a href="<?= base_url() ?>" class='sidebar-link'>
@@ -17,19 +17,23 @@
 
         <li class="sidebar-title">Data Master</li>
 
-        <li class="sidebar-item">
-          <a href="index.html" class='sidebar-link'>
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'admin') {
+                                  echo 'active';
+                                } ?>">
+          <a href="<?= base_url('admin/admin') ?>" class='sidebar-link'>
             <i class="bi bi-person-badge"></i>
             <span>Admin</span>
           </a>
         </li>
-        <li class="sidebar-item">
-          <a href="index.html" class='sidebar-link'>
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'anggota') {
+                                  echo 'active';
+                                } ?>">
+          <a href="<?= base_url('admin/anggota') ?>" class='sidebar-link'>
             <i class="bi bi-person-circle"></i>
             <span>Anggota</span>
           </a>
         </li>
-        <li class="sidebar-item <?php if ($this->uri->segment(1) == 'buku') {
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'buku') {
                                   echo 'active';
                                 } ?>">
           <a href="<?= base_url('admin/buku') ?>" class='sidebar-link'>
@@ -37,7 +41,7 @@
             <span>Buku</span>
           </a>
         </li>
-        <li class="sidebar-item <?php if ($this->uri->segment(1) == 'jenisbuku') {
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'jenisbuku') {
                                   echo 'active';
                                 } ?>">
           <a href="<?= base_url('admin/jenisbuku') ?>" class='sidebar-link'>
@@ -45,7 +49,23 @@
             <span>Jenis Buku</span>
           </a>
         </li>
-        <li class="sidebar-item <?php if ($this->uri->segment(1) == 'klasifikasiddc') {
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'jurusan') {
+                                  echo 'active';
+                                } ?>">
+          <a href="<?= base_url('admin/jurusan') ?>" class='sidebar-link'>
+            <i class="bi bi-journal-bookmark"></i>
+            <span>Jurusan</span>
+          </a>
+        </li>
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'kelas') {
+                                  echo 'active';
+                                } ?>">
+          <a href="<?= base_url('admin/kelas') ?>" class='sidebar-link'>
+            <i class="bi bi-journal-check"></i>
+            <span>Kelas</span>
+          </a>
+        </li>
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'klasifikasiddc') {
                                   echo 'active';
                                 } ?>">
           <a href="<?= base_url('admin/klasifikasiddc') ?>" class='sidebar-link'>
@@ -53,7 +73,7 @@
             <span>Klasifikasi DDC</span>
           </a>
         </li>
-        <li class="sidebar-item <?php if ($this->uri->segment(1) == 'sumberbuku') {
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'sumberbuku') {
                                   echo 'active';
                                 } ?>">
           <a href="<?= base_url('admin/sumberbuku') ?>" class='sidebar-link'>
