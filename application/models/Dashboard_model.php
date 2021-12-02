@@ -18,6 +18,11 @@ class Dashboard_model extends CI_Model
     return $this->db->get()->result_array();
   }
 
+  public function getBukuAll()
+  {
+    return $this->db->get('buku')->result_array();
+  }
+
   public function savePengunjung()
   {
     $jam = date("Y-m-d H:i:s");

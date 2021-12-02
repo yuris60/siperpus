@@ -28,7 +28,7 @@
 <!-- <script src="<?= base_url('assets/'); ?>js/toast.js"></script> -->
 
 <!-- Instascan JS -->
-<script src="<?= base_url('assets/js/myinstascan.js') ?>"></script>
+<script src="<?= base_url('assets/js/myinstascan_absen.js') ?>"></script>
 
 <script>
   // Jquery Datatable
@@ -48,6 +48,8 @@
     var ss = waktu.getSeconds() + ""; //memunculkan jam:menit:detik dengan menambahkan angka 0 jika angkanya cuma satu digit (0-9)
     document.getElementById("clock").innerHTML = (sh.length == 1 ? "0" + sh : sh) + ":" + (sm.length == 1 ? "0" + sm : sm) + ":" + (ss.length == 1 ? "0" + ss : ss);
   }
+
+  document.getElementById("ToastBtnGagal").click(); // Click on the checkbox
 </script>
 
 </body>

@@ -12,6 +12,10 @@
 <!-- Font Awesome -->
 <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/fontawesome/all.min.js"></script>
 
+<!-- Datatables -->
+<script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/jquery-datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/jquery-datatables/custom.jquery.dataTables.bootstrap5.min.js"></script>
+
 <!-- Instascan -->
 <script type="text/javascript" src="<?= base_url('assets/vendor/'); ?>instascan/adapter.min.js"></script>
 <script type="text/javascript" src="<?= base_url('assets/vendor/'); ?>instascan/vue.min.js"></script>
@@ -22,6 +26,17 @@
 
 <!-- JS -->
 <script src="<?= base_url('assets/'); ?>js/myscript.js"></script>
+
+<script>
+  // Jquery Datatable
+  let jquery_datatable = $("#table1").DataTable()
+
+  //tooltip
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+</script>
 </body>
 
 </html>

@@ -45,7 +45,7 @@ class Dashboard extends CI_Controller
       $this->load->view('templates/footer');
       $this->load->view('templates/js');
     } else {
-      $this->dashboard_model->save();
+      $this->dashboard_model->savePengunjung();
       $this->session->set_flashdata('success', 'Disimpan');
       redirect('dashboard/absenpengunjung');
     }
@@ -59,6 +59,7 @@ class Dashboard extends CI_Controller
     $data['icon'] = "bi bi-bool-fill";
 
     $data['pengunjung'] = $this->dashboard_model->getPengunjung();
+    $data['buku'] = $this->dashboard_model->getBukuAll();
 
     $this->form_validation->set_rules('nisn', 'NISN', 'required|trim');
 

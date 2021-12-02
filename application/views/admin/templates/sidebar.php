@@ -9,7 +9,7 @@
         <li class="sidebar-item <?php if ($this->uri->segment(2) == 'dashboard' || $this->uri->segment(2) == '') {
                                   echo 'active';
                                 } ?>">
-          <a href="<?= base_url() ?>" class='sidebar-link'>
+          <a href="<?= base_url('admin') ?>" class='sidebar-link'>
             <i class="bi bi-house-door-fill"></i>
             <span>Dashboard</span>
           </a>
@@ -84,8 +84,10 @@
 
         <li class="sidebar-title">Data Transaksi</li>
 
-        <li class="sidebar-item">
-          <a href="index.html" class='sidebar-link'>
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'peminjaman') {
+                                  echo 'active';
+                                } ?>">
+          <a href="<?= base_url('admin/peminjaman') ?>" class='sidebar-link'>
             <i class="bi bi-cloud-arrow-up-fill"></i>
             <span>Peminjaman Buku</span>
           </a>

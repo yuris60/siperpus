@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="<?= base_url('assets/vendor/mazer/dist/') ?>assets/vendors/bootstrap-icons/bootstrap-icons.css">
   <link rel="stylesheet" href="<?= base_url('assets/vendor/mazer/dist/') ?>assets/css/app.css">
   <link rel="shortcut icon" href="<?= base_url('assets/vendor/mazer/dist/') ?>assets/images/favicon.svg" type="image/x-icon">
+
+  <!-- Datatables -->
+  <link rel="stylesheet" href="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/jquery-datatables/jquery.dataTables.bootstrap5.min.css">
 </head>
 
 <body>

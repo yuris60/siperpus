@@ -1,4 +1,5 @@
 const flashDataSuccess = $('.flash-data-success').data('flashdata');
+const flashDataGagal = $('.flash-data-gagal').data('flashdata');
 
 if (flashDataSuccess) {
   var toastTriggerSuccess = document.getElementById('ToastBtnSuccess')
@@ -11,6 +12,19 @@ if (flashDataSuccess) {
     })
   }
   document.getElementById("ToastBtnSuccess").click(); // Click on the checkbox
+}
+
+else if (flashDataGagal) {
+  var toastTriggerGagal = document.getElementById('ToastBtnGagal')
+  var toastGagal = document.getElementById('ToastGagal')
+  if (toastTriggerGagal) {
+    toastTriggerGagal.addEventListener('click', function() {
+      var toastgagal = new bootstrap.Toast(toastGagal)
+      
+      toastgagal.show()
+    })
+  }
+  document.getElementById("ToastBtnGagal").click(); // Click on the checkbox
 }
 
 // //tombol-hapus
