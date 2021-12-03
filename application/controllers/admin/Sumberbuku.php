@@ -47,7 +47,7 @@ class sumberbuku extends CI_Controller
     } else {
       $this->sumberbuku_model->save();
       $this->session->set_flashdata('success', 'disimpan');
-      redirect('sumberbuku');
+      redirect('admin/sumberbuku');
     }
   }
 
@@ -73,7 +73,7 @@ class sumberbuku extends CI_Controller
     } else {
       $this->sumberbuku_model->update($where);
       $this->session->set_flashdata('success', 'Diperbarui');
-      redirect('sumberbuku');
+      redirect('admin/sumberbuku');
     }
   }
 
@@ -82,27 +82,6 @@ class sumberbuku extends CI_Controller
     $where = ['id_sumberbuku' => $this->uri->segment(3)];
     $this->sumberbuku_model->delete($where);
     $this->session->set_flashdata('success', 'Dihapus');
-    redirect('sumberbuku');
-  }
-
-  public function scan()
-  {
-    $data['title'] = "Perbarui Sumber Buku | SIPERPUS";
-    $data['menu'] = "Sumber Buku";
-    $data['submenu'] = "Perbarui Data";
-    $data['icon'] = "bi bi-journals";
-
-    $this->load->view('admin/templates/header', $data);
-    $this->load->view('admin/templates/sidebar');
-    $this->load->view('admin/templates/topbar');
-    $this->load->view('admin/sumberbuku/sumberbuku_scan', $data);
-    $this->load->view('admin/templates/footer');
-    $this->load->view('admin/templates/js_scan');
-  }
-
-  public function getscan()
-  {
-    echo json_encode($this->sumberbuku_model->getById($_POST['id']));
-    // echo $_POST['id'];
+    redirect('admin/sumberbuku');
   }
 }

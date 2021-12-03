@@ -32,34 +32,10 @@ class Peminjaman extends CI_Controller
       $this->load->view('admin/templates/footer');
       $this->load->view('admin/templates/js_scan');
     } else {
-      $this->peminjaman_model->save();
+      $this->peminjaman_model->savePeminjaman();
+      $id_pinjam = $this->input->post('id_pinjam');
       $this->session->set_flashdata('success', 'Disimpan');
-      redirect('admin/peminjaman');
-    }
-  }
-
-  public function create()
-  {
-    $data['title'] = "Tambah Peminjaman | SIPERPUS";
-    $data['menu'] = "Peminjaman";
-    $data['submenu'] = "Tambah Data";
-    $data['icon'] = "bi bi-book-half";
-
-    $this->form_validation->set_rules('nisn', 'NISN', 'required|trim');
-
-    $data['id_pinjam'] = $this->peminjaman_model->autonumber();
-
-    if ($this->form_validation->run() == FALSE) {
-      $this->load->view('admin/templates/header', $data);
-      $this->load->view('admin/templates/sidebar');
-      $this->load->view('admin/templates/topbar');
-      $this->load->view('admin/peminjaman/peminjaman_create', $data);
-      $this->load->view('admin/templates/footer');
-      $this->load->view('admin/templates/js_scan');
-    } else {
-      $this->peminjaman_model->save();
-      $this->session->set_flashdata('success', 'disimpan');
-      redirect('admin/peminjaman');
+      redirect('admin/peminjaman/detail/' . $id_pinjam);
     }
   }
 
@@ -67,14 +43,15 @@ class Peminjaman extends CI_Controller
   {
     // $data['user'] = $this->login_model->getSession();
     $data['title'] = "Detail Peminjaman | SIPERPUS";
-    $data['menu'] = "Peminjaman";
+    $data['menu'] = "Buku";
     $data['submenu'] = "Detail Peminjaman";
     $data['icon'] = "bi bi-book-half";
 
     // $where = $this->uri->segment(4);
 
-    $this->form_validation->set_rules('nisn', 'NISN', 'required|trim');
-    $data['anggota'] = $this->peminjaman_model->getAnggota($where);
+    $this->form_validation->set_rules('id_buku', 'ID Buku', 'required|trim');
+    $data['buku'] = $this->peminjaman_model->getBukuAll();
+    $data['anggota'] = $this->peminjaman_model->getAnggotaByID($where);
     $data['detail_peminjaman'] = $this->peminjaman_model->getDetailPeminjaman($where);
 
     if ($this->form_validation->run() == FALSE) {
@@ -83,12 +60,22 @@ class Peminjaman extends CI_Controller
       $this->load->view('admin/templates/topbar');
       $this->load->view('admin/peminjaman/peminjaman_detail', $data);
       $this->load->view('admin/templates/footer');
-      $this->load->view('admin/templates/js_scan');
+      $this->load->view('admin/templates/js_scanbuku');
     } else {
-      $this->peminjaman_model->save();
+      $this->peminjaman_model->saveDetailPeminjaman();
+      $id_pinjam = $this->input->post('id_pinjam');
       $this->session->set_flashdata('success', 'Disimpan');
-      redirect('admin/peminjaman');
+      redirect('admin/peminjaman/detail/' . $id_pinjam);
     }
+  }
+
+  public function savePeminjamanBukuManual($id_pinjam, $id_buku)
+  {
+    $id_pinjam = $this->uri->segment(4);
+    $id_buku = $this->uri->segment(5);
+    $this->peminjaman_model->saveDetailPeminjamanManual($id_pinjam, $id_buku);
+    $this->session->set_flashdata('success', 'Disimpan');
+    redirect('admin/peminjaman/detail/' . $id_pinjam);
   }
 
   public function update($where)
@@ -128,5 +115,17 @@ class Peminjaman extends CI_Controller
     $this->peminjaman_model->delete($where);
     $this->session->set_flashdata('success', 'Dihapus');
     redirect('admin/peminjaman');
+  }
+
+  public function deletepeminjamanbuku($id_detailpinjam, $id_pinjam, $qty_pinjam)
+  {
+    $id_pinjam = $this->uri->segment(4);
+    $id_detailpinjam = ['id_detailpinjam' => $this->uri->segment(5)];
+    $id_buku = $this->uri->segment(6);
+    $qty_pinjam = $this->uri->segment(7);
+    // echo $id_pinjam;
+    $this->peminjaman_model->deletepeminjamanbuku($id_detailpinjam, $id_buku, $qty_pinjam);
+    $this->session->set_flashdata('success', 'Dihapus');
+    redirect('admin/peminjaman/detail/' . $id_pinjam);
   }
 }

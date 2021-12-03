@@ -1,36 +1,75 @@
-<div id="main" class="bg-primary" style="height: 300px;">
-  <header class="mb-2">
+<div id="main" class='layout-navbar'>
+  <div class="bg-primary" style="height: 100px;">
+    <header class='mb-3'>
+      <nav class="navbar navbar-expand navbar-light ">
+        <div class="container-fluid">
+          <a href="#" class="burger-btn d-block text-white">
+            <i class="bi bi-justify fs-3"></i>
+          </a>
 
-    <a href="#" class="text-white burger-btn d-block d-xl-none">
-      <i class="bi bi-justify fs-3"></i>
-    </a>
-
-  </header>
-
-  <!-- <div class="row mb-4">
-    <div class="col">
-      <p class="text-white">
-        Tanggal : <span class="badge bg-white text-dark"><?= tgl_indo(date('Y-m-d')) ?></span>
-        <span class="mx-2">|</span>
-        Waktu : <span class="badge bg-white text-dark" id="clock"></span>
-      </p>
-    </div>
-    <div class="col">
-      <div class="btn-group dropdown float-end">
-        <button type="button" class="btn btn-light text-dark dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="<?= base_url('assets/vendor/mazer/dist/assets/images/faces/1.jpg') ?>" width="30px" class="rounded-circle" alt="...">
-          Halo, <strong>Yuris Alkhalifi</strong>
-          <i class="bi bi-caret-down-fill"></i>
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item text-center">Admin</a>
-          <a class="dropdown-item disabled" href="#">Option 2</a>
-          <a class="dropdown-item" href="#">Option 3</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href=""><button class="btn btn-danger btn-block"><i class="bi bi-box-arrow-right"></i> Logout</button></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown me-1">
+                <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class='bi bi-envelope bi-sub fs-4 text-white'></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                  <li>
+                    <h6 class="dropdown-header">Mail</h6>
+                  </li>
+                  <li><a class="dropdown-item" href="#">No new mail</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown me-3">
+                <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class='bi bi-bell bi-sub fs-4 text-white'></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                  <li>
+                    <h6 class="dropdown-header">Notifications</h6>
+                  </li>
+                  <li><a class="dropdown-item">No notification available</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="dropdown">
+              <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="user-menu d-flex">
+                  <div class="user-name text-end me-3">
+                    <h6 class="mb-0 text-white">John Ducky</h6>
+                    <p class="mb-0 text-sm text-white">Administrator</p>
+                  </div>
+                  <div class="user-img d-flex align-items-center">
+                    <div class="avatar avatar-md">
+                      <img src="assets/images/faces/1.jpg">
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton" style="min-width: 11rem;">
+                <li>
+                  <h6 class="dropdown-header">Hello, John!</h6>
+                </li>
+                <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-person me-2"></i> My
+                    Profile</a></li>
+                <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i>
+                    Settings</a></li>
+                <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-wallet me-2"></i>
+                    Wallet</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div> -->
+      </nav>
+    </header>
+  </div>
 
-  <div class="page-heading">
+  <div id="main-content" style="background-color: #eee;">
+    <div class="page-heading">

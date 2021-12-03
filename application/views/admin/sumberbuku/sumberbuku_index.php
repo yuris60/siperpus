@@ -2,14 +2,14 @@
 <div class="page-title">
   <div class="row">
     <div class="col-12 col-md-6 order-md-1 order-last">
-      <h3 class="text-white"><i class="<?= $icon ?>"></i> <?= $menu ?></h3>
+      <h3><i class="<?= $icon ?>"></i> <?= $menu ?></h3>
       <p class="text-subtitle text-muted"></p>
     </div>
     <div class="col-12 col-md-6 order-md-2 order-first">
       <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>"><span class="badge bg-white text-dark">Dashboard</span></a></li>
-          <li class="breadcrumb-item active" aria-current="page"><span class="badge text-white"><?= $menu ?></span></li>
+          <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>"><span class="badge bg-primary text-white text-dark">Dashboard</span></a></li>
+          <li class="breadcrumb-item active" aria-current="page"><span class="badge text-dark"><?= $menu ?></span></li>
         </ol>
       </nav>
     </div>
@@ -31,7 +31,7 @@
 <!-- Toast -->
 <div class="flash-data-success" data-flashdata="<?= $this->session->flashdata('success'); ?>"></div>
 
-<button type="button" class="btn btn-primary" style="display: none;" id="ToastBtnSuccess">Show live toast</button>
+<button type="button" class="btn btn-primary" id="ToastBtnSuccess">Show live toast</button>
 <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
   <div id="ToastSuccess" class="toast bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-body">
@@ -39,25 +39,6 @@
     </div>
   </div>
 </div>
-
-<!-- Flexbox container for aligning the toasts -->
-<div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100" style="display: none;">
-  <button type="button" class="btn btn-primary" style="display: none;" id="ToastBtnDelete">Show live toast</button>
-
-  <!-- Then put toasts within -->
-  <div id="ToastBtnDelete" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="display: none;">
-    <div class="toast-header">
-      <img src="..." class="rounded me-2" alt="...">
-      <strong class="me-auto">Bootstrap</strong>
-      <small>11 mins ago</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body">
-      Hello, world! This is a toast message.
-    </div>
-  </div>
-</div>
-<!-- End of Toastr -->
 
 <!-- Container -->
 <section class="section">

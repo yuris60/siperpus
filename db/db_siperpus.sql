@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2021 at 04:59 AM
--- Server version: 10.4.14-MariaDB
+-- Generation Time: Dec 02, 2021 at 03:59 AM
+-- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -464,7 +465,7 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id_buku`, `id_ddc`, `id_jenisbuku`, `id_sumberbuku`, `judul_buku`, `penerbit`, `pengarang`, `isbn`, `thn_terbit`, `tinggi_buku`, `tgl_penerimaan`, `jml_halaman`, `jml_eksemplar`, `stok_buku`, `rak_buku`, `gambar_buku`) VALUES
-(1, 17, 2, 2, 'Advokasi Pencegahan Penyalahgunaan Narkoba', 'BNN Kab. Purbalingga', 'BNN Kab. Purbalingga', '', 2020, 1, '2021-11-16', 1, 50, 50, 1, ''),
+(1, 17, 2, 2, 'Advokasi Pencegahan Penyalahgunaan Narkoba', 'BNN Kab. Purbalingga', 'BNN Kab. Purbalingga', '', 2020, 1, '2021-11-16', 1, 50, 48, 1, ''),
 (2, 0, 0, 0, 'Al-Qur\'an', '', '', '', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
 (3, 17, 0, 0, 'Anamnesia Dan Pemeriksaan Fisik', 'Erlangga Jakarta', 'Janathan 61', '', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
 (4, 17, 0, 0, 'Anatomi Dan Fisiologi Untuk Mahasisawa Keperawatan', 'Buku Kedokteran ', 'Drs. H. Syaiful', '', 2032, 0, '0000-00-00', 0, 0, 0, 0, ''),
@@ -660,45 +661,26 @@ INSERT INTO `buku` (`id_buku`, `id_ddc`, `id_jenisbuku`, `id_sumberbuku`, `judul
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_klasifikasi_ddc`
---
-
-CREATE TABLE `detail_klasifikasi_ddc` (
-  `id_detailddc` int(11) NOT NULL,
-  `id_ddc` int(11) NOT NULL,
-  `kode_detailddc` int(11) NOT NULL,
-  `kategori_detailddc` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `detail_klasifikasi_ddc`
---
-
-INSERT INTO `detail_klasifikasi_ddc` (`id_detailddc`, `id_ddc`, `kode_detailddc`, `kategori_detailddc`) VALUES
-(1, 400, 1, 'Bahasa Indonesia'),
-(2, 400, 2, 'Bahasa Inggris'),
-(3, 400, 3, 'Fiksi dan Nonfiksi'),
-(4, 400, 4, 'Bahasa Jawa'),
-(5, 500, 1, 'Sains'),
-(6, 500, 2, 'Matematika'),
-(7, 600, 1, 'Keperawatan'),
-(8, 600, 2, 'Farmasi'),
-(9, 600, 3, 'Komputer');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `detail_peminjaman`
 --
 
 CREATE TABLE `detail_peminjaman` (
   `id_detailpinjam` int(11) NOT NULL,
-  `id_pinjam` int(11) NOT NULL,
+  `id_pinjam` char(12) NOT NULL,
   `id_buku` int(11) NOT NULL,
+  `qty_pinjam` int(11) NOT NULL,
   `tgl_kembali` datetime NOT NULL,
+  `tgl_pengembalian` datetime NOT NULL,
   `keterlambatan` int(3) NOT NULL,
   `status_buku` enum('Belum Kembali','Sudah Kembali') NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `detail_peminjaman`
+--
+
+INSERT INTO `detail_peminjaman` (`id_detailpinjam`, `id_pinjam`, `id_buku`, `qty_pinjam`, `tgl_kembali`, `tgl_pengembalian`, `keterlambatan`, `status_buku`) VALUES
+(4, '202111270007', 1, 1, '2021-11-29 12:22:03', '2021-12-01 10:27:17', 2, 'Sudah Kembali');
 
 -- --------------------------------------------------------
 
@@ -828,14 +810,27 @@ CREATE TABLE `pegawai` (
 --
 
 CREATE TABLE `peminjaman` (
-  `id_pinjam` int(11) NOT NULL,
+  `id_pinjam` char(12) NOT NULL,
   `tgl_pinjam` datetime NOT NULL,
-  `no_anggota` char(7) NOT NULL,
-  `kd_pegawai` char(12) NOT NULL,
-  `tgl_batas_akhir` date NOT NULL,
+  `nisn` char(10) NOT NULL,
+  `id_admin` int(11) NOT NULL,
+  `tgl_bataspinjam` date NOT NULL,
   `total_denda` int(6) NOT NULL,
   `status` enum('Belum Lunas','Lunas') NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `peminjaman`
+--
+
+INSERT INTO `peminjaman` (`id_pinjam`, `tgl_pinjam`, `nisn`, `id_admin`, `tgl_bataspinjam`, `total_denda`, `status`) VALUES
+('202111240001', '2021-11-24 00:37:41', '0006214793', 1, '2021-11-27', 0, 'Belum Lunas'),
+('202111240002', '2021-11-24 00:40:44', '0009002403', 1, '2021-11-27', 0, 'Belum Lunas'),
+('202111240003', '2021-11-24 00:49:27', '0009262784', 1, '2021-11-27', 0, 'Belum Lunas'),
+('202111240004', '2021-11-24 00:49:34', '0006595914', 1, '2021-11-27', 0, 'Belum Lunas'),
+('202111240005', '2021-11-24 00:52:07', '0004680903', 1, '2021-11-27', 0, 'Belum Lunas'),
+('202111250006', '2021-11-25 18:53:51', '0032640889', 1, '2021-11-28', 0, 'Belum Lunas'),
+('202111270007', '2021-11-27 00:29:02', '0034344993', 1, '2021-11-30', 0, 'Lunas');
 
 -- --------------------------------------------------------
 
@@ -863,7 +858,9 @@ INSERT INTO `pengunjung` (`id_pengunjung`, `nisn`, `jam_kunjungan`) VALUES
 (7, '0006595914', '2021-11-20 00:32:25'),
 (8, '0006595914', '2021-11-20 00:32:54'),
 (9, '0006595914', '2021-11-20 00:33:16'),
-(10, '0006595914', '2021-11-20 00:33:32');
+(10, '0006595914', '2021-11-20 00:33:32'),
+(11, '0015375389', '2021-11-22 23:46:48'),
+(12, '0018123595', '2021-11-22 23:47:23');
 
 -- --------------------------------------------------------
 
@@ -903,12 +900,6 @@ ALTER TABLE `anggota`
 --
 ALTER TABLE `buku`
   ADD PRIMARY KEY (`id_buku`);
-
---
--- Indexes for table `detail_klasifikasi_ddc`
---
-ALTER TABLE `detail_klasifikasi_ddc`
-  ADD PRIMARY KEY (`id_detailddc`);
 
 --
 -- Indexes for table `detail_peminjaman`
@@ -975,16 +966,10 @@ ALTER TABLE `buku`
   MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=193;
 
 --
--- AUTO_INCREMENT for table `detail_klasifikasi_ddc`
---
-ALTER TABLE `detail_klasifikasi_ddc`
-  MODIFY `id_detailddc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
 -- AUTO_INCREMENT for table `detail_peminjaman`
 --
 ALTER TABLE `detail_peminjaman`
-  MODIFY `id_detailpinjam` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detailpinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `jenis_buku`
@@ -1008,7 +993,7 @@ ALTER TABLE `kelas`
 -- AUTO_INCREMENT for table `klasifikasi_ddc`
 --
 ALTER TABLE `klasifikasi_ddc`
-  MODIFY `id_ddc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_ddc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `pegawai`
@@ -1017,22 +1002,16 @@ ALTER TABLE `pegawai`
   MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `peminjaman`
---
-ALTER TABLE `peminjaman`
-  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `pengunjung`
 --
 ALTER TABLE `pengunjung`
-  MODIFY `id_pengunjung` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_pengunjung` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `sumber_buku`
 --
 ALTER TABLE `sumber_buku`
-  MODIFY `id_sumberbuku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_sumberbuku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

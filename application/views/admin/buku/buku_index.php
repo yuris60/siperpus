@@ -8,8 +8,8 @@
     <div class="col-12 col-md-6 order-md-2 order-first">
       <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>"><span class="badge bg-white text-dark">Dashboard</span></a></li>
-          <li class="breadcrumb-item active" aria-current="page"><span class="badge text-white"><?= $menu ?></span></li>
+          <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>"><span class="badge bg-primary text-white text-dark">Dashboard</span></a></li>
+          <li class="breadcrumb-item active" aria-current="page"><span class="badge text-dark"><?= $menu ?></span></li>
         </ol>
       </nav>
     </div>
@@ -53,12 +53,13 @@
         <thead>
           <tr class="table-secondary">
             <th>No</th>
+            <th>QR Code</th>
             <th>Judul Buku</th>
             <th>Pengarang</th>
             <th>Penerbit</th>
             <th>Tahun Terbit</th>
             <th>Gambar Buku</th>
-            <th width="100px">Aksi</th>
+            <th width="70px">Aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -66,17 +67,34 @@
           foreach ($buku as $b) : ?>
             <tr>
               <td><?= $no; ?></td>
+              <td>
+                <?php
+                // require_once(base_url('assets/vendor/phpqrcodegenerator/qrlib.php'));
+                // QRcode::png($b['id_buku'], "M", 2, 2);
+                // $qrCode = new Endroid\QrCode\QrCode($b['id_buku']);
+                // header("Content-Type: image/png");
+                // $params['data'] = 'tes';
+                // $this->ciqrcode->generate($params);
+                ?>
+                <img src="<?= site_url('admin/buku/qrcode/') . $b['id_buku'] ?>" class="img-zoomable" width="40px" alt="">
+              </td>
               <td><?= $b['judul_buku']; ?></td>
               <td><?= $b['pengarang']; ?></td>
               <td><?= $b['penerbit']; ?></td>
               <td><?= $b['thn_terbit']; ?></td>
-              <td><?= $b['gambar_buku']; ?></td>
+              <td>
+                <?php if (empty($dp['gambar'])) : ?>
+                  <figure style="width: 80%"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="30%" class="img-zoomable" alt=""></figure>
+                <?php else : ?>
+                  <img src="<?= base_url('assets/img/buku/') . $dp['gambar_buku'] ?>" width="30%" alt="">
+                <?php endif; ?>
+              </td>
               <td>
                 <a href="<?= base_url('admin/buku/update/') . $b['id_buku']; ?>">
-                  <button class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
+                  <button class="btn btn-warning btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
                 </a>
                 <a href="<?= base_url('admin/buku/delete/') . $b['id_buku']; ?>" class="tombol-hapus">
-                  <button class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></button>
+                  <button class="btn btn-danger btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></button>
                 </a>
               </td>
             </tr>

@@ -2,6 +2,16 @@
 </div>
 
 <script src="<?= base_url('assets/vendor/'); ?>jquery/jquery.min.js"></script>
+
+<script>
+  // Tooltip
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+</script>
+
+
 <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/js/bootstrap.bundle.min.js"></script>
 
@@ -22,15 +32,11 @@
 <!-- Sweetalert -->
 <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/sweetalert2/sweetalert2.all.min.js"></script>
 
-<!-- JS -->
-<script src="<?= base_url('assets/'); ?>js/myscript.js"></script>
 
 <!-- Instascan -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
 <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-<!-- Toast -->
-<!-- <script src="<?= base_url('assets/'); ?>js/toast.js"></script> -->
 
 <!-- filepond validation -->
 <script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-file-validate-size.js"></script>
@@ -49,6 +55,21 @@
 
 <!-- Imask -->
 <script src="<?= base_url('assets/') ?>vendor/imask/imask.js"></script>
+
+<!-- JS -->
+<script src="<?= base_url('assets/'); ?>js/myscript.js"></script>
+
+<!-- Load Zooming library -->
+<script src="https://unpkg.com/zooming/build/zooming.min.js"></script>
+
+<script>
+  // Listen to images after DOM content is fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    new Zooming({
+      // options...
+    }).listen('.img-zoomable')
+  })
+</script>
 
 <script>
   // Jquery Datatable

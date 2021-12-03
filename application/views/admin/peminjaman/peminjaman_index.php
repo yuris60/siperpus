@@ -2,14 +2,14 @@
 <div class="page-title">
   <div class="row">
     <div class="col-12 col-md-6 order-md-1 order-last">
-      <h3 class="text-white"><i class="<?= $icon ?>"></i> <?= $menu ?></h3>
+      <h3><i class="<?= $icon ?>"></i> <?= $menu ?></h3>
       <p class="text-subtitle text-muted"></p>
     </div>
     <div class="col-12 col-md-6 order-md-2 order-first">
       <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>"><span class="badge bg-white text-dark">Dashboard</span></a></li>
-          <li class="breadcrumb-item active" aria-current="page"><span class="badge text-white"><?= $menu ?></span></li>
+          <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>"><span class="badge bg-primary text-white text-dark">Dashboard</span></a></li>
+          <li class="breadcrumb-item active" aria-current="page"><span class="badge text-dark"><?= $menu ?></span></li>
         </ol>
       </nav>
     </div>
@@ -30,10 +30,11 @@
 
 <!-- Toast -->
 <div class="flash-data-success" data-flashdata="<?= $this->session->flashdata('success'); ?>"></div>
-<div class="flash-data-gagal" data-flashdata="<?= $this->session->flashdata('gagal'); ?>"></div>
+<div class="flash-data-gagal-pinjam" data-flashdata="<?= $this->session->flashdata('gagal'); ?>"></div>
 
+<!-- Toast Berhasil Pinjam -->
 <button type="button" class="btn btn-primary" style="display: none;" id="ToastBtnSuccess">Show live toast</button>
-<div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+<div class="position-fixed top-3 end-0 p-3" style="z-index: 11">
   <div id="ToastSuccess" class="toast bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-body">
       <i class="fas fa-check"></i> <b>Selamat, </b>Data Berhasil <?= $this->session->flashdata('success'); ?>
@@ -41,9 +42,10 @@
   </div>
 </div>
 
-<button type="button" class="btn btn-danger" style="display: none;" id="ToastBtnGagal">Show live toast</button>
-<div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
-  <div id="ToastGagal" class="toast bg-danger text-white" role="alert" aria-live="assertive" aria-atomic="true">
+<!-- Toast Gagal Pinjam -->
+<button type="button" class="btn btn-danger" style="display: none;" id="ToastBtnGagalPinjam">Show live toast</button>
+<div class="position-fixed top-3 end-0 p-3" style="z-index: 11">
+  <div id="ToastGagalPinjam" class="toast bg-danger text-white" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-body">
       <i class="fas fa-times"></i> <b>Maaf, </b>Data Anggota Tidak <?= $this->session->flashdata('gagal'); ?>
     </div>
@@ -100,7 +102,8 @@
               foreach ($peminjaman as $p) : ?>
                 <tr>
                   <td><?= $no; ?></td>
-                  <td><?= date($p['tgl_pinjam'], strtotime('H:i:s')) ?></td>
+                  <td><?= tgl_indo($p['tgl_pinjam']) ?></td>
+                  <!-- <td><?= date($p['tgl_pinjam'], strtotime('H:i:s')) ?></td> -->
                   <!-- <td><?= waktu_lalu($p['tgl_pinjam']) ?></td> -->
                   <td><?= $p['nm_anggota']; ?></td>
                   <td>

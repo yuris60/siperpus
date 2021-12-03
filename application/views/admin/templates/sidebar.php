@@ -1,6 +1,6 @@
 <div id="sidebar" class="active">
   <div class="sidebar-wrapper active">
-    <img src="<?= base_url('assets/img/sidebar.jpg'); ?>" width="100%" class="" alt="">
+    <!-- <img src="<?= base_url('assets/img/sidebar.jpg'); ?>" width="100%" class="" alt=""> -->
     <div class="sidebar-menu">
       <ul class="menu">
         <!-- <li style="margin-left: -10px;"><img src="<?= base_url('assets/img/sidebar.jpg'); ?>" width="100%" class="" alt=""></li> -->
@@ -92,8 +92,10 @@
             <span>Peminjaman Buku</span>
           </a>
         </li>
-        <li class="sidebar-item">
-          <a href="index.html" class='sidebar-link'>
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'pengembalian') {
+                                  echo 'active';
+                                } ?>">
+          <a href="<?= base_url('admin/pengembalian') ?>" class='sidebar-link'>
             <i class="bi bi-cloud-arrow-down-fill"></i>
             <span>Pengembalian Buku</span>
           </a>
@@ -101,8 +103,10 @@
 
         <li class="sidebar-title">Laporan</li>
 
-        <li class="sidebar-item">
-          <a href="index.html" class='sidebar-link'>
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'laporanbuku') {
+                                  echo 'active';
+                                } ?>">
+          <a href="<?= base_url('admin/laporanbuku') ?>" class='sidebar-link'>
             <i class="bi bi-book-half"></i>
             <span>Laporan Buku</span>
           </a>

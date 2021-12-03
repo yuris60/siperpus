@@ -14,7 +14,7 @@ user_guide_src/build/*
 user_guide_src/cilexer/build/*
 user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
-assets/vendor/mazer
+assets/vendor/mazer/*
 /vendor/
 
 # IDE Files
@@ -38,4 +38,3 @@ assets/vendor/mazer
  clean = git-lfs clean -- %f
  smudge = git-lfs smudge -- %f
  process = git-lfs filter-process
-assets/vendor/mazer/

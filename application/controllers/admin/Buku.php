@@ -8,6 +8,7 @@ class Buku extends CI_Controller
     parent::__construct();
     $this->load->model('admin/buku_model');
     $this->load->helper('tglindo');
+    $this->load->library('qrcode/ciqrcode');
   }
 
   public function index()
@@ -92,5 +93,17 @@ class Buku extends CI_Controller
     $this->buku_model->delete($where);
     $this->session->set_flashdata('success', 'Dihapus');
     redirect('buku');
+  }
+
+  public function qrcode($where)
+  {
+    qrcode::png(
+      $where,
+      $outfile = false,
+      $level = QR_ECLEVEL_H,
+      $size = 6,
+      $margin = 0
+
+    );
   }
 }
