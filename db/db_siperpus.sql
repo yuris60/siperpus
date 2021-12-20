@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2021 at 03:59 AM
+-- Generation Time: Dec 20, 2021 at 07:44 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -724,6 +724,31 @@ INSERT INTO `jurusan` (`id_jurusan`, `nm_jurusan`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kategori_buku`
+--
+
+CREATE TABLE `kategori_buku` (
+  `id_kategoribuku` int(11) NOT NULL,
+  `nm_kategoribuku` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kategori_buku`
+--
+
+INSERT INTO `kategori_buku` (`id_kategoribuku`, `nm_kategoribuku`) VALUES
+(1, 'Buku Teks Pelajaran'),
+(2, 'Buku Bacaan'),
+(3, 'Buku Penunjang Ujian'),
+(4, 'Buku Penunjang Pelajaran'),
+(5, 'Kamus Umum'),
+(6, 'Kamus Produktif'),
+(7, 'Al-Quran'),
+(8, 'Ensiklopedia');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `kelas`
 --
 
@@ -841,26 +866,27 @@ INSERT INTO `peminjaman` (`id_pinjam`, `tgl_pinjam`, `nisn`, `id_admin`, `tgl_ba
 CREATE TABLE `pengunjung` (
   `id_pengunjung` int(11) NOT NULL,
   `nisn` char(10) NOT NULL,
-  `jam_kunjungan` datetime NOT NULL
+  `jam_kunjungan` datetime NOT NULL,
+  `keperluan` enum('Membaca','Mengerjakan Tugas','Belajar') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pengunjung`
 --
 
-INSERT INTO `pengunjung` (`id_pengunjung`, `nisn`, `jam_kunjungan`) VALUES
-(1, '0004680903', '2021-11-20 00:03:44'),
-(2, '0006214793', '2021-11-20 00:26:40'),
-(3, '0006595914', '2021-11-20 00:29:09'),
-(4, '0006595914', '2021-11-20 00:29:38'),
-(5, '0006595914', '2021-11-20 00:31:41'),
-(6, '0006595914', '2021-11-20 00:32:01'),
-(7, '0006595914', '2021-11-20 00:32:25'),
-(8, '0006595914', '2021-11-20 00:32:54'),
-(9, '0006595914', '2021-11-20 00:33:16'),
-(10, '0006595914', '2021-11-20 00:33:32'),
-(11, '0015375389', '2021-11-22 23:46:48'),
-(12, '0018123595', '2021-11-22 23:47:23');
+INSERT INTO `pengunjung` (`id_pengunjung`, `nisn`, `jam_kunjungan`, `keperluan`) VALUES
+(1, '0004680903', '2021-11-20 00:03:44', 'Membaca'),
+(2, '0006214793', '2021-11-20 00:26:40', 'Membaca'),
+(3, '0006595914', '2021-11-20 00:29:09', 'Membaca'),
+(4, '0006595914', '2021-11-20 00:29:38', 'Membaca'),
+(5, '0006595914', '2021-11-20 00:31:41', 'Membaca'),
+(6, '0006595914', '2021-11-20 00:32:01', 'Membaca'),
+(7, '0006595914', '2021-11-20 00:32:25', 'Membaca'),
+(8, '0006595914', '2021-11-20 00:32:54', 'Membaca'),
+(9, '0006595914', '2021-11-20 00:33:16', 'Membaca'),
+(10, '0006595914', '2021-11-20 00:33:32', 'Membaca'),
+(11, '0015375389', '2021-11-22 23:46:48', 'Membaca'),
+(12, '0018123595', '2021-11-22 23:47:23', 'Membaca');
 
 -- --------------------------------------------------------
 
@@ -918,6 +944,12 @@ ALTER TABLE `jenis_buku`
 --
 ALTER TABLE `jurusan`
   ADD PRIMARY KEY (`id_jurusan`);
+
+--
+-- Indexes for table `kategori_buku`
+--
+ALTER TABLE `kategori_buku`
+  ADD PRIMARY KEY (`id_kategoribuku`);
 
 --
 -- Indexes for table `kelas`
@@ -982,6 +1014,12 @@ ALTER TABLE `jenis_buku`
 --
 ALTER TABLE `jurusan`
   MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `kategori_buku`
+--
+ALTER TABLE `kategori_buku`
+  MODIFY `id_kategoribuku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `kelas`
