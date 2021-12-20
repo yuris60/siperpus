@@ -9,6 +9,8 @@ class LaporanBuku extends CI_Controller
     $this->load->model('admin/laporanbuku_model');
     $this->load->helper('tglindo');
     $this->load->library('qrcode/ciqrcode');
+    ini_set('max_execution_time', 0);
+    ini_set('memory_limit', '20480M');
   }
 
   public function index()
@@ -18,35 +20,41 @@ class LaporanBuku extends CI_Controller
     $data['menu'] = "Laporan Buku";
     $data['icon'] = "bi bi-book-half";
 
+
     if (isset($_POST['submit_label_buku'])) {
-      $data['title'] = "Cetak Laporan Pendapatan PDF Custom | NBC";
+      $checkbox = $_POST['cid_buku'];
+      if ($checkbox > 0) {
+        $data['title'] = "Cetak Label Buku Pilihan | SIPERPUS";
 
-      //load halaman
-      $this->load->library('pdf');
-      // $this->load->view('penjualan/transaksi_pdf', $data);
+        //load halaman
+        $this->load->library('pdf');
+        // $this->load->view('penjualan/transaksi_pdf', $data);
 
-      //inisialisasi variabel untuk dompdf
-      $paper_size = 'A4';
-      $orientation = 'portrait';
-      // $html = $this->output->get_output();
+        //inisialisasi variabel untuk dompdf
+        $paper_size = 'A4';
+        $orientation = 'portrait';
+        // $html = $this->output->get_output();
 
-      //terapkan ke dompdf
-      // $this->pdf->set_option('isRemoteEnabled', TRUE);
-      $this->pdf->setPaper($paper_size, $orientation);
-      $this->pdf->filename = "Cetak Laporan Pendapatan PDF Custom | NBC";
-      $this->pdf->load_view('admin/buku/buku_cetaklabelbuku_byID', $data);
+        //terapkan ke dompdf
+        // $this->pdf->set_option('isRemoteEnabled', TRUE);
+        $this->pdf->setPaper($paper_size, $orientation);
+        $this->pdf->filename = "Cetak Label Buku Pilihan | SIPERPUS";
+        $this->pdf->load_view('admin/laporanbuku/laporanbuku_cetaklabelbuku_byID', $data);
 
 
-      //Convert to PDF
-      // $this->dompdf->load_html($html);
-      // $this->dompdf->render();
-      // $this->dompdf->stream("Laporan Pendapatan", array('Attachment' => 0));
+        //Convert to PDF
+        // $this->dompdf->load_html($html);
+        // $this->dompdf->render();
+        // $this->dompdf->stream("Laporan Pendapatan", array('Attachment' => 0));
+      } else {
+        redirect('admin/laporanbuku');
+      }
     } else {
       $data['buku'] = $this->laporanbuku_model->getAll();
       $this->load->view('admin/templates/header', $data);
       $this->load->view('admin/templates/sidebar');
       $this->load->view('admin/templates/topbar');
-      $this->load->view('admin/buku/buku_laporan', $data);
+      $this->load->view('admin/laporanbuku/laporanbuku_index', $data);
       $this->load->view('admin/templates/footer');
       $this->load->view('admin/templates/js');
     }
@@ -63,10 +71,37 @@ class LaporanBuku extends CI_Controller
   //   $this->load->view('admin/templates/header', $data);
   //   $this->load->view('admin/templates/sidebar');
   //   $this->load->view('admin/templates/topbar');
-  //   $this->load->view('admin/buku/buku_laporan', $data);
+  //   $this->load->view('admin/laporanbuku/laporanbuku_laporan', $data);
   //   $this->load->view('admin/templates/footer');
   //   $this->load->view('admin/templates/js');
   // }
+
+  public function cetakLabelBuku()
+  {
+    $data['buku'] = $this->laporanbuku_model->getAllJoin();
+    $data['title'] = "Cetak Label Buku Keseluruhan | SIPERPUS";
+
+    //load halaman
+    $this->load->library('pdf');
+    // $this->load->view('penjualan/transaksi_pdf', $data);
+
+    //inisialisasi variabel untuk dompdf
+    $paper_size = 'A4';
+    $orientation = 'portrait';
+    // $html = $this->output->get_output();
+
+    //terapkan ke dompdf
+    // $this->pdf->set_option('isRemoteEnabled', TRUE);
+    $this->pdf->setPaper($paper_size, $orientation);
+    $this->pdf->filename = "Cetak Label Buku Keseluruhan | SIPERPUS";
+    $this->pdf->load_view('admin/laporanbuku/laporanbuku_cetaklabelbuku', $data);
+
+
+    //Convert to PDF
+    // $this->dompdf->load_html($html);
+    // $this->dompdf->render();
+    // $this->dompdf->stream("Laporan Pendapatan", array('Attachment' => 0));
+  }
 
   public function cetakLabelBukuByID()
   {
@@ -80,7 +115,7 @@ class LaporanBuku extends CI_Controller
     $this->load->view('admin/templates/header', $data);
     $this->load->view('admin/templates/sidebar');
     $this->load->view('admin/templates/topbar');
-    $this->load->view('admin/buku/buku_cetaklabelbuku_byID', $data);
+    $this->load->view('admin/laporanbuku/laporanbuku_cetaklabelbuku_byID', $data);
     $this->load->view('admin/templates/footer');
     $this->load->view('admin/templates/js');
   }

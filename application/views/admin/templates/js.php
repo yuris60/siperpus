@@ -2,16 +2,6 @@
 </div>
 
 <script src="<?= base_url('assets/vendor/'); ?>jquery/jquery.min.js"></script>
-
-<script>
-  // Tooltip
-  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-  var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl)
-  })
-</script>
-
-
 <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/js/bootstrap.bundle.min.js"></script>
 
@@ -69,33 +59,47 @@
       // options...
     }).listen('.img-zoomable')
   })
-</script>
 
-<script>
-  // Jquery Datatable
-  let jquery_datatable = $("#table1").DataTable()
-
-  // Tooltip
-  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-  var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl)
-  })
-
-  //waktu berjalan
-  function tampilkanwaktu() { //fungsi ini akan dipanggil di bodyOnLoad dieksekusi tiap 1000ms = 1detik    
-    var waktu = new Date(); //membuat object date berdasarkan waktu saat 
-    var sh = waktu.getHours() + ""; //memunculkan nilai jam, //tambahan script + "" supaya variable sh bertipe string sehingga bisa dihitung panjangnya : sh.length    //ambil nilai menit
-    var sm = waktu.getMinutes() + ""; //memunculkan nilai detik    
-    var ss = waktu.getSeconds() + ""; //memunculkan jam:menit:detik dengan menambahkan angka 0 jika angkanya cuma satu digit (0-9)
-    document.getElementById("clock").innerHTML = (sh.length == 1 ? "0" + sh : sh) + ":" + (sm.length == 1 ? "0" + sm : sm) + ":" + (ss.length == 1 ? "0" + ss : ss);
-  }
-
-  //imask
-  var element = document.getElementById('isbn');
-  var maskOptions = {
-    mask: '000-000-0000-00-0'
-  };
-  var mask = IMask(element, maskOptions);
+  //pilihan laporan
+  $(document).ready(function() {
+    $("#pilihan").change(function() {
+      $(this).find("option:selected").each(function() {
+        var optionValue = $(this).attr("id");
+        if (optionValue) {
+          $(".pilihan").not("." + optionValue).hide();
+          $("." + optionValue).show();
+        } else {
+          $(".pilihan").hide();
+        }
+      });
+    }).change();
+  });
+  $(document).ready(function() {
+    $("#pilihan2").change(function() {
+      $(this).find("option:selected").each(function() {
+        var optionValue = $(this).attr("id");
+        if (optionValue) {
+          $(".pilihan2").not("." + optionValue).hide();
+          $("." + optionValue).show();
+        } else {
+          $(".pilihan2").hide();
+        }
+      });
+    }).change();
+  });
+  $(document).ready(function() {
+    $("#pilihan3").change(function() {
+      $(this).find("option:selected").each(function() {
+        var optionValue = $(this).attr("id");
+        if (optionValue) {
+          $(".pilihan3").not("." + optionValue).hide();
+          $("." + optionValue).show();
+        } else {
+          $(".pilihan3").hide();
+        }
+      });
+    }).change();
+  });
 
   //datepicker
   $(function() {
@@ -183,6 +187,31 @@
       }
     });
   });
+
+  // Jquery Datatable
+  let jquery_datatable = $("#table1").DataTable()
+
+  // Tooltip
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+
+  //waktu berjalan
+  function tampilkanwaktu() { //fungsi ini akan dipanggil di bodyOnLoad dieksekusi tiap 1000ms = 1detik    
+    var waktu = new Date(); //membuat object date berdasarkan waktu saat 
+    var sh = waktu.getHours() + ""; //memunculkan nilai jam, //tambahan script + "" supaya variable sh bertipe string sehingga bisa dihitung panjangnya : sh.length    //ambil nilai menit
+    var sm = waktu.getMinutes() + ""; //memunculkan nilai detik    
+    var ss = waktu.getSeconds() + ""; //memunculkan jam:menit:detik dengan menambahkan angka 0 jika angkanya cuma satu digit (0-9)
+    document.getElementById("clock").innerHTML = (sh.length == 1 ? "0" + sh : sh) + ":" + (sm.length == 1 ? "0" + sm : sm) + ":" + (ss.length == 1 ? "0" + ss : ss);
+  }
+
+  //imask
+  var element = document.getElementById('isbn');
+  var maskOptions = {
+    mask: '000-000-0000-00-0'
+  };
+  var mask = IMask(element, maskOptions);
 </script>
 
 </body>

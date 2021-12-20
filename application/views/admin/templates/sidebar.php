@@ -57,6 +57,14 @@
             <span>Jurusan</span>
           </a>
         </li>
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'kategoribuku') {
+                                  echo 'active';
+                                } ?>">
+          <a href="<?= base_url('admin/kategoribuku') ?>" class='sidebar-link'>
+            <i class="bi bi-bookmarks"></i>
+            <span>Kategori Buku</span>
+          </a>
+        </li>
         <li class="sidebar-item <?php if ($this->uri->segment(2) == 'kelas') {
                                   echo 'active';
                                 } ?>">
@@ -103,6 +111,14 @@
 
         <li class="sidebar-title">Laporan</li>
 
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'laporananggota') {
+                                  echo 'active';
+                                } ?>">
+          <a href="<?= base_url('admin/laporananggota') ?>" class='sidebar-link'>
+            <i class="bi bi-person-circle"></i>
+            <span>Laporan Anggota</span>
+          </a>
+        </li>
         <li class="sidebar-item <?php if ($this->uri->segment(2) == 'laporanbuku') {
                                   echo 'active';
                                 } ?>">
@@ -111,10 +127,12 @@
             <span>Laporan Buku</span>
           </a>
         </li>
-        <li class="sidebar-item">
-          <a href="index.html" class='sidebar-link'>
-            <i class="bi bi-person-circle"></i>
-            <span>Laporan Anggota</span>
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'laporanpengunjung') {
+                                  echo 'active';
+                                } ?>">
+          <a href="<?= base_url('admin/laporanpengunjung') ?>" class='sidebar-link'>
+            <i class="bi bi-person-square"></i>
+            <span>Laporan Pengunjung</span>
           </a>
         </li>
         <li class="sidebar-item"><button class="btn btn-danger btn-block"><i class="bi bi-box-arrow-right"></i> Logout</button></li>

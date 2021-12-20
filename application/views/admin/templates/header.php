@@ -36,5 +36,5 @@
   <!-- <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/toast.css"> -->
 </head>
 
-<body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">
+<body>
   <div id="app">

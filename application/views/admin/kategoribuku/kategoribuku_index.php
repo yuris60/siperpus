@@ -40,12 +40,31 @@
   </div>
 </div>
 
+<!-- Flexbox container for aligning the toasts -->
+<div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100" style="display: none;">
+  <button type="button" class="btn btn-primary" style="display: none;" id="ToastBtnDelete">Show live toast</button>
+
+  <!-- Then put toasts within -->
+  <div id="ToastBtnDelete" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="display: none;">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div>
+</div>
+<!-- End of Toastr -->
+
 <!-- Container -->
 <section class="section">
   <div class="card">
     <div class="card-header">
       <h4 class="card-title"><i class="fas fa-database"></i> Data
-        <a href="<?= base_url('admin/sumberbuku/create') ?>" class="float-end"><button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah Data"><i class="fas fa-plus"></i></button></a>
+        <a href="<?= base_url('admin/kategoribuku/create') ?>" class="float-end"><button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah Data"><i class="fas fa-plus"></i></button></a>
       </h4>
     </div>
     <div class="card-body">
@@ -53,24 +72,22 @@
         <thead>
           <tr class="table-secondary">
             <th>No</th>
-            <th>Kode Sumber Buku</th>
-            <th>Nama Sumber Buku</th>
+            <th>Nama Kategori</th>
             <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
           <?php $no = 1;
-          foreach ($sumberbuku as $sb) : ?>
+          foreach ($kategoribuku as $kb) : ?>
             <tr>
               <td><?= $no; ?></td>
-              <td><?= $sb['kode_sumberbuku']; ?></td>
-              <td><?= $sb['nm_sumberbuku']; ?></td>
+              <td><?= $kb['nm_kategoribuku']; ?></td>
               <td>
-                <a href="<?= base_url('admin/sumberbuku/update/') . $sb['id_sumberbuku']; ?>">
-                  <button class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
+                <a href="<?= base_url('admin/kategoribuku/update/') . $kb['id_kategoribuku']; ?>">
+                  <button class="btn btn-sm btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
                 </a>
-                <a href="<?= base_url('admin/sumberbuku/delete/') . $sb['id_sumberbuku']; ?>" class="tombol-hapus">
-                  <button class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></button>
+                <a href="<?= base_url('admin/kategoribuku/delete/') . $kb['id_kategoribuku']; ?>" class="tombol-hapus">
+                  <button class="btn btn-sm btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></button>
                 </a>
               </td>
             </tr>

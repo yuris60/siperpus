@@ -13,6 +13,16 @@ class laporanbuku_model extends CI_Model
     return $this->db->get()->result_array();
   }
 
+  public function getAllJoin()
+  {
+    $this->db->select('*');
+    $this->db->from('buku');
+    $this->db->join('klasifikasi_ddc', 'buku.id_ddc = klasifikasi_ddc.id_ddc');
+    // $this->db->limit(190);
+    $this->db->order_by('id_buku', 'DESC');
+    return $this->db->get()->result_array();
+  }
+
   public function cetakLabelBukuByID()
   {
     $checkbox = $_POST['cid_buku'];
