@@ -1,7 +1,12 @@
 <?php
+if (!empty($kelas)) {
+  header("Content-type: application/vnd-ms-excel");
+  header("Content-Disposition: attachment; filename=Laporan Anggota \"$kelas\".xls");
+} else {
+  header("Content-type: application/vnd-ms-excel");
+  header("Content-Disposition: attachment; filename=Laporan Anggota \"$angkatan\".xls");
+}
 // Skrip berikut ini adalah skrip yang bertugas untuk meng-export data tadi ke excell
-header("Content-type: application/vnd-ms-excel");
-header("Content-Disposition: attachment; filename=Laporan Pengunjung.xls");
 ?>
 
 <!DOCTYPE html>
@@ -48,16 +53,14 @@ header("Content-Disposition: attachment; filename=Laporan Pengunjung.xls");
   <center>
     <div>
       <!-- <img src="<?= base_url('assets/img/logo.png') ?>" width="100px" style="margin-top: 10px;"> -->
-      <h3 style="margin-top: 0px;">Laporan Pengunjung Perpustakaan SMK Soedirman</h3>
-      <p style="margin-top: -10px;">
-        <?php error_reporting(0) ?>
-        <?php if (!empty($periode_bulanan)) : ?>
-          Periode Bulan : <?= date('M Y', strtotime($periode_bulanan)) ?>
-        <?php elseif (!empty($periode_tahunan)) : ?>
-          Periode Tahun : <?= $periode_tahunan ?>
+      <h3 style="margin-top: 0px;">Laporan Anggota Perpustakaan SMK Soedirman</h3>
+      <div style="margin-top: -30px;">
+        <?php if (!empty($kelas)) : ?>
+          <p>Kelas : <?= $kelas ?></p>
         <?php else : ?>
-          Periode : <?= date('d M Y', strtotime($custom_start)) . " - " . date('d M Y', strtotime($custom_end)) ?>
+          <p>Angkatan : Kelas <?= $angkatan ?></p>
         <?php endif; ?>
+      </div>
 
     </div>
   </center>
@@ -66,34 +69,30 @@ header("Content-Disposition: attachment; filename=Laporan Pengunjung.xls");
     <thead>
       <tr class="text-center">
         <th class="text-center">No</th>
-        <!-- <th class="text-center">NISN</th> -->
+        <th class="text-center">NISN</th>
         <th class="text-center">Nama Anggota</th>
-        <th class="text-center">Kelas</th>
-        <th class="text-center">Tgl Kunjungan</th>
-        <th class="text-center">Keperluan</th>
+        <th class="text-center">Jenis Kelamin</th>
+        <th class="text-center">Tempat Tanggal Lahir</th>
       </tr>
     </thead>
     <tbody>
       <?php $no = 1;
-      foreach ($pengunjung as $p) : ?>
+      foreach ($anggota as $a) : ?>
         <tr>
           <td class="text-center"><?= $no; ?></td>
-          <!-- <td class="text-center"><?= $p['nisn']; ?></td> -->
-          <td><?= $p['nm_anggota']; ?></td>
+          <td class="text-center"><?= $a['nisn']; ?></td>
+          <td><?= $a['nm_anggota']; ?></td>
           <td>
             <?php
-            if ($p['tingkatan_kelas'] == 1) {
-              $tingkatan_kelas = "X";
-            } elseif ($p['tingkatan_kelas'] == 2) {
-              $tingkatan_kelas = "XI";
+            if ($a['jk_anggota'] == "L") {
+              $jenis_kelamin = "Laki-Laki";
             } else {
-              $tingkatan_kelas = "XII";
+              $jenis_kelamin = "Perempuan";
             }
-            echo $tingkatan_kelas . " " . $p['nm_jurusan'] . " " . $p['nomor_kelas']
+            echo $jenis_kelamin;
             ?>
           </td>
-          <td><?= tgl_indo($p['jam_kunjungan']); ?></td>
-          <td class="text-center"><?= $p['keperluan']; ?></td>
+          <td><?= $a['tempatlahir_anggota'] . ", " . tgl_indo($a['tgllahir_anggota'])  ?></td>
         </tr>
       <?php $no++;
       endforeach; ?>

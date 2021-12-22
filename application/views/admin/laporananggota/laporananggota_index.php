@@ -41,52 +41,132 @@
 </div>
 
 <section class="section">
-  <div class="card">
-    <div class="card-header">
-      <h4 class="card-title"><i class="fas fa-file"></i> Cetak Laporan</h4>
-    </div>
-    <div class="card-body">
-      <form action="<?= base_url('admin/laporanpengunjung/cetakLaporan') ?>" method="POST" autocomplete="off" target="_blank">
-        <div class="row">
-          <div class="col-5">
+  <div class="row">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"><i class="fas fa-id-card"></i> Cetak Kartu Anggota
+            <a href="<?= base_url('admin/laporananggota/cetakKartu') ?>" target="_blank"><button type="button" class="btn btn-sm btn-danger float-end" name="pdf_kartu" data-bs-toggle="tooltip" data-bs-placement="top" title="Cetak Semua (PDF)"><i class="fas fa-file-pdf"></i></button></a>
+          </h4>
+        </div>
+        <div class="card-body">
+          <form action="<?= base_url('admin/laporananggota/cetakKartu') ?>" method="POST" autocomplete="off" target="_blank">
             <div class="form-group">
               <select name="pilihan" class="form-control" id="pilihan" onchange="laporan()">
                 <option value="">-== Pilih Berdasarkan ==-</option>
-                <option value="" id="bulanan">Kelas</option>
-                <option value="" id="tahunan">Angkatan</option>
+                <option value="" id="kelas">Kelas</option>
+                <option value="" id="angkatan">Angkatan</option>
               </select>
             </div>
-          </div>
 
-          <div class="col-5">
             <!-- Bulanan -->
-            <div class="pilihan bulanan">
-              <input type="text" class="form-control datepicker-bulanan" id="bulanan" name="bulanan" placeholder="Masukkan Bulanan">
+            <div class="pilihan kelas">
+              <select name="kelas" class="form-select">
+                <option value="">-== Pilih Disini ==-</option>
+                <?php foreach ($kelas as $k) : ?>
+                  <?php
+                  if ($k['tingkatan_kelas'] == 1) {
+                    $tingkatan_kelas = "X";
+                  } elseif ($k['tingkatan_kelas'] == 2) {
+                    $tingkatan_kelas = "XI";
+                  } else {
+                    $tingkatan_kelas = "XII";
+                  }
+                  ?>
+                  <option value="<?= $k['id_kelas'] ?>"><?= $tingkatan_kelas . " " . $k['nm_jurusan'] . " " . $k['nomor_kelas']; ?></option>
+                <?php endforeach; ?>
+              </select>
             </div>
 
             <!-- Semesteran -->
-            <div class="pilihan tahunan">
-              <input type="text" class="form-control datepicker-tahunan" id="tahunan" name="tahunan" placeholder="Masukkan Tahunan">
+            <div class="pilihan angkatan">
+              <select name="angkatan" class="form-select">
+                <option value="">-== Pilih Disini ==-</option>
+                <option value="1">X</option>
+                <option value="2">XI</option>
+                <option value="3">XII</option>
+              </select>
             </div>
 
 
             <!-- Custom -->
-            <div class="pilihan custom">
-              <div class="input-daterange datepicker-range input-group" id="custom">
-                <input type="text" class="input-sm form-control" name="custom_start" placeholder="Mulai" />
-                <span class="input-group-addon"> - </span>
-                <input type="text" class="input-sm form-control" name="custom_end" placeholder="Selesai" />
-              </div>
+            <!-- <div class="pilihan custom">
+            <div class="input-daterange datepicker-range input-group" id="custom">
+              <input type="text" class="input-sm form-control" name="custom_start" placeholder="Mulai" />
+              <span class="input-group-addon"> - </span>
+              <input type="text" class="input-sm form-control" name="custom_end" placeholder="Selesai" />
+            </div>
+          </div> -->
+
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-danger" name="pdf_kartu"><i class="fas fa-file-pdf"></i> Cetak (PDF)</button>
+          <!-- <button type="submit" class="btn btn-sm btn-success" name="excel"><i class="fas fa-file-excel"></i> Excel</button> -->
+        </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"><i class="fas fa-file"></i> Cetak Laporan Anggota</h4>
+        </div>
+        <div class="card-body">
+          <form action="<?= base_url('admin/laporananggota/cetakLaporan') ?>" method="POST" autocomplete="off" target="_blank">
+            <div class="form-group">
+              <select name="pilihan2" class="form-control" id="pilihan2" onchange="laporan()">
+                <option value="">-== Pilih Berdasarkan ==-</option>
+                <option value="" id="kelas2">Kelas</option>
+                <option value="" id="angkatan2">Angkatan</option>
+              </select>
             </div>
 
-          </div>
+            <!-- Bulanan -->
+            <div class="pilihan2 kelas2">
+              <select name="kelas2" class="form-select">
+                <option value="">-== Pilih Disini ==-</option>
+                <?php foreach ($kelas as $k) : ?>
+                  <?php
+                  if ($k['tingkatan_kelas'] == 1) {
+                    $tingkatan_kelas = "X";
+                  } elseif ($k['tingkatan_kelas'] == 2) {
+                    $tingkatan_kelas = "XI";
+                  } else {
+                    $tingkatan_kelas = "XII";
+                  }
+                  ?>
+                  <option value="<?= $k['id_kelas'] ?>"><?= $tingkatan_kelas . " " . $k['nm_jurusan'] . " " . $k['nomor_kelas'] ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
 
-          <div class="col-2">
-            <button type="submit" class="btn btn-sm btn-danger" name="pdf"><i class="fas fa-file-pdf"></i> PDF</button>
-            <button type="submit" class="btn btn-sm btn-success" name="excel"><i class="fas fa-file-excel"></i> Excel</button>
-          </div>
+            <!-- Semesteran -->
+            <div class="pilihan2 angkatan2">
+              <select name="angkatan2" class="form-select">
+                <option value="">-== Pilih Disini ==-</option>
+                <option value="1">X</option>
+                <option value="2">XI</option>
+                <option value="3">XII</option>
+              </select>
+            </div>
+
+
+            <!-- Custom -->
+            <!-- <div class="pilihan custom">
+            <div class="input-daterange datepicker-range input-group" id="custom">
+              <input type="text" class="input-sm form-control" name="custom_start" placeholder="Mulai" />
+              <span class="input-group-addon"> - </span>
+              <input type="text" class="input-sm form-control" name="custom_end" placeholder="Selesai" />
+            </div>
+          </div> -->
+
         </div>
-      </form>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-danger" name="pdf_laporan"><i class="fas fa-file-pdf"></i> PDF</button>
+          <button type="submit" class="btn btn-success" name="excel_laporan"><i class="fas fa-file-excel"></i> Excel</button>
+        </div>
+        </form>
+      </div>
     </div>
   </div>
 </section>
@@ -105,6 +185,7 @@
             <th>Nama Anggota</th>
             <th>Jenis Kelamin</th>
             <th>Kelas</th>
+            <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -132,6 +213,11 @@
                 }
                 echo $tingkatan_kelas . " " . $a['nm_jurusan'] . " " . $a['nomor_kelas']
                 ?>
+              </td>
+              <td>
+                <a href="<?= base_url('admin/laporananggota/cetakKartuByID/') . $a['nisn']; ?>" target="_blank">
+                  <button class="btn btn-sm btn-info" data-bs-toggle="tooltip" data-bs-placement="top" title="Cetak Kartu <?= $a['nm_anggota'] ?>"><i class="fas fa-id-card"></i></button>
+                </a>
               </td>
             </tr>
           <?php $no++;
