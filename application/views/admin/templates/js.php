@@ -43,6 +43,13 @@
 <script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond.js"></script>
 <script src="<?= base_url('assets/') ?>js/myimage-uploader.js"></script>
 
+<!-- Charts -->
+<script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/apexcharts/apexcharts.js"></script>
+<script src="<?= base_url('assets/'); ?>js/dashboard.js"></script>
+
+<!-- Simple Calendar -->
+<script type="text/javascript" src="<?= base_url('assets/vendor/simple-calendar/dist/'); ?>jquery.simple-calendar.js"></script>
+
 <!-- Imask -->
 <script src="<?= base_url('assets/') ?>vendor/imask/imask.js"></script>
 
@@ -53,6 +60,28 @@
 <script src="https://unpkg.com/zooming/build/zooming.min.js"></script>
 
 <script>
+  // simple calendar
+  $(document).ready(function() {
+    $("#kalender").simpleCalendar({
+      //Defaults options below
+      //string of months starting from january
+      months: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'July', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+      days: ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
+      displayYear: true, // Display year in header
+      fixedStartDay: true, // Week begin always by monday or by day set by number 0 = sunday, 7 = saturday, false = month always begin by first day of the month
+      displayEvent: true, // Display existing event
+      disableEventDetails: true, // disable showing event details
+      disableEmptyDetails: true, // disable showing empty date details
+      events: [], // List of events
+      onInit: function(calendar) {}, // Callback after first initialization
+      onMonthChange: function(month, year) {}, // Callback on month change
+      onDateSelect: function(date, events) {}, // Callback on date selection
+      onEventSelect: function() {}, // Callback on event selection - use $(this).data('event') to access the event
+      onEventCreate: function($el) {}, // Callback fired when an HTML event is created - see $(this).data('event')
+      onDayCreate: function($el, d, m, y) {} // Callback fired when an HTML day is created   - see $(this).data('today'), .data('todayEvents')
+    });
+  });
+
   // Listen to images after DOM content is fully loaded
   document.addEventListener('DOMContentLoaded', function() {
     new Zooming({

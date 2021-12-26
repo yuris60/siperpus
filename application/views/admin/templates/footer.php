@@ -5,7 +5,7 @@
       <p>2021 &copy; Sistem Informasi Perpustakaan (SIPERPUS)</p>
     </div>
     <div class="float-end">
-      <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a href="http://instagram.com/yuris60">YAK</a></p>
+      <p>Developt with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a href="http://instagram.com/yuris60">YAK</a></p>
     </div>
   </div>
 </footer>

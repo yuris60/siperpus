@@ -19,7 +19,7 @@ class laporananggota extends CI_Controller
     // $data['user'] = $this->login_model->getSession();
     $data['title'] = "Laporan Anggota | SIPERPUS";
     $data['menu'] = "Laporan Anggota";
-    $data['icon'] = "bi bi-book-half";
+    $data['icon'] = "bi bi-person-circle";
 
     $data['kelas'] = $this->laporananggota_model->getAllKelas();
     $data['anggota'] = $this->laporananggota_model->getAll();
@@ -65,7 +65,7 @@ class laporananggota extends CI_Controller
 
         //load halaman
         $this->load->library('pdf');
-        // $this->load->view('penjualan/transaksi_pdf', $data);
+
 
         //inisialisasi variabel untuk dompdf
         $paper_size = 'A4';
@@ -170,6 +170,24 @@ class laporananggota extends CI_Controller
         $data['angkatan'] = "Kelas " . $tingkatan_kelas;
         $this->load->view('admin/laporananggota/laporananggota_cetakexcel', $data);
       }
+    } else if (isset($_POST['pdf_laporanall'])) {
+      $data['anggota'] = $this->laporananggota_model->getAll();
+      $data['title'] = "Cetak Laporan Anggota Keseluruhan";
+      //load halaman
+      $this->load->library('pdf');
+      //inisialisasi variabel untuk dompdf
+      $paper_size = 'A4';
+      $orientation = 'landscape';
+      // $html = $this->output->get_output();
+
+      //terapkan ke dompdf
+      // $this->pdf->set_option('isRemoteEnabled', TRUE);
+      $this->pdf->setPaper($paper_size, $orientation);
+      $this->pdf->filename = "Cetak Laporan Anggota Keseluruhan | SIPERPUS";
+      $this->pdf->load_view('admin/laporananggota/laporananggota_cetakpdf', $data);
+    } else if (isset($_POST['excel_laporanall'])) {
+      $data['anggota'] = $this->laporananggota_model->getAll();
+      $this->load->view('admin/laporananggota/laporananggota_cetakexcel', $data);
     }
   }
 
@@ -200,7 +218,7 @@ class laporananggota extends CI_Controller
       $data['title'] = "Cetak Kartu Perpus | $name_kelas | SIPERPUS";
       //load halaman
       $this->load->library('pdf');
-      // $this->load->view('penjualan/transaksi_pdf', $data);
+
 
       //inisialisasi variabel untuk dompdf
       $paper_size = 'A4';
@@ -236,7 +254,7 @@ class laporananggota extends CI_Controller
       $data['title'] = "Cetak Kartu Perpus | Kelas $tingkatan_kelas | SIPERPUS";
       //load halaman
       $this->load->library('pdf');
-      // $this->load->view('penjualan/transaksi_pdf', $data);
+
 
       //inisialisasi variabel untuk dompdf
       $paper_size = 'A4';
@@ -254,7 +272,7 @@ class laporananggota extends CI_Controller
 
       //load halaman
       $this->load->library('pdf');
-      // $this->load->view('penjualan/transaksi_pdf', $data);
+
 
       //inisialisasi variabel untuk dompdf
       $paper_size = 'A4';
@@ -276,7 +294,7 @@ class laporananggota extends CI_Controller
 
     //load halaman
     $this->load->library('pdf');
-    // $this->load->view('penjualan/transaksi_pdf', $data);
+
 
     //inisialisasi variabel untuk dompdf
     $paper_size = 'A4';

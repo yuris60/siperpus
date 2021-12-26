@@ -33,8 +33,11 @@
   <link href="<?= base_url('assets/'); ?>vendor/image-uploader/css/filepond.css" rel="stylesheet">
   <link href="<?= base_url('assets/'); ?>vendor/image-uploader/css/filepond-plugin-image-preview.css" rel="stylesheet">
 
+  <!-- Simple Calendar -->
+  <link rel="stylesheet" type="text/css" href="<?= base_url('assets/vendor/simple-calendar/dist/'); ?>simple-calendar.css" />
+
   <!-- <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/toast.css"> -->
 </head>
 
-<body>
+<body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">
   <div id="app">

@@ -2,15 +2,15 @@
 <div class="page-title">
   <div class="row">
     <div class="col-12 col-md-6 order-md-1 order-last">
-      <h3 class="text-white"><i class="<?= $icon ?>"></i> <?= $submenu . " " . $menu ?></h3>
+      <h3><?= $submenu . " " . $menu ?></h3>
       <p class="text-subtitle text-muted"></p>
     </div>
     <div class="col-12 col-md-6 order-md-2 order-first">
       <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>"><span class="badge bg-white text-dark">Dashboard</span></a></li>
-          <li class="breadcrumb-item"><a href="<?= base_url('admin/jenisbuku') ?>"><span class="badge bg-white text-dark"><?= $menu ?></span></a></li>
-          <li class="breadcrumb-item active" aria-current="page"><span class="badge text-white"><?= $submenu ?></span></li>
+          <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>"><span class="badge bg-primary text-white">Dashboard</span></a></li>
+          <li class="breadcrumb-item"><a href="<?= base_url('admin/kategoribuku') ?>"><span class="badge bg-primary text-white"><?= $menu ?></span></a></li>
+          <li class="breadcrumb-item active" aria-current="page"><span class="badge text-dark"><?= $submenu ?></span></li>
         </ol>
       </nav>
     </div>

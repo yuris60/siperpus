@@ -46,8 +46,10 @@
       <div style="margin-top: -30px;">
         <?php if (!empty($kelas)) : ?>
           <p>Kelas : <?= $kelas ?></p>
-        <?php else : ?>
+        <?php elseif (!empty($angkatan)) : ?>
           <p>Angkatan : Kelas <?= $angkatan ?></p>
+        <?php else : ?>
+          <p>Data Anggota Keseluruhan</p>
         <?php endif; ?>
       </div>
     </div>
