@@ -7,6 +7,7 @@ class LaporanBuku extends CI_Controller
   {
     parent::__construct();
     $this->load->model('admin/laporanbuku_model');
+    $this->load->model('admin/login_model');
     $this->load->helper('tglindo');
     $this->load->library('qrcode/ciqrcode');
     ini_set('max_execution_time', 0);
@@ -15,7 +16,7 @@ class LaporanBuku extends CI_Controller
 
   public function index()
   {
-    // $data['user'] = $this->login_model->getSession();
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Laporan Buku | SIPERPUS";
     $data['menu'] = "Laporan Buku";
     $data['icon'] = "bi bi-book-half";

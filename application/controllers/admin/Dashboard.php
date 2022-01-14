@@ -9,11 +9,12 @@ class Dashboard extends CI_Controller
   {
     parent::__construct();
     $this->load->helper('tglindo');
+    $this->load->model('admin/login_model');
   }
 
   public function index()
   {
-    // $data['user'] = $this->login_model->getSession();
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Dashboard | SIPERPUS";
     $data['menu'] = "Dashboard";
     $data['icon'] = "bi bi-house-door-fill";

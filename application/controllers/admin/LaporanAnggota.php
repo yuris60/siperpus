@@ -7,8 +7,8 @@ class laporananggota extends CI_Controller
   {
     parent::__construct();
     $this->load->model('admin/laporananggota_model');
+    $this->load->model('admin/login_model');
     $this->load->helper('tgljamindo');
-    $this->load->helper('tglindo');
     $this->load->library('qrcode/ciqrcode');
     ini_set('max_execution_time', 0);
     ini_set('memory_limit', '20480M');
@@ -16,7 +16,7 @@ class laporananggota extends CI_Controller
 
   public function index()
   {
-    // $data['user'] = $this->login_model->getSession();
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Laporan Anggota | SIPERPUS";
     $data['menu'] = "Laporan Anggota";
     $data['icon'] = "bi bi-person-circle";

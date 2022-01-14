@@ -9,13 +9,13 @@ class Detailpeminjaman extends CI_Controller
   {
     parent::__construct();
     $this->load->model('admin/peminjaman_model');
-    $this->load->helper('tglindo');
     $this->load->helper('waktulalu');
+    $this->load->model('admin/login_model');
   }
 
   public function buku($where)
   {
-    // $data['user'] = $this->login_model->getSession();
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Detail Peminjaman | SIPERPUS";
     $data['menu'] = "Detail Peminjaman";
     $data['icon'] = "bi bi-book-half";
@@ -42,6 +42,7 @@ class Detailpeminjaman extends CI_Controller
 
   public function create()
   {
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Tambah Peminjaman | SIPERPUS";
     $data['menu'] = "Peminjaman";
     $data['submenu'] = "Tambah Data";
@@ -67,6 +68,7 @@ class Detailpeminjaman extends CI_Controller
 
   public function update($where)
   {
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Perbarui Peminjaman | SIPERPUS";
     $data['menu'] = "Peminjaman";
     $data['submenu'] = "Perbarui Data";

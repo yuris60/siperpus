@@ -1,17 +1,20 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
+date_default_timezone_set('Asia/Jakarta');
+
 class kategoribuku extends CI_Controller
 {
   public function __construct()
   {
     parent::__construct();
     $this->load->model('admin/kategoribuku_model');
+    $this->load->model('admin/login_model');
   }
 
   public function index()
   {
-    // $data['user'] = $this->login_model->getSession();
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Kategori Buku | SIPERPUS";
     $data['menu'] = "Kategori Buku";
     $data['icon'] = "bi bi-bookmarks";
@@ -28,6 +31,7 @@ class kategoribuku extends CI_Controller
 
   public function create()
   {
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Tambah Kategori Buku | SIPERPUS";
     $data['menu'] = "Kategori Buku";
     $data['submenu'] = "Tambah Data";
@@ -51,6 +55,7 @@ class kategoribuku extends CI_Controller
 
   public function update($where)
   {
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Perbarui Kategori Buku | SIPERPUS";
     $data['menu'] = "Kategori Buku";
     $data['submenu'] = "Perbarui Data";

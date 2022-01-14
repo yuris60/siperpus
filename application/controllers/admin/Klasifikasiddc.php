@@ -1,18 +1,20 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
+date_default_timezone_set('Asia/Jakarta');
+
 class klasifikasiddc extends CI_Controller
 {
   public function __construct()
   {
     parent::__construct();
     $this->load->model('admin/klasifikasiddc_model');
-    $this->load->helper('tglindo');
+    $this->load->model('admin/login_model');
   }
 
   public function index()
   {
-    // $data['user'] = $this->login_model->getSession();
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Klasifikasi DDC | SIPERPUS";
     $data['menu'] = "Klasifikasi DDC";
     $data['icon'] = "bi bi-list-ol";
@@ -29,6 +31,7 @@ class klasifikasiddc extends CI_Controller
 
   public function create()
   {
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Tambah Klasifikasi DDC | SIPERPUS";
     $data['menu'] = "Klasifikasi DDC";
     $data['submenu'] = "Tambah Data";
@@ -53,6 +56,7 @@ class klasifikasiddc extends CI_Controller
 
   public function update($where)
   {
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Perbarui Klasifikasi DDC | SIPERPUS";
     $data['menu'] = "Klasifikasi DDC";
     $data['submenu'] = "Perbarui Data";

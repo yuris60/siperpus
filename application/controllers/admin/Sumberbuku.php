@@ -7,12 +7,12 @@ class sumberbuku extends CI_Controller
   {
     parent::__construct();
     $this->load->model('admin/sumberbuku_model');
-    $this->load->helper('tglindo');
+    $this->load->model('admin/login_model');
   }
 
   public function index()
   {
-    // $data['user'] = $this->login_model->getSession();
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Sumber Buku | SIPERPUS";
     $data['menu'] = "Sumber Buku";
     $data['icon'] = "bi bi-journals";
@@ -29,6 +29,7 @@ class sumberbuku extends CI_Controller
 
   public function create()
   {
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Tambah Sumber Buku | SIPERPUS";
     $data['menu'] = "Sumber Buku";
     $data['submenu'] = "Tambah Data";
@@ -53,6 +54,7 @@ class sumberbuku extends CI_Controller
 
   public function update($where)
   {
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Perbarui Sumber Buku | SIPERPUS";
     $data['menu'] = "Sumber Buku";
     $data['submenu'] = "Perbarui Data";

@@ -1,18 +1,21 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
+date_default_timezone_set('Asia/Jakarta');
+
 class jenisbuku extends CI_Controller
 {
   public function __construct()
   {
     parent::__construct();
     $this->load->model('admin/jenisbuku_model');
+    $this->load->model('admin/login_model');
     $this->load->helper('tglindo');
   }
 
   public function index()
   {
-    // $data['user'] = $this->login_model->getSession();
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Jenis Buku | SIPERPUS";
     $data['menu'] = "Jenis Buku";
     $data['icon'] = "bi bi-bookmark-fill";
@@ -29,6 +32,7 @@ class jenisbuku extends CI_Controller
 
   public function create()
   {
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Tambah Jenis Buku | SIPERPUS";
     $data['menu'] = "Jenis Buku";
     $data['submenu'] = "Tambah Data";
@@ -47,12 +51,13 @@ class jenisbuku extends CI_Controller
     } else {
       $this->jenisbuku_model->save();
       $this->session->set_flashdata('success', 'disimpan');
-      redirect('jenisbuku');
+      redirect('admin/jenisbuku');
     }
   }
 
   public function update($where)
   {
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Perbarui Jenis Buku | SIPERPUS";
     $data['menu'] = "Jenis Buku";
     $data['submenu'] = "Perbarui Data";
@@ -73,7 +78,7 @@ class jenisbuku extends CI_Controller
     } else {
       $this->jenisbuku_model->update($where);
       $this->session->set_flashdata('success', 'Diperbarui');
-      redirect('jenisbuku');
+      redirect('admin/jenisbuku');
     }
   }
 
@@ -82,6 +87,6 @@ class jenisbuku extends CI_Controller
     $where = ['id_jenisbuku' => $this->uri->segment(4)];
     $this->jenisbuku_model->delete($where);
     $this->session->set_flashdata('success', 'Dihapus');
-    redirect('jenisbuku');
+    redirect('admin/jenisbuku');
   }
 }

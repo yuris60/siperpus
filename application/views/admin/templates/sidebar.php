@@ -135,7 +135,9 @@
             <span>Laporan Pengunjung</span>
           </a>
         </li>
-        <li class="sidebar-item"><button class="btn btn-danger btn-block"><i class="bi bi-box-arrow-right"></i> Logout</button></li>
+        <li class="sidebar-item">
+          <a href="<?= base_url('admin/login/logout') ?>"><button class="btn btn-danger btn-block"><i class="bi bi-box-arrow-right"></i> Logout</button></a>
+        </li>
       </ul>
     </div>
     <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>

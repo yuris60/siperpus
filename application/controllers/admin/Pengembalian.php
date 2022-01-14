@@ -7,12 +7,12 @@ class Pengembalian extends CI_Controller
   {
     parent::__construct();
     $this->load->model('admin/pengembalian_model');
-    $this->load->helper('tglindo');
+    $this->load->model('admin/login_model');
   }
 
   public function index()
   {
-    // $data['user'] = $this->login_model->getSession();
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Pengembalian Buku| SIPERPUS";
     $data['menu'] = "Pengembalian Buku";
     $data['icon'] = "bi bi-book-half";
@@ -29,7 +29,7 @@ class Pengembalian extends CI_Controller
 
   public function detail($where)
   {
-    // $data['user'] = $this->login_model->getSession();
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Detail Pengembalian | SIPERPUS";
     $data['menu'] = "Pengembalian Buku";
     $data['submenu'] = "Detail";

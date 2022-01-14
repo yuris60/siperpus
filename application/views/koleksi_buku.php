@@ -1,264 +1,371 @@
-<div class="content-wrapper container">
+<main id="main">
 
-  <div class="page-heading">
-    <h3>Koleksi Buku e-Library SMK Soedirman Purbalingga</h3>
-  </div>
+  <section id="about" class="about">
+    <div class="container">
 
-  <div class="page-content">
-    <section class="row">
-      <div class="col-lg-12">
-        <div class="row">
-
-          <div class="row">
-            <div class="col-lg-12">
-              <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Buku Terpopuler</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Buku Terbaru</a>
-                </li>
-              </ul>
-              <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                  <div class="row mt-4">
-
-                    <div class="col-lg-2">
-                      <div class="card">
-                        <div class="d-flex justify-content-center bg-secondary"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="100%" class="d-flex justify-content-center" alt="..."></div>
-                        <div class="card-body">
-                          <p class="my-0" style="font-size: 12px;">Yuris Alkhalifi</p>
-                          <h6>Keajaiban Toko Kelontong Namiya</h6>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <div class="card">
-                        <div class="d-flex justify-content-center bg-secondary"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="100%" class="d-flex justify-content-center" alt="..."></div>
-                        <div class="card-body">
-                          <p class="my-0" style="font-size: 12px;">Yuris Alkhalifi</p>
-                          <h6>Keajaiban Toko Kelontong Namiya</h6>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <div class="card">
-                        <div class="d-flex justify-content-center bg-secondary"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="100%" class="d-flex justify-content-center" alt="..."></div>
-                        <div class="card-body">
-                          <p class="my-0" style="font-size: 12px;">Yuris Alkhalifi</p>
-                          <h6>Keajaiban Toko Kelontong Namiya</h6>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <div class="card">
-                        <div class="d-flex justify-content-center bg-secondary"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="100%" class="d-flex justify-content-center" alt="..."></div>
-                        <div class="card-body">
-                          <p class="my-0" style="font-size: 12px;">Yuris Alkhalifi</p>
-                          <h6>Keajaiban Toko Kelontong Namiya</h6>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <div class="card">
-                        <div class="d-flex justify-content-center bg-secondary"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="100%" class="d-flex justify-content-center" alt="..."></div>
-                        <div class="card-body">
-                          <p class="my-0" style="font-size: 12px;">Yuris Alkhalifi</p>
-                          <h6>Keajaiban Toko Kelontong Namiya</h6>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <div class="card">
-                        <div class="d-flex justify-content-center bg-secondary"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="100%" class="d-flex justify-content-center" alt="..."></div>
-                        <div class="card-body">
-                          <p class="my-0" style="font-size: 12px;">Yuris Alkhalifi</p>
-                          <h6>Keajaiban Toko Kelontong Namiya</h6>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                  <div class="row mt-4">
-
-                    <div class="col-lg-2">
-                      <div class="card">
-                        <div class="d-flex justify-content-center bg-secondary"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="100%" class="d-flex justify-content-center" alt="..."></div>
-                        <div class="card-body">
-                          <p class="my-0" style="font-size: 12px;">Yuris Alkhalifi</p>
-                          <h6>Keajaiban Toko Kelontong Namiya</h6>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <div class="card">
-                        <div class="d-flex justify-content-center bg-secondary"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="100%" class="d-flex justify-content-center" alt="..."></div>
-                        <div class="card-body">
-                          <p class="my-0" style="font-size: 12px;">Yuris Alkhalifi</p>
-                          <h6>Keajaiban Toko Kelontong Namiya</h6>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <div class="card">
-                        <div class="d-flex justify-content-center bg-secondary"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="100%" class="d-flex justify-content-center" alt="..."></div>
-                        <div class="card-body">
-                          <p class="my-0" style="font-size: 12px;">Yuris Alkhalifi</p>
-                          <h6>Keajaiban Toko Kelontong Namiya</h6>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <div class="card">
-                        <div class="d-flex justify-content-center bg-secondary"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="100%" class="d-flex justify-content-center" alt="..."></div>
-                        <div class="card-body">
-                          <p class="my-0" style="font-size: 12px;">Yuris Alkhalifi</p>
-                          <h6>Keajaiban Toko Kelontong Namiya</h6>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <div class="card">
-                        <div class="d-flex justify-content-center bg-secondary"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="100%" class="d-flex justify-content-center" alt="..."></div>
-                        <div class="card-body">
-                          <p class="my-0" style="font-size: 12px;">Yuris Alkhalifi</p>
-                          <h6>Keajaiban Toko Kelontong Namiya</h6>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <div class="card">
-                        <div class="d-flex justify-content-center bg-secondary"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="100%" class="d-flex justify-content-center" alt="..."></div>
-                        <div class="card-body">
-                          <p class="my-0" style="font-size: 12px;">Yuris Alkhalifi</p>
-                          <h6>Keajaiban Toko Kelontong Namiya</h6>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class=""><img src="<?= base_url('assets/svg/qr-code.svg') ?>" alt="" style="margin-top: -5px;"> Scan QR Code Disini</h4>
-                </div>
-                <div class="card-body">
-                  <video id="preview" class="mt-2" width="100%"></video>
-                  <button id="play" class="btn btn-success btn-block" onclick="play()"><i class="bi bi-play-circle"></i> Play Camera</button>
-                  <button id="stop" class="btn btn-danger btn-block" onclick="stop()"><i class="bi bi-stop-circle"></i> Stop Camera</button>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="card">
-                    <div class="card-header">
-                      <h4 class=""><i class="bi bi-cart"></i> Keranjang Buku</h4>
-                    </div>
-                    <div class="card-body mb-0">
-                      <table class="table table-striped table-hover" style="font-size: 15px; margin-bottom: -20px;">
-                        <thead>
-                          <tr class="table-secondary">
-                            <td>No</td>
-                            <td width="30px">Judul Buku</td>
-                            <td>Qty</td>
-                            <td>Aksi</td>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td>Advokasi Pencegahan Penyalahgunaan Narkoba</td>
-                            <td><input type="number" name="qty_pinjam" class="form-control" min="1" value="1"></td>
-                            <td>
-                              <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>2</td>
-                            <td>Anatomi Dan Fisiologi Untuk Mahasisawa Keperawatan</td>
-                            <td><input type="number" name="qty_pinjam" class="form-control" min="1" value="1"></td>
-                            <td>
-                              <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="card-footer mt-0">
-                      <button type="submit" class="btn btn-success btn-block">Pinjam Buku</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-8">
-              <div class="card border-primary">
-                <div class="card-header bg-primary">
-                  <h5 class="card-title text-white">Koleksi Buku</h5>
-                </div>
-                <div class="card-body">
-                  <table class="table table-striped table-hover" id="table1" style="font-size: 15px;">
-                    <thead>
-                      <tr class="table-secondary">
-                        <th>No</th>
-                        <th>Gambar</th>
-                        <th>Judul Buku</th>
-                        <th>Pengarang</th>
-                        <th>Penerbit</th>
-                        <th>Stok</th>
-                        <th>Rak</th>
-                        <th>Aksi</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php $no = 1;
-                      foreach ($buku as $b) : ?>
-                        <tr>
-                          <td><?= $no ?></td>
-                          <td class="text-center">
-                            <?php if (empty($b['gambar'])) : ?>
-                              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="40%" alt="">
-                            <?php else : ?>
-                              <img src="<?= base_url('assets/img/buku/') . $b['gambar_buku'] ?>" width="40%" alt="">
-                            <?php endif; ?>
-                          </td>
-                          <td><?= $b['judul_buku'] ?></td>
-                          <td><?= $b['pengarang'] ?></td>
-                          <td><?= $b['penerbit'] ?></td>
-                          <td><?= $b['stok_buku'] ?></td>
-                          <td><?= $b['rak_buku'] ?></td>
-                          <td><button class="btn btn-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Masukkan Keranjang"><i class="bi bi-cart"></i></button></td>
-                        </tr>
-                      <?php $no++;
-                      endforeach; ?>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
+      <div class="row height d-flex justify-content-center align-items-center">
+        <div class="col-lg-12">
+          <div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="Cari berdasarkan judul buku, nama penulis, penerbit ataupun lainnya"> <button class="btn btn-primary">Cari</button> </div>
         </div>
       </div>
-    </section>
-  </div>
+
+      <!-- <section class="row content" data-aos="fade-up">
+        <div class="col-xl-6">
+          <div class="row">
+            <div class="col-xl-3 col-3">
+              <img src="<?= base_url('assets/img/user.png') ?>" width="100%" class="rounded-circle" alt="...">
+              <p class="text-center mt-2">Buku Teks Pelajaran</p>
+            </div>
+            <div class="col-xl-3 col-3">
+              <img src="<?= base_url('assets/img/user.png') ?>" width="100%" class="rounded-circle" alt="...">
+              <p class="text-center mt-2">Buku Bacaan</p>
+            </div>
+            <div class="col-xl-3 col-3">
+              <img src="<?= base_url('assets/img/user.png') ?>" width="100%" class="rounded-circle" alt="...">
+              <p class="text-center mt-2">Buku Penunjang Ujian</p>
+            </div>
+            <div class="col-xl-3 col-3">
+              <img src="<?= base_url('assets/img/user.png') ?>" width="100%" class="rounded-circle" alt="...">
+              <p class="text-center mt-2">Buku Penunjang Pelajaran</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="row">
+            <div class="col-xl-3 col-3">
+              <img src="<?= base_url('assets/img/user.png') ?>" width="100%" class="rounded-circle" alt="...">
+              <p class="text-center mt-2">Kamus Umum</p>
+            </div>
+            <div class="col-xl-3 col-3">
+              <img src="<?= base_url('assets/img/user.png') ?>" width="100%" class="rounded-circle" alt="...">
+              <p class="text-center mt-2">Kamus Produktif</p>
+            </div>
+            <div class="col-xl-3 col-3">
+              <img src="<?= base_url('assets/img/user.png') ?>" width="100%" class="rounded-circle" alt="...">
+              <p class="text-center mt-2">Al-Quran</p>
+            </div>
+            <div class="col-xl-3 col-3">
+              <img src="<?= base_url('assets/img/user.png') ?>" width="100%" class="rounded-circle" alt="...">
+              <p class="text-center mt-2">Ensiklopedia</p>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <section class="row content" data-aos="fade-up">
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="card">
+                aaaaaa
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                aaaaaa
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                aaaaaa
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                aaaaaa
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="card">
+                aaaaaa
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                aaaaaa
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                aaaaaa
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                aaaaaa
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Buku Populer -->
+      <section class="row" style="margin-top: -80px;">
+        <div class="judul mb-2">
+          <h4>Buku Populer
+
+            <button class="btn btn-sm btn-primary float-end">Lihat Semua</button>
+          </h4>
+        </div>
+        <div class="col-xl-3 d-none d-xl-block">
+          <img src="<?= base_url('assets/img/bukupopuler.png') ?>" width="80%" alt="">
+        </div>
+        <div class="col-xl-9 col-lg-12 col-md-12 col-12">
+          <div class="owl-carousel owl-theme">
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Of Buku Populer -->
+
+      <!-- Buku Terbaru -->
+      <section class="row" style="margin-top: -80px;">
+        <div class="judul mb-2">
+          <h4>Buku Terbaru
+
+            <button class="btn btn-sm btn-primary float-end">Lihat Semua</button>
+          </h4>
+        </div>
+        <div class="col-xl-3 d-none d-xl-block">
+          <img src="<?= base_url('assets/img/bukupopuler.png') ?>" width="80%" alt="">
+        </div>
+        <div class="col-xl-9 col-lg-12 col-md-12 col-12">
+          <div class="owl-carousel owl-theme">
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+            <div class="item" style="width: 150px;">
+              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+              <small>Yuris Alkhalifi</small>
+              <h5>Ini Judul Buku</h5>
+              <span class="badge bg-success">Stok : 103</span>
+              <span class="badge bg-primary">Rak : 2</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Of Buku Populer -->
+
+      <section class="row" style="margin-top: -80px; margin-bottom: -80px;">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h5 class=""><i class="fas fa-database"></i> Data
+                <!-- <a href="<?= base_url('admin/buku/create') ?>" class="float-end"><button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah Data"><i class="fas fa-plus"></i></button></a> -->
+              </h5>
+            </div>
+            <div class="card-body">
+              <table class="table table-striped table-hover" id="table1">
+                <thead>
+                  <tr class="">
+                    <th>No</th>
+                    <th>QR Code</th>
+                    <th>Judul Buku</th>
+                    <th>Pengarang</th>
+                    <th>Penerbit</th>
+                    <th>Tahun Terbit</th>
+                    <th width="100px">Gambar Buku</th>
+                    <!-- <th width="70px">Aksi</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php $no = 1;
+                  foreach ($buku as $b) : ?>
+                    <tr>
+                      <td><?= $no; ?></td>
+                      <td>
+                        <?php
+                        // require_once(base_url('assets/vendor/phpqrcodegenerator/qrlib.php'));
+                        // QRcode::png($b['id_buku'], "M", 2, 2);
+                        // $qrCode = new Endroid\QrCode\QrCode($b['id_buku']);
+                        // header("Content-Type: image/png");
+                        // $params['data'] = 'tes';
+                        // $this->ciqrcode->generate($params);
+                        ?>
+                        <img src="<?= site_url('admin/buku/qrcode/') . $b['id_buku'] ?>" class="img-zoomable" width="50px" alt="">
+                      </td>
+                      <td><?= $b['judul_buku']; ?></td>
+                      <td><?= $b['pengarang']; ?></td>
+                      <td><?= $b['penerbit']; ?></td>
+                      <td><?= $b['thn_terbit']; ?></td>
+                      <td>
+                        <?php if (empty($dp['gambar'])) : ?>
+                          <figure style="width: 80%"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="70%" class="img-zoomable" alt=""></figure>
+                        <?php else : ?>
+                          <img src="<?= base_url('assets/img/buku/') . $dp['gambar_buku'] ?>" width="70%" alt="">
+                        <?php endif; ?>
+                      </td>
+                    </tr>
+                  <?php $no++;
+                  endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>

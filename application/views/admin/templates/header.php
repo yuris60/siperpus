@@ -37,6 +37,13 @@
   <link rel="stylesheet" type="text/css" href="<?= base_url('assets/vendor/simple-calendar/dist/'); ?>simple-calendar.css" />
 
   <!-- <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/toast.css"> -->
+
+  <?php
+  if ($admin == 0) {
+    $this->session->set_flashdata('flash-belum-login', 'dahulu');
+    redirect('admin/login');
+  }
+  ?>
 </head>
 
 <body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">

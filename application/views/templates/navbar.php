@@ -1,57 +1,58 @@
-<nav class="main-navbar">
-  <div class="container">
-    <ul class="justify-content-center">
-      <li class="menu-item">
-        <a href="<?= base_url('dashboard/') ?>" class='menu-link'>
-          <i class="bi bi-grid-fill"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li class="menu-item  ">
-        <a href="<?= base_url('dashboard/absenpengunjung') ?>" class='menu-link'>
-          <i class="bi bi-book-fill"></i>
-          <span>Absen Pengunjung</span>
-        </a>
-      </li>
-      <li class="menu-item  ">
-        <a href="<?= base_url('dashboard/koleksibuku') ?>" class='menu-link'>
-          <i class="bi bi-book-fill"></i>
-          <span>Koleksi Buku</span>
-        </a>
-      </li>
-      <li class="menu-item  ">
-        <a href="index.html" class='menu-link'>
-          <i class="bi bi-grid-fill"></i>
-          <span>Peraturan Perpustakaan</span>
-        </a>
-      </li>
-      <li class="menu-item  has-sub">
-        <a href="#" class='menu-link'>
-          <i class="bi bi-life-preserver"></i>
-          <span>Support</span>
-        </a>
-        <div class="submenu ">
-          <!-- Wrap to submenu-group-wrapper if you want 3-level submenu. Otherwise remove it. -->
-          <div class="submenu-group-wrapper">
-            <ul class="submenu-group">
-              <li class="submenu-item  ">
-                <a href="https://zuramai.github.io/mazer/docs" class='submenu-link'>Documentation</a>
-              </li>
-              <li class="submenu-item  ">
-                <a href="https://github.com/zuramai/mazer/blob/main/CONTRIBUTING.md" class='submenu-link'>Contribute</a>
-              </li>
-              <li class="submenu-item  ">
-                <a href="https://github.com/zuramai/mazer#donate" class='submenu-link'>Donate</a>
-              </li>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center bg-primary">
+    <div class="container d-flex align-items-center">
 
+      <h1 class="logo me-auto"><a href="index.html">SIPERPUS</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html" class="<?php if ($this->uri->segment(2) == 'index' || $this->uri->segment(2) == '') {
+                                            echo 'active';
+                                          } ?>">Beranda</a></li>
+
+          <li class="dropdown"><a href=""><span>Tentang</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="about.html">Sejarah & Landasan Hukum</a></li>
+              <li><a href="team.html">Visi Misi</a></li>
+              <li><a href="testimonials.html">Struktur Organisasi</a></li>
+              <li><a href="testimonials.html">Keanggotaan Perpustakaan</a></li>
+              <li><a href="testimonials.html">Sarana & Prasarana</a></li>
+              <li><a href="testimonials.html">Foto Perpustakaan</a></li>
+              <li><a href="testimonials.html">Staf Perpustakaan</a></li>
+              <li><a href="testimonials.html">Alamat Perpustakaan</a></li>
+
+              <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li> -->
             </ul>
-          </div>
-        </div>
-      </li>
+          </li>
+          <li>
+            <a class="<?php if ($this->uri->segment(2) == 'absenpengunjung') {
+                        echo 'active';
+                      } ?>" href="<?= base_url('dashboard/absenpengunjung') ?>">Absen Pengunjung</a>
+          </li>
+          <li>
+            <a class="<?php if ($this->uri->segment(2) == 'koleksibuku') {
+                        echo 'active';
+                      } ?>" href="<?= base_url('dashboard/koleksibuku') ?>">Koleksi Buku</a>
+          </li>
+          <!-- <li><a href="portfolio.html">Koleksi Buku</a></li> -->
+          <li><a href="pricing.html">Berita</a></li>
+          <!-- <li><a href="blog.html">Blog</a></li> -->
 
+          <!-- <li><a href="contact.html">Contact</a></li> -->
+          <!-- <li><a href="index.html" class="getstarted">Koleksi Buku</a></li> -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
 
-    </ul>
-  </div>
-</nav>
-
-</header>
+    </div>
+  </header><!-- End Header -->

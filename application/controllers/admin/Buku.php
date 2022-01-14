@@ -1,19 +1,21 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
+date_default_timezone_set('Asia/Jakarta');
+
 class Buku extends CI_Controller
 {
   public function __construct()
   {
     parent::__construct();
     $this->load->model('admin/buku_model');
-    $this->load->helper('tglindo');
     $this->load->library('qrcode/ciqrcode');
+    $this->load->model('admin/login_model');
   }
 
   public function index()
   {
-    // $data['user'] = $this->login_model->getSession();
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Buku | SIPERPUS";
     $data['menu'] = "Buku";
     $data['icon'] = "bi bi-book-half";
@@ -30,6 +32,7 @@ class Buku extends CI_Controller
 
   public function create()
   {
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Tambah Buku | SIPERPUS";
     $data['menu'] = "Buku";
     $data['submenu'] = "Tambah Data";
@@ -58,6 +61,7 @@ class Buku extends CI_Controller
 
   public function update($where)
   {
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Perbarui Buku | SIPERPUS";
     $data['menu'] = "Buku";
     $data['submenu'] = "Perbarui Data";

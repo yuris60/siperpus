@@ -1,19 +1,21 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
+date_default_timezone_set('Asia/Jakarta');
+
 class laporanpengunjung extends CI_Controller
 {
   public function __construct()
   {
     parent::__construct();
     $this->load->model('admin/laporanpengunjung_model');
+    $this->load->model('admin/login_model');
     $this->load->helper('tgljamindo');
-    $this->load->helper('tglindo');
   }
 
   public function index()
   {
-    // $data['user'] = $this->login_model->getSession();
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Laporan Pengunjung | SIPERPUS";
     $data['menu'] = "Laporan Pengunjung";
     $data['icon'] = "bi bi-book-half";

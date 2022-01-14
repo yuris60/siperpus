@@ -1,18 +1,20 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
+date_default_timezone_set('Asia/Jakarta');
+
 class Anggota extends CI_Controller
 {
   public function __construct()
   {
     parent::__construct();
     $this->load->model('admin/anggota_model');
-    $this->load->helper('tglindo');
+    $this->load->model('admin/login_model');
   }
 
   public function index()
   {
-    // $data['user'] = $this->login_model->getSession();
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Anggota | SIPERPUS";
     $data['menu'] = "Anggota";
     $data['icon'] = "bi bi-book-half";
@@ -29,6 +31,7 @@ class Anggota extends CI_Controller
 
   public function create()
   {
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Tambah Anggota | SIPERPUS";
     $data['menu'] = "Anggota";
     $data['submenu'] = "Tambah Data";
@@ -53,6 +56,7 @@ class Anggota extends CI_Controller
 
   public function update($where)
   {
+    $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Perbarui Anggota | SIPERPUS";
     $data['menu'] = "Anggota";
     $data['submenu'] = "Perbarui Data";
