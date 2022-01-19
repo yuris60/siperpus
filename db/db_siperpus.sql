@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2022 at 03:57 PM
--- Server version: 10.4.8-MariaDB
+-- Generation Time: Jan 19, 2022 at 05:03 AM
+-- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -463,7 +462,7 @@ INSERT INTO `anggota` (`nisn`, `id_kelas`, `nm_anggota`, `jk_anggota`, `tempatla
 --
 
 CREATE TABLE `buku` (
-  `id_buku` int(11) NOT NULL,
+  `id_buku` char(6) NOT NULL,
   `id_ddc` int(11) NOT NULL,
   `id_jenisbuku` int(11) NOT NULL,
   `id_sumberbuku` int(11) NOT NULL,
@@ -479,8 +478,8 @@ CREATE TABLE `buku` (
   `jml_halaman` int(4) NOT NULL,
   `jml_eksemplar` int(4) NOT NULL,
   `stok_buku` int(4) NOT NULL,
-  `rak_buku` int(1) NOT NULL,
-  `gambar_buku` char(14) NOT NULL
+  `rak_buku` varchar(3) NOT NULL,
+  `gambar_buku` char(12) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -488,198 +487,98 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id_buku`, `id_ddc`, `id_jenisbuku`, `id_sumberbuku`, `id_kategoribuku`, `judul_buku`, `penerbit`, `pengarang`, `isbn`, `buku_kelas`, `thn_terbit`, `tinggi_buku`, `tgl_penerimaan`, `jml_halaman`, `jml_eksemplar`, `stok_buku`, `rak_buku`, `gambar_buku`) VALUES
-(1, 17, 2, 2, 0, 'Advokasi Pencegahan Penyalahgunaan Narkoba', 'BNN Kab. Purbalingga', 'BNN Kab. Purbalingga', '', 'X', 2020, 1, '2021-11-16', 1, 50, 48, 1, ''),
-(2, 0, 0, 0, 0, 'Al-Qur\'an', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(3, 17, 0, 0, 0, 'Anamnesia Dan Pemeriksaan Fisik', 'Erlangga Jakarta', 'Janathan 61', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(4, 17, 0, 0, 0, 'Anatomi Dan Fisiologi Untuk Mahasisawa Keperawatan', 'Buku Kedokteran ', 'Drs. H. Syaiful', '', 'X', 2032, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(5, 17, 0, 0, 0, 'Anatomi Dan Fisologi Manusia ', 'Numed Yogyakarta', 'Zuyina L', '', 'X', 2031, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(6, 17, 0, 0, 0, 'Anatomi Dan Fisologi Untuk Paramedis', 'Gramedia Jakarta', 'Evelyn C.P', '', 'X', 2039, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(7, 17, 0, 0, 0, 'Anatomi Fisiologi', 'Pilar Utama Mandiri Jaktim ', 'Rudi Fahru, Adi Setiawan', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(8, 17, 0, 0, 0, 'Asuhan Keperawatan Praktis', 'Mediaction Yogyakarta', 'Amin Huda', '', 'X', 2036, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(9, 13, 0, 0, 0, 'Atas Singgasana', 'Gama Media Jakarta ', 'Abidah El. K', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(10, 13, 0, 0, 0, 'Atheis', 'Balai Pustaka Jakarta', 'Achdiat K', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(11, 12, 0, 0, 0, 'Bahasa Indoenesia XI (1)', 'Erlangga Jakarta', 'Husin ', '', 'X', 2012, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(12, 12, 0, 0, 0, 'Bahasa Indoenesia XII (2)', 'Erlangga Jakarta', 'Husin ', '', 'X', 2039, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(13, 12, 0, 0, 0, 'Bahasa Indonesia X', 'Kemendikbud Jakarta ', 'Kemendikbud', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(14, 12, 0, 0, 0, 'Bahasa Indonesia X (1)', 'Erlangga Jakarta', 'Ahinad Iskak', '', 'X', 2038, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(15, 12, 0, 0, 0, 'Bahasa Indonesia XI', 'Kemendikbud Jakarta ', 'Kemendikbud', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(16, 0, 0, 0, 0, 'Bahasa Inggris X', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(17, 0, 0, 0, 0, 'Bahasa Inggris XI', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(18, 0, 0, 0, 0, 'Biologi 2', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(19, 0, 0, 0, 0, 'Biologi 3', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(20, 0, 0, 0, 0, 'Biologi X', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(21, 13, 0, 0, 0, 'Bukan Milik Kami ', 'Balai Pustaka Jakarta', 'Syamsul Arifin', '', 'X', 1998, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(22, 13, 0, 0, 0, 'Dan Perangpun Sia', 'Pustaka Jaya Jakarta', 'Ismail Maha', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(23, 13, 0, 0, 0, 'Dari Avemaria Kejalan Lain Roma', 'Balai Pustaka Jakarta', 'Idrus', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(24, 13, 0, 0, 0, 'Dari Satu Masa, Dari Satu Tempat', 'CV. Mus Jakarta', 'Asrul Sani', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(25, 13, 0, 0, 0, 'Dari Sunyi KE Bunyi ', 'Grafiti Jakarta', 'Hartojo Andang ', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(26, 18, 0, 0, 0, 'Dasar-Dasar Kefarmasian', 'Pilar Utama Mandiri Jaktim ', 'Hendrik M, Diniah A', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(27, 18, 0, 0, 0, 'Dasar-Dasar Kefarmasian Kelas X', 'Buku Kedokteran ', 'Ai Kurasein', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(28, 18, 0, 0, 0, 'Dasar-Dasar Kefarmasian Kelas XI', 'Buku Kedokteran ', 'Aster Nila', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(29, 13, 0, 0, 0, 'Dewi Sartika ', 'Kemendikbud Jakarta ', 'Rochiat W', '', 'X', 1985, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(30, 17, 0, 0, 0, 'Diagnosis Keperawatan', 'Buku Kedokteran Indonesia', 'Judith M', '', 'X', 2032, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(31, 13, 0, 0, 0, 'Diantara Kaliprogo Dan Kalipongo', 'Mitra Gama Media Jakarta ', 'Khisna Miha', '', 'X', 1995, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(32, 13, 0, 0, 0, 'Ditengah Keluarga', 'Pustaka Jaya Jakarta', 'Ajib Rosidi', '', 'X', 2033, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(33, 13, 0, 0, 0, 'Dunia Semata Wayang ', 'Hihkayat Jakarta ', 'Imam Budisan', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(34, 13, 0, 0, 0, 'Efrosina', 'Cakra Budaya Indo Jakarta ', 'Cecep Syamsul', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(35, 13, 0, 0, 0, 'Empat Kumpulan Sajak', 'Pustaka Jaya Jakarta', 'Rendra', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(36, 0, 0, 0, 0, 'Ensiklopedi Islam ', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(37, 18, 0, 0, 0, 'Farmakognosi', 'Pilar Utama Mandiri Jaktim ', 'Supriani, Nursalimi', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(38, 18, 0, 0, 0, 'Farmakognosi Dasar Kelas X', 'Buku Kedokteran ', 'Muh. Yani Zam', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(39, 18, 0, 0, 0, 'Farmakologi 1', 'Pilar Utama Mandiri Jaktim ', 'Nur Salimi, Rudi Fahrud ', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(40, 18, 0, 0, 0, 'Farmakologi Kelas XI', 'Buku Kedokteran ', 'Muh. Yani Zam', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(41, 18, 0, 0, 0, 'Farmakologi Kelas XII', 'Buku Kedokteran ', 'Aster Nila', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(42, 18, 0, 0, 0, 'Farmakologi Kelas XII', 'Buku Kedokteran ', 'Aster Nila', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(43, 18, 0, 0, 0, 'Farmakologi Program Keahlian XI', 'Buku Kedokteran ', 'Aster Nila', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(44, 18, 0, 0, 0, 'Farmakope Indonesia', 'Depkes RI Indonesia ', 'Depkes', '', 'X', 1978, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(45, 15, 0, 0, 0, 'Fisika X', 'Erlangga Ciracas Jakarta', 'Sudirman', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(46, 0, 0, 0, 0, 'Fokus Asessmen Kompetensi Minuman (AKM)', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(47, 0, 0, 0, 0, 'Fokus UN 2018', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(48, 0, 0, 0, 0, 'Formukarium Nasional ', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(49, 0, 0, 0, 0, 'Forward An English 1', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(50, 0, 0, 0, 0, 'Forward An English 2', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(51, 0, 0, 0, 0, 'Forward An English 3', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(52, 11, 0, 0, 0, 'Forward An English XII (3)', 'Erlangga Jakarta', 'Eka Mulya,Shyla K L', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(53, 0, 0, 0, 0, 'Get Along With English 2', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(54, 0, 0, 0, 0, 'Get Along With English 3', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(55, 13, 0, 0, 0, 'Hadiah Liburan', 'Adi Cita Karya R. Jakarta', 'Riza Astuti', '', 'X', 1996, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(56, 13, 0, 0, 0, 'Haji Agus Sakim', 'Kemendikbud Jakarta ', 'Drs. Mukayat', '', 'X', 1985, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(57, 13, 0, 0, 0, 'Hujan Kepagian', 'Balai Pustaka Jakarta', 'Nugroho Noto ', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(58, 17, 0, 0, 0, 'Ilmu Komunikasi Dalam Kontek Keperawatan ', 'Tran Infameida Jakarta ', 'Ns. Nunung N', '', 'X', 2010, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(59, 18, 0, 0, 0, 'Ilmu Meracik Obat', 'Gajah Mada UP Yogyakarta', 'Moh. Anief', '', 'X', 1997, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(60, 17, 0, 0, 0, 'Ilmu Penyakit Dan Penunjang Diagnostik 2', 'Pilar Utama Mandiri Jaktim ', 'Dr. Anggraini Ns Ainun Bad', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(61, 13, 0, 0, 0, 'Indonesiaku', 'Kemendikbud Jakarta ', 'Hamid Jaber', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(62, 13, 0, 0, 0, 'Jelajah Bandung Purba', 'Inti Media Jakarta ', 'Dewi Syafrian', '', 'X', 2034, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(63, 13, 0, 0, 0, 'Jumpa Aceh', 'Nusa Agung Jakarta ', 'H. M Zaerudin', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(64, 18, 0, 0, 0, 'K3LH Program Keahlian Kefarmasian Kelas X', 'Buku Kedokteran ', 'Hartati ', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(65, 19, 0, 0, 0, 'Katalog Desain-Desain Tehnik Web Multimedia Buku Komputer B', 'Andi Penerbit Yogyakarta', 'Janathan 62', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(66, 0, 0, 0, 0, 'Kalimati ', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(67, 0, 0, 0, 0, 'Kamus Inggris Indonesia', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(68, 1, 0, 0, 0, 'Kamus Kedokteran Dorland', 'Depkes RI Indonesia ', 'Buku Kedokteran', '', 'X', 1998, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(69, 17, 0, 0, 0, 'Kamus Keperawatan ', 'Dinamika Jakarta ', 'Rahayuni', '', 'X', 1978, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(70, 17, 0, 0, 0, 'Kamus Keperawatan ', 'Dinamika Jakarta ', 'Rahayuni', '', 'X', 1978, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(71, 1, 0, 0, 0, 'Kamus Lengkap Bahasa Jawa', 'Widya Karya Semarang', 'Drs. Damanto', '', 'X', 2016, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(72, 13, 0, 0, 0, 'Kapitan Patimura ', 'Kemdikbud Jakarta ', 'Ig Nanulaita ', '', 'X', 1985, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(73, 13, 0, 0, 0, 'Kartika Wulandari', 'CV. Swakarya Jakarta', 'Slamet N', '', 'X', 2036, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(74, 13, 0, 0, 0, 'Kasihku Disirandu', 'Mita Gama Widya', 'Drs. K. Soemar', '', 'X', 1996, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(75, 0, 0, 0, 0, 'Katalog Aplikasi Office Database Buku Komputer A', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(76, 13, 0, 0, 0, 'Keajabian Di Pasar Senin ', 'CV. Mus Jakarta', 'Misbach Yusa', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(77, 13, 0, 0, 0, 'Kebutuhan Dasar Mannusia', 'Pilar Utama Mandiri Jaktim ', 'Dewi Puspita Ns, Tuti Asria', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(78, 13, 0, 0, 0, 'Keluarga Permana ', 'Nusa Agung Jakarta ', 'Ramadhan ', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(79, 13, 0, 0, 0, 'Kembali Ziarah', 'Gama Media Yogyakarta', 'Isbedy Stiawan', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(80, 13, 0, 0, 0, 'Kepahlawanan Generasi Sahabat Rosulullah', 'UNU Islam Malang ', 'DR. Abdurrahman', '', 'X', 2033, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(81, 0, 0, 0, 0, 'Kesehatan Kerja', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(82, 17, 0, 0, 0, 'Keselamatan Dan Kesehatan  Kerja ', 'Gasyen Publis Jatinegara', 'Cecep Dani', '', 'X', 2014, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(83, 17, 0, 0, 0, 'Keselamatan Kesehatan  Dan Lingkungan Hidup (K3LH) ', 'Pilar Utama Mandiri Jaktim ', 'Heru Widiarto, H. Abduh B', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(84, 17, 0, 0, 0, 'Ketrampilan Dasar Tindak Keperawatan 2', 'Pilar Utama Mandiri Jaktim ', 'Dhanik Tri Dewi Puspita', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(85, 19, 0, 0, 0, 'Ketrampilan Komputer Dan Pengelolaan Informasi XI (2)', 'Erlangga Jakarta', 'Nurindah D', '', 'X', 2013, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(86, 19, 0, 0, 0, 'Ketrampilan Komputer Dan Pengelolaan Informasi XII (3)', 'Erlangga Jakarta', 'Nuridah Dwiyani', '', 'X', 2013, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(87, 15, 0, 0, 0, 'Kimia ', 'erlangga Ciracas Jakarta', 'Aas Saidah, Tiara Damay', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(88, 18, 0, 0, 0, 'Kimia Farmasi 2', 'Pilar Utama Mandiri Jaktim ', 'Adi Yuli war, Heri Reksa', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(89, 18, 0, 0, 0, 'Kimia Farmasi Prog. Farmasi Kelas XI', 'Buku Kedokteran ', 'Yulie', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(90, 15, 0, 0, 0, 'Kimia X (1)', 'Erlangga Jakarta', 'Siti Nagiyah', '', 'X', 2015, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(91, 15, 0, 0, 0, 'Kimia XI Kelompok Teknologi Dan Kesehatan ', 'Erlangga Jakarta', 'Siti Nagiyah', '', 'X', 2013, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(92, 17, 0, 0, 0, 'Komunikasi Keperawatan', 'Pilar Utama Mandiri Jaktim ', 'Supanjiono Ns Tuti Asri', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(93, 17, 0, 0, 0, 'Konsep Dasar Keperawatan 1', 'Pilar Utama Mandiri Jaktim ', 'Supanjiono Ns Endah IV', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(94, 13, 0, 0, 0, 'Layar Terkembang', 'Balai Pustaka Jakarta', 'St. Takdir Alisy', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(95, 13, 0, 0, 0, 'Malam Taman Sari ', 'Gama Media Yogyakarta', 'Suminto', '', 'X', 2033, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(96, 13, 0, 0, 0, 'Malam Terakhir ', 'Grafiti Jakarta', 'Leila S Shudo', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(97, 16, 0, 0, 0, 'Matematika  X (1)', 'Erlangga Jakarta', 'Eka Zuliana', '', 'X', 2012, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(98, 16, 0, 0, 0, 'Matematika 1', 'Erlangga Ciracas Jakarta', 'Kasmina Toali', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(99, 16, 0, 0, 0, 'Matematika 1', 'Erlangga Ciracas Jakarta', 'Kasmina Toali', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(100, 16, 0, 0, 0, 'Matematika 2', 'Erlangga Ciracas Jakarta', 'Kasmina Toali', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(101, 16, 0, 0, 0, 'Matematika 3', 'Erlangga Jakarta', 'Kasmina Toali', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(102, 16, 0, 0, 0, 'Matematika X', 'Kemendikbud Jakarta ', 'Kemendikbud', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(103, 16, 0, 0, 0, 'Matematika XI', 'Kemendikbud Jakarta ', 'Kemendikbud', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(104, 16, 0, 0, 0, 'Matematika XI', 'Kemendikbud Jakarta ', 'Kemendikbud', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(105, 16, 0, 0, 0, 'Matematika XII', 'Erlangga Jakarta', 'Kasmina Toali', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(106, 16, 0, 0, 0, 'Matematika XII (3)', 'Erlangga Jakarta', 'Tasmina Taoli', '', 'X', 2038, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(107, 18, 0, 0, 0, 'Memahami Teknik Pembuatan Sediaan Obat Dalam Skala Kecil dan Skala Industri', 'Erlangga Jakarta', 'Bidang Studii Keahlian Farmasi', '', 'X', 2015, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(108, 13, 0, 0, 0, 'Membaca Semesta', 'Dwi Segara Jakarta', 'Dwi Segara', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(109, 18, 0, 0, 0, 'Menangkal Narkoba Dan Kekerasan', 'Balai Pustaka Jakarta', 'Dr. Lydiahar', '', 'X', 2036, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(110, 18, 0, 0, 0, 'Modul MenerapkanPembuatan Sediaaan Obat Sesuai Resep Dokter Dibawah Pengaawasan Apotek', 'Erlangga Jakarta', 'Maryani ', '', 'X', 2012, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(111, 13, 0, 0, 0, 'Nyanyian Anak Cucu', 'Angkas Bandung', 'Upita Agustina ', '', 'X', 2030, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(112, 13, 0, 0, 0, 'Nyanyian Tanah Air', 'Grasindo Jakarta ', 'Saini KM', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(113, 13, 0, 0, 0, 'Orang-Orang Belanda Dipintu Darurat', 'Jakarta Putra Sukses', 'Munggul Wibowo', '', 'X', 2032, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(114, 13, 0, 0, 0, 'Pahlawan Dan Tikus', 'Hikayat Publis Yogyakarta', 'K.H.A Mustala', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(115, 13, 0, 0, 0, 'Pak Jon, Apa Bebernya Kerjaanmu', 'Depdikbud Jakarta ', 'Marjono ', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(116, 13, 0, 0, 0, 'Pejuang Pantang Menyerang ', 'CV. Nugraha Jakarta', 'Purnawan', '', 'X', 1986, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(117, 18, 0, 0, 0, 'Pelayanan farmasi', 'Pilar Utama Mandiri Jaktim ', 'Abdur Rahman, Fitri Soleh', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(118, 18, 0, 0, 0, 'Pelayanan Farmasi Adm Farma Kelas X', 'Buku Kedokteran ', 'Syukrina', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(119, 18, 0, 0, 0, 'Pelayanan Farmasi Adm Farma Kelas XII', 'Buku Kedokteran ', 'Syukrina', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(120, 18, 0, 0, 0, 'Pelayanan Farmasi Ilmu Resep Kelas XI Dan XII', 'Buku Kedokteran', 'Ai Kurasein', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(121, 18, 0, 0, 0, 'Pelayanan Farmasi Simulasi Apotek Kelas XI Dan XII', 'Buku Kedokteran', 'Fitrri Zakiah', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(122, 3, 0, 0, 0, 'Pendidikan Agama Islam 1', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(123, 3, 0, 0, 0, 'Pendidikan Agama Islam 2', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(124, 3, 0, 0, 0, 'Pendidikan Agama Islam 3', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(125, 3, 0, 0, 0, 'Pendidikan Agama Islam 3', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(126, 3, 0, 0, 0, 'Pendidikan Agama Islam Dan Budi Pekerti ', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(127, 3, 0, 0, 0, 'Pendidikan Agama Islam Dan Budi Pekerti XI', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(128, 8, 0, 0, 0, 'Pendidikan Jasmani Olahraga Dan Kesehatan X', 'Kemendikbud Jakarta ', 'Kemendikbud', '', 'X', 2014, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(129, 8, 0, 0, 0, 'Pendidikan Jasmani Olahraga Dan Kesehatan XI', 'Kemendikbud Jakarta ', 'Kemdikbud ', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(130, 8, 0, 0, 0, 'Pendidikan Jasmani, Olahraga Dan Kesehatan 1', 'Erlangga Ciracas Jakarta', 'Indiarti Agung, M Azhar M', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(131, 8, 0, 0, 0, 'Pendidikan Jasmani, Olahraga Dan Kesehatan XI', 'Kemendikbud Jakarta ', 'Kemendikbud', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(132, 0, 0, 0, 0, 'Pendidikan Kewarganegaraan XI (2)', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(133, 0, 0, 0, 0, 'Pendidikan Pancasila Dan Kewarganegaraan X', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(134, 0, 0, 0, 0, 'Pendidikan Pancasila Dan Kewarganegaraan XI', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(135, 0, 0, 0, 0, 'Pengantar Kebutuhan Dasar Manusia ', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(136, 0, 0, 0, 0, 'Perhitungan Dosis Obat ', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(137, 0, 0, 0, 0, 'Perundang-undangan Kesehatan', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(138, 13, 0, 0, 0, 'Peruntuhan Cahaya', 'Hikayat Jakarta ', 'Jamal D Rah', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(139, 13, 0, 0, 0, 'Potret Seorang Penyair Muda Sebagai Si Maling Kundang ', 'Nusa Agung Jakarta ', 'Goenawan M', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(140, 11, 0, 0, 0, 'Practise Your English Competence 1', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(141, 11, 0, 0, 0, 'Practise Your English Competence 2', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(142, 8, 0, 0, 0, 'Prakarya Dan Kewirausahaan XI', 'Kemendikbud Jakarta ', 'Kemendikbud', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(143, 17, 0, 0, 0, 'Praktik Klinik Keperawatan Dasar 3', 'Buku Kedokteran', 'Barbara R Hg.', '', 'X', 2013, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(144, 14, 0, 0, 0, 'Prigel Bahasa Jawa 1', 'Erlangga Ciracas Jakarta', 'Gandung W', '', 'X', 2014, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(145, 14, 0, 0, 0, 'Prigel Bahasa Jawa 2', 'Erlangga  Jakarta', 'Gedung Wid', '', 'X', 2014, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(146, 14, 0, 0, 0, 'Prigel Bahasa Jawa 3 (XII)', 'Erlangga Jakarta', 'Gandung W', '', 'X', 2013, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(147, 14, 0, 0, 0, 'Prigel Bahasa Jawa 3 (XII)', 'Erlangga Jakarta', 'Gandung W', '', 'X', 2013, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(148, 8, 0, 0, 0, 'Produk Kreatif Dan Kewirausahaan', 'Yudistira', 'Dony Kusuma', '', 'X', 2019, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(149, 8, 0, 0, 0, 'Produk Kreatif Dan Kewirausahaan 1', 'Jakarta Yudistira', 'Dody Kusuma', '', 'X', 2019, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(150, 8, 0, 0, 0, 'Produk Kreatif Dan Kewirausahaan XI Dan XII', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(151, 12, 0, 0, 0, 'Produktif Berbahasa Indonesia', 'Erlangga Ciracas Jakarta', 'Yustinah', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(152, 12, 0, 0, 0, 'Produktif Berbahasa Indonesia 2', 'Erlangga Ciracas Jakarta', 'Yustinah', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(153, 12, 0, 0, 0, 'Produktif Berbahasa Indonesia XII (3)', 'Erlangga Jakarta', 'Yustinah', '', 'X', 2019, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(154, 12, 0, 0, 0, 'Produktif Berbahasa Indonesia XII (3)', 'Erlangga Jakarta', 'Yustinah', '', 'X', 2019, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(155, 12, 0, 0, 0, 'PTP Bahasa Indonesia Kelas X', 'Erlangga Jakarta', 'Sujepti', '', 'X', 2020, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(156, 12, 0, 0, 0, 'PTP Bahasa Indonesia Kelas XI', 'Erlangga Jakarta', 'Sujepti', '', 'X', 2020, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(157, 12, 0, 0, 0, 'PTP Bahasa Indonesia Kelas XII', 'Erlangga Jakarta', 'Sujepti', '', 'X', 2020, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(158, 12, 0, 0, 0, 'PTP Bahasa Indonesia X (1)', 'Erlangga Jakarta', 'Sujepti', '', 'X', 2020, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(159, 12, 0, 0, 0, 'PTP Bahasa Indonesia XI (1)', 'Erlangga Jakarta', 'Sujepti', '', 'X', 2020, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(160, 16, 0, 0, 0, 'PTP Matematika Kelas X', 'Erlangga Jakarta', 'Eka Zuliana', '', 'X', 2020, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(161, 16, 0, 0, 0, 'PTP Matematika Kelas XI', 'Erlangga Jakarta', 'Eka Zuliana', '', 'X', 2020, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(162, 16, 0, 0, 0, 'PTP Matematika Kelas XII', 'Erlangga Jakarta', 'Eka Zuliana', '', 'X', 2020, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(163, 16, 0, 0, 0, 'PTP Matematika X (1)', 'Erlangga Jakarta', 'Eka Zuliana', '', 'X', 2020, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(164, 11, 0, 0, 0, 'PTP Splash Grade XI', 'Erlangga Jakarta', 'Anik M', '', 'X', 2020, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(165, 11, 0, 0, 0, 'PTP Splash Grade XII', 'Erlangga Jakarta', 'Anik M', '', 'X', 2020, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(166, 11, 0, 0, 0, 'PTP Splash X (1)', 'Erlangga Jakarta', 'Anik M', '', 'X', 2020, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(167, 11, 0, 0, 0, 'PTP Splash XI (2)', 'Erlangga Jakarta', 'Anik M', '', 'X', 2020, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(168, 13, 0, 0, 0, 'Reportase Yang Menakutkan ', 'Jakarta Nafila ', 'Mustofa', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(169, 13, 0, 0, 0, 'Robohnya Surau Kami ', 'Gramedia Jakarta', 'A.A Navis', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(170, 13, 0, 0, 0, 'Romeo Juliet', 'Navila Jakarta ', 'Skakespera', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(171, 13, 0, 0, 0, 'Rumah Cahaya', 'Gama Media Yogyakarta', 'Abdul Wachid', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(172, 13, 0, 0, 0, 'Sebelum Senja Selesai', 'Hikayat Publis Yogyakarta', 'Moh. Wanganw', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(173, 13, 0, 0, 0, 'Sejarah Indonesia', 'Kemendikbud Jakarta ', 'Kemendikbud  ', '', 'X', 2016, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(174, 13, 0, 0, 0, 'Sejarah Indonesia', 'Kemendikbud Jakarta ', 'Kemendikbud  ', '', 'X', 2016, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(175, 13, 0, 0, 0, 'Sembayang Rumputan', 'Navila Jakarta ', 'Ahmadun Y', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(176, 8, 0, 0, 0, 'Seni Budaya I', 'Erlangga Ciracas Jakarta', 'Sugiyanto, T. Agustin ', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(177, 8, 0, 0, 0, 'Seni Budaya XI', 'Kemendikbud Jakarta ', 'Kemendikbud', '', 'X', 2017, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(178, 1, 0, 0, 0, 'Simulasi Dan Komunikasi ', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(179, 13, 0, 0, 0, 'Slilit Sang Kiai ', 'Grafiti Jakarta', 'Emha Ainun', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(180, 13, 0, 0, 0, 'Sri Rejeki ', 'Intimedia ', 'Kasno, S.Pd', '', 'X', 2034, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(181, 13, 0, 0, 0, 'Sri Sumarah', 'Grafiti Jakarta', 'Kumpulan Saja', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(182, 13, 0, 0, 0, 'Suara Sang Guru ', 'Pustaka Jaya Jakarta', 'Kahil Gibran', '', 'X', 1992, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(183, 13, 0, 0, 0, 'Sumur Tanpa Dasar', 'Nusa Agung Jakarta ', 'Arifin C Noer', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(184, 13, 0, 0, 0, 'Sumur Tanpa Dasar', 'Nusa Agung Jakarta ', 'Arifin C Noer', '', 'X', 2035, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(185, 0, 0, 0, 0, 'Tanaman Obat Indonesia', '', '', '', 'X', 0000, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(186, 13, 0, 0, 0, 'Tuanku Imam Bonjol ', 'Kemendikbud Jakarta ', 'Drs. Mardjaai ', '', 'X', 1985, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(187, 11, 0, 0, 0, 'X-Epres UN  Bahasa Inggris', 'Erlangga Jakarta', 'Endrawati', '', 'X', 2019, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(188, 12, 0, 0, 0, 'X-Epres UN 2019 Bahasa Indonesia', 'Erlangga Jakarta', 'Rustamaji', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(189, 11, 0, 0, 0, 'X-Epres UN 2019 Bahasa Inggris', 'Erlangga Jakarta', 'Endarwati', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(190, 16, 0, 0, 0, 'X-Epres UN 2019 Matematika', 'Erlangga Jakarta', 'Kasmina ', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(191, 12, 0, 0, 0, 'X-Epres UN 2020 Bahasa Indonesia', 'Erlangga Jakarta', 'Rustamaji', '', 'X', 2019, 0, '0000-00-00', 0, 0, 0, 0, ''),
-(192, 16, 0, 0, 0, 'X-Epres UN 2020 Matematika', 'Erlangga Jakarta', 'Kasmina', '', 'X', 2018, 0, '0000-00-00', 0, 0, 0, 0, '');
+('B00001', 18, 2, 2, 1, 'Farmakologi Jilid 1', 'Pilar Utama Mandiri', 'Nur Salimi Dwi Sakti, S. Far, Apt dkk', '978-602-6220-61-5', 'XI', 2017, 25, '0000-00-00', 140, 140, 22, '1', 'B00001.jpg'),
+('B00002', 18, 2, 1, 1, 'Farmakologi Jilid 2', 'Pilar Utama Mandiri', 'Rahayu Prihatin, S. Far., Apt dkk', '978-602-6220-62-2', 'XII', 2018, 25, '0000-00-00', 70, 70, 31, '1', 'B00002.jpg'),
+('B00003', 18, 2, 1, 1, 'Tanaman Obat Indonesia ', 'Pilar Utama Mandiri', 'Abdur Rahman,S.Si., Apt dkk', '978-602-6220-53-0', 'XI', 2017, 25, '0000-00-00', 148, 148, 8, '1', 'B00003.jpg'),
+('B00004', 18, 2, 1, 1, 'Dasar-Dasar Kefarmasian', 'Pilar Utama Mandiri', 'Hendrik, M. Farm., Apt dkk', '978-602-6220-66-0', 'XI', 2017, 25, '0000-00-00', 156, 156, 26, '1', 'B00004.jpg'),
+('B00005', 18, 2, 1, 1, 'Keselamatan Kesehatan Kerja Dan Lingkungan Hidup (K3LH)', 'Pilar Utama Mandiri', 'Heru Widiarto, S. Farm., Apt', '978-602-6220-52-3', 'XI', 2017, 25, '0000-00-00', 128, 128, 31, '1', 'B00005.jpg'),
+('B00006', 18, 2, 1, 1, 'Pelayanan Farmasi Jilid 1', 'Pilar Utama Mandiri', 'Abdur Rahman,S.Si., Apt dkk', '978-602-6220-64-6', 'XI', 2018, 25, '0000-00-00', 168, 168, 6, '1', 'B00006.jpg'),
+('B00007', 18, 2, 1, 1, 'Pelayanan Farmasi Jilid 2', 'Pilar Utama Mandiri', 'Fitri sholechah, s. Farm., Apt dkk', '978-602-6220-65-3', 'XII', 2018, 25, '0000-00-00', 140, 140, 54, '1', 'B00007.jpg'),
+('B00008', 18, 2, 1, 1, 'Farmakognonsi', 'Pilar Utama Mandiri', 'Supriani, M Sc., Apt dkk', '978-602-6220-55-4', 'XI', 2018, 25, '0000-00-00', 132, 132, 26, '1', 'B00008.jpg'),
+('B00009', 18, 2, 1, 1, 'Kimia Farmasi Jilid 1', 'Pilar Utama Mandiri', 'Ardi Yuli Wardani, S.si dkk', '978-602-6220-57-8', 'XI', 2018, 25, '0000-00-00', 76, 76, 8, '1', 'B00009.jpg'),
+('B00010', 18, 2, 1, 1, 'Perundang-Undangan Kesehatan', 'Pilar Utama Mandiri', 'Arip, S.Farm., Apt dkk', '978-602-6220-51-6', 'XI', 2017, 25, '0000-00-00', 154, 154, 61, '1', 'B00010.jpg'),
+('B00011', 18, 2, 1, 1, 'Modul Menerapkan Pembuatan Sediaan Obat sesuai resep dokter dibawah pengawasan apoteker             ', 'Erlangga', 'Maryani, S.Farm., Apt', '978-602-241-315-8', 'XI', 2013, 26, '0000-00-00', 61, 61, 35, '1', 'B00011.jpg'),
+('B00012', 18, 2, 1, 1, 'Melaksanakan Kerjasama dengan Kolega dan Pelanggan', 'Erlangga', 'Sri Muharni dkk', '978-602-298-656-0', 'XI', 2016, 26, '0000-00-00', 76, 76, 2, '1', 'B00012.jpg'),
+('B00013', 18, 2, 1, 1, 'Mendeskripsikan Penggolongan Obat', 'Erlangga', 'Sri Muharni Budiningsih, Apt', '978-602-298-662-5', 'XI', 2016, 26, '0000-00-00', 86, 86, 11, '1', 'B00013.jpg'),
+('B00014', 18, 2, 1, 1, 'Memahami Teknik Pembuatan Sediaan Obat dalam Skala Kecil dan Skala Industri Jilid 1', 'Erlangga', 'Maryani, S.Farm., Apt', '978-602-298-532-7', 'XI', 2015, 26, '0000-00-00', 94, 94, 21, '1', 'B00014.jpg'),
+('B00015', 17, 2, 1, 1, 'Anatomi Fisiologi', 'Pilar Utama Mandiri', 'Rudi Fahrudin,SMK.,M.Pd', '978-602-6220-35-6', 'XI', 2017, 25, '0000-00-00', 170, 170, 23, '1', 'B00015.jpg'),
+('B00016', 17, 2, 1, 1, 'Komunikasi Keperawatan ', 'Pilar Utama Mandiri', 'Supanjiono,S. Kep. Ners dkk', '978-602-6220-14-1', 'XI', 2017, 25, '0000-00-00', 102, 102, 25, '1', 'B00016.jpg'),
+('B00017', 17, 2, 1, 1, 'Ilmu Penyakit Dan Penunjang Diagnostik Jilid 1', 'Pilar Utama Mandiri', 'dr. Anggarini Zaenab, MM dkk', '978-602-6220-38-7', 'XI', 2018, 25, '0000-00-00', 148, 148, 2, '1', 'B00017.jpg'),
+('B00018', 17, 2, 1, 1, 'Ilmu Penyakit Dan Penunjang Diagnostik Jilid 2', 'Pilar Utama Mandiri', 'dr. Anggarini Zaenab, MM dkk', '978-602-6220-39-4', 'XII', 2018, 25, '0000-00-00', 156, 156, 10, '1', 'B00018.jpg'),
+('B00019', 17, 2, 1, 1, 'ilmu Kesehatan Masyarakat', 'Pilar Utama Mandiri', 'Wahyu Sulistiani, S.Kep.Ns', '978-602-6220-36-3', 'XI', 2017, 25, '0000-00-00', 118, 118, 48, '1', 'B00019.jpg'),
+('B00020', 17, 2, 1, 1, 'Konsep Dasar Keperawatan  Jilid 1', 'Pilar Utama Mandiri', 'Supanjiono,S. Kep. Ners dkk', '978-602-6220-41-7', 'XI', 2018, 25, '0000-00-00', 2, 2, 22, '1', 'B00020.jpg'),
+('B00021', 17, 2, 1, 1, 'Konsep Dasar Keperawatan  Jilid 2', 'Pilar Utama Mandiri', 'Ns. Tuti Asrianti Utam, SE., S.Kep., M.Kep dkk', '978-602-6220-42-5', 'XII', 2018, 25, '0000-00-00', 90, 90, 59, '1', 'B00021.jpg'),
+('B00022', 17, 2, 1, 1, 'Konsep Dasar Keperawatan  Jilid 3', 'Pilar Utama Mandiri', 'Ns. Tuti Asrianti Utam, SE., S.Kep., M.Kep dkk', '978-602-6220-43-1', 'XII', 2017, 25, '0000-00-00', 88, 88, 42, '1', 'B00022.jpg'),
+('B00023', 17, 2, 1, 1, 'Kebutuhan Dasar Manusia Jilid 1', 'Pilar Utama Mandiri', 'Dewi Puspitasari dkk', '978-602-6220-45-5', 'XI', 2018, 25, '0000-00-00', 94, 94, 2, '1', 'B00023.jpg'),
+('B00024', 17, 2, 1, 1, 'Kebutuhan Dasar Manusia Jilid 2', 'Pilar Utama Mandiri', 'Dewi Puspitasari dkk', '978-602-6220-46-2', 'XII', 2017, 25, '0000-00-00', 118, 118, 13, '1', 'B00024.jpg'),
+('B00025', 17, 2, 1, 1, 'Ketrampilan Dasar Tindakan Keperawatan Jilid 1', 'Pilar Utama Mandiri', 'Dhanik Tri Hastuti, S.Kep.,Ns dkk', '978-602-6220-48-6', 'X', 2018, 25, '0000-00-00', 140, 140, 4, '1', 'B00025.jpg'),
+('B00026', 17, 2, 1, 1, 'Ketrampilan Dasar Tindakan Keperawatan Jilid 2', 'Pilar Utama Mandiri', 'Dhanik Tri Hastuti, S.Kep.,Ns dkk', '978-602-6220-49-3', 'XI', 2018, 25, '0000-00-00', 80, 80, 24, '1', 'B00026.jpg'),
+('B00027', 17, 2, 1, 1, 'Ketrampilan Dasar Tindakan Keperawatan Jilid 3', 'Pilar Utama Mandiri', 'Dhanik Tri Hastuti, S.Kep.,Ns dkk', '', 'XII', 0000, 0, '0000-00-00', 124, 124, 39, '1', 'B00027.jpg'),
+('B00028', 18, 2, 1, 1, 'Farmakologi dan Terapi Edisi lima', 'FKUI Jakarta', 'Dep. Farmakologi FKUI', '978-979-1610-46-7', 'X', 2007, 25, '0000-00-00', 931, 931, 4, '2', 'B00028.jpg'),
+('B00029', 18, 2, 1, 4, 'Obat-Obat Penting', 'PT. Gramedia Jakarta', 'Drs. Tan Hoan Tjay dkk', '978-602-10995', 'X', 1979, 25, '0000-00-00', 969, 969, 1, '2', 'B00029.jpg'),
+('B00030', 18, 2, 1, 4, 'ISO Farmakoterapi ', 'PT. ISFI Jakarta', 'Prof. Dr Elin Yulinah Sukandar,. Apt', '978-979-18514-1-1', 'X', 2009, 25, '0000-00-00', 1022, 1022, 1, '2', 'B00030.jpg'),
+('B00031', 18, 2, 1, 4, 'Farmakope Indonesia Edisi Ke 3', 'Departemen Kesehatan RI', 'Dr. Mirdan Sirait', '', 'X', 1979, 20, '0000-00-00', 920, 920, 2, '2', 'B00031.jpg'),
+('B00032', 18, 2, 1, 4, 'Informasi Spesialite Indonesia 2016', 'Jurnal Farmasi Indonesia ', 'Tim ISO Indonesia ', '854-4492', 'X', 2016, 20, '0000-00-00', 628, 368, 2, '2', 'B00032.jpg'),
+('B00033', 18, 2, 1, 4, 'Perhitungan Dosis Edisi  7', 'Erlangga', 'Mary Jo Boyer', '978-979-099-764-8', 'X', 2009, 20, '0000-00-00', 368, 368, 2, '2', 'B00033.jpg'),
+('B00034', 18, 2, 1, 4, 'ISO 2017/2018', 'PT. ISFI Jakarta Barat', 'Drs. M Dani Pratomo, Apt', '0854-4492', 'X', 2005, 20, '0000-00-00', 655, 655, 1, '2', 'B00034.jpg'),
+('B00035', 18, 2, 1, 1, 'Ilmu Meracik Obat', 'UGM Press', 'Moh. Anif', '979-420-432-3', 'X', 2010, 20, '0000-00-00', 231, 231, 1, '2', 'B00035.jpg'),
+('B00036', 17, 2, 1, 1, 'Diagnosis Keperawatan', 'EGC', 'Nanda International', '978-979-044-134-7', 'X', 2018, 20, '0000-00-00', 671, 671, 2, '2', 'B00036.jpg'),
+('B00037', 17, 2, 1, 6, 'Kamus Saku Kedokteram Dorland Edisi 25', 'EGC', 'Dr. Popy Kumala dkk', '979-448-410-5', 'X', 1998, 20, '0000-00-00', 1210, 1210, 4, '2', 'B00037.jpg'),
+('B00038', 17, 2, 1, 6, 'Kamus Keperawatan', 'Wacana Intelektual', 'Dr. Mayapada ', '978-602-8-118-583', 'X', 2008, 20, '0000-00-00', 640, 640, 2, '2', 'B00038.jpg'),
+('B00039', 17, 2, 1, 1, 'Diagnosis Keperawatan', 'EGC', 'Ns. Esty Wahyuningsih', '978-979-044-182-8', 'X', 1988, 20, '0000-00-00', 1214, 1214, 1, '2', 'B00039.jpg'),
+('B00040', 17, 2, 1, 6, 'Kamus Keperawatan', 'Paramedia ', 'Rosdiana A. R', '979-602-89-36187', 'X', 2008, 20, '0000-00-00', 640, 640, 3, '2', 'B00040.jpg'),
+('B00041', 17, 2, 1, 6, 'Kamus Keperawatan', 'Dinamika', 'Rahayuni J', '978-602-8936-101', 'XI', 2008, 20, '0000-00-00', 640, 640, 3, '2', 'B00041.jpg'),
+('B00042', 17, 2, 1, 1, 'Asuhan Keperawatan Praktis Jilid 2', 'Media Action', 'Amin Huda Nuarif, S. Kep., Ns dkk', '978-602-72002-6-5', 'X', 2016, 20, '0000-00-00', 435, 435, 4, '2', 'B00042.jpg'),
+('B00043', 17, 2, 1, 1, 'Asuhan Keperawatan Praktis Jilid 1', 'Media Action', 'Amin Huda Nuarif, S. Kep., Ns dkk', '978-602-72002-5-8', 'X', 2016, 20, '0000-00-00', 440, 440, 5, '2', 'B00043.jpg'),
+('B00044', 17, 2, 1, 1, 'Psikologi Keperawatan', 'Rajawali Press', 'Prof. Dr. Zulfan Saam, M.S dkk', '978-979-769-458-6', 'X', 2012, 20, '0000-00-00', 214, 214, 1, '2', 'B00044.jpg'),
+('B00045', 17, 2, 1, 1, 'Kebutuhan Dasar Manusia', 'Penerbbit Andi', 'Yeni Lestari, S.Kep dkk', '978-979-29-6387-8', 'X', 2017, 25, '0000-00-00', 180, 180, 1, '2', 'B00045.jpg'),
+('B00046', 17, 2, 1, 1, 'Anatomi Fisiologi Dan Siklus Kehhidupan Manusia', 'Medical Book', 'Lidia Widia', '978-602-1547-86-1', 'X', 2015, 25, '0000-00-00', 180, 180, 1, '2', 'B00046.jpg'),
+('B00047', 17, 2, 1, 1, 'Pemgantar Kebutuhan Dasar Manusia ', 'Salemba Medika', 'A. Aziz Alimul Hidayat', '978-602-1163-15-3', 'X', 2014, 25, '0000-00-00', 276, 276, 1, '2', 'B00047.jpg'),
+('B00048', 17, 2, 1, 1, 'Anamnesa dan Pemeriksaan Fisik', 'Erlangga Medical Series', ' Jonathan Gleadle', '979-781-822-5', 'X', 2007, 25, '0000-00-00', 202, 202, 1, '2', 'B00048.jpg'),
+('B00049', 17, 2, 1, 1, 'Praktik Keperawatan Dasar', 'EGC', 'Jane F. Budhi. S. Kep', '978-979-044-355-6', 'X', 2002, 25, '0000-00-00', 108, 108, 3, '2', 'B00049.jpg'),
+('B00050', 3, 2, 1, 1, 'Pendidikan Agama Islam dan Budi Pekerti', 'Kemendikbud', 'Nelty Khairiyah dkk', '978-602-427-042-1', 'X', 2017, 25, '0000-00-00', 202, 202, 86, '2', 'B00050.jpg'),
+('B00051', 12, 2, 1, 1, 'Bahasa Inggris', 'Kemendikbud', 'Utami Widianti', '978-602-427-106-0', 'X', 2017, 25, '0000-00-00', 224, 224, 16, '2', 'B00051.jpg'),
+('B00052', 12, 2, 1, 1, 'Forward An English', 'Erlangga', 'Shyla K. Lande dkk', '978-602-434-654-6', 'XI', 2017, 25, '0000-00-00', 185, 185, 122, '3', 'B00052.jpg'),
+('B00053', 12, 2, 1, 1, 'Forward An English', 'Erlanggga', 'Shyla K. Lande dkk', '978-602-434-653-9', 'X', 2017, 25, '0000-00-00', 236, 236, 54, '3', 'B00053.jpg'),
+('B00054', 12, 2, 1, 1, 'Bahasa Inggris', 'Kemendikbud', 'Emi Emilia  dkk', '978-602-427-106-0', 'XI', 2017, 25, '0000-00-00', 170, 170, 97, '3', 'B00054.jpg'),
+('B00055', 12, 2, 1, 1, 'Bahasa Inggris Semester 2', 'Kemendikbud', 'Helena dkk', '978-602-282-479-4', 'XI', 2017, 25, '0000-00-00', 128, 128, 10, '3', 'B00055.jpg'),
+('B00056', 18, 2, 1, 1, 'Kimia Farmasi Jilid 2', 'Pilar Utama Mandiri', 'Ardi Yuli Wardani, S.si dkk', '978-602-6220-59-8', 'XI', 2018, 25, '0000-00-00', 88, 88, 33, '2', 'B00056.jpg'),
+('B00057', 12, 2, 1, 1, 'Forward An English ', 'Erlangga', 'Eka Mulya Astuti dkk', '978-602-298-805-2', 'XII', 2018, 25, '0000-00-00', 149, 149, 28, '3', 'B00057.jpg'),
+('B00058', 12, 2, 1, 1, 'Forward An English', 'Erlangga', 'Shyla K. Lande dkk', '978-602-434-655-3', 'XII', 2019, 25, '0000-00-00', 182, 182, 143, '3', 'B00058.jpg'),
+('B00059', 16, 2, 1, 1, 'Matematika ', 'Erlangga', 'Kasmina dkk', '978-602-434-745-1', 'X', 2018, 25, '0000-00-00', 334, 334, 42, '4', 'B00059.jpg'),
+('B00060', 16, 2, 1, 1, 'Matematika ', 'Erlangga', 'Sudianto Manullang dkk', '978-602-282-106-9', 'XII', 2017, 25, '0000-00-00', 338, 338, 95, '4', 'B00060.jpg'),
+('B00061', 16, 2, 1, 1, 'Matematika  Jilid 2', 'Erlangga', 'Kasmina dkk', '978-602-434-746-8', 'XI', 2018, 25, '0000-00-00', 340, 340, 71, '4', 'B00061.jpg'),
+('B00062', 16, 2, 1, 1, 'Matematika Jilid 3', 'Erlangga', 'Kasmina dkk', '978-602-434-747-5', 'XII', 2019, 25, '0000-00-00', 128, 128, 105, '4', 'B00062.jpg'),
+('B00063', 16, 2, 1, 1, 'Matematika Jilid 4', 'Erlangga', 'Kasmina dkk', '978-602-298-875-5', 'XII', 2018, 25, '0000-00-00', 154, 154, 31, '4', 'B00063.jpg'),
+('B00064', 16, 2, 1, 1, 'Matematika', 'Kemendikbud', 'Bornok Sinaga dkk', '978-602-282-493-0', 'X', 2017, 25, '0000-00-00', 224, 224, 36, '4', 'B00064.jpg'),
+('B00065', 16, 2, 1, 3, 'Erlangga X-press Matematika', 'Erlangga', 'Kasmina dkk', '978-623-266-352-7', 'XII', 2021, 25, '0000-00-00', 162, 162, 28, '', 'B00065.jpg'),
+('B00066', 11, 2, 1, 3, 'Erlangga X-press Bahasa Inggris', 'Erlangga', 'Endrawati', '978-623-266-381-7', 'XII', 2021, 25, '0000-00-00', 79, 79, 10, '', 'B00066.jpg'),
+('B00067', 12, 2, 1, 3, 'Erlangga X-press Bahasa Indonesia', 'Erlangga', 'Rustamanji', '978-623-266-351-6', 'XII', 2021, 0, '0000-00-00', 196, 196, 28, '', 'B00067.jpg'),
+('B00068', 17, 2, 1, 4, 'MIM\'S Petunjuk Konsultasi Edisi 19', 'PT. Isfi Indonesia ', 'Ikatan Apoteker Indomesia', '', 'XII', 2021, 0, '0000-00-00', 200, 200, 25, 'Lab', 'B00068.jpg'),
+('B00069', 18, 2, 1, 4, 'ISO (Indonesia Volume 52 Tahun 2019', 'PT. Isfi Indonesia ', 'Ikatan Apoteker Indomesia', '8-997226-830011', 'XII', 2021, 20, '0000-00-00', 456, 456, 25, 'Lab', 'B00069.jpg'),
+('B00070', 17, 2, 1, 1, 'Farmakope Edisi 3', 'Kemendikbud', 'Ikatan Apoteker Indomesia', '', 'XII', 2021, 20, '0000-00-00', 1235, 1235, 10, 'Lab', 'B00070.jpg'),
+('B00071', 17, 2, 1, 1, 'Farmakope Edisi 5 Jilid 1', 'Kemendikbud', 'Ikatan Apoteker Indomesia', '', 'XII', 2021, 25, '0000-00-00', 1235, 1235, 2, 'Lab', 'B00071.jpg'),
+('B00072', 17, 2, 1, 1, 'Farmakope Edisi 5 jilid 2', 'Kemendikbud', 'Ikatan Apoteker Indomesia', '', 'XII', 2021, 25, '0000-00-00', 1235, 1235, 2, 'Lab', 'B00072.jpg'),
+('B00073', 17, 2, 1, 1, 'Farmakope Edisi 6 Jilid 1', 'Kemendikbud', 'Ikatan Apoteker Indomesia', '', 'XII', 2021, 25, '0000-00-00', 1235, 1235, 2, 'Lab', 'B00073.jpg'),
+('B00074', 17, 2, 1, 1, 'Farmakope Edisi 6 Jilid 2', 'Kemendikbud', 'Ikatan Apoteker Indomesia', '', 'XII', 2021, 25, '0000-00-00', 1235, 1235, 2, 'Lab', 'B00074.jpg'),
+('B00075', 18, 2, 1, 1, 'Anatomi Fisiologi', 'Medical Book', 'Zuyina Luk lukaningsih', '978-62-9129-14-4', 'XI', 2011, 20, '0000-00-00', 116, 116, 1, '2', 'B00075.jpg'),
+('B00076', 17, 2, 1, 4, 'MIM\'S Petunjuk Konsultasi Edisi 19', 'Mim\'s Pharmacy Guide', 'Dr. Arlina Pramudianto', '979074861-2', 'XI', 2012, 20, '0000-00-00', 435, 435, 1, '2', 'B00076.jpg'),
+('B00077', 18, 2, 1, 1, 'Penyakit Infeksi ', 'Erlangga', 'Mandal dkk', '978-979-033-588-2', 'XI', 2014, 20, '0000-00-00', 301, 301, 1, '2', 'B00077.jpg'),
+('B00078', 18, 2, 1, 1, 'Keperawatan Gawat Darurat', 'Medical Book', 'Musliha, S.Kep, Ners', '978-979-1446-85-3', 'XI', 2010, 20, '0000-00-00', 180, 180, 1, '2', 'B00078.jpg'),
+('B00079', 18, 2, 1, 1, 'Ilmu Komunikaso Dalam Konteks Keperawatan', 'Trans  Info Media ', 'Ns.  Nunung Nurhasanah, S Kep', '978-602-8200-47-9', 'XI', 2013, 20, '0000-00-00', 160, 160, 2, '2', 'B00079.jpg'),
+('B00080', 1, 2, 1, 3, 'Erlangga Fokus AKM ', 'Erlangga', 'Tim Erlangga Fokus ', '978-623-266-362-6', 'XII', 2020, 25, '0000-00-00', 246, 246, 106, '2B', 'B00080.jpg'),
+('B00081', 16, 2, 1, 3, 'PTP Matematika ', 'Erlangga', 'Eka Zuliana dkk', '978-623-266-030-4', 'X', 2020, 25, '0000-00-00', 234, 234, 111, '2B', 'B00081.jpg'),
+('B00082', 14, 2, 1, 1, 'Prigel Bahsaa Jawa ', 'Erlangga', 'Gandung Widaryatmo,dkk', '978-602-298-635-5', 'X', 2014, 25, '0000-00-00', 148, 148, 51, '3B', 'B00082.jpg'),
+('B00083', 3, 2, 1, 1, 'Pendidikan Agama Islam dan Budi Pekerti', 'Erlangga', 'H. Abd. Rahman dkk', '978-602-434-633', 'XI', 2017, 25, '0000-00-00', 276, 276, 64, '1B', 'B00083.jpg'),
+('B00084', 3, 2, 1, 1, 'Pendidikan Agama Islam dan Budi Pekerti', 'Kemendikbud ', 'Kemendikbud', '978-602-282-407-7', 'XI', 2014, 25, '0000-00-00', 134, 134, 1, '1B', 'B00084.jpg'),
+('B00085', 3, 2, 1, 1, 'Pendidikan Agama Islam dan Budi Pekerti', 'Kemendikbud', 'Mustahdi dkk', '978-602-427-044-5', 'XI', 2017, 25, '0000-00-00', 218, 218, 76, '1B', 'B00085.jpg'),
+('B00086', 12, 2, 1, 1, 'Bahasa Indoneisa', 'Kemendikbud', 'Suherli dkk', '978-602-427-099-5', 'X', 2017, 25, '0000-00-00', 290, 290, 22, '3A', 'B00086.jpg'),
+('B00087', 12, 2, 1, 1, 'Bahasa Indomesia', 'Kemendikbud ', 'Suherli dkk', '978-602-427-2-8', 'XI', 2017, 25, '0000-00-00', 314, 314, 45, '3A', 'B00087.jpg'),
+('B00088', 3, 2, 1, 1, 'Pendidikan Agama Islam dan Budi Pekerti', 'Erlangga', 'H. Abd. Rahman dkk', '978--602-486-945-', 'XI', 2018, 25, '0000-00-00', 242, 242, 21, '2A', 'B00088.jpg'),
+('B00089', 4, 2, 1, 1, 'Pendidikan Pancasila dan Kewarganegaraan', 'Kemendikbud', 'Yusnawan Lubis dkk', '978-602-427-092-6', 'XI', 2017, 25, '0000-00-00', 228, 228, 89, '3B', 'B00089.jpg'),
+('B00090', 11, 2, 1, 1, 'Produktif Berbahasa Indonesia', 'Erlangga', 'Yustinah', '978-602-434-638-6', 'X', 2017, 25, '0000-00-00', 276, 276, 41, '3A', 'B00090.jpg'),
+('B00091', 11, 2, 1, 1, 'Produktif Berbahasa Indonesia', 'Erlangga', 'Yustinah', '978-602-434-639-3', 'XI', 2018, 25, '0000-00-00', 274, 274, 1, '3A', 'B00091.jpg'),
+('B00092', 18, 2, 1, 1, 'K3 & Kesehatan Lingkungan', 'EGC', 'Budi Yulianto, M.Kes', '978-979-044-376-1', 'X', 2013, 25, '0000-00-00', 130, 130, 1, '', 'B00092.jpg');
 
 -- --------------------------------------------------------
 
@@ -690,20 +589,13 @@ INSERT INTO `buku` (`id_buku`, `id_ddc`, `id_jenisbuku`, `id_sumberbuku`, `id_ka
 CREATE TABLE `detail_peminjaman` (
   `id_detailpinjam` int(11) NOT NULL,
   `id_pinjam` char(12) NOT NULL,
-  `id_buku` int(11) NOT NULL,
+  `id_buku` char(6) NOT NULL,
   `qty_pinjam` int(11) NOT NULL,
   `tgl_kembali` datetime NOT NULL,
   `tgl_pengembalian` datetime NOT NULL,
   `keterlambatan` int(3) NOT NULL,
   `status_buku` enum('Belum Kembali','Sudah Kembali') NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `detail_peminjaman`
---
-
-INSERT INTO `detail_peminjaman` (`id_detailpinjam`, `id_pinjam`, `id_buku`, `qty_pinjam`, `tgl_kembali`, `tgl_pengembalian`, `keterlambatan`, `status_buku`) VALUES
-(4, '202111270007', 1, 1, '2021-11-29 12:22:03', '2021-12-01 10:27:17', 2, 'Sudah Kembali');
 
 -- --------------------------------------------------------
 
@@ -867,19 +759,6 @@ CREATE TABLE `peminjaman` (
   `status` enum('Belum Lunas','Lunas') NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `peminjaman`
---
-
-INSERT INTO `peminjaman` (`id_pinjam`, `tgl_pinjam`, `nisn`, `id_admin`, `tgl_bataspinjam`, `total_denda`, `status`) VALUES
-('202111240001', '2021-11-24 00:37:41', '0006214793', 1, '2021-11-27', 0, 'Belum Lunas'),
-('202111240002', '2021-11-24 00:40:44', '0009002403', 1, '2021-11-27', 0, 'Belum Lunas'),
-('202111240003', '2021-11-24 00:49:27', '0009262784', 1, '2021-11-27', 0, 'Belum Lunas'),
-('202111240004', '2021-11-24 00:49:34', '0006595914', 1, '2021-11-27', 0, 'Belum Lunas'),
-('202111240005', '2021-11-24 00:52:07', '0004680903', 1, '2021-11-27', 0, 'Belum Lunas'),
-('202111250006', '2021-11-25 18:53:51', '0032640889', 1, '2021-11-28', 0, 'Belum Lunas'),
-('202111270007', '2021-11-27 00:29:02', '0034344993', 1, '2021-11-30', 0, 'Lunas');
-
 -- --------------------------------------------------------
 
 --
@@ -1027,16 +906,10 @@ ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `buku`
---
-ALTER TABLE `buku`
-  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=193;
-
---
 -- AUTO_INCREMENT for table `detail_peminjaman`
 --
 ALTER TABLE `detail_peminjaman`
-  MODIFY `id_detailpinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_detailpinjam` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `jenis_buku`
