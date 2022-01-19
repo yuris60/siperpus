@@ -8,9 +8,9 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html" class="<?php if ($this->uri->segment(2) == 'index' || $this->uri->segment(2) == '') {
-                                            echo 'active';
-                                          } ?>">Beranda</a></li>
+          <li><a href="<?= base_url() ?>" class="<?php if ($this->uri->segment(2) == 'index' || $this->uri->segment(2) == '') {
+                                                    echo 'active';
+                                                  } ?>">Beranda</a></li>
 
           <li class="dropdown"><a href=""><span>Tentang</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -40,9 +40,9 @@
                       } ?>" href="<?= base_url('dashboard/absenpengunjung') ?>">Absen Pengunjung</a>
           </li>
           <li>
-            <a class="<?php if ($this->uri->segment(2) == 'koleksibuku') {
+            <a class="<?php if ($this->uri->segment(2) == 'koleksi') {
                         echo 'active';
-                      } ?>" href="<?= base_url('dashboard/koleksibuku') ?>">Koleksi Buku</a>
+                      } ?>" href="<?= base_url('buku/koleksi') ?>">Koleksi Buku</a>
           </li>
           <!-- <li><a href="portfolio.html">Koleksi Buku</a></li> -->
           <li><a href="pricing.html">Berita</a></li>

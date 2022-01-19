@@ -5,7 +5,7 @@
 
       <div class="row height d-flex justify-content-center align-items-center">
         <div class="col-lg-12">
-          <div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="Cari berdasarkan judul buku, nama penulis, penerbit ataupun lainnya"> <button class="btn btn-primary">Cari</button> </div>
+          <div class="search"> <i class="fa fa-search"></i> <input type="text" name="cari" class="form-control" placeholder="Cari berdasarkan judul buku, nama penulis, penerbit ataupun lainnya"> <button class="btn btn-primary">Cari</button> </div>
         </div>
       </div>
 
@@ -54,49 +54,49 @@
 
       <section class="row content" data-aos="fade-up">
         <div class="col-lg-6">
-          <div class="row">
-            <div class="col-lg-3">
+          <div class="row text-center">
+            <div class="col-lg-3 col-6 mb-3">
               <div class="card">
-                aaaaaa
+                <a href="<?= base_url('buku/kategori/1'); ?>"><img src="<?= base_url('assets/img/icon/Buku Teks Pelajaran.png') ?>" width="100%"></a>
               </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-6 mb-3">
               <div class="card">
-                aaaaaa
+                <a href="<?= base_url('buku/kategori/2'); ?>"><img src="<?= base_url('assets/img/icon/Buku Bacaan.png') ?>" width="100%"></a>
               </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-6 mb-3">
               <div class="card">
-                aaaaaa
+                <a href="<?= base_url('buku/kategori/3'); ?>"><img src="<?= base_url('assets/img/icon/Buku Penunjang Ujian.png') ?>" width="100%"></a>
               </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-6 mb-3">
               <div class="card">
-                aaaaaa
+                <a href="<?= base_url('buku/kategori/4'); ?>"><img src="<?= base_url('assets/img/icon/Buku Penunjang Pelajaran.png') ?>" width="100%"></a>
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-6">
-          <div class="row">
-            <div class="col-lg-3">
+          <div class="row text-center">
+            <div class="col-lg-3 col-6 mb-3">
               <div class="card">
-                aaaaaa
+                <a href="<?= base_url('buku/kategori/5'); ?>"><img src="<?= base_url('assets/img/icon/Kamus Umum.png') ?>" width="100%"></a>
               </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-6 mb-3">
               <div class="card">
-                aaaaaa
+                <a href="<?= base_url('buku/kategori/6'); ?>"><img src="<?= base_url('assets/img/icon/Kamus Produktif.png') ?>" width="100%"></a>
               </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-6 mb-3">
               <div class="card">
-                aaaaaa
+                <a href="<?= base_url('buku/kategori/7'); ?>"><img src="<?= base_url('assets/img/icon/Al-Quran.png') ?>" width="100%"></a>
               </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-6 mb-3">
               <div class="card">
-                aaaaaa
+                <a href="<?= base_url('buku/kategori/8'); ?>"><img src="<?= base_url('assets/img/icon/Ensiklopedia.png') ?>" width="100%"></a>
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@
         <div class="col-xl-3 d-none d-xl-block">
           <img src="<?= base_url('assets/img/bukupopuler.png') ?>" width="80%" alt="">
         </div>
-        <div class="col-xl-9 col-lg-12 col-md-12 col-12">
+        <div class="col-xl-9 col-lg-12 col-md-12 col-12" data-aos="fade-right">
           <div class="owl-carousel owl-theme">
             <div class="item" style="width: 150px;">
               <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
@@ -209,101 +209,28 @@
       <!-- Buku Terbaru -->
       <section class="row" style="margin-top: -80px;">
         <div class="judul mb-2">
-          <h4>Buku Terbaru
 
-            <button class="btn btn-sm btn-primary float-end">Lihat Semua</button>
+          <button class="btn btn-sm btn-primary float-end">Lihat Semua</button>
           </h4>
         </div>
         <div class="col-xl-3 d-none d-xl-block">
           <img src="<?= base_url('assets/img/bukupopuler.png') ?>" width="80%" alt="">
         </div>
-        <div class="col-xl-9 col-lg-12 col-md-12 col-12">
+        <div class="col-xl-9 col-lg-12 col-md-12 col-12" data-aos="fade-right">
           <div class="owl-carousel owl-theme">
-            <div class="item" style="width: 150px;">
-              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
-              <small>Yuris Alkhalifi</small>
-              <h5>Ini Judul Buku</h5>
-              <span class="badge bg-success">Stok : 103</span>
-              <span class="badge bg-primary">Rak : 2</span>
-
-            </div>
-            <div class="item" style="width: 150px;">
-              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
-              <small>Yuris Alkhalifi</small>
-              <h5>Ini Judul Buku</h5>
-              <span class="badge bg-success">Stok : 103</span>
-              <span class="badge bg-primary">Rak : 2</span>
-            </div>
-            <div class="item" style="width: 150px;">
-              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
-              <small>Yuris Alkhalifi</small>
-              <h5>Ini Judul Buku</h5>
-              <span class="badge bg-success">Stok : 103</span>
-              <span class="badge bg-primary">Rak : 2</span>
-            </div>
-            <div class="item" style="width: 150px;">
-              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
-              <small>Yuris Alkhalifi</small>
-              <h5>Ini Judul Buku</h5>
-              <span class="badge bg-success">Stok : 103</span>
-              <span class="badge bg-primary">Rak : 2</span>
-            </div>
-            <div class="item" style="width: 150px;">
-              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
-              <small>Yuris Alkhalifi</small>
-              <h5>Ini Judul Buku</h5>
-              <span class="badge bg-success">Stok : 103</span>
-              <span class="badge bg-primary">Rak : 2</span>
-            </div>
-            <div class="item" style="width: 150px;">
-              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
-              <small>Yuris Alkhalifi</small>
-              <h5>Ini Judul Buku</h5>
-              <span class="badge bg-success">Stok : 103</span>
-              <span class="badge bg-primary">Rak : 2</span>
-            </div>
-            <div class="item" style="width: 150px;">
-              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
-              <small>Yuris Alkhalifi</small>
-              <h5>Ini Judul Buku</h5>
-              <span class="badge bg-success">Stok : 103</span>
-              <span class="badge bg-primary">Rak : 2</span>
-            </div>
-            <div class="item" style="width: 150px;">
-              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
-              <small>Yuris Alkhalifi</small>
-              <h5>Ini Judul Buku</h5>
-              <span class="badge bg-success">Stok : 103</span>
-              <span class="badge bg-primary">Rak : 2</span>
-            </div>
-            <div class="item" style="width: 150px;">
-              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
-              <small>Yuris Alkhalifi</small>
-              <h5>Ini Judul Buku</h5>
-              <span class="badge bg-success">Stok : 103</span>
-              <span class="badge bg-primary">Rak : 2</span>
-            </div>
-            <div class="item" style="width: 150px;">
-              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
-              <small>Yuris Alkhalifi</small>
-              <h5>Ini Judul Buku</h5>
-              <span class="badge bg-success">Stok : 103</span>
-              <span class="badge bg-primary">Rak : 2</span>
-            </div>
-            <div class="item" style="width: 150px;">
-              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
-              <small>Yuris Alkhalifi</small>
-              <h5>Ini Judul Buku</h5>
-              <span class="badge bg-success">Stok : 103</span>
-              <span class="badge bg-primary">Rak : 2</span>
-            </div>
-            <div class="item" style="width: 150px;">
-              <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
-              <small>Yuris Alkhalifi</small>
-              <h5>Ini Judul Buku</h5>
-              <span class="badge bg-success">Stok : 103</span>
-              <span class="badge bg-primary">Rak : 2</span>
-            </div>
+            <?php foreach ($bukuterbaru as $bt) : ?>
+              <div class="item" style="width: 150px;">
+                <?php if (file_exists(base_url('assets/img/buku/') . $bt['gambar_buku'])) : ?>
+                  ok
+                <?php else : ?>
+                  <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
+                <?php endif; ?>
+                <small><?= $bt['pengarang']; ?></small>
+                <h5><?= $bt['judul_buku']; ?></h5>
+                <span class="badge bg-success">Stok : <?= $bt['stok_buku']; ?></span>
+                <span class="badge bg-primary">Rak : <?= $bt['rak_buku']; ?></span>
+              </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </section>

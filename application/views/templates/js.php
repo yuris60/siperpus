@@ -66,6 +66,12 @@
 
   // Jquery Datatable
   let jquery_datatable = $("#table1").DataTable()
+
+  //Tooltips
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
 </script>
 
 <!-- Template Main JS File -->
