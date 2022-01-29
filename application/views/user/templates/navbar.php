@@ -14,11 +14,22 @@
 
           <li class="dropdown"><a href=""><span>Tentang</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="about.html">Sejarah & Landasan Hukum</a></li>
-              <li><a href="team.html">Visi Misi</a></li>
+              <li><a class="<?php if ($this->uri->segment(2) == 'sejarah') {
+                              echo 'active';
+                            } ?>" href="<?= base_url('tentang/sejarah') ?>">Sejarah Perpustakaan</a></li>
+              <li>
+                <a class="<?php if ($this->uri->segment(2) == 'visimisi') {
+                            echo 'active';
+                          } ?>" href="<?= base_url('tentang/visimisi') ?>">Visi Misi</a>
+              </li>
               <li><a href="testimonials.html">Struktur Organisasi</a></li>
               <li><a href="testimonials.html">Keanggotaan Perpustakaan</a></li>
-              <li><a href="testimonials.html">Sarana & Prasarana</a></li>
+              <li>
+                <a class="<?php if ($this->uri->segment(2) == 'saranaprasarana') {
+                            echo 'active';
+                          } ?>" href="<?= base_url('tentang/saranaprasarana') ?>">Sarana & Prasarana
+                </a>
+              </li>
               <li><a href="testimonials.html">Foto Perpustakaan</a></li>
               <li><a href="testimonials.html">Staf Perpustakaan</a></li>
               <li><a href="testimonials.html">Alamat Perpustakaan</a></li>
@@ -37,15 +48,17 @@
           <li>
             <a class="<?php if ($this->uri->segment(2) == 'absenpengunjung') {
                         echo 'active';
-                      } ?>" href="<?= base_url('dashboard/absenpengunjung') ?>">Absen Pengunjung</a>
+                      } ?>" href="<?= base_url('dashboard/absenpengunjung') ?>">Absen Pengunjung
+            </a>
           </li>
           <li>
             <a class="<?php if ($this->uri->segment(2) == 'koleksi') {
                         echo 'active';
-                      } ?>" href="<?= base_url('buku/koleksi') ?>">Koleksi Buku</a>
+                      } ?>" href="<?= base_url('buku/koleksi') ?>">Koleksi Buku
+            </a>
           </li>
           <!-- <li><a href="portfolio.html">Koleksi Buku</a></li> -->
-          <li><a href="pricing.html">Berita</a></li>
+          <!-- <li><a href="pricing.html">Berita</a></li> -->
           <!-- <li><a href="blog.html">Blog</a></li> -->
 
           <!-- <li><a href="contact.html">Contact</a></li> -->

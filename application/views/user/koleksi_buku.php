@@ -5,7 +5,28 @@
 
       <div class="row height d-flex justify-content-center align-items-center">
         <div class="col-lg-12">
-          <div class="search"> <i class="fa fa-search"></i> <input type="text" name="cari" class="form-control" placeholder="Cari berdasarkan judul buku, nama penulis, penerbit ataupun lainnya"> <button class="btn btn-primary">Cari</button> </div>
+
+          <form action="<?= base_url('buku/cari') ?>" method="POST" autocomplete="off">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="mb-4" style="font-weight: 800;">Cari buku apa? yuk bisa cari langsung disini ... </h4>
+                <div class="row">
+                  <div class="col-lg-3">
+                    <select name="pilih_berdasarkan" class="form-select" style="height: 60px;">
+                      <option value="">Cari Buku Berdasarkan</option>
+                      <option value="judul_buku">Judul Buku</option>
+                      <option value="pengarang">Pengarang</option>
+                      <option value="penerbit">Penerbit</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-9">
+                    <div class="search"> <i class="fa fa-search"></i> <input type="text" name="cari" class="form-control" placeholder="Ketikkan kata kunci disini ..." autofocus> <button class="btn btn-primary">Cari</button> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
         </div>
       </div>
 
@@ -216,19 +237,30 @@
         <div class="col-xl-3 d-none d-xl-block">
           <img src="<?= base_url('assets/img/bukupopuler.png') ?>" width="80%" alt="">
         </div>
-        <div class="col-xl-9 col-lg-12 col-md-12 col-12" data-aos="fade-right">
+        <div class="col-xl-9 col-lg-12 col-md-12 col-12" data-aos="fade-left">
           <div class="owl-carousel owl-theme">
             <?php foreach ($bukuterbaru as $bt) : ?>
-              <div class="item" style="width: 150px;">
+              <div class="item text-center" style="width: 150px;">
                 <?php if (file_exists(base_url('assets/img/buku/') . $bt['gambar_buku'])) : ?>
                   ok
                 <?php else : ?>
                   <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="50px" alt="">
                 <?php endif; ?>
-                <small><?= $bt['pengarang']; ?></small>
-                <h5><?= $bt['judul_buku']; ?></h5>
-                <span class="badge bg-success">Stok : <?= $bt['stok_buku']; ?></span>
-                <span class="badge bg-primary">Rak : <?= $bt['rak_buku']; ?></span>
+                <small><?= substr($bt['pengarang'], 0, 15); ?> ...</small>
+                <h6 style="font-weight: 800;"><?= $bt['judul_buku']; ?></h6>
+                <?php if ($bt['stok_buku'] == 0) : ?>
+                  <span class="badge bg-danger">Stok : <?= $bt['stok_buku']; ?></span>
+                <?php else : ?>
+                  <span class="badge bg-success">Stok : <?= $bt['stok_buku']; ?></span>
+                <?php endif; ?>
+                <span class="badge bg-secondary">Rak : <?= $bt['rak_buku']; ?></span>
+
+
+                <a href="" id="pilih" data-bs-toggle="modal" data-bs-target="#exampleModal" data-judul_buku="<?= $bt['judul_buku'] ?>" data-pengarang="<?= $bt['pengarang'] ?>" data-penerbit="<?= $bt['penerbit'] ?>" data-thn_terbit="<?= $bt['thn_terbit'] ?>" data-isbn="<?= $bt['isbn'] ?>" data-kode_ddc="<?= $bt['kode_ddc'] . " - " .  $bt['kategori_ddc'] ?>" data-kategori_buku="<?= $bt['nm_kategoribuku'] ?>" data-stok_buku="<?= $bt['stok_buku'] ?>" data-rak_buku="<?= $bt['rak_buku'] ?>">
+                  <div class="d-grid gap-2 mt-2">
+                    <button type="button" class="btn btn-primary btn-sm btn-block">Detail</button>
+                  </div>
+                </a>
               </div>
             <?php endforeach; ?>
           </div>
@@ -240,50 +272,43 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <h5 class=""><i class="fas fa-database"></i> Data
+              <h5 class=""><i class="fas fa-database"></i> Data Buku Keseluruhan
                 <!-- <a href="<?= base_url('admin/buku/create') ?>" class="float-end"><button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah Data"><i class="fas fa-plus"></i></button></a> -->
               </h5>
             </div>
-            <div class="card-body">
+            <div class="card-body table-responsive">
               <table class="table table-striped table-hover" id="table1">
                 <thead>
-                  <tr class="">
+                  <tr class="text-center">
                     <th>No</th>
-                    <th>QR Code</th>
+                    <th width="100px">Gambar Buku</th>
                     <th>Judul Buku</th>
                     <th>Pengarang</th>
                     <th>Penerbit</th>
                     <th>Tahun Terbit</th>
-                    <th width="100px">Gambar Buku</th>
-                    <!-- <th width="70px">Aksi</th> -->
+                    <th width="70px">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php $no = 1;
                   foreach ($buku as $b) : ?>
-                    <tr>
-                      <td><?= $no; ?></td>
-                      <td>
-                        <?php
-                        // require_once(base_url('assets/vendor/phpqrcodegenerator/qrlib.php'));
-                        // QRcode::png($b['id_buku'], "M", 2, 2);
-                        // $qrCode = new Endroid\QrCode\QrCode($b['id_buku']);
-                        // header("Content-Type: image/png");
-                        // $params['data'] = 'tes';
-                        // $this->ciqrcode->generate($params);
-                        ?>
-                        <img src="<?= site_url('admin/buku/qrcode/') . $b['id_buku'] ?>" class="img-zoomable" width="50px" alt="">
+                    <tr class="align-middle">
+                      <td class="text-center"><?= $no; ?></td>
+                      <td class="mx-auto">
+                        <?php if (empty($b['gambar'])) : ?>
+                          <figure style="width: 70%"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="70%" class="img-zoomable" alt=""></figure>
+                        <?php else : ?>
+                          <img src="<?= base_url('assets/img/buku/') . $b['gambar_buku'] ?>" class="text-center mx-auto" width="70%" alt="">
+                        <?php endif; ?>
                       </td>
                       <td><?= $b['judul_buku']; ?></td>
                       <td><?= $b['pengarang']; ?></td>
                       <td><?= $b['penerbit']; ?></td>
                       <td><?= $b['thn_terbit']; ?></td>
                       <td>
-                        <?php if (empty($dp['gambar'])) : ?>
-                          <figure style="width: 80%"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="70%" class="img-zoomable" alt=""></figure>
-                        <?php else : ?>
-                          <img src="<?= base_url('assets/img/buku/') . $dp['gambar_buku'] ?>" width="70%" alt="">
-                        <?php endif; ?>
+                        <a href="" id="pilih" data-bs-toggle="modal" data-bs-target="#exampleModal" data-judul_buku="<?= $b['judul_buku'] ?>" data-pengarang="<?= $b['pengarang'] ?>" data-penerbit="<?= $b['penerbit'] ?>" data-thn_terbit="<?= $b['thn_terbit'] ?>" data-isbn="<?= $b['isbn'] ?>" data-kode_ddc="<?= $b['kode_ddc'] . " - " .  $b['kategori_ddc'] ?>" data-kategori_buku="<?= $b['nm_kategoribuku'] ?>" data-stok_buku="<?= $b['stok_buku'] ?>" data-rak_buku="<?= $b['rak_buku'] ?>">
+                          <button type="button" class="btn btn-primary btn-sm">Detail</button>
+                        </a>
                       </td>
                     </tr>
                   <?php $no++;
@@ -294,5 +319,117 @@
           </div>
         </div>
       </section>
+
     </div>
   </section>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-book"></i> Detail Buku</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-striped mb-0">
+            <tbody style="font-size: 14px;">
+              <tr>
+                <td colspan="3">
+                  <?php if (file_exists(base_url('assets/img/buku/') . $bt['gambar_buku'])) : ?>
+                    ok
+                  <?php else : ?>
+                    <img src="<?= base_url('assets/img/contoh.jpg') ?>" class="mx-auto" width="80px" alt="">
+                  <?php endif; ?>
+                </td>
+              </tr>
+              <tr>
+                <td>Judul Buku</td>
+                <td>:</td>
+                <td><span id="judul_buku"></span></td>
+              </tr>
+              <tr>
+                <td>Pengarang</td>
+                <td>:</td>
+                <td><span id="pengarang"></span></td>
+              </tr>
+              <tr>
+                <td>Penerbit</td>
+                <td>:</td>
+                <td><span id="penerbit"></span></td>
+              </tr>
+              <tr>
+                <td>Tahun Terbit</td>
+                <td>:</td>
+                <td><span id="thn_terbit"></span></td>
+              </tr>
+              <tr>
+                <td>ISBN</td>
+                <td>:</td>
+                <td><span id="isbn"></span></td>
+              </tr>
+              <tr>
+                <td>Kode DDC</td>
+                <td>:</td>
+                <td><span id="kode_ddc"></span></td>
+              </tr>
+              <tr>
+                <td>Kategori Buku</td>
+                <td>:</td>
+                <td><span id="kategori_buku"></span></td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <h4 class="text-center">
+                    <?php
+                    $stok = "<span id='stok_buku'>";
+                    $stok_buku = intval($stok);
+                    // $stok_buku = number_format($stok);
+                    // echo $stok;
+                    ?>
+                    <?php if ($stok_buku == 0) : ?>
+                      <div class="badge bg-danger">Stok : <?= $stok ?></span></div>
+                    <?php else : ?>
+                      <div class="badge bg-success">Stok : <?= $stok ?></span></div>
+                    <?php endif; ?>
+                    <div class="badge bg-secondary">Rak : <span id="rak_buku"></span></div>
+                  </h4>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Modal -->
+
+  <script src="<?= base_url('assets/') ?>js/jquery-3.3.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(document).on('click', '#pilih', function() {
+        var item_judul_buku = $(this).data('judul_buku');
+        var item_pengarang = $(this).data('pengarang');
+        var item_penerbit = $(this).data('penerbit');
+        var item_thn_terbit = $(this).data('thn_terbit');
+        var item_isbn = $(this).data('isbn');
+        var item_kode_ddc = $(this).data('kode_ddc');
+        var item_kategori_buku = $(this).data('kategori_buku');
+        var item_stok_buku = $(this).data('stok_buku');
+        var item_rak_buku = $(this).data('rak_buku');
+        document.getElementById("judul_buku").innerHTML = item_judul_buku;
+        document.getElementById("pengarang").innerHTML = item_pengarang;
+        document.getElementById("penerbit").innerHTML = item_penerbit;
+        document.getElementById("thn_terbit").innerHTML = item_thn_terbit;
+        document.getElementById("isbn").innerHTML = item_isbn;
+        document.getElementById("kode_ddc").innerHTML = item_kode_ddc;
+        document.getElementById("kategori_buku").innerHTML = item_kategori_buku;
+        document.getElementById("stok_buku").innerHTML = item_stok_buku;
+        document.getElementById("rak_buku").innerHTML = item_rak_buku;
+      })
+    })
+  </script>

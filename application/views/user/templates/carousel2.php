@@ -2,7 +2,9 @@
   <section id="hero2">
     <div class="content">
       <div class="title">
-        <h2><?= $menu ?></h2>
+        <h2 class="text-sm-start">
+          <?= $menu ?>
+        </h2>
       </div>
     </div>
   </section>

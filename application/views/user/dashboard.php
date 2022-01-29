@@ -29,7 +29,7 @@
   </section><!-- End About Section -->
 
   <!-- ======= Services Section ======= -->
-  <section id="services" class="services" data-aos="fade-up">
+  <!-- <section id="services" class="services" data-aos="fade-up">
     <div class="container">
       <h3>Berita Perpustakaan
         <button class="btn btn-sm btn-primary float-end">Lihat Semua</button>
@@ -103,6 +103,122 @@
       </div>
 
     </div>
-  </section><!-- End Services Section -->
+  </section> -->
+  <!-- End Services Section -->
+
+  <section data-aos="fade-left">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-lg-3 col-md-6">
+          <div class="card bg-primary text-white">
+            <div class="card-body px-3 py-4-5">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="stats-icon blue">
+                    <h1><i class="bi bi-person-circle"></i></h1>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <h6 class="font-semibold">Jumlah Anggota</h6>
+                  <h6 class="font-extrabold mb-0">183.000</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 col-md-6">
+          <div class="card bg-danger text-white">
+            <div class="card-body px-3 py-4-5">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="stats-icon purple">
+                    <h1><i class="bi bi-book"></i></h1>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <h6 class="font-semibold">Jumlah Judul Buku</h6>
+                  <h6 class="font-extrabold mb-0">112.000</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 col-md-6">
+          <div class="card bg-warning">
+            <div class="card-body px-3 py-4-5">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="stats-icon green">
+                    <h1><i class="bi bi-book"></i></h1>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <h6 class="text-muted font-semibold">Jumlah Eksemplar</h6>
+                  <h6 class="font-extrabold mb-0">80.000</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 col-md-6">
+          <div class="card bg-success text-white">
+            <div class="card-body px-3 py-4-5">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="stats-icon red">
+                    <h1><i class="bi bi-person-badge"></i></h1>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <h6 class="font-semibold">Jumlah Admin</h6>
+                  <h6 class="font-extrabold mb-0">80.000</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hero2" class="mt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center text-white">Sambutan hangat dari SMK Soedirman Purbalingga</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ucapan1" class="ucapan1" data-aos="fade-up">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="nama">Bpk. Fulan bin Fulan</h1>
+          <h3>Kepala Sekolah SMK Soedirman Purbalingga</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde impedit sit vero corporis eum accusantium ex magnam porro. Veritatis, necessitatibus. Illo magni consequuntur ex facere alias. Sint mollitia blanditiis accusamus!</p>
+        </div>
+        <div class="col-lg-6">
+          <img src="<?= base_url('assets/img/ronaldo.jpg') ?>" height="300px" class="mx-auto" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ucapan2" class="ucapan2" data-aos="fade-up">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <img src="<?= base_url('assets/img/ronaldo.jpg') ?>" height="300px" class="mx-auto" alt="">
+        </div>
+        <div class="col-lg-6">
+          <h1 class="nama">Bpk. Suhartono</h1>
+          <h3>Kepala perpustakaan SMK Soedirman Purbalingga</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde impedit sit vero corporis eum accusantium ex magnam porro. Veritatis, necessitatibus. Illo magni consequuntur ex facere alias. Sint mollitia blanditiis accusamus!</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </main><!-- End #main -->

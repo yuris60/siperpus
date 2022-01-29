@@ -83,7 +83,7 @@
               <td><?= $b['penerbit']; ?></td>
               <td><?= $b['thn_terbit']; ?></td>
               <td>
-                <?php if (file_exists(base_url('assets/img/buku/') . $dp['gambar'])) : ?>
+                <?php if (empty($dp['gambar'])) : ?>
                   <figure style="width: 80%"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="30%" class="img-zoomable" alt=""></figure>
                 <?php else : ?>
                   <img src="<?= base_url('assets/img/buku/') . $dp['gambar_buku'] ?>" width="30%" alt="">

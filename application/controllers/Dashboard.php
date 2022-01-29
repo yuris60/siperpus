@@ -18,12 +18,12 @@ class Dashboard extends CI_Controller
     $data['menu'] = "Beranda";
     $data['icon'] = "home";
 
-    $this->load->view('templates/header', $data);
-    $this->load->view('templates/navbar');
-    $this->load->view('templates/carousel');
-    $this->load->view('dashboard', $data);
-    $this->load->view('templates/footer');
-    $this->load->view('templates/js');
+    $this->load->view('user/templates/header', $data);
+    $this->load->view('user/templates/navbar');
+    $this->load->view('user/templates/carousel');
+    $this->load->view('user/dashboard', $data);
+    $this->load->view('user/templates/footer');
+    $this->load->view('user/templates/js');
   }
 
   public function absenpengunjung()
@@ -38,12 +38,12 @@ class Dashboard extends CI_Controller
     $this->form_validation->set_rules('nisn', 'NISN', 'required|trim');
 
     if ($this->form_validation->run() == FALSE) {
-      $this->load->view('templates/header', $data);
-      $this->load->view('templates/navbar');
-      $this->load->view('templates/carousel2');
-      $this->load->view('absen_pengunjung', $data);
-      $this->load->view('templates/footer');
-      $this->load->view('templates/js_scan');
+      $this->load->view('user/templates/header', $data);
+      $this->load->view('user/templates/navbar');
+      $this->load->view('user/templates/carousel2');
+      $this->load->view('user/absen_pengunjung', $data);
+      $this->load->view('user/templates/footer');
+      $this->load->view('user/templates/js_scan');
     } else {
       $this->dashboard_model->savePengunjung();
       $this->session->set_flashdata('success', 'Disimpan');
@@ -64,12 +64,12 @@ class Dashboard extends CI_Controller
     $this->form_validation->set_rules('nisn', 'NISN', 'required|trim');
 
     if ($this->form_validation->run() == FALSE) {
-      $this->load->view('templates/header', $data);
-      $this->load->view('templates/navbar');
-      $this->load->view('templates/carousel2');
-      $this->load->view('koleksi_buku', $data);
-      $this->load->view('templates/footer');
-      $this->load->view('templates/js');
+      $this->load->view('user/templates/header', $data);
+      $this->load->view('user/templates/navbar');
+      $this->load->view('user/templates/carousel2');
+      $this->load->view('user/koleksi_buku', $data);
+      $this->load->view('user/templates/footer');
+      $this->load->view('user/templates/js');
     } else {
       $this->dashboard_model->savePengunjung();
       $this->session->set_flashdata('success', 'Disimpan');

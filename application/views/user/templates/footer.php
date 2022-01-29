@@ -45,7 +45,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Sailor</span></strong>. All Rights Reserved
+        Perpustakaan SMK Soedirman Purbalingga &copy; <?= date('Y') ?>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->

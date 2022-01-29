@@ -18,7 +18,7 @@
         <div class="col-lg-4">
           <div class="card">
             <div class="card-header">
-              <h5><img src="<?= base_url('assets/svg/qr-code.svg') ?>" alt="" style="margin-top: -5px;"> Scan QR Code Disini</h5>
+              <h5><i class="bi bi-qr-code"></i> Scan QR Code Disini</h5>
             </div>
             <div class="card-body">
               <video id="preview" width="100%"></video>
