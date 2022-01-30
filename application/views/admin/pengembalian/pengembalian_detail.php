@@ -78,7 +78,8 @@
                 <th width="50px">Gambar</th>
                 <th>Judul Buku</th>
                 <th>Qty</th>
-                <th>Tgl Kembali</th>
+                <th>Tgl Batas</th>
+                <th>Tgl Pengembalian</th>
                 <th>Keterlambatan</th>
                 <th>Status Buku</th>
                 <th width="100px">Aksi</th>
@@ -98,7 +99,14 @@
                   </td>
                   <td><?= $dp['judul_buku'] ?></td>
                   <td><?= $dp['qty_pinjam'] ?></td>
-                  <td><?= tgl_indo($dp['tgl_kembali']) ?></td>
+                  <td><?= tgl_indo($dp['tgl_kembali']); ?></td>
+                  <td>
+                    <?php if ($dp['tgl_pengembalian'] != "0000-00-00 00:00:00") : ?>
+                      <?= tgl_indo($dp['tgl_pengembalian']) ?>
+                    <?php else : ?>
+                      0000-00-00
+                    <?php endif; ?>
+                  </td>
                   <td class="text-center">
                     <?php
                     $hariini = date('Y-m-d');
@@ -128,14 +136,18 @@
                     <?php endif; ?>
                   </td>
                   <td class="text-center"><?= $dp['status_buku'] ?></td>
-                  <td>
-                    <a href="<?= base_url('admin/pengembalian/perpanjangpeminjaman/') . $dp['id_pinjam'] . "/" . $dp['id_detailpinjam']; ?>" class="tombol-perpanjang-buku">
-                      <button class="btn btn-info btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Perpanjang Peminjaman"><i class="bi bi-calendar-date"></i></button>
-                    </a>
-                    <a href="<?= base_url('admin/pengembalian/kembalikanbuku/') . $dp['id_pinjam'] . "/" . $dp['id_detailpinjam'] . "/" . $selisihhari;  ?>" class="tombol-pengembalian-buku">
-                      <button class="btn btn-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Kembalikan Buku"><i class="bi bi-check"></i></button>
-                    </a>
-                  </td>
+                  <?php if ($dp['status_buku'] == "Belum Kembali") : ?>
+                    <td>
+                      <a href="<?= base_url('admin/pengembalian/perpanjangpeminjaman/') . $dp['id_pinjam'] . "/" . $dp['id_detailpinjam'] . "/" . $dp['id_buku'] . "/" . $dp['qty_pinjam']; ?>" class="tombol-perpanjang-buku">
+                        <button class="btn btn-info btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Perpanjang Peminjaman"><i class="bi bi-calendar-date"></i></button>
+                      </a>
+                      <a href="<?= base_url('admin/pengembalian/kembalikanbuku/') . $dp['id_pinjam'] . "/" . $dp['id_detailpinjam']  . "/" . $dp['id_buku'] . "/" . $dp['qty_pinjam'] . "/" . $selisihhari;  ?>" class="tombol-pengembalian-buku">
+                        <button class="btn btn-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Kembalikan Buku"><i class="bi bi-check"></i></button>
+                      </a>
+                    </td>
+                  <?php else : ?>
+                    <td></td>
+                  <?php endif; ?>
                 </tr>
               <?php $no++;
               endforeach; ?>
@@ -185,17 +197,18 @@
               echo $tingkatan_kelas . " " . $anggota['nm_jurusan'] . " " . $anggota['nomor_kelas']
               ?>
             </li>
-            <li class="list-group-item">
+            <li class="list-group-item bg-success text-white">
               <small><strong>Tanggal Pinjam</strong></small><br>
-              <?= date('d M Y', strtotime($anggota['tgl_pinjam'])) ?>
+              <?= tgl_indo($anggota['tgl_pinjam']); ?>
             </li>
-            <li class="list-group-item">
+            <li class="list-group-item bg-danger text-white">
               <small><strong>Batas Pinjam</strong></small><br>
               <?php
-              $tgl_pinjam = $anggota['tgl_pinjam'];
-              $bataspinjam = date('d M Y', strtotime('+3 days', strtotime($tgl_pinjam))); //tambah tanggal sebanyak 
-              echo $bataspinjam;
+              // $tgl_pinjam = $anggota['tgl_pinjam'];
+              // $bataspinjam = date('d M Y', strtotime('+3 days', strtotime($tgl_pinjam))); //tambah tanggal sebanyak 
+              // echo $bataspinjam;
               ?>
+              <?= tgl_indo($anggota['tgl_bataspinjam']); ?>
 
             </li>
           </ul>

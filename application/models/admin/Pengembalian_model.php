@@ -44,21 +44,28 @@ class Pengembalian_model extends CI_Model
 
   public function perpanjangPeminjaman($id_pinjam, $id_detailpinjam)
   {
+    // Update tabel detail peminjaman (perbuku)
     $this->db->select('*');
     $this->db->from('detail_peminjaman');
     $this->db->where('id_detailpinjam', $id_detailpinjam);
     $query = $this->db->get()->row_array();
-
     $tgl_kembali_lama = $query['tgl_kembali'];
     $tgl_kembali_baru = date('Y-m-d H:i:s', strtotime('+7 days', strtotime($tgl_kembali_lama)));
-
     $this->db->set('tgl_kembali', $tgl_kembali_baru);
     $this->db->where('id_detailpinjam', $id_detailpinjam);
     $this->db->update('detail_peminjaman');
+
+    //  Update tabel peminjaman (pertransaksi)
+    $tgl_bataspinjam_baru = $tgl_kembali_baru;
+    $this->db->set('tgl_bataspinjam', $tgl_bataspinjam_baru);
+    $this->db->where('id_pinjam', $id_pinjam);
+    $this->db->update('peminjaman');
   }
 
-  public function kembalikanBuku($id_pinjam, $id_detailpinjam, $keterlambatan)
+  public function kembalikanBuku($id_pinjam, $id_detailpinjam, $keterlambatan, $id_buku, $qty_lama)
   {
+
+    // update tabel detail pengembalian
     $hariini = date('Y-m-d H:i:s');
     $data = [
       'tgl_pengembalian' => $hariini,
@@ -68,13 +75,24 @@ class Pengembalian_model extends CI_Model
     $this->db->where('id_detailpinjam', $id_detailpinjam);
     $this->db->update('detail_peminjaman', $data);
 
+    // kembalikan qty buku sebelumnya
+    $this->db->select('stok_buku');
+    $this->db->from('buku');
+    $this->db->where('id_buku', $id_buku);
+    $query = $this->db->get()->row_array();
+    $stoklama = $query['stok_buku'];
+    $stokbaru = $stoklama + $qty_lama;
+    $this->db->set('stok_buku', $stokbaru);
+    $this->db->where('id_buku', $id_buku);
+    $this->db->update('buku');
+
     $this->db->select('*');
     $this->db->from('detail_peminjaman');
     $this->db->where('id_pinjam', $id_pinjam);
     $this->db->where('status_buku', 'Belum Kembali');
-    $query = $this->db->get();
+    $query2 = $this->db->get();
 
-    if ($query->num_rows() == 0) { //jika terdaftar, maka simpan
+    if ($query2->num_rows() == 0) { //jika buku sudah kembali semua
       $this->db->set('status', 'Lunas');
       $this->db->where('id_pinjam', $id_pinjam);
       $this->db->update('peminjaman');

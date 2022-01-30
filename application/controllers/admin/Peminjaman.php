@@ -78,36 +78,49 @@ class Peminjaman extends CI_Controller
     redirect('admin/peminjaman/detail/' . $id_pinjam);
   }
 
-  public function update($where)
+  // public function update($where)
+  // {
+  //   $data['admin'] = $this->login_model->getSession();
+  //   $data['title'] = "Perbarui Peminjaman | SIPERPUS";
+  //   $data['menu'] = "Peminjaman";
+  //   $data['submenu'] = "Perbarui Data";
+  //   $data['icon'] = "bi bi-book-half";
+
+  //   $this->form_validation->set_rules('judul_peminjaman', 'Judul peminjaman', 'required|trim');
+  //   $this->form_validation->set_rules('penerbit', 'Penerbit', 'required|trim');
+  //   $this->form_validation->set_rules('pengarang', 'Pengarang', 'required|trim');
+  //   $this->form_validation->set_rules('thn_terbit', 'Tahun Terbit', 'required|trim');
+
+  //   $data['peminjaman'] = $this->peminjaman_model->getById($where);
+  //   $data['ddc'] = $this->peminjaman_model->getDdcAll();
+  //   $data['sumberpeminjaman'] = $this->peminjaman_model->getSumberpeminjamanAll();
+  //   $data['jenispeminjaman'] = $this->peminjaman_model->getJenispeminjamanAll();
+
+  //   if ($this->form_validation->run() == FALSE) {
+  //     $this->load->view('admin/templates/header', $data);
+  //     $this->load->view('admin/templates/sidebar');
+  //     $this->load->view('admin/templates/topbar');
+  //     $this->load->view('admin/peminjaman/peminjaman_update', $data);
+  //     $this->load->view('admin/templates/footer');
+  //     $this->load->view('admin/templates/js');
+  //   } else {
+  //     $this->peminjaman_model->update($where);
+  //     $this->session->set_flashdata('success', 'Diperbarui');
+  //     redirect('admin/peminjaman');
+  //   }
+  // }
+
+  public function updateQtyPinjam()
   {
-    $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Perbarui Peminjaman | SIPERPUS";
-    $data['menu'] = "Peminjaman";
-    $data['submenu'] = "Perbarui Data";
-    $data['icon'] = "bi bi-book-half";
+    $id_pinjam = $this->input->post('id_pinjam');
+    $id_detailpinjam = $this->input->post('id_detailpinjam');
+    $id_buku = $this->input->post('id_buku');
+    $qty_lama = $this->input->post('qty_pinjam');
+    $qty_pinjam = $this->input->post('qty');
 
-    $this->form_validation->set_rules('judul_peminjaman', 'Judul peminjaman', 'required|trim');
-    $this->form_validation->set_rules('penerbit', 'Penerbit', 'required|trim');
-    $this->form_validation->set_rules('pengarang', 'Pengarang', 'required|trim');
-    $this->form_validation->set_rules('thn_terbit', 'Tahun Terbit', 'required|trim');
-
-    $data['peminjaman'] = $this->peminjaman_model->getById($where);
-    $data['ddc'] = $this->peminjaman_model->getDdcAll();
-    $data['sumberpeminjaman'] = $this->peminjaman_model->getSumberpeminjamanAll();
-    $data['jenispeminjaman'] = $this->peminjaman_model->getJenispeminjamanAll();
-
-    if ($this->form_validation->run() == FALSE) {
-      $this->load->view('admin/templates/header', $data);
-      $this->load->view('admin/templates/sidebar');
-      $this->load->view('admin/templates/topbar');
-      $this->load->view('admin/peminjaman/peminjaman_update', $data);
-      $this->load->view('admin/templates/footer');
-      $this->load->view('admin/templates/js');
-    } else {
-      $this->peminjaman_model->update($where);
-      $this->session->set_flashdata('success', 'Diperbarui');
-      redirect('admin/peminjaman');
-    }
+    $this->peminjaman_model->updateQtyPinjam($id_pinjam, $id_detailpinjam, $id_buku, $qty_lama, $qty_pinjam);
+    $this->session->set_flashdata('success', 'Diperbarui');
+    redirect('admin/peminjaman/detail/' . $id_pinjam);
   }
 
   public function delete($where)

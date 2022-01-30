@@ -1,3 +1,8 @@
+<?php
+// Untuk menghilangkan warning pada grafik bulan yang kosong
+error_reporting(0)
+?>
+
 <!-- Breadcrumb -->
 <div class="page-title">
   <div class="row">
@@ -18,7 +23,7 @@
 
 <div class="row">
   <!-- Left Col-9 -->
-  <div class="col-9">
+  <div class="col-12 col-lg-9">
     <div class="row">
       <div class="col-6 col-lg-3 col-md-6">
         <div class="card">
@@ -31,7 +36,7 @@
               </div>
               <div class="col-md-9">
                 <h6 class="text-muted font-semibold">Jumlah Anggota</h6>
-                <h6 class="font-extrabold mb-0">183.000</h6>
+                <h6 class="font-extrabold mb-0"><?= $jumlahanggota; ?></h6>
               </div>
             </div>
           </div>
@@ -48,7 +53,7 @@
               </div>
               <div class="col-md-9">
                 <h6 class="text-muted font-semibold">Jumlah Judul Buku</h6>
-                <h6 class="font-extrabold mb-0">112.000</h6>
+                <h6 class="font-extrabold mb-0"><?= $jumlahjudulbuku; ?></h6>
               </div>
             </div>
           </div>
@@ -65,7 +70,7 @@
               </div>
               <div class="col-md-9">
                 <h6 class="text-muted font-semibold">Jumlah Eksemplar</h6>
-                <h6 class="font-extrabold mb-0">80.000</h6>
+                <h6 class="font-extrabold mb-0"><?= $jumlaheksemplarbuku; ?></h6>
               </div>
             </div>
           </div>
@@ -82,7 +87,7 @@
               </div>
               <div class="col-md-9">
                 <h6 class="text-muted font-semibold">Jumlah Admin</h6>
-                <h6 class="font-extrabold mb-0">80.000</h6>
+                <h6 class="font-extrabold mb-0"><?= $jumlahadmin; ?></h6>
               </div>
             </div>
           </div>
@@ -105,37 +110,23 @@
           <div class="col-12 col-xl-5 col-md-5">
             <div class="card">
               <div class="card-header">
-                <h4><i class="bi bi-person-square"></i> 3 Pengunjung Terakhir</h4>
+                <h4><i class="bi bi-person-square"></i> 5 Pengunjung Terakhir</h4>
               </div>
               <!-- <div class="card-body"> -->
-              <div class="card-content pb-4">
-                <div class="recent-message d-flex px-4 py-3">
-                  <div class="avatar avatar-lg">
-                    <img src="<?= base_url('assets/vendor/mazer/dist/') ?>assets/images/faces/4.jpg">
+              <div class="card-content">
+                <?php foreach ($pengunjung as $p) : ?>
+                  <div class="recent-message d-flex px-4 pb-3">
+                    <?php if (file_exists(base_url('assets/img/anggota/') . $p['foto_anggota'])) : ?>
+                      ok
+                    <?php else : ?>
+                      <img src="<?= base_url('assets/img/no_photo.jpg') ?>" width="50px" alt="">
+                    <?php endif; ?>
+                    <div class="name ms-4">
+                      <h5 class="mb-1"><?= $p['nm_anggota']; ?></h5>
+                      <h6 class="text-muted mb-0"><?= waktu_lalu($p['jam_kunjungan']) ?></h6>
+                    </div>
                   </div>
-                  <div class="name ms-4">
-                    <h5 class="mb-1">Hank Schrader</h5>
-                    <h6 class="text-muted mb-0">25 Menit Lalu</h6>
-                  </div>
-                </div>
-                <div class="recent-message d-flex px-4 py-3">
-                  <div class="avatar avatar-lg">
-                    <img src="<?= base_url('assets/vendor/mazer/dist/') ?>assets/images/faces/5.jpg">
-                  </div>
-                  <div class="name ms-4">
-                    <h5 class="mb-1">Dean Winchester</h5>
-                    <h6 class="text-muted mb-0">35 Menit Lalu</h6>
-                  </div>
-                </div>
-                <div class="recent-message d-flex px-4 py-3">
-                  <div class="avatar avatar-lg">
-                    <img src="<?= base_url('assets/vendor/mazer/dist/') ?>assets/images/faces/1.jpg">
-                  </div>
-                  <div class="name ms-4">
-                    <h5 class="mb-1">John Dodol</h5>
-                    <h6 class="text-muted mb-0">45 Menit Lalu</h6>
-                  </div>
-                </div>
+                <?php endforeach; ?>
               </div>
             </div>
             <!-- </div> -->
@@ -151,21 +142,189 @@
                     <button class="nav-link btn-sm active" id="pills-peminjamanall-tab" data-bs-toggle="pill" data-bs-target="#pills-peminjamanall" type="button" role="tab" aria-controls="pills-peminjamanall" aria-selected="true">Semua</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link btn-sm" id="pills-peminjamanbelumkembali-tab" data-bs-toggle="pill" data-bs-target="#pills-peminjamanbelumkembali" type="button" role="tab" aria-controls="pills-peminjamanbelumkembali" aria-selected="false">Belum Kembali</button>
+                    <button class="nav-link btn-sm" id="pills-peminjamanbelumlunas-tab" data-bs-toggle="pill" data-bs-target="#pills-peminjamanbelumlunas" type="button" role="tab" aria-controls="pills-peminjamanbelumlunas" aria-selected="false">Belum Lunas</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link btn-sm" id="pills-peminjamansudahkembali-tab" data-bs-toggle="pill" data-bs-target="#pills-peminjamansudahkembali" type="button" role="tab" aria-controls="pills-peminjamansudahkembali" aria-selected="false">Sudah Kembali</button>
+                    <button class="nav-link btn-sm" id="pills-peminjamanlunas-tab" data-bs-toggle="pill" data-bs-target="#pills-peminjamanlunas" type="button" role="tab" aria-controls="pills-peminjamanlunas" aria-selected="false">Lunas</button>
                   </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
                   <div class="tab-pane fade show active" id="pills-peminjamanall" role="tabpanel" aria-labelledby="pills-peminjamanall-tab">
-                    Semua Peminjaman
+                    <?php if (!empty($peminjamansemua)) : ?>
+                      <!-- Jika Ada Data -->
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Foto</th>
+                            <th>Nama Anggota</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php $no = 1;
+                          foreach ($peminjamansemua as $ps) : ?>
+                            <tr>
+                              <td><?= $no; ?></td>
+                              <td>
+                                <?php if (file_exists(base_url('assets/img/anggota/') . $ps['foto_anggota'])) : ?>
+                                  ok
+                                <?php else : ?>
+                                  <img src="<?= base_url('assets/img/no_photo.jpg') ?>" width="50px" alt="">
+                                <?php endif; ?>
+                              </td>
+                              <td><?= $ps['nm_anggota'] ?></td>
+                              <td>
+                                <a href="<?= base_url('admin/pengembalian/detail/') . $ps['id_pinjam']; ?>">
+                                  <?php if ($ps['status'] == "Belum Lunas") : ?>
+                                    <span class="badge bg-danger"><?= $ps['status']; ?></span>
+                                  <?php else : ?>
+                                    <span class="badge bg-success"><?= $ps['status']; ?></span>
+                                  <?php endif; ?>
+                                </a>
+                              </td>
+                            </tr>
+                          <?php $no++;
+                          endforeach; ?>
+                        </tbody>
+                      </table>
+
+                    <?php else : ?>
+                      <!-- Jika Data Kosong -->
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Foto</th>
+                            <th>Nama Anggota</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td colspan="4" class="text-center">Tidak ada data</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    <?php endif; ?>
                   </div>
-                  <div class="tab-pane fade" id="pills-peminjamanbelumkembali" role="tabpanel" aria-labelledby="pills-peminjamanbelumkembali-tab">
-                    Peminjaman Belum Kembali
+                  <div class="tab-pane fade" id="pills-peminjamanbelumlunas" role="tabpanel" aria-labelledby="pills-peminjamanbelumlunas-tab">
+                    <?php if (!empty($peminjamanbelumlunas)) : ?>
+                      <!-- Jika Ada Data -->
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Foto</th>
+                            <th>Nama Anggota</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php $no = 1;
+                          foreach ($peminjamanbelumlunas as $pbl) : ?>
+                            <tr>
+                              <td><?= $no; ?></td>
+                              <td>
+                                <?php if (file_exists(base_url('assets/img/anggota/') . $pbl['foto_anggota'])) : ?>
+                                  ok
+                                <?php else : ?>
+                                  <img src="<?= base_url('assets/img/no_photo.jpg') ?>" width="50px" alt="">
+                                <?php endif; ?>
+                              </td>
+                              <td><?= $pbl['nm_anggota'] ?></td>
+                              <td>
+                                <a href="<?= base_url('admin/pengembalian/detail/') . $pbl['id_pinjam']; ?>">
+                                  <?php if ($pbl['status'] == "Belum Lunas") : ?>
+                                    <span class="badge bg-danger"><?= $pbl['status']; ?></span>
+                                  <?php else : ?>
+                                    <span class="badge bg-success"><?= $pbl['status']; ?></span>
+                                  <?php endif; ?>
+                                </a>
+                              </td>
+                            </tr>
+                          <?php $no++;
+                          endforeach; ?>
+                        </tbody>
+                      </table>
+
+                    <?php else : ?>
+                      <!-- Jika Data Kosong -->
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Foto</th>
+                            <th>Nama Anggota</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td colspan="4" class="text-center">Tidak ada data</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    <?php endif; ?>
                   </div>
-                  <div class="tab-pane fade" id="pills-peminjamansudahkembali" role="tabpanel" aria-labelledby="pills-peminjamansudahkembali-tab">
-                    Peminjaman Sudah Kembali
+                  <div class="tab-pane fade" id="pills-peminjamanlunas" role="tabpanel" aria-labelledby="pills-peminjamanlunas-tab">
+                    <?php if (!empty($peminjamanlunas)) : ?>
+                      <!-- Jika Ada Data -->
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Foto</th>
+                            <th>Nama Anggota</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php $no = 1;
+                          foreach ($peminjamanlunas as $pl) : ?>
+                            <tr>
+                              <td><?= $no; ?></td>
+                              <td>
+                                <?php if (file_exists(base_url('assets/img/anggota/') . $pl['foto_anggota'])) : ?>
+                                  ok
+                                <?php else : ?>
+                                  <img src="<?= base_url('assets/img/no_photo.jpg') ?>" width="50px" alt="">
+                                <?php endif; ?>
+                              </td>
+                              <td><?= $pl['nm_anggota'] ?></td>
+                              <td>
+                                <a href="<?= base_url('admin/pengembalian/detail/') . $pl['id_pinjam']; ?>">
+                                  <?php if ($pl['status'] == "Belum Lunas") : ?>
+                                    <span class="badge bg-danger"><?= $pl['status']; ?></span>
+                                  <?php else : ?>
+                                    <span class="badge bg-success"><?= $pl['status']; ?></span>
+                                  <?php endif; ?>
+                                </a>
+                              </td>
+                            </tr>
+                          <?php $no++;
+                          endforeach; ?>
+                        </tbody>
+                      </table>
+
+                    <?php else : ?>
+                      <!-- Jika Data Kosong -->
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Foto</th>
+                            <th>Nama Anggota</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td colspan="4" class="text-center">Tidak ada data</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>
@@ -246,7 +405,7 @@
               <div class="card-body">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                   <li class="nav-item" role="presentation">
-                    <span><button class="nav-link btn btn-sm active" id="pills-hariini-tab" data-bs-toggle="pill" data-bs-target="#pills-hariini" type="button" role="tab" aria-controls="pills-hariini" aria-selected="true">Hari Ini</button></span>
+                    <button class="nav-link btn btn-sm active" id="pills-hariini-tab" data-bs-toggle="pill" data-bs-target="#pills-hariini" type="button" role="tab" aria-controls="pills-hariini" aria-selected="true">Hari Ini</button>
                   </li>
                   <li class="nav-item" role="presentation">
                     <button class="nav-link btn btn-sm" id="pills-keseluruhan-tab" data-bs-toggle="pill" data-bs-target="#pills-keseluruhan" type="button" role="tab" aria-controls="pills-keseluruhan" aria-selected="false">Keseluruhan</button>

@@ -28,17 +28,10 @@
           </div>
         </div>
         <div class="col-lg-8">
-          <!-- <div class="card">
-            <div class="card-header">
-              <h5><img src="<?= base_url('assets/svg/qr-code.svg') ?>" alt="" style="margin-top: -5px;"> Hasil Scan Barcode</h5>
-            </div>
-            <div class="card-body">
-              <form action="" method="POST">
-                <input type="text" name="nisn" id="nisn" class="form-control" readonly> -->
-          <!-- <input type="submit" value="Simpan"> -->
-          <!-- </form>
-            </div>
-          </div> -->
+          <form action="" method="POST">
+            <input type="hidden" name="nisn" id="nisn" class="form-control" readonly>
+            <!-- <input type="submit" value="Simpan"> -->
+          </form>
 
           <div class="card">
             <div class="card-header">

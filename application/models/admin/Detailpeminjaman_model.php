@@ -68,29 +68,6 @@ class Detailpeminjaman_model extends CI_Model
     }
   }
 
-  public function update($where = null)
-  {
-    $data = [
-      'id_ddc' => htmlspecialchars($this->input->post('id_ddc', true)),
-      'id_jenispeminjaman' => htmlspecialchars($this->input->post('id_jenispeminjaman', true)),
-      'id_sumberpeminjaman' => htmlspecialchars($this->input->post('id_sumberpeminjaman', true)),
-      'judul_peminjaman' => htmlspecialchars($this->input->post('judul_peminjaman', true)),
-      'penerbit' => htmlspecialchars($this->input->post('penerbit', true)),
-      'pengarang' => htmlspecialchars($this->input->post('pengarang', true)),
-      'isbn' => htmlspecialchars($this->input->post('isbn', true)),
-      'thn_terbit' => htmlspecialchars($this->input->post('thn_terbit', true)),
-      'tinggi_peminjaman' => htmlspecialchars($this->input->post('tinggi_peminjaman', true)),
-      'tgl_penerimaan' => htmlspecialchars($this->input->post('tgl_penerimaan', true)),
-      'jml_halaman' => htmlspecialchars($this->input->post('jml_halaman', true)),
-      'jml_eksemplar' => htmlspecialchars($this->input->post('jml_eksemplar', true)),
-      'stok_peminjaman' => htmlspecialchars($this->input->post('stok_peminjaman', true)),
-      'rak_peminjaman' => htmlspecialchars($this->input->post('rak_peminjaman', true)),
-    ];
-
-    $this->db->where('id_pinjam', $where);
-    $this->db->update('peminjaman', $data);
-  }
-
   public function delete($where)
   {
     $this->db->delete('peminjaman', $where);

@@ -50,14 +50,14 @@ class Pengembalian extends CI_Controller
   public function perpanjangPeminjaman($id_pinjam, $id_detailpinjam)
   {
     $this->pengembalian_model->perpanjangPeminjaman($id_pinjam, $id_detailpinjam);
-    $this->session->set_flashdata('success', 'Disimpan');
+    $this->session->set_flashdata('success', 'Diperpanjang');
     redirect('admin/pengembalian/detail/' . $id_pinjam);
   }
 
   public function kembalikanBuku($id_pinjam, $id_detailpinjam, $keterlambatan)
   {
     $this->pengembalian_model->kembalikanBuku($id_pinjam, $id_detailpinjam, $keterlambatan);
-    $this->session->set_flashdata('success', 'Disimpan');
+    $this->session->set_flashdata('success', 'Dikembalikan');
     redirect('admin/pengembalian/detail/' . $id_pinjam);
   }
 }

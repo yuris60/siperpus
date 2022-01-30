@@ -123,14 +123,23 @@
                         <?php endif; ?>
                       </td>
                       <td><?= $dp['judul_buku'] ?></td>
-                      <td><input type="number" name="qty" id="qty" min=1 value="<?= $dp['qty_pinjam'] ?>" class="form-control"></td>
-                      <td>
-                        <a href="<?= base_url('admin/peminjaman/updateqtypinjam/') . $dp['id_pinjam'] . '/' . $dp['id_detailpinjam'] . '/' . $dp['id_buku'] . '/' . $dp['qty_pinjam']; ?>">
-                          <button class="btn btn-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Stok Pinjam"><i class="fas fa-sort-numeric-up"></i></button>
-                        </a>
-                        <a href="<?= base_url('admin/peminjaman/deletepeminjamanbuku/') . $dp['id_pinjam'] . '/' . $dp['id_detailpinjam'] . '/' . $dp['id_buku'] . '/' . $dp['qty_pinjam']  ?>" class="tombol-hapus">
-                          <button class="btn btn-danger btn-sm" data-bs-autohide="false" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus Peminjaman"><i class="fas fa-trash"></i></button>
-                        </a>
+                      <form action="<?= base_url('admin/peminjaman/updateqtypinjam/') ?>" method="POST">
+                        <td>
+                          <input type="number" name="qty" id="qty" min=1 value="<?= $dp['qty_pinjam'] ?>" class="form-control">
+                          <input type="hidden" name="id_pinjam" value="<?= $dp['id_pinjam']; ?>">
+                          <input type="hidden" name="id_detailpinjam" value="<?= $dp['id_detailpinjam']; ?>">
+                          <input type="hidden" name="id_buku" value="<?= $dp['id_buku']; ?>">
+                          <input type="hidden" name="qty_pinjam" value="<?= $dp['qty_pinjam']; ?>">
+                        </td>
+                        <td>
+                          <button type="submit" class="btn btn-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Stok Pinjam"><i class="fas fa-sort-numeric-up"></i></button>
+                          <!-- <a href="<?= base_url('admin/peminjaman/updateqtypinjam/') . $dp['id_pinjam'] . '/' . $dp['id_detailpinjam'] . '/' . $dp['id_buku'] . '/' . $dp['qty_pinjam']; ?>">
+                            <button class="btn btn-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Stok Pinjam"><i class="fas fa-sort-numeric-up"></i></button>
+                          </a> -->
+                      </form>
+                      <a href="<?= base_url('admin/peminjaman/deletepeminjamanbuku/') . $dp['id_pinjam'] . '/' . $dp['id_detailpinjam'] . '/' . $dp['id_buku'] . '/' . $dp['qty_pinjam']  ?>" class="tombol-hapus">
+                        <button class="btn btn-danger btn-sm" data-bs-autohide="false" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus Peminjaman"><i class="fas fa-trash"></i></button>
+                      </a>
                       </td>
                     </tr>
                   <?php $no++;

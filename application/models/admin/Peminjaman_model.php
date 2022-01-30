@@ -96,150 +96,140 @@ class Peminjaman_model extends CI_Model
 
   public function saveDetailPeminjaman()
   {
-    $this->db->select('stok_buku');
+    $this->db->select('id_buku');
     $this->db->from('buku');
     $this->db->where('id_buku', $this->input->post('id_buku'));
-    $query = $this->db->get()->row_array();
-
-    if ($query['stok_buku'] >= $this->input->post('id_buku')) { //jika stok buku ada, maka simpan
+    $query2 = $this->db->get();
+    //cek apakah buku terdaftar atau tidak
+    if ($query2->num_rows() <> 0) { //jika terdaftar, maka simpan
+      //cek apakah buku terpinjam 2x
       $this->db->select('id_buku');
-      $this->db->from('buku');
+      $this->db->from('detail_peminjaman');
+      $this->db->where('id_pinjam', $this->input->post('id_pinjam'));
       $this->db->where('id_buku', $this->input->post('id_buku'));
-      $query2 = $this->db->get();
-      //cek apakah buku terdaftar atau tidak
-      if ($query2->num_rows() <> 0) { //jika terdaftar, maka simpan
-        //cek apakah buku terpinjam 2x
-        $this->db->select('id_buku');
-        $this->db->from('detail_peminjaman');
-        $this->db->where('id_pinjam', $this->input->post('id_pinjam'));
+      $query3 = $this->db->get();
+      if ($query3->num_rows() == 0) { //jika belum dipinjam, maka simpan
+        // Simpan Detail Peminjaman
+        $tgl_hariini = date('Y-m-d H:i:s');
+        $tgl_kembali = date('Y-m-d H:i:s', strtotime('+7 days', strtotime($tgl_hariini))); //tambah tanggal sebanyak 
+
+        $data = [
+          'id_detailpinjam' => htmlspecialchars($this->input->post('id_detailpinjam', true)),
+          'id_pinjam' => htmlspecialchars($this->input->post('id_pinjam', true)),
+          'id_buku' => htmlspecialchars($this->input->post('id_buku', true)),
+          'qty_pinjam' => 1,
+          'tgl_kembali' => $tgl_kembali,
+          'tgl_pengembalian' => 0,
+          'keterlambatan' => 0,
+          'status_buku' => 'Belum Kembali'
+        ];
+        $this->db->insert('detail_peminjaman', $data);
+
+        //update stok buku
+        $this->db->select('stok_buku');
+        $this->db->from('buku');
         $this->db->where('id_buku', $this->input->post('id_buku'));
-        $query3 = $this->db->get();
-        if ($query3->num_rows() == 0) { //jika belum dipinjam, maka simpan
-          // Simpan Detail Peminjaman
-          $data = [
-            'id_detailpinjam' => htmlspecialchars($this->input->post('id_detailpinjam', true)),
-            'id_pinjam' => htmlspecialchars($this->input->post('id_pinjam', true)),
-            'id_buku' => htmlspecialchars($this->input->post('id_buku', true)),
-            'qty_pinjam' => 1,
-            'tgl_pengembalian' => 0,
-            'keterlambatan' => 0,
-            'status_buku' => 'Belum Kembali'
-          ];
-          $this->db->insert('detail_peminjaman', $data);
+        $query4 = $this->db->get()->row_array();
 
-          //update stok buku
-          $this->db->select('stok_buku');
-          $this->db->from('buku');
-          $this->db->where('id_buku', $this->input->post('id_buku'));
-          $query4 = $this->db->get()->row_array();
-
-          $stoklama = $query4['stok_buku'];
-          $pinjam = 1;
-          $stokbaru = $stoklama - $pinjam;
-          $this->db->set('stok_buku', $stokbaru);
-          $this->db->where('id_buku', $this->input->post('id_buku'));
-          $this->db->update('buku');
-        } else { //jika sudah dipinjam sebelumnya
-          $id_pinjam = $this->input->post('id_pinjam');
-          $this->session->set_flashdata('gagal-pinjam-buku', 'Dipinjam');
-          redirect('admin/peminjaman/detail/' . $id_pinjam);
-        }
-      } else { //jika tidak terdaftar, maka alihkan
+        $stoklama = $query4['stok_buku'];
+        $pinjam = 1;
+        $stokbaru = $stoklama - $pinjam;
+        $this->db->set('stok_buku', $stokbaru);
+        $this->db->where('id_buku', $this->input->post('id_buku'));
+        $this->db->update('buku');
+      } else { //jika sudah dipinjam sebelumnya
         $id_pinjam = $this->input->post('id_pinjam');
-        $this->session->set_flashdata('gagal-pinjam', 'Terdaftar');
+        $this->session->set_flashdata('gagal-pinjam-buku', 'Dipinjam');
         redirect('admin/peminjaman/detail/' . $id_pinjam);
       }
-    } else { //jika stok buku kurang, maka
+    } else { //jika tidak terdaftar, maka alihkan
       $id_pinjam = $this->input->post('id_pinjam');
-      $this->session->set_flashdata('gagal-buku-kurang', 'Kurang');
+      $this->session->set_flashdata('gagal-pinjam', 'Terdaftar');
       redirect('admin/peminjaman/detail/' . $id_pinjam);
     }
   }
 
   public function saveDetailPeminjamanManual($id_pinjam, $id_buku)
   {
-    $this->db->select('stok_buku');
+    $this->db->select('id_buku');
     $this->db->from('buku');
     $this->db->where('id_buku', $id_buku);
-    $query = $this->db->get()->row_array();
+    $query = $this->db->get();
 
-    if ($query['stok_buku'] >= $id_buku) { //jika stok buku ada, maka simpan
+    //cek apakah buku terdaftar atau tidak
+    if ($query->num_rows() <> 0) { //jika terdaftar, maka simpan
+      //cek apakah buku terpinjam 2x
       $this->db->select('id_buku');
-      $this->db->from('buku');
+      $this->db->from('detail_peminjaman');
+      $this->db->where('id_pinjam', $id_pinjam);
       $this->db->where('id_buku', $id_buku);
-      $query = $this->db->get();
+      $query2 = $this->db->get();
+      if ($query2->num_rows() == 0) { //jika belum dipinjam, maka simpan
+        $tgl_hariini = date('Y-m-d H:i:s');
+        $tgl_kembali = date('Y-m-d H:i:s', strtotime('+7 days', strtotime($tgl_hariini))); //tambah tanggal sebanyak 
+        $data = [
+          'id_pinjam' => $id_pinjam,
+          'id_buku' => $id_buku,
+          'qty_pinjam' => 1,
+          'tgl_kembali' => $tgl_kembali,
+          'tgl_pengembalian' => 0,
+          'keterlambatan' => 0,
+          'status_buku' => 'Belum Kembali'
+        ];
 
-      //cek apakah buku terdaftar atau tidak
-      if ($query->num_rows() <> 0) { //jika terdaftar, maka simpan
-        //cek apakah buku terpinjam 2x
-        $this->db->select('id_buku');
-        $this->db->from('detail_peminjaman');
-        $this->db->where('id_pinjam', $id_pinjam);
+        $this->db->insert('detail_peminjaman', $data);
+
+        //update stok buku
+        $this->db->select('stok_buku');
+        $this->db->from('buku');
         $this->db->where('id_buku', $id_buku);
-        $query2 = $this->db->get();
-        if ($query2->num_rows() == 0) { //jika belum dipinjam, maka simpan
-          $tgl_kembali = date('Y-m-d H:i:s', strtotime('+7 days')); //tambah tanggal sebanyak 
-          $data = [
-            'id_pinjam' => $id_pinjam,
-            'id_buku' => $id_buku,
-            'qty_pinjam' => 1,
-            'tgl_kembali' => $tgl_kembali,
-            'tgl_pengembalian' => 0,
-            'keterlambatan' => 0,
-            'status_buku' => 'Belum Kembali'
-          ];
+        $query4 = $this->db->get()->row_array();
 
-          $this->db->insert('detail_peminjaman', $data);
-
-          //update stok buku
-          $this->db->select('stok_buku');
-          $this->db->from('buku');
-          $this->db->where('id_buku', $id_buku);
-          $query4 = $this->db->get()->row_array();
-
-          $stoklama = $query4['stok_buku'];
-          $pinjam = 1;
-          $stokbaru = $stoklama - $pinjam;
-          $this->db->set('stok_buku', $stokbaru);
-          $this->db->where('id_buku', $id_buku);
-          $this->db->update('buku');
-        } else { //jika sudah dipinjam sebelumnya
-          $this->session->set_flashdata('gagal-pinjam-buku', 'Dipinjam');
-          redirect('admin/peminjaman/detail/' . $id_pinjam);
-        }
-      } else { //jika tidak terdaftar, maka alihkan
-        $id_pinjam = $id_pinjam;
-        $this->session->set_flashdata('gagal-pinjam', 'Terdaftar');
+        $stoklama = $query4['stok_buku'];
+        $pinjam = 1;
+        $stokbaru = $stoklama - $pinjam;
+        $this->db->set('stok_buku', $stokbaru);
+        $this->db->where('id_buku', $id_buku);
+        $this->db->update('buku');
+      } else { //jika sudah dipinjam sebelumnya
+        $this->session->set_flashdata('gagal-pinjam-buku', 'Dipinjam');
         redirect('admin/peminjaman/detail/' . $id_pinjam);
       }
-    } else { //jika stok buku kurang, maka
+    } else { //jika tidak terdaftar, maka alihkan
       $id_pinjam = $id_pinjam;
-      $this->session->set_flashdata('gagal-buku-kurang', 'Kurang');
+      $this->session->set_flashdata('gagal-pinjam', 'Terdaftar');
       redirect('admin/peminjaman/detail/' . $id_pinjam);
     }
   }
 
-  public function update($where = null)
+  public function updateQtyPinjam($id_pinjam, $id_detailpinjam, $id_buku, $qty_lama, $qty_pinjam)
   {
-    $data = [
-      'id_ddc' => htmlspecialchars($this->input->post('id_ddc', true)),
-      'id_jenispeminjaman' => htmlspecialchars($this->input->post('id_jenispeminjaman', true)),
-      'id_sumberpeminjaman' => htmlspecialchars($this->input->post('id_sumberpeminjaman', true)),
-      'judul_peminjaman' => htmlspecialchars($this->input->post('judul_peminjaman', true)),
-      'penerbit' => htmlspecialchars($this->input->post('penerbit', true)),
-      'pengarang' => htmlspecialchars($this->input->post('pengarang', true)),
-      'isbn' => htmlspecialchars($this->input->post('isbn', true)),
-      'thn_terbit' => htmlspecialchars($this->input->post('thn_terbit', true)),
-      'tinggi_peminjaman' => htmlspecialchars($this->input->post('tinggi_peminjaman', true)),
-      'tgl_penerimaan' => htmlspecialchars($this->input->post('tgl_penerimaan', true)),
-      'jml_halaman' => htmlspecialchars($this->input->post('jml_halaman', true)),
-      'jml_eksemplar' => htmlspecialchars($this->input->post('jml_eksemplar', true)),
-      'stok_peminjaman' => htmlspecialchars($this->input->post('stok_peminjaman', true)),
-      'rak_peminjaman' => htmlspecialchars($this->input->post('rak_peminjaman', true)),
-    ];
+    // kembalikan qty buku sebelumnya
+    $this->db->select('stok_buku');
+    $this->db->from('buku');
+    $this->db->where('id_buku', $id_buku);
+    $query = $this->db->get()->row_array();
+    $stoklama = $query['stok_buku'];
+    $stokbaru = $stoklama + $qty_lama;
+    $this->db->set('stok_buku', $stokbaru);
+    $this->db->where('id_buku', $id_buku);
+    $this->db->update('buku');
 
-    $this->db->where('id_pinjam', $where);
-    $this->db->update('peminjaman', $data);
+    // pinjam buku dengan qty baru (perbarui tabel buku)
+    $this->db->select('stok_buku');
+    $this->db->from('buku');
+    $this->db->where('id_buku', $id_buku);
+    $query2 = $this->db->get()->row_array();
+    $stoklama = $query2['stok_buku'];
+    $stokbaru = $stoklama - $qty_pinjam;
+    $this->db->set('stok_buku', $stokbaru);
+    $this->db->where('id_buku', $id_buku);
+    $this->db->update('buku');
+
+    // pinjam buku dengan qty baru (perbarui tabel peminjaman)
+    $this->db->set('qty_pinjam', $qty_pinjam);
+    $this->db->where('id_detailpinjam', $id_detailpinjam);
+    $this->db->update('detail_peminjaman');
   }
 
   public function delete($where)
