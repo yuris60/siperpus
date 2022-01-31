@@ -28,9 +28,12 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
 <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 
+<!-- Dropify -->
+<script src="<?= base_url('assets/') ?>vendor/dropify/dist/js/dropify.min.js"></script>
+
 <!-- filepond validation -->
-<script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-file-validate-size.js"></script>
-<script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-file-validate-type.js"></script>
+<!-- <script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-file-validate-size.js"></script>
+<script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-file-validate-type.js"></script> -->
 
 <!-- image editor -->
 <script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-file-validate-size.js"></script>
@@ -213,6 +216,21 @@
         today: 'fas fa-check',
         clear: 'fas fa-trash',
         close: 'fas fa-times'
+      }
+    });
+  });
+
+  //dropify
+  $(document).ready(function() {
+    $('.dropify').dropify({
+      messages: {
+        default: 'Drag atau drop untuk memilih gambar',
+        replace: 'Ganti',
+        remove: 'Hapus',
+        error: 'error'
+      },
+      tpl: {
+        message: '<div class="dropify-message"><span class="file-icon" /> <p>{{ default }}</p></div>',
       }
     });
   });

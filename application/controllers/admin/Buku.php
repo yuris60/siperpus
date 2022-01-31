@@ -11,6 +11,8 @@ class Buku extends CI_Controller
     $this->load->model('admin/buku_model');
     $this->load->library('qrcode/ciqrcode');
     $this->load->model('admin/login_model');
+    $this->load->library('upload');
+    $this->load->library('user_agent');
   }
 
   public function index()
@@ -44,6 +46,7 @@ class Buku extends CI_Controller
     $data['ddc'] = $this->buku_model->getDdcAll();
     $data['sumberbuku'] = $this->buku_model->getSumberBukuAll();
     $data['jenisbuku'] = $this->buku_model->getJenisBukuAll();
+    $data['id_buku'] = $this->buku_model->autonumber();
 
     if ($this->form_validation->run() == FALSE) {
       $this->load->view('admin/templates/header', $data);
@@ -53,7 +56,27 @@ class Buku extends CI_Controller
       $this->load->view('admin/templates/footer');
       $this->load->view('admin/templates/js');
     } else {
-      $this->buku_model->save();
+      $namafile = $this->input->post('id_buku');;
+      $config['upload_path'] = './assets/img/buku/'; //path folder
+      $config['allowed_types'] = 'jpg|png|jpeg|'; //type yang dapat diakses bisa anda sesuaikan
+      // $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+      $config['file_name'] = $namafile;
+
+      if ($this->upload->do_upload('fotosebelum')) {
+        $gbr = $this->upload->data();
+        // $gbr = array('upload_data' => $this->upload->data());
+        $filesimpan = $gbr['file_name']; //Mengambil file name dari gambar yang diupload
+        // echo "Upload Berhasil <br>" . $gambar;
+        // $this->buku_model->simpan_wajah_before($namafile);
+        // $this->session->set_flashdata('flash', 'disimpan');
+
+        // $referred_from = $this->session->userdata('pasien_wajah');
+        // redirect($referred_from, 'refresh');
+        // $this->upload->;
+      } else {
+        echo "Gambar Gagal Upload. Gambar harus bertipe jpg|png|jpeg|";
+      }
+      $this->buku_model->save($filesimpan);
       $this->session->set_flashdata('success', 'disimpan');
       redirect('buku');
     }

@@ -34,7 +34,7 @@ class buku_model extends CI_Model
     return $this->db->get('jenis_buku')->result_array();
   }
 
-  public function save()
+  public function save($filesimpan)
   {
     $data = [
       'id_ddc' => htmlspecialchars($this->input->post('id_ddc', true)),
@@ -51,9 +51,30 @@ class buku_model extends CI_Model
       'jml_eksemplar' => htmlspecialchars($this->input->post('jml_eksemplar', true)),
       'stok_buku' => htmlspecialchars($this->input->post('stok_buku', true)),
       'rak_buku' => htmlspecialchars($this->input->post('rak_buku', true)),
+      'gambar_buku' => $filesimpan
     ];
 
     $this->db->insert('buku', $data);
+  }
+
+  public function autonumber()
+  {
+    $this->db->select('RIGHT(id_buku,5) as id_buku', FALSE);
+    $this->db->order_by('id_buku', 'DESC');
+    $this->db->limit(1);
+    $query = $this->db->get('buku');      //cek dulu apakah ada sudah ada kode di tabel.    
+    if ($query->num_rows() <> 0) {
+      //jika kode ternyata sudah ada.      
+      $data = $query->row();
+      $kode = intval($data->id_buku) + 1;
+    } else {
+      //jika kode belum ada      
+      $kode = 1;
+    }
+
+    $kodemax = str_pad($kode, 5, "0", STR_PAD_LEFT); // angka 4 menunjukkan jumlah digit angka 0
+    $kodejadi = "B" . $kodemax;
+    return $kodejadi;
   }
 
   public function update($where = null)

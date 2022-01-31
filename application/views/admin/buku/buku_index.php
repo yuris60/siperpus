@@ -59,7 +59,7 @@
             <th>Penerbit</th>
             <th>Tahun Terbit</th>
             <th>Gambar Buku</th>
-            <th width="70px">Aksi</th>
+            <th width="120px">Aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -76,7 +76,7 @@
                 // $params['data'] = 'tes';
                 // $this->ciqrcode->generate($params);
                 ?>
-                <img src="<?= site_url('admin/buku/qrcode/') . $b['id_buku'] ?>" class="img-zoomable" width="40px" alt="">
+                <img src="<?= site_url('admin/buku/qrcode/') . $b['id_buku'] ?>" class="img-zoomable" width="50px" alt="">
               </td>
               <td><?= $b['judul_buku']; ?></td>
               <td><?= $b['pengarang']; ?></td>
@@ -84,12 +84,15 @@
               <td><?= $b['thn_terbit']; ?></td>
               <td>
                 <?php if (empty($dp['gambar'])) : ?>
-                  <figure style="width: 80%"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="30%" class="img-zoomable" alt=""></figure>
+                  <figure style="width: 80%"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="40px" class="img-zoomable" alt=""></figure>
                 <?php else : ?>
-                  <img src="<?= base_url('assets/img/buku/') . $dp['gambar_buku'] ?>" width="30%" alt="">
+                  <img src="<?= base_url('assets/img/buku/') . $dp['gambar_buku'] ?>" width="40px" alt="">
                 <?php endif; ?>
               </td>
               <td>
+                <a href="<?= base_url('admin/buku/detail/') . $b['id_buku']; ?>">
+                  <button class="btn btn-info btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Lihat Detail"><i class="fas fa-info-circle"></i></button>
+                </a>
                 <a href="<?= base_url('admin/buku/update/') . $b['id_buku']; ?>">
                   <button class="btn btn-warning btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
                 </a>

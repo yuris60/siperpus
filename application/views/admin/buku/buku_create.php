@@ -9,7 +9,7 @@
       <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>"><span class="badge bg-primary text-white">Dashboard</span></a></li>
-          <li class="breadcrumb-item"><a href="<?= base_url('admin/kategoribuku') ?>"><span class="badge bg-primary text-white"><?= $menu ?></span></a></li>
+          <li class="breadcrumb-item"><a href="<?= base_url('admin/buku') ?>"><span class="badge bg-primary text-white"><?= $menu ?></span></a></li>
           <li class="breadcrumb-item active" aria-current="page"><span class="badge text-dark"><?= $submenu ?></span></li>
         </ol>
       </nav>
@@ -35,11 +35,10 @@
           <h4 class="card-title"><i class="fas fa-image"></i> Gambar Buku <h4>
         </div>
         <div class="card-body">
-          <input type="file" name="gambar_buku" class="image-crop-filepond" image-crop-aspect-ratio="3:4">
-          <code>(*) Gambar Ukuran 3x4</code>
+          <input type="file" name="gambar_buku" class="dropify">
         </div>
-        <div class="card-footer">
-
+        <div class="card-footer text-center">
+          <code>Ukuran gambar 3x4</code>
         </div>
       </div>
     </div>
@@ -54,6 +53,13 @@
               <h4>
           </div>
           <div class="card-body">
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">ID Buku</label>
+              <div class="col-sm-9">
+                <input type="text" readonly class="form-control" name="id_buku" id="id_buku" value="<?= $id_buku ?>">
+              </div>
+            </div>
 
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Judul Buku</label>

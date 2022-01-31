@@ -9,7 +9,7 @@
       <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>"><span class="badge bg-primary text-white">Dashboard</span></a></li>
-          <li class="breadcrumb-item"><a href="<?= base_url('admin/kategoribuku') ?>"><span class="badge bg-primary text-white"><?= $menu ?></span></a></li>
+          <li class="breadcrumb-item"><a href="<?= base_url('admin/buku') ?>"><span class="badge bg-primary text-white"><?= $menu ?></span></a></li>
           <li class="breadcrumb-item active" aria-current="page"><span class="badge text-dark"><?= $submenu ?></span></li>
         </ol>
       </nav>
@@ -35,8 +35,14 @@
           <h4 class="card-title"><i class="fas fa-image"></i> Gambar Buku <h4>
         </div>
         <div class="card-body">
-          <input type="file" name="gambar_buku" class="image-crop-filepond" image-crop-aspect-ratio="3:4">
-          <code>(*) Gambar Ukuran 3x4</code>
+          <?php if (file_exists(base_url('assets/img/buku/') . $buku['gambar_buku'])) : ?>
+            <input type="file" name="gambar_buku_sebelumnya" class="dropify" data-default-file="<?= base_url('assets/img/buku/') . $buku['gambar_buku'] ?>">
+          <?php else : ?>
+            <input type="file" name="gambar_buku" class="dropify">
+          <?php endif; ?>
+        </div>
+        <div class="card-footer text-center">
+          <code>Ukuran gambar 3x4</code>
         </div>
       </div>
     </div>

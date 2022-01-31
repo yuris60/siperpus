@@ -29,9 +29,12 @@
   <link href="<?= base_url('assets/') ?>vendor/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
   <link href="<?= base_url('assets/') ?>vendor/datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 
+  <!-- Dropify -->
+  <link href="<?= base_url('assets/') ?>vendor/dropify/dist/css/dropify.css" rel="stylesheet">
+
   <!-- File Uploader -->
-  <link href="<?= base_url('assets/'); ?>vendor/image-uploader/css/filepond.css" rel="stylesheet">
-  <link href="<?= base_url('assets/'); ?>vendor/image-uploader/css/filepond-plugin-image-preview.css" rel="stylesheet">
+  <!-- <link href="<?= base_url('assets/'); ?>vendor/image-uploader/css/filepond.css" rel="stylesheet">
+  <link href="<?= base_url('assets/'); ?>vendor/image-uploader/css/filepond-plugin-image-preview.css" rel="stylesheet"> -->
 
   <!-- Simple Calendar -->
   <link rel="stylesheet" type="text/css" href="<?= base_url('assets/vendor/simple-calendar/dist/'); ?>simple-calendar.css" />
