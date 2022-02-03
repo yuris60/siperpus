@@ -27,7 +27,7 @@
   </div>
 </div>
 
-<form action="" method="POST" autocomplete="off">
+<form action="" method="POST" autocomplete="off" enctype="multipart/form-data">
   <div class="row">
     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
       <div class="card">
@@ -167,6 +167,18 @@
                 </div>
 
                 <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">Kategori Buku</label>
+                  <div class="col-sm-8">
+                    <select name="id_kategoribuku" id="id_kategoribuku" class="form-select">
+                      <option value="">-== Pilih Disini ==-</option>
+                      <?php foreach ($kategoribuku as $kb) : ?>
+                        <option value="<?= $kb['id_kategoribuku'] ?>"><?= $kb['nm_kategoribuku'] ?></option>
+                      <?php endforeach; ?>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group row">
                   <label class="col-sm-4 col-form-label">Sumber Buku</label>
                   <div class="col-sm-8">
                     <select name="id_ddc" id="id_ddc" class="form-select">
@@ -179,6 +191,21 @@
                 </div>
 
                 <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">Buku Kelas</label>
+                  <div class="col-sm-8">
+                    <select name="buku_kelas" id="buku_kelas" class="form-select">
+                      <option value="">-== Pilih Disini ==-</option>
+                      <option value="X">X</option>
+                      <option value="XI">XI</option>
+                      <option value="XII">XII</option>
+                    </select>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group row">
                   <label class="col-sm-4 col-form-label">ISBN</label>
                   <div class="col-sm-8">
                     <input type="text" maxlength="17" class="form-control <?= form_error('isbn') ? 'is-invalid' : '' ?>" name="isbn" id="isbn" value="<?php echo set_value('isbn'); ?>">
@@ -188,9 +215,6 @@
                   </div>
                 </div>
 
-              </div>
-
-              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="form-group row">
                   <label class="col-sm-4 col-form-label">Jumlah Halaman</label>
                   <div class="col-sm-8">

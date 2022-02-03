@@ -10,6 +10,7 @@ class Anggota extends CI_Controller
     parent::__construct();
     $this->load->model('admin/anggota_model');
     $this->load->model('admin/login_model');
+    $this->load->library('upload');
   }
 
   public function index()
@@ -17,7 +18,7 @@ class Anggota extends CI_Controller
     $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Anggota | SIPERPUS";
     $data['menu'] = "Anggota";
-    $data['icon'] = "bi bi-book-half";
+    $data['icon'] = "bi bi-person-circle";
 
     $data['anggota'] = $this->anggota_model->getAll();
 
@@ -35,10 +36,10 @@ class Anggota extends CI_Controller
     $data['title'] = "Tambah Anggota | SIPERPUS";
     $data['menu'] = "Anggota";
     $data['submenu'] = "Tambah Data";
-    $data['icon'] = "bi bi-book-half";
+    $data['icon'] = "bi bi-person-circle";
 
-    // $this->form_validation->set_rules('kode_anggota', 'Kode anggota', 'required|trim');
-    // $this->form_validation->set_rules('nm_anggota', 'Nama anggota', 'required|trim');
+    $data['kelas'] = $this->anggota_model->getKelasAll();
+    $this->form_validation->set_rules('nisn', 'NISN', 'required|trim');
 
     if ($this->form_validation->run() == FALSE) {
       $this->load->view('admin/templates/header', $data);
@@ -48,24 +49,46 @@ class Anggota extends CI_Controller
       $this->load->view('admin/templates/footer');
       $this->load->view('admin/templates/js');
     } else {
-      $this->anggota_model->save();
-      $this->session->set_flashdata('success', 'disimpan');
-      redirect('anggota');
+      if (!empty($_FILES['foto_anggota']['name'])) { //jika akan mengubah gambar
+        $namafile = $this->input->post('nisn');
+        $config['upload_path'] = './assets/img/anggota/'; //path folder
+        $config['allowed_types'] = 'jpg|jpeg'; //type yang dapat diakses bisa anda sesuaikan
+        // $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+        $config['file_name'] = $namafile;
+        $config['overwrite'] = true;
+
+        $this->upload->initialize($config);
+        if ($this->upload->do_upload('foto_anggota')) {
+          $gbr = $this->upload->data();
+          $filesimpan = $gbr['file_name']; //Mengambil file name dari gambar yang diupload
+          $this->anggota_model->save($filesimpan);
+          $this->session->set_flashdata('success', 'Disimpan');
+          redirect('admin/anggota');
+        } else {
+          echo "Gambar Gagal Upload. Gambar harus bertipe jpg|jpeg";
+        }
+      } else { //jika tidak mengubah gambar
+        $this->anggota_model->save();
+        $this->session->set_flashdata('success', 'Disimpan');
+        redirect('admin/anggota');
+      }
     }
   }
 
   public function update($where)
   {
+    $where = $this->uri->segment(4);
     $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Perbarui Anggota | SIPERPUS";
     $data['menu'] = "Anggota";
     $data['submenu'] = "Perbarui Data";
-    $data['icon'] = "bi bi-book-half";
+    $data['icon'] = "bi bi-person-circle";
 
-    // $this->form_validation->set_rules('judul_anggota', 'Judul anggota', 'required|trim');
-    // $this->form_validation->set_rules('penerbit', 'Penerbit', 'required|trim');
-    // $this->form_validation->set_rules('pengarang', 'Pengarang', 'required|trim');
-    // $this->form_validation->set_rules('thn_terbit', 'Tahun Terbit', 'required|trim');
+    $data['anggota'] = $this->anggota_model->getByID($where);
+    $data['kelas'] = $this->anggota_model->getKelasAll();
+
+    $this->form_validation->set_rules('nisn', 'NISN', 'required|trim');
+    $this->form_validation->set_rules('nm_anggota', 'Nama Anggota', 'required|trim');
 
     if ($this->form_validation->run() == FALSE) {
       $this->load->view('admin/templates/header', $data);
@@ -75,17 +98,37 @@ class Anggota extends CI_Controller
       $this->load->view('admin/templates/footer');
       $this->load->view('admin/templates/js');
     } else {
-      $this->anggota_model->update($where);
-      $this->session->set_flashdata('success', 'Diperbarui');
-      redirect('anggota');
+      if (!empty($_FILES['foto_anggota']['name'])) { //jika akan mengubah gambar
+        $namafile = $this->input->post('nisn');
+        $config['upload_path'] = './assets/img/anggota/'; //path folder
+        $config['allowed_types'] = 'jpg|jpeg'; //type yang dapat diakses bisa anda sesuaikan
+        // $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+        $config['file_name'] = $namafile;
+        $config['overwrite'] = true;
+
+        $this->upload->initialize($config);
+        if ($this->upload->do_upload('foto_anggota')) {
+          $gbr = $this->upload->data();
+          $filesimpan = $gbr['file_name']; //Mengambil file name dari gambar yang diupload
+          $this->anggota_model->update($where, $filesimpan);
+          $this->session->set_flashdata('success', 'Diperbarui');
+          redirect('admin/anggota');
+        } else {
+          echo "Gambar Gagal Upload. Gambar harus bertipe jpg|jpeg";
+        }
+      } else { //jika tidak mengubah gambar
+        $this->anggota_model->update($where);
+        $this->session->set_flashdata('success', 'Diperbarui');
+        redirect('admin/anggota');
+      }
     }
   }
 
   public function delete($where)
   {
-    $where = ['id_anggota' => $this->uri->segment(4)];
+    $where = ['nisn' => $this->uri->segment(4)];
     $this->anggota_model->delete($where);
     $this->session->set_flashdata('success', 'Dihapus');
-    redirect('anggota');
+    redirect('admin/anggota');
   }
 }

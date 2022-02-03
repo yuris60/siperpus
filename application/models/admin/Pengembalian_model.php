@@ -62,7 +62,7 @@ class Pengembalian_model extends CI_Model
     $this->db->update('peminjaman');
   }
 
-  public function kembalikanBuku($id_pinjam, $id_detailpinjam, $keterlambatan, $id_buku, $qty_lama)
+  public function kembalikanBuku($id_pinjam, $id_detailpinjam, $id_buku, $qty_pinjam, $keterlambatan)
   {
 
     // update tabel detail pengembalian
@@ -81,7 +81,7 @@ class Pengembalian_model extends CI_Model
     $this->db->where('id_buku', $id_buku);
     $query = $this->db->get()->row_array();
     $stoklama = $query['stok_buku'];
-    $stokbaru = $stoklama + $qty_lama;
+    $stokbaru = $stoklama + $qty_pinjam;
     $this->db->set('stok_buku', $stokbaru);
     $this->db->where('id_buku', $id_buku);
     $this->db->update('buku');

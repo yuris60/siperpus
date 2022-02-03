@@ -9,7 +9,7 @@
       <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>"><span class="badge bg-primary text-white">Dashboard</span></a></li>
-          <li class="breadcrumb-item"><a href="<?= base_url('admin/kategoribuku') ?>"><span class="badge bg-primary text-white"><?= $menu ?></span></a></li>
+          <li class="breadcrumb-item"><a href="<?= base_url('admin/klasifikasiddc') ?>"><span class="badge bg-primary text-white"><?= $menu ?></span></a></li>
           <li class="breadcrumb-item active" aria-current="page"><span class="badge text-dark"><?= $submenu ?></span></li>
         </ol>
       </nav>

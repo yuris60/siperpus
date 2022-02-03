@@ -44,7 +44,7 @@ class Dashboard_model extends CI_Model
     $this->db->join('buku', 'detail_peminjaman.id_buku = buku.id_buku');
     $this->db->join('anggota', 'anggota.nisn = peminjaman.nisn');
     $this->db->group_by('peminjaman.id_pinjam');
-    $this->db->limit(10);
+    $this->db->limit(5);
     $this->db->order_by('peminjaman.id_pinjam', 'DESC');
     return $this->db->get()->result_array();
   }
@@ -58,7 +58,7 @@ class Dashboard_model extends CI_Model
     $this->db->join('anggota', 'anggota.nisn = peminjaman.nisn');
     $this->db->where('peminjaman.status', 'Belum Lunas');
     $this->db->group_by('peminjaman.id_pinjam');
-    $this->db->limit(10);
+    $this->db->limit(5);
     $this->db->order_by('peminjaman.id_pinjam', 'DESC');
     return $this->db->get()->result_array();
   }
@@ -72,7 +72,7 @@ class Dashboard_model extends CI_Model
     $this->db->join('anggota', 'anggota.nisn = peminjaman.nisn');
     $this->db->where('peminjaman.status', 'Lunas');
     $this->db->group_by('peminjaman.id_pinjam');
-    $this->db->limit(10);
+    $this->db->limit(5);
     $this->db->order_by('peminjaman.id_pinjam', 'DESC');
     return $this->db->get()->result_array();
   }
@@ -132,7 +132,8 @@ class Dashboard_model extends CI_Model
   // End of Pengunjung
 
   // Peminjaman Buku
-  public function getJumlahPeminjamanJanuari()
+  // Qty
+  public function getJumlahQtyJanuari()
   {
     $tahun = date('Y');
     $this->db->select_sum('detail_peminjaman.qty_pinjam');
@@ -142,7 +143,7 @@ class Dashboard_model extends CI_Model
     $this->db->group_by('detail_peminjaman.id_detailpinjam');
     return $query = $this->db->get('detail_peminjaman')->row();
   }
-  public function getJumlahPeminjamanFebruari()
+  public function getJumlahQtyFebruari()
   {
     $tahun = date('Y');
     $this->db->select_sum('detail_peminjaman.qty_pinjam');
@@ -152,7 +153,7 @@ class Dashboard_model extends CI_Model
     $this->db->group_by('detail_peminjaman.id_detailpinjam');
     return $query = $this->db->get('detail_peminjaman')->row();
   }
-  public function getJumlahPeminjamanMaret()
+  public function getJumlahQtyMaret()
   {
     $tahun = date('Y');
     $this->db->select_sum('detail_peminjaman.qty_pinjam');
@@ -162,7 +163,7 @@ class Dashboard_model extends CI_Model
     $this->db->group_by('detail_peminjaman.id_detailpinjam');
     return $query = $this->db->get('detail_peminjaman')->row();
   }
-  public function getJumlahPeminjamanApril()
+  public function getJumlahQtyApril()
   {
     $tahun = date('Y');
     $this->db->select_sum('detail_peminjaman.qty_pinjam');
@@ -172,7 +173,7 @@ class Dashboard_model extends CI_Model
     $this->db->group_by('detail_peminjaman.id_detailpinjam');
     return $query = $this->db->get('detail_peminjaman')->row();
   }
-  public function getJumlahPeminjamanMei()
+  public function getJumlahQtyMei()
   {
     $tahun = date('Y');
     $this->db->select_sum('detail_peminjaman.qty_pinjam');
@@ -182,7 +183,7 @@ class Dashboard_model extends CI_Model
     $this->db->group_by('detail_peminjaman.id_detailpinjam');
     return $query = $this->db->get('detail_peminjaman')->row();
   }
-  public function getJumlahPeminjamanJuni()
+  public function getJumlahQtyJuni()
   {
     $tahun = date('Y');
     $this->db->select_sum('detail_peminjaman.qty_pinjam');
@@ -192,7 +193,7 @@ class Dashboard_model extends CI_Model
     $this->db->group_by('detail_peminjaman.id_detailpinjam');
     return $query = $this->db->get('detail_peminjaman')->row();
   }
-  public function getJumlahPeminjamanJuli()
+  public function getJumlahQtyJuli()
   {
     $tahun = date('Y');
     $this->db->select_sum('detail_peminjaman.qty_pinjam');
@@ -202,7 +203,7 @@ class Dashboard_model extends CI_Model
     $this->db->group_by('detail_peminjaman.id_detailpinjam');
     return $query = $this->db->get('detail_peminjaman')->row();
   }
-  public function getJumlahPeminjamanAgustus()
+  public function getJumlahQtyAgustus()
   {
     $tahun = date('Y');
     $this->db->select_sum('detail_peminjaman.qty_pinjam');
@@ -212,7 +213,7 @@ class Dashboard_model extends CI_Model
     $this->db->group_by('detail_peminjaman.id_detailpinjam');
     return $query = $this->db->get('detail_peminjaman')->row();
   }
-  public function getJumlahPeminjamanSeptember()
+  public function getJumlahQtySeptember()
   {
     $tahun = date('Y');
     $this->db->select_sum('detail_peminjaman.qty_pinjam');
@@ -222,7 +223,7 @@ class Dashboard_model extends CI_Model
     $this->db->group_by('detail_peminjaman.id_detailpinjam');
     return $query = $this->db->get('detail_peminjaman')->row();
   }
-  public function getJumlahPeminjamanOktober()
+  public function getJumlahQtyOktober()
   {
     $tahun = date('Y');
     $this->db->select_sum('detail_peminjaman.qty_pinjam');
@@ -232,7 +233,7 @@ class Dashboard_model extends CI_Model
     $this->db->group_by('detail_peminjaman.id_detailpinjam');
     return $query = $this->db->get('detail_peminjaman')->row();
   }
-  public function getJumlahPeminjamanNovember()
+  public function getJumlahQtyNovember()
   {
     $tahun = date('Y');
     $this->db->select_sum('detail_peminjaman.qty_pinjam');
@@ -242,7 +243,8 @@ class Dashboard_model extends CI_Model
     $this->db->group_by('detail_peminjaman.id_detailpinjam');
     return $query = $this->db->get('detail_peminjaman')->row();
   }
-  public function getJumlahPeminjamanDesember()
+
+  public function getJumlahQtyDesember()
   {
     $tahun = date('Y');
     $this->db->select_sum('detail_peminjaman.qty_pinjam');
@@ -251,5 +253,126 @@ class Dashboard_model extends CI_Model
     $this->db->where('YEAR(peminjaman.tgl_pinjam)=', $tahun);
     $this->db->group_by('detail_peminjaman.id_detailpinjam');
     return $query = $this->db->get('detail_peminjaman')->row();
+  }
+
+  // Peminjaman
+  public function getJumlahPeminjamanJanuari()
+  {
+    $tahun = date('Y');
+    $this->db->select('*');
+    $this->db->from('peminjaman');
+    $this->db->where('MONTH(peminjaman.tgl_pinjam)=01');
+    $this->db->where('YEAR(peminjaman.tgl_pinjam)=', $tahun);
+    return $this->db->get()->num_rows();
+  }
+
+  public function getJumlahPeminjamanFebruari()
+  {
+    $tahun = date('Y');
+    $this->db->select('*');
+    $this->db->from('peminjaman');
+    $this->db->where('MONTH(peminjaman.tgl_pinjam)=02');
+    $this->db->where('YEAR(peminjaman.tgl_pinjam)=', $tahun);
+    return $this->db->get()->num_rows();
+  }
+
+  public function getJumlahPeminjamanMaret()
+  {
+    $tahun = date('Y');
+    $this->db->select('*');
+    $this->db->from('peminjaman');
+    $this->db->where('MONTH(peminjaman.tgl_pinjam)=03');
+    $this->db->where('YEAR(peminjaman.tgl_pinjam)=', $tahun);
+    return $this->db->get()->num_rows();
+  }
+
+  public function getJumlahPeminjamanApril()
+  {
+    $tahun = date('Y');
+    $this->db->select('*');
+    $this->db->from('peminjaman');
+    $this->db->where('MONTH(peminjaman.tgl_pinjam)=04');
+    $this->db->where('YEAR(peminjaman.tgl_pinjam)=', $tahun);
+    return $this->db->get()->num_rows();
+  }
+
+  public function getJumlahPeminjamanMei()
+  {
+    $tahun = date('Y');
+    $this->db->select('*');
+    $this->db->from('peminjaman');
+    $this->db->where('MONTH(peminjaman.tgl_pinjam)=05');
+    $this->db->where('YEAR(peminjaman.tgl_pinjam)=', $tahun);
+    return $this->db->get()->num_rows();
+  }
+
+  public function getJumlahPeminjamanJuni()
+  {
+    $tahun = date('Y');
+    $this->db->select('*');
+    $this->db->from('peminjaman');
+    $this->db->where('MONTH(peminjaman.tgl_pinjam)=06');
+    $this->db->where('YEAR(peminjaman.tgl_pinjam)=', $tahun);
+    return $this->db->get()->num_rows();
+  }
+
+  public function getJumlahPeminjamanJuli()
+  {
+    $tahun = date('Y');
+    $this->db->select('*');
+    $this->db->from('peminjaman');
+    $this->db->where('MONTH(peminjaman.tgl_pinjam)=07');
+    $this->db->where('YEAR(peminjaman.tgl_pinjam)=', $tahun);
+    return $this->db->get()->num_rows();
+  }
+
+  public function getJumlahPeminjamanAgustus()
+  {
+    $tahun = date('Y');
+    $this->db->select('*');
+    $this->db->from('peminjaman');
+    $this->db->where('MONTH(peminjaman.tgl_pinjam)=08');
+    $this->db->where('YEAR(peminjaman.tgl_pinjam)=', $tahun);
+    return $this->db->get()->num_rows();
+  }
+
+  public function getJumlahPeminjamanSeptember()
+  {
+    $tahun = date('Y');
+    $this->db->select('*');
+    $this->db->from('peminjaman');
+    $this->db->where('MONTH(peminjaman.tgl_pinjam)=09');
+    $this->db->where('YEAR(peminjaman.tgl_pinjam)=', $tahun);
+    return $this->db->get()->num_rows();
+  }
+
+  public function getJumlahPeminjamanOktober()
+  {
+    $tahun = date('Y');
+    $this->db->select('*');
+    $this->db->from('peminjaman');
+    $this->db->where('MONTH(peminjaman.tgl_pinjam)=10');
+    $this->db->where('YEAR(peminjaman.tgl_pinjam)=', $tahun);
+    return $this->db->get()->num_rows();
+  }
+
+  public function getJumlahPeminjamanNovember()
+  {
+    $tahun = date('Y');
+    $this->db->select('*');
+    $this->db->from('peminjaman');
+    $this->db->where('MONTH(peminjaman.tgl_pinjam)=11');
+    $this->db->where('YEAR(peminjaman.tgl_pinjam)=', $tahun);
+    return $this->db->get()->num_rows();
+  }
+
+  public function getJumlahPeminjamanDesember()
+  {
+    $tahun = date('Y');
+    $this->db->select('*');
+    $this->db->from('peminjaman');
+    $this->db->where('MONTH(peminjaman.tgl_pinjam)=12');
+    $this->db->where('YEAR(peminjaman.tgl_pinjam)=', $tahun);
+    return $this->db->get()->num_rows();
   }
 }

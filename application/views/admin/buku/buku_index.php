@@ -83,10 +83,14 @@
               <td><?= $b['penerbit']; ?></td>
               <td><?= $b['thn_terbit']; ?></td>
               <td>
-                <?php if (empty($dp['gambar'])) : ?>
-                  <figure style="width: 80%"><img src="<?= base_url('assets/img/contoh.jpg') ?>" width="40px" class="img-zoomable" alt=""></figure>
+                <?php
+                $file_gambar = './assets/img/buku/' . $b['gambar_buku'];
+                if (file_exists($file_gambar)) : ?>
+                  <img src="<?= base_url('assets/img/buku/') . $b['gambar_buku'] ?>" class="img-zoomable" width="45px" alt="">
+                  <!-- Gambar Ada -->
                 <?php else : ?>
-                  <img src="<?= base_url('assets/img/buku/') . $dp['gambar_buku'] ?>" width="40px" alt="">
+                  <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="45px" class="img-zoomable" alt="">
+                  <!-- Gambar Tidak Ada -->
                 <?php endif; ?>
               </td>
               <td>
@@ -94,7 +98,7 @@
                   <button class="btn btn-info btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Lihat Detail"><i class="fas fa-info-circle"></i></button>
                 </a>
                 <a href="<?= base_url('admin/buku/update/') . $b['id_buku']; ?>">
-                  <button class="btn btn-warning btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
+                  <button class="btn btn-warning btn-sm text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
                 </a>
                 <a href="<?= base_url('admin/buku/delete/') . $b['id_buku']; ?>" class="tombol-hapus">
                   <button class="btn btn-danger btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></button>

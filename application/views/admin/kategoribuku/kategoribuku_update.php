@@ -20,8 +20,8 @@
 
 <div class="row">
   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-    <div class="alert alert-info" role="alert">
-      <h4 class="alert-info"><i class="fas fa-info"></i> Informasi</h4>
+    <div class="alert alert-warning text-dark" role="alert">
+      <h4 class="alert-warning text-dark"><i class="fas fa-info"></i> Informasi</h4>
       Silahkan isi formulir <strong><?= strtoupper($menu) ?></strong> dengan baik dan benar.
     </div>
   </div>
@@ -49,7 +49,7 @@
 
       </div>
       <div class="card-footer">
-        <button type="submit" class="btn btn-warning"><i class="fas fa-save"></i> Perbarui</button>
+        <button type="submit" class="btn btn-warning text-dark"><i class="fas fa-edit"></i> Perbarui</button>
         <!-- <a href="<?= base_url() . 'admin/' . strtolower($menu) ?>"><button type="button" class="btn btn-dark"><i class="fas fa-reply"></i> Kembali</button></a> -->
         <a href="<?= base_url() . 'admin/kategoribuku' ?>"><button type="button" class="btn btn-dark"><i class="fas fa-reply"></i> Kembali</button></a>
       </div>

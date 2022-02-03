@@ -39,19 +39,33 @@ class Dashboard extends CI_Controller
     $data['pengunjungperempuan'] = $this->dashboard_model->getJumlahPengunjungPerempuan();
     $data['pengunjung'] = $this->dashboard_model->getPengunjung();
 
-    // Peminjaman Buku Grafik Bar
-    $data['jumlahpeminjamanbukujanuari'] = $this->dashboard_model->getJumlahPeminjamanJanuari();
-    $data['jumlahpeminjamanbukufebruari'] = $this->dashboard_model->getJumlahPeminjamanFebruari();
-    $data['jumlahpeminjamanbukumaret'] = $this->dashboard_model->getJumlahPeminjamanMaret();
-    $data['jumlahpeminjamanbukuapril'] = $this->dashboard_model->getJumlahPeminjamanApril();
-    $data['jumlahpeminjamanbukumei'] = $this->dashboard_model->getJumlahPeminjamanMei();
-    $data['jumlahpeminjamanbukujuni'] = $this->dashboard_model->getJumlahPeminjamanJuni();
-    $data['jumlahpeminjamanbukujuli'] = $this->dashboard_model->getJumlahPeminjamanJuli();
-    $data['jumlahpeminjamanbukuagustus'] = $this->dashboard_model->getJumlahPeminjamanAgustus();
-    $data['jumlahpeminjamanbukuseptember'] = $this->dashboard_model->getJumlahPeminjamanSeptember();
-    $data['jumlahpeminjamanbukuoktober'] = $this->dashboard_model->getJumlahPeminjamanOktober();
-    $data['jumlahpeminjamanbukunovember'] = $this->dashboard_model->getJumlahPeminjamanNovember();
-    $data['jumlahpeminjamanbukudesember'] = $this->dashboard_model->getJumlahPeminjamanDesember();
+    // Peminjaman Buku Grafik Area
+    // Qty
+    $data['jumlahqtyjanuari'] = $this->dashboard_model->getJumlahQtyJanuari();
+    $data['jumlahqtyfebruari'] = $this->dashboard_model->getJumlahQtyFebruari();
+    $data['jumlahqtymaret'] = $this->dashboard_model->getJumlahQtyMaret();
+    $data['jumlahqtyapril'] = $this->dashboard_model->getJumlahQtyApril();
+    $data['jumlahqtymei'] = $this->dashboard_model->getJumlahQtyMei();
+    $data['jumlahqtyjuni'] = $this->dashboard_model->getJumlahQtyJuni();
+    $data['jumlahqtyjuli'] = $this->dashboard_model->getJumlahQtyJuli();
+    $data['jumlahqtyagustus'] = $this->dashboard_model->getJumlahQtyAgustus();
+    $data['jumlahqtyseptember'] = $this->dashboard_model->getJumlahQtySeptember();
+    $data['jumlahqtyoktober'] = $this->dashboard_model->getJumlahQtyOktober();
+    $data['jumlahqtynovember'] = $this->dashboard_model->getJumlahQtyNovember();
+    $data['jumlahqtydesember'] = $this->dashboard_model->getJumlahQtyDesember();
+
+    $data['jumlahpeminjamanjanuari'] = $this->dashboard_model->getJumlahPeminjamanJanuari();
+    $data['jumlahpeminjamanfebruari'] = $this->dashboard_model->getJumlahPeminjamanFebruari();
+    $data['jumlahpeminjamanmaret'] = $this->dashboard_model->getJumlahPeminjamanMaret();
+    $data['jumlahpeminjamanapril'] = $this->dashboard_model->getJumlahPeminjamanApril();
+    $data['jumlahpeminjamanmei'] = $this->dashboard_model->getJumlahPeminjamanMei();
+    $data['jumlahpeminjamanjuni'] = $this->dashboard_model->getJumlahPeminjamanJuni();
+    $data['jumlahpeminjamanjuli'] = $this->dashboard_model->getJumlahPeminjamanJuli();
+    $data['jumlahpeminjamanagustus'] = $this->dashboard_model->getJumlahPeminjamanAgustus();
+    $data['jumlahpeminjamanseptember'] = $this->dashboard_model->getJumlahPeminjamanSeptember();
+    $data['jumlahpeminjamanoktober'] = $this->dashboard_model->getJumlahPeminjamanOktober();
+    $data['jumlahpeminjamannovember'] = $this->dashboard_model->getJumlahPeminjamanNovember();
+    $data['jumlahpeminjamandesember'] = $this->dashboard_model->getJumlahPeminjamanDesember();
 
 
     $this->load->view('admin/templates/header', $data);

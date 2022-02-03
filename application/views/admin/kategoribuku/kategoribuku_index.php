@@ -84,7 +84,7 @@
               <td><?= $kb['nm_kategoribuku']; ?></td>
               <td>
                 <a href="<?= base_url('admin/kategoribuku/update/') . $kb['id_kategoribuku']; ?>">
-                  <button class="btn btn-sm btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
+                  <button class="btn btn-sm btn-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
                 </a>
                 <a href="<?= base_url('admin/kategoribuku/delete/') . $kb['id_kategoribuku']; ?>" class="tombol-hapus">
                   <button class="btn btn-sm btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></button>

@@ -18,53 +18,53 @@
 // }
 
 //peminjaman buku
-$peminjamanbukujanuari = 0;
-foreach ($jumlahpeminjamanbukujanuari as $peminjamanjanuari) {
-  $peminjamanbukujanuari += $peminjamanjanuari;
+$qtyjanuari = 0;
+foreach ($jumlahqtyjanuari as $peminjamanjanuari) {
+  $qtyjanuari += $peminjamanjanuari;
 }
-$peminjamanbukufebruari = 0;
-foreach ($jumlahpeminjamanbukufebruari as $peminjamanfebruari) {
-  $peminjamanbukufebruari += $peminjamanfebruari;
+$qtyfebruari = 0;
+foreach ($jumlahqtyfebruari as $peminjamanfebruari) {
+  $qtyfebruari += $peminjamanfebruari;
 }
-$peminjamanbukumaret = 0;
-foreach ($jumlahpeminjamanbukumaret as $peminjamanmaret) {
-  $peminjamanbukumaret += $peminjamanmaret;
+$qtymaret = 0;
+foreach ($jumlahqtymaret as $peminjamanmaret) {
+  $qtymaret += $peminjamanmaret;
 }
-$peminjamanbukuapril = 0;
-foreach ($jumlahpeminjamanbukuapril as $peminjamanapril) {
-  $peminjamanbukuapril += $peminjamanapril;
+$qtyapril = 0;
+foreach ($jumlahqtyapril as $peminjamanapril) {
+  $qtyapril += $peminjamanapril;
 }
-$peminjamanbukumei = 0;
-foreach ($jumlahpeminjamanbukumei as $peminjamanmei) {
-  $peminjamanbukumei += $peminjamanmei;
+$qtymei = 0;
+foreach ($jumlahqtymei as $peminjamanmei) {
+  $qtymei += $peminjamanmei;
 }
-$peminjamanbukujuni = 0;
-foreach ($jumlahpeminjamanbukujuni as $peminjamanjuni) {
-  $peminjamanbukujuni += $peminjamanjuni;
+$qtyjuni = 0;
+foreach ($jumlahqtyjuni as $peminjamanjuni) {
+  $qtyjuni += $peminjamanjuni;
 }
-$peminjamanbukujuli = 0;
-foreach ($jumlahpeminjamanbukujuli as $peminjamanjuli) {
-  $peminjamanbukujuli += $peminjamanjuli;
+$qtyjuli = 0;
+foreach ($jumlahqtyjuli as $peminjamanjuli) {
+  $qtyjuli += $peminjamanjuli;
 }
-$peminjamanbukuagustus = 0;
-foreach ($jumlahpeminjamanbukuagustus as $peminjamanagustus) {
-  $peminjamanbukuagustus += $peminjamanagustus;
+$qtyagustus = 0;
+foreach ($jumlahqtyagustus as $peminjamanagustus) {
+  $qtyagustus += $peminjamanagustus;
 }
-$peminjamanbukuseptember = 0;
-foreach ($jumlahpeminjamanbukuseptember as $peminjamanseptember) {
-  $peminjamanbukuseptember += $peminjamanseptember;
+$qtyseptember = 0;
+foreach ($jumlahqtyseptember as $peminjamanseptember) {
+  $qtyseptember += $peminjamanseptember;
 }
-$peminjamanbukuoktober = 0;
-foreach ($jumlahpeminjamanbukuoktober as $peminjamanoktober) {
-  $peminjamanbukuoktober += $peminjamanoktober;
+$qtyoktober = 0;
+foreach ($jumlahqtyoktober as $peminjamanoktober) {
+  $qtyoktober += $peminjamanoktober;
 }
-$peminjamanbukunovember = 0;
-foreach ($jumlahpeminjamanbukunovember as $peminjamannovember) {
-  $peminjamanbukunovember += $peminjamannovember;
+$qtynovember = 0;
+foreach ($jumlahqtynovember as $peminjamannovember) {
+  $qtynovember += $peminjamannovember;
 }
-$peminjamanbukudesember = 0;
-foreach ($jumlahpeminjamanbukudesember as $peminjamandesember) {
-  $peminjamanbukudesember += $peminjamandesember;
+$qtydesember = 0;
+foreach ($jumlahqtydesember as $peminjamandesember) {
+  $qtydesember += $peminjamandesember;
 }
 ?>
 
@@ -135,7 +135,7 @@ foreach ($jumlahpeminjamanbukudesember as $peminjamandesember) {
     plotOptions: {},
     series: [{
       name: 'peminjaman',
-      data: [<?= $peminjamanbukujanuari; ?>, <?= $peminjamanbukufebruari; ?>, <?= $peminjamanbukumaret; ?>, <?= $peminjamanbukuapril; ?>, <?= $peminjamanbukumei; ?>, <?= $peminjamanbukujuni; ?>, <?= $peminjamanbukujuli; ?>, <?= $peminjamanbukuagustus; ?>, <?= $peminjamanbukuseptember; ?>, <?= $peminjamanbukuoktober; ?>, <?= $peminjamanbukunovember; ?>, <?= $peminjamanbukudesember; ?>]
+      data: [<?= $jumlahpeminjamanjanuari; ?>, <?= $jumlahpeminjamanfebruari; ?>, <?= $jumlahpeminjamanmaret; ?>, <?= $jumlahpeminjamanapril; ?>, <?= $jumlahpeminjamanmei; ?>, <?= $jumlahpeminjamanjuni; ?>, <?= $jumlahpeminjamanjuli; ?>, <?= $jumlahpeminjamanagustus; ?>, <?= $jumlahpeminjamanseptember; ?>, <?= $jumlahpeminjamanoktober; ?>, <?= $jumlahpeminjamannovember; ?>, <?= $jumlahpeminjamandesember; ?>]
     }],
     colors: '#435ebe',
     xaxis: {
@@ -183,9 +183,58 @@ foreach ($jumlahpeminjamanbukudesember as $peminjamandesember) {
     }
   }
 
+  var areaOptions = {
+    series: [{
+        name: "Peminjaman",
+        data: [<?= $jumlahpeminjamanjanuari ?>, 30],
+      },
+      {
+        name: "Qty Pinjam",
+        data: [<?= $qtyjanuari ?>, 20],
+      },
+    ],
+    chart: {
+      height: 350,
+      type: "bar",
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    xaxis: {
+      type: "category",
+      categories: [
+        "Januari",
+        "Februari",
+        "Maret",
+        "April",
+        "Mei",
+        "Juni",
+        "Juli",
+        "Agustus",
+        "September",
+        "Oktober",
+        "November",
+        "Dsember",
+      ],
+    },
+    theme: {
+      mode: 'light',
+      palette: 'palette2',
+      monochrome: {
+        enabled: false,
+        color: '#255aee',
+        shadeTo: 'light',
+        shadeIntensity: 0.65
+      },
+    },
+    tooltip: {},
+  };
+
+  // var chartProfileVisit = new ApexCharts(document.querySelector("#chart-profile-visit"), areaOptions);
   var chartProfileVisit = new ApexCharts(document.querySelector("#chart-profile-visit"), optionsProfileVisit);
   var chartPengunjungHariIni = new ApexCharts(document.getElementById('pengunjung-hariini'), optionsPengunjungHariini)
   var chartPengunjungKeseluruhan = new ApexCharts(document.getElementById('pengunjung-keseluruhan'), optionsPengunjungKeseluruhan)
+
 
   chartProfileVisit.render();
   chartPengunjungHariIni.render()

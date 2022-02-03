@@ -86,7 +86,7 @@
               <td><?= $jb['nm_jenisbuku']; ?></td>
               <td>
                 <a href="<?= base_url('admin/jenisbuku/update/') . $jb['id_jenisbuku']; ?>">
-                  <button class="btn btn-sm btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
+                  <button class="btn btn-sm btn-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
                 </a>
                 <a href="<?= base_url('admin/jenisbuku/delete/') . $jb['id_jenisbuku']; ?>" class="tombol-hapus">
                   <button class="btn btn-sm btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></button>

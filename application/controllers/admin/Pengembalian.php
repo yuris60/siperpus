@@ -54,9 +54,9 @@ class Pengembalian extends CI_Controller
     redirect('admin/pengembalian/detail/' . $id_pinjam);
   }
 
-  public function kembalikanBuku($id_pinjam, $id_detailpinjam, $keterlambatan)
+  public function kembalikanBuku($id_pinjam, $id_detailpinjam, $id_buku, $qty_pinjam, $keterlambatan)
   {
-    $this->pengembalian_model->kembalikanBuku($id_pinjam, $id_detailpinjam, $keterlambatan);
+    $this->pengembalian_model->kembalikanBuku($id_pinjam, $id_detailpinjam, $id_buku, $qty_pinjam, $keterlambatan);
     $this->session->set_flashdata('success', 'Dikembalikan');
     redirect('admin/pengembalian/detail/' . $id_pinjam);
   }

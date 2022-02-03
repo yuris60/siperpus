@@ -30,6 +30,9 @@
 <!-- Instascan JS -->
 <script src="<?= base_url('assets/js/myinstascan_buku.js') ?>"></script>
 
+<!-- Load Zooming library -->
+<script src="https://unpkg.com/zooming/build/zooming.min.js"></script>
+
 <script>
   // Jquery Datatable
   let jquery_datatable = $("#table1").DataTable()
@@ -38,6 +41,13 @@
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+
+  // Listen to images after DOM content is fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    new Zooming({
+      // options...
+    }).listen('.img-zoomable')
   })
 
   //waktu berjalan

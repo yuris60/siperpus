@@ -116,8 +116,9 @@ error_reporting(0)
               <div class="card-content">
                 <?php foreach ($pengunjung as $p) : ?>
                   <div class="recent-message d-flex px-4 pb-3">
-                    <?php if (file_exists(base_url('assets/img/anggota/') . $p['foto_anggota'])) : ?>
-                      ok
+                    <?php $file_gambar = './assets/img/anggota/' . $p['foto_anggota'];
+                    if (file_exists($file_gambar)) : ?>
+                      <img src="<?= base_url('assets/img/anggota/') . $p['foto_anggota'] ?>" width="50px" alt="">
                     <?php else : ?>
                       <img src="<?= base_url('assets/img/no_photo.jpg') ?>" width="50px" alt="">
                     <?php endif; ?>
@@ -167,8 +168,9 @@ error_reporting(0)
                             <tr>
                               <td><?= $no; ?></td>
                               <td>
-                                <?php if (file_exists(base_url('assets/img/anggota/') . $ps['foto_anggota'])) : ?>
-                                  ok
+                                <?php $file_gambar = './assets/img/anggota/' . $ps['foto_anggota'];
+                                if (file_exists($file_gambar)) : ?>
+                                  <img src="<?= base_url('assets/img/anggota/') . $ps['foto_anggota'] ?>" width="50px" alt="">
                                 <?php else : ?>
                                   <img src="<?= base_url('assets/img/no_photo.jpg') ?>" width="50px" alt="">
                                 <?php endif; ?>
@@ -226,8 +228,9 @@ error_reporting(0)
                             <tr>
                               <td><?= $no; ?></td>
                               <td>
-                                <?php if (file_exists(base_url('assets/img/anggota/') . $pbl['foto_anggota'])) : ?>
-                                  ok
+                                <?php $file_gambar = './assets/img/anggota/' . $pbl['foto_anggota'];
+                                if (file_exists($file_gambar)) : ?>
+                                  <img src="<?= base_url('assets/img/anggota/') . $pbl['foto_anggota'] ?>" width="50px" alt="">
                                 <?php else : ?>
                                   <img src="<?= base_url('assets/img/no_photo.jpg') ?>" width="50px" alt="">
                                 <?php endif; ?>
@@ -285,8 +288,9 @@ error_reporting(0)
                             <tr>
                               <td><?= $no; ?></td>
                               <td>
-                                <?php if (file_exists(base_url('assets/img/anggota/') . $pl['foto_anggota'])) : ?>
-                                  ok
+                                <?php $file_gambar = './assets/img/anggota/' . $pl['foto_anggota'];
+                                if (file_exists($file_gambar)) : ?>
+                                  <img src="<?= base_url('assets/img/anggota/') . $pl['foto_anggota'] ?>" width="50px" alt="">
                                 <?php else : ?>
                                   <img src="<?= base_url('assets/img/no_photo.jpg') ?>" width="50px" alt="">
                                 <?php endif; ?>

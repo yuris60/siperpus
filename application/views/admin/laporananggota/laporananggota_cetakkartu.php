@@ -58,14 +58,15 @@
 <body>
   <?php foreach ($anggota as $a) : ?>
     <div class="kartu">
-      <img src="<?= base_url('assets/img/contoh kartu perpus/') ?>template_kartu.png" width="100%" alt="">
+      <img src="<?= base_url('assets/img/contoh kartu perpus/') ?>template_kartu.jpg" width="100%" alt="">
 
       <p class="nama"><?= $a['nm_anggota'] ?></p>
       <img src="<?= site_url('admin/laporananggota/qrcode/') . $a['nisn'] ?>" class="qrcode" width="75px" alt="">
 
       <p class="berlaku">21 Desember 2022</p>
-      <?php if (file_exists(base_url('assets/img/fotoanggota/') . $a['foto_anggota'])) : ?>
-        <img src="<?= base_url('assets/img/contoh kartu perpus/') ?>bambang pamungkas.png" class="foto" width="84px" alt="">
+      <?php $file_gambar = './assets/img/anggota/' . $a['foto_anggota'];
+      if (file_exists($file_gambar)) : ?>
+        <img src="<?= base_url('assets/img/anggota/') . $a['foto_anggota'] ?>" class="foto" width="84px" alt="">
       <?php else : ?>
         <img src="<?= base_url('assets/img/') ?>no_photo.jpg" class="foto" width="84px" alt="">
       <?php endif; ?>

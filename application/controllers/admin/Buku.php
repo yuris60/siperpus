@@ -12,7 +12,6 @@ class Buku extends CI_Controller
     $this->load->library('qrcode/ciqrcode');
     $this->load->model('admin/login_model');
     $this->load->library('upload');
-    $this->load->library('user_agent');
   }
 
   public function index()
@@ -40,13 +39,17 @@ class Buku extends CI_Controller
     $data['submenu'] = "Tambah Data";
     $data['icon'] = "bi bi-book-half";
 
-    $this->form_validation->set_rules('kode_buku', 'Kode Buku', 'required|trim');
-    $this->form_validation->set_rules('nm_buku', 'Nama Buku', 'required|trim');
+    $this->form_validation->set_rules('id_buku', 'ID Buku', 'required|trim');
+    $this->form_validation->set_rules('judul_buku', 'Judul Buku', 'required|trim');
+    $this->form_validation->set_rules('penerbit', 'Penerbit', 'required|trim');
+    $this->form_validation->set_rules('pengarang', 'Pengarang', 'required|trim');
+    $this->form_validation->set_rules('thn_terbit', 'Tahun Terbit', 'required|trim');
 
     $data['ddc'] = $this->buku_model->getDdcAll();
     $data['sumberbuku'] = $this->buku_model->getSumberBukuAll();
     $data['jenisbuku'] = $this->buku_model->getJenisBukuAll();
     $data['id_buku'] = $this->buku_model->autonumber();
+    $data['kategoribuku'] = $this->buku_model->getKategoriBukuAll();
 
     if ($this->form_validation->run() == FALSE) {
       $this->load->view('admin/templates/header', $data);
@@ -56,40 +59,42 @@ class Buku extends CI_Controller
       $this->load->view('admin/templates/footer');
       $this->load->view('admin/templates/js');
     } else {
-      $namafile = $this->input->post('id_buku');;
-      $config['upload_path'] = './assets/img/buku/'; //path folder
-      $config['allowed_types'] = 'jpg|png|jpeg|'; //type yang dapat diakses bisa anda sesuaikan
-      // $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
-      $config['file_name'] = $namafile;
+      if (!empty($_FILES['gambar_buku']['name'])) { //jika akan mengubah gambar
+        $namafile = $this->input->post('id_buku');
+        $config['upload_path'] = './assets/img/buku/'; //path folder
+        $config['allowed_types'] = 'jpg|jpeg'; //type yang dapat diakses bisa anda sesuaikan
+        // $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+        $config['file_name'] = $namafile;
+        $config['overwrite'] = true;
 
-      if ($this->upload->do_upload('fotosebelum')) {
-        $gbr = $this->upload->data();
-        // $gbr = array('upload_data' => $this->upload->data());
-        $filesimpan = $gbr['file_name']; //Mengambil file name dari gambar yang diupload
-        // echo "Upload Berhasil <br>" . $gambar;
-        // $this->buku_model->simpan_wajah_before($namafile);
-        // $this->session->set_flashdata('flash', 'disimpan');
-
-        // $referred_from = $this->session->userdata('pasien_wajah');
-        // redirect($referred_from, 'refresh');
-        // $this->upload->;
-      } else {
-        echo "Gambar Gagal Upload. Gambar harus bertipe jpg|png|jpeg|";
+        $this->upload->initialize($config);
+        if ($this->upload->do_upload('gambar_buku')) {
+          $gbr = $this->upload->data();
+          $filesimpan = $gbr['file_name']; //Mengambil file name dari gambar yang diupload
+          $this->buku_model->save($filesimpan);
+          $this->session->set_flashdata('success', 'Disimpan');
+          redirect('admin/buku');
+        } else {
+          echo "Gambar Gagal Upload. Gambar harus bertipe jpg|jpeg";
+        }
+      } else { //jika tidak mengubah gambar
+        $this->buku_model->save();
+        $this->session->set_flashdata('success', 'Disimpan');
+        redirect('admin/buku');
       }
-      $this->buku_model->save($filesimpan);
-      $this->session->set_flashdata('success', 'disimpan');
-      redirect('buku');
     }
   }
 
   public function update($where)
   {
+    $where = $this->uri->segment(4);
     $data['admin'] = $this->login_model->getSession();
     $data['title'] = "Perbarui Buku | SIPERPUS";
     $data['menu'] = "Buku";
     $data['submenu'] = "Perbarui Data";
     $data['icon'] = "bi bi-book-half";
 
+    $this->form_validation->set_rules('id_buku', 'ID Buku', 'required|trim');
     $this->form_validation->set_rules('judul_buku', 'Judul Buku', 'required|trim');
     $this->form_validation->set_rules('penerbit', 'Penerbit', 'required|trim');
     $this->form_validation->set_rules('pengarang', 'Pengarang', 'required|trim');
@@ -108,9 +113,29 @@ class Buku extends CI_Controller
       $this->load->view('admin/templates/footer');
       $this->load->view('admin/templates/js');
     } else {
-      $this->buku_model->update($where);
-      $this->session->set_flashdata('success', 'Diperbarui');
-      redirect('buku');
+      if (!empty($_FILES['gambar_buku']['name'])) { //jika akan mengubah gambar
+        $namafile = $this->input->post('id_buku');
+        $config['upload_path'] = './assets/img/buku/'; //path folder
+        $config['allowed_types'] = 'jpg|jpeg'; //type yang dapat diakses bisa anda sesuaikan
+        // $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+        $config['file_name'] = $namafile;
+        $config['overwrite'] = true;
+
+        $this->upload->initialize($config);
+        if ($this->upload->do_upload('gambar_buku')) {
+          $gbr = $this->upload->data();
+          $filesimpan = $gbr['file_name']; //Mengambil file name dari gambar yang diupload
+          $this->buku_model->update($where, $filesimpan);
+          $this->session->set_flashdata('success', 'Diperbarui');
+          redirect('admin/buku');
+        } else {
+          echo "Gambar Gagal Upload. Gambar harus bertipe jpg|jpeg";
+        }
+      } else { //jika tidak mengubah gambar
+        $this->buku_model->update($where);
+        $this->session->set_flashdata('success', 'Diperbarui');
+        redirect('admin/buku');
+      }
     }
   }
 
@@ -118,8 +143,12 @@ class Buku extends CI_Controller
   {
     $where = ['id_buku' => $this->uri->segment(4)];
     $this->buku_model->delete($where);
+
+    // hapus file
+    unlink(FCPATH . "/assets/img/buku/" . $where);
+
     $this->session->set_flashdata('success', 'Dihapus');
-    redirect('buku');
+    redirect('admin/buku');
   }
 
   public function qrcode($where)

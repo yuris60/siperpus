@@ -91,10 +91,11 @@
                 <tr>
                   <td><?= $no ?></td>
                   <td class="text-center">
-                    <?php if (empty($dp['gambar'])) : ?>
-                      <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="100%" alt="">
+                    <?php $file_gambar = './assets/img/buku/' . $dp['gambar_buku'];
+                    if (file_exists($file_gambar)) : ?>
+                      <img src="<?= base_url('assets/img/buku/') . $dp['gambar_buku'] ?>" class="img-zoomable" width="100%" alt="">
                     <?php else : ?>
-                      <img src="<?= base_url('assets/img/buku/') . $dp['gambar_buku'] ?>" width="40%" alt="">
+                      <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="100%" class="img-zoomable" alt="">
                     <?php endif; ?>
                   </td>
                   <td><?= $dp['judul_buku'] ?></td>

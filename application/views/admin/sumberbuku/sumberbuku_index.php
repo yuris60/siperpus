@@ -67,7 +67,7 @@
               <td><?= $sb['nm_sumberbuku']; ?></td>
               <td>
                 <a href="<?= base_url('admin/sumberbuku/update/') . $sb['id_sumberbuku']; ?>">
-                  <button class="btn btn-sm btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
+                  <button class="btn btn-sm btn-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
                 </a>
                 <a href="<?= base_url('admin/sumberbuku/delete/') . $sb['id_sumberbuku']; ?>" class="tombol-hapus">
                   <button class="btn btn-sm btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></button>

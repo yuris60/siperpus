@@ -16,19 +16,50 @@ class Anggota_model extends CI_Model
     return $this->db->get()->result_array();
   }
 
-  public function getById($where)
+  public function getKelasAll()
   {
-    return $this->db->get_where('buku', ["id_buku" => $where])->row_array();
+    $this->db->select('*');
+    $this->db->from('kelas');
+    $this->db->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan');
+    $this->db->order_by('kelas.tingkatan_kelas', 'ASC');
+    $this->db->order_by('kelas.id_jurusan', 'ASC');
+    $this->db->order_by('kelas.nomor_kelas', 'ASC');
+    return $this->db->get()->result_array();
   }
 
-  public function save()
+  public function getById($where)
+  {
+    $this->db->select('*');
+    $this->db->from('anggota');
+    $this->db->join('kelas', 'anggota.id_kelas = kelas.id_kelas');
+    $this->db->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan');
+    $this->db->where('anggota.nisn', $where);
+    return $this->db->get()->row_array();
+  }
+
+  public function save($filesimpan)
   {
     $data = [
-      'kode_buku' => htmlspecialchars($this->input->post('kode_buku', true)),
-      'nm_buku' => htmlspecialchars($this->input->post('nm_buku', true)),
+      'nisn' => htmlspecialchars($this->input->post('nisn', true)),
+      'id_kelas' => htmlspecialchars($this->input->post('id_kelas', true)),
+      'nm_anggota' => htmlspecialchars($this->input->post('nm_anggota', true)),
+      'jk_anggota' => htmlspecialchars($this->input->post('jk_anggota', true)),
+      'tempatlahir_anggota' => htmlspecialchars($this->input->post('tempatlahir_anggota', true)),
+      'tgllahir_anggota' => htmlspecialchars($this->input->post('tgllahir_anggota', true)),
+      'nik_anggota' => htmlspecialchars($this->input->post('nik_anggota', true)),
+      'agama_anggota' => htmlspecialchars($this->input->post('agama_anggota', true)),
+      'alamat_anggota' => htmlspecialchars($this->input->post('alamat_anggota', true)),
+      'rt' => htmlspecialchars($this->input->post('rt', true)),
+      'rw' => htmlspecialchars($this->input->post('rw', true)),
+      'dusun' => htmlspecialchars($this->input->post('dusun', true)),
+      'kelurahan' => htmlspecialchars($this->input->post('kelurahan', true)),
+      'kecamatan' => htmlspecialchars($this->input->post('kecamatan', true)),
+      'nama_ayah' => htmlspecialchars($this->input->post('nama_ayah', true)),
+      'nama_ibu' => htmlspecialchars($this->input->post('nama_ibu', true)),
+      'foto_anggota' => $filesimpan
     ];
 
-    $this->db->insert('buku', $data);
+    $this->db->insert('anggota', $data);
   }
 
   public function update($where = null)

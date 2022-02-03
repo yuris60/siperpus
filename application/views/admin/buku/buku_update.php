@@ -20,14 +20,14 @@
 
 <div class="row">
   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-    <div class="alert alert-info" role="alert">
-      <h4 class="alert-info"><i class="fas fa-info"></i> Informasi</h4>
+    <div class="alert alert-warning text-dark" role="alert">
+      <h4 class="alert-warning text-dark"><i class="fas fa-info"></i> Informasi</h4>
       Silahkan isi formulir <strong><?= strtoupper($menu) ?></strong> dengan baik dan benar.
     </div>
   </div>
 </div>
 
-<form action="" method="POST" autocomplete="off">
+<form action="" method="POST" autocomplete="off" enctype="multipart/form-data">
   <div class="row">
     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
       <div class="card">
@@ -35,10 +35,11 @@
           <h4 class="card-title"><i class="fas fa-image"></i> Gambar Buku <h4>
         </div>
         <div class="card-body">
-          <?php if (file_exists(base_url('assets/img/buku/') . $buku['gambar_buku'])) : ?>
-            <input type="file" name="gambar_buku_sebelumnya" class="dropify" data-default-file="<?= base_url('assets/img/buku/') . $buku['gambar_buku'] ?>">
+          <?php $file_gambar = './assets/img/buku/' . $buku['gambar_buku'];
+          if (file_exists($file_gambar)) : ?>
+            <input type="file" name="gambar_buku" class="dropify" data-default-file="<?= base_url('assets/img/buku/') . $buku['gambar_buku'] ?>">
           <?php else : ?>
-            <input type="file" name="gambar_buku" class="dropify">
+            <input type="file" name="gambar_buku" class="dropify" data-default-file="<?= base_url('assets/img/contoh.jpg') ?>">
           <?php endif; ?>
         </div>
         <div class="card-footer text-center">
@@ -57,6 +58,13 @@
               <h4>
           </div>
           <div class="card-body">
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">ID Buku</label>
+              <div class="col-sm-9">
+                <input type="text" readonly class="form-control" name="id_buku" id="id_buku" value="<?= $buku['id_buku'] ?>">
+              </div>
+            </div>
 
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Judul Buku</label>
@@ -267,16 +275,14 @@
               </div>
             </div>
             <div class="card-footer text-center">
-              <button type="submit" class="btn btn-warning"><i class="fas fa-edit"></i> Perbarui</button>
+              <button type="submit" class="btn btn-warning text-dark"><i class="fas fa-edit"></i> Perbarui</button>
               <!-- <a href="<?= base_url() . 'admin/' . strtolower($menu) ?>"><button type="button" class="btn btn-dark"><i class="fas fa-reply"></i> Kembali</button></a> -->
               <a href="<?= base_url() . 'admin/buku' ?>"><button type="button" class="btn btn-dark"><i class="fas fa-reply"></i> Kembali</button></a>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 </form>
-
-</section>
 <!-- End of Container -->
-</div>
-</div>
