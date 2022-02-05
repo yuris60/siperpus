@@ -76,7 +76,7 @@ class Peminjaman_model extends CI_Model
     $query = $this->db->get();
 
     if ($query->num_rows() <> 0) {
-      echo "Anggota Terdaftar";
+      // echo "Anggota Terdaftar";
       $data = [
         'id_pinjam' => htmlspecialchars($this->input->post('id_pinjam', true)),
         'tgl_pinjam' => htmlspecialchars($this->input->post('tgl_pinjam', true)),

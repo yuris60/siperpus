@@ -3,7 +3,16 @@
 
 <script src="<?= base_url('assets/vendor/'); ?>jquery/jquery.min.js"></script>
 <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/js/bootstrap.bundle.min.js"></script> -->
+<script src="<?= base_url('assets/') ?>js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Tooltip
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+</script>
 
 <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/js/mazer.js"></script>
 
@@ -22,11 +31,10 @@
 <!-- Sweetalert -->
 <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/sweetalert2/sweetalert2.all.min.js"></script>
 
-
 <!-- Instascan -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
-<script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+<script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script> -->
 
 <!-- Dropify -->
 <script src="<?= base_url('assets/') ?>vendor/dropify/dist/js/dropify.min.js"></script>
@@ -36,7 +44,7 @@
 <script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-file-validate-type.js"></script> -->
 
 <!-- image editor -->
-<script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-file-validate-size.js"></script>
+<!-- <script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-file-validate-size.js"></script>
 <script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-file-validate-type.js"></script>
 <script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-image-exif-orientation.js"></script>
 <script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-image-crop.js"></script>
@@ -44,7 +52,7 @@
 <script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-image-preview.js"></script>
 <script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond-plugin-image-resize.js"></script>
 <script src="<?= base_url('assets/') ?>vendor/image-uploader/js/filepond.js"></script>
-<script src="<?= base_url('assets/') ?>js/myimage-uploader.js"></script>
+<script src="<?= base_url('assets/') ?>js/myimage-uploader.js"></script> -->
 
 <!-- Charts -->
 <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/apexcharts/apexcharts.js"></script>
@@ -237,12 +245,6 @@
 
   // Jquery Datatable
   let jquery_datatable = $("#table1").DataTable()
-
-  // Tooltip
-  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-  var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl)
-  })
 
   //waktu berjalan
   function tampilkanwaktu() { //fungsi ini akan dipanggil di bodyOnLoad dieksekusi tiap 1000ms = 1detik    

@@ -99,7 +99,7 @@ error_reporting(0)
       <div class="col-12 col-xl-12 col-md-12 col-xs-12">
         <div class="card">
           <div class="card-header">
-            <h4><i class="bi bi-graph-up"></i> Grafik Peminjaman</h4>
+            <h4 class="card-title"><i class="bi bi-graph-up"></i> Grafik Peminjaman</h4>
           </div>
           <div class="card-body">
             <div id="chart-profile-visit"></div>
@@ -110,10 +110,10 @@ error_reporting(0)
           <div class="col-12 col-xl-5 col-md-5">
             <div class="card">
               <div class="card-header">
-                <h4><i class="bi bi-person-square"></i> 5 Pengunjung Terakhir</h4>
+                <h4 class="card-title"><i class="bi bi-person-square"></i> 5 Pengunjung Terakhir</h4>
               </div>
               <!-- <div class="card-body"> -->
-              <div class="card-content">
+              <div class="card-content" style="margin-top: 12px;">
                 <?php foreach ($pengunjung as $p) : ?>
                   <div class="recent-message d-flex px-4 pb-3">
                     <?php $file_gambar = './assets/img/anggota/' . $p['foto_anggota'];
@@ -135,7 +135,7 @@ error_reporting(0)
           <div class="col-12 col-xl-7 col-md-7">
             <div class="card">
               <div class="card-header">
-                <h4><i class="bi bi-cloud-arrow-up-fill"></i> Peminjaman Terakhir</h4>
+                <h4 class="card-title"><i class="bi bi-cloud-arrow-up-fill"></i> Peminjaman Terakhir</h4>
               </div>
               <div class="card-body">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -338,6 +338,56 @@ error_reporting(0)
       </div>
     </div>
 
+    <div class="row">
+      <div class="col-12 col-xl-12 col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title"><i class="bi bi-person-square"></i> 5 Buku Terfavorit</h4>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Cover Buku</th>
+                  <th>Judul Buku</th>
+                  <th>Pengarang</th>
+                  <th>Total Dipinjam</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                $no = 1;
+                foreach ($bukuterfavorit as $bt) :
+                  if ($bt['qty_pinjam'] >= 1) :
+                ?>
+                    <tr>
+                      <td><?= $no; ?></td>
+                      <td>
+                        <?php
+                        $file_gambar = './assets/img/buku/' . $bt['gambar_buku'];
+                        if (file_exists($file_gambar)) : ?>
+                          <img src="<?= base_url('assets/img/buku/') . $bt['gambar_buku'] ?>" class="img-zoomable" width="70px" alt="">
+                          <!-- Gambar Ada -->
+                        <?php else : ?>
+                          <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="70px" class="img-zoomable" alt="">
+                          <!-- Gambar Tidak Ada -->
+                        <?php endif; ?>
+                      </td>
+                      <td><?= $bt['judul_buku']; ?></td>
+                      <td><?= $bt['pengarang']; ?></td>
+                      <td class="text-center"><?= $bt['qty_pinjam'] ?> eks</td>
+                    </tr>
+                  <?php endif; ?>
+                <?php $no++;
+                endforeach; ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
   <!-- End of Left Col-9 -->
 
@@ -355,7 +405,7 @@ error_reporting(0)
       <div class="col-12 col-xl-12 col-md-12 col-xs-12">
         <!-- <div class="card">
       <div class="card-header">
-        <h4>Peminjaman Terakhir</h4>
+        <h4  class="card-title">Peminjaman Terakhir</h4>
       </div>
       <div class="card-content pb-4">
         <div class="recent-message d-flex px-4 py-3">
@@ -393,7 +443,7 @@ error_reporting(0)
     </div> -->
         <div class="card">
           <div class="card-header">
-            <h4><i class="bi bi-calendar2-week-fill"></i> Kalender</h4>
+            <h4 class="card-title"><i class="bi bi-calendar2-week-fill"></i> Kalender</h4>
           </div>
           <div class="card-body">
             <div id="kalender" class="calendar-container" style="width: 100%;"></div>
@@ -404,7 +454,7 @@ error_reporting(0)
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h4><i class="bi bi-person-square"></i> Jumlah Pengunjung</h4>
+                <h4 class="card-title"><i class="bi bi-person-square"></i> Jumlah Pengunjung</h4>
               </div>
               <div class="card-body">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">

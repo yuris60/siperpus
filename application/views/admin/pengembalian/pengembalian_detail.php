@@ -163,7 +163,8 @@
           <h4 class=""><i class="fas fa-info"></i> Info Peminjaman</h4>
         </div>
         <div class="card-body">
-          <?php if (file_exists(base_url('assets/img/anggota/') . $anggota['foto_anggota'])) : ?>
+          <?php $file_gambar = './assets/img/anggota/' . $anggota['foto_anggota'];
+          if (file_exists($file_gambar)) : ?>
             <img src="<?= base_url('assets/img/anggota/') . $anggota['foto_anggota'] ?>" width="100%" alt="">
           <?php else : ?>
             <img src="<?= base_url('assets/img/no_photo.jpg') ?>" width="100%" alt="">

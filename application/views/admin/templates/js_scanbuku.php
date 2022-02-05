@@ -3,7 +3,15 @@
 
 <script src="<?= base_url('assets/vendor/'); ?>jquery/jquery.min.js"></script>
 <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url('assets/') ?>js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Tooltip
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+</script>
 
 <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/js/mazer.js"></script>
 

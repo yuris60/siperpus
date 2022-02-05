@@ -37,6 +37,16 @@ class Anggota_model extends CI_Model
     return $this->db->get()->row_array();
   }
 
+  public function getJoinPeminjaman($where)
+  {
+    $this->db->select('*');
+    $this->db->from('anggota');
+    $this->db->join('peminjaman', 'peminjaman.nisn = anggota.nisn');
+    $this->db->where('anggota.nisn', $where);
+    $this->db->order_by('id_pinjam', 'DESC');
+    return $query = $this->db->get()->result_array();
+  }
+
   public function save($filesimpan)
   {
     $data = [

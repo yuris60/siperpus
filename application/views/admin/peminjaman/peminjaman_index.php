@@ -70,7 +70,7 @@
             <?php
             date_default_timezone_set('Asia/Jakarta');
             $hariini = date('Y-m-d');
-            $bataspinjam = date('Y-m-d', strtotime('+3 days', strtotime($hariini))); //tambah tanggal sebanyak 6 bulan
+            $bataspinjam = date('Y-m-d', strtotime('+7 days', strtotime($hariini))); //tambah tanggal sebanyak 6 bulan
             ?>
 
             <input type="hidden" name="id_pinjam" value="<?= $id_pinjam ?>">

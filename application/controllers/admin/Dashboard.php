@@ -67,6 +67,8 @@ class Dashboard extends CI_Controller
     $data['jumlahpeminjamannovember'] = $this->dashboard_model->getJumlahPeminjamanNovember();
     $data['jumlahpeminjamandesember'] = $this->dashboard_model->getJumlahPeminjamanDesember();
 
+    // Buku Terfavorit
+    $data['bukuterfavorit'] = $this->dashboard_model->getBukuTerfavorit();
 
     $this->load->view('admin/templates/header', $data);
     $this->load->view('admin/templates/sidebar');

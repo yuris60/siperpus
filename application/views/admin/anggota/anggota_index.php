@@ -87,6 +87,9 @@
                 ?>
               </td>
               <td>
+                <a href="<?= base_url('admin/anggota/riwayatpeminjaman/') . $a['nisn']; ?>" data-bs-toggle="tooltip" data-bs-placement="top" title="Riwayat Peminjaman">
+                  <button class="btn btn-sm btn-info"><i class="bi bi-cloud-arrow-up-fill"></i></button>
+                </a>
                 <a href="<?= base_url('admin/anggota/update/') . $a['nisn']; ?>">
                   <button class="btn btn-sm btn-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
                 </a>

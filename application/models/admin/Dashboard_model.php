@@ -128,7 +128,6 @@ class Dashboard_model extends CI_Model
     $this->db->order_by('pengunjung.id_pengunjung', 'DESC');
     return $this->db->get()->result_array();
   }
-
   // End of Pengunjung
 
   // Peminjaman Buku
@@ -374,5 +373,29 @@ class Dashboard_model extends CI_Model
     $this->db->where('MONTH(peminjaman.tgl_pinjam)=12');
     $this->db->where('YEAR(peminjaman.tgl_pinjam)=', $tahun);
     return $this->db->get()->num_rows();
+  }
+
+  // Buku Terfavorit
+  public function getBukuTerfavorit()
+  {
+    // $this->db->select('*');
+    // $this->db->from('peminjaman');
+    // $this->db->join('detail_peminjaman', 'detail_peminjaman.id_pinjam = peminjaman.id_pinjam');
+    // $this->db->join('buku', 'detail_peminjaman.id_buku = buku.id_buku');
+    // $this->db->group_by('detail_peminjaman.id_buku');
+    // return $this->db->get()->result_array();
+
+    $sql = "SELECT buku.gambar_buku, buku.id_buku, buku.judul_buku, buku.pengarang, (
+      Select SUM(detail_peminjaman.qty_pinjam)
+      FROM detail_peminjaman
+      JOIN peminjaman ON detail_peminjaman.id_pinjam = peminjaman.id_pinjam
+      WHERE detail_peminjaman.id_buku = buku.id_buku
+      ) as qty_pinjam
+        FROM buku
+        LEFT JOIN detail_peminjaman USING(id_buku)
+        GROUP BY id_buku
+        ORDER BY qty_pinjam DESC
+        LIMIT 10";
+    return $topbuku = $this->db->query($sql)->result_array();
   }
 }

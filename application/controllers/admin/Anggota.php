@@ -131,4 +131,24 @@ class Anggota extends CI_Controller
     $this->session->set_flashdata('success', 'Dihapus');
     redirect('admin/anggota');
   }
+
+  public function riwayatPeminjaman($where)
+  {
+    $where = $this->uri->segment(4);
+    $data['admin'] = $this->login_model->getSession();
+    $data['title'] = "Riwayat Peminjaman Anggota | SIPERPUS";
+    $data['menu'] = "Anggota";
+    $data['submenu'] = "Riwayat Peminjaman";
+    $data['icon'] = "bi bi-person-circle";
+
+    $data['anggota'] = $this->anggota_model->getById($where);
+    $data['peminjaman'] = $this->anggota_model->getJoinPeminjaman($where);
+
+    $this->load->view('admin/templates/header', $data);
+    $this->load->view('admin/templates/sidebar');
+    $this->load->view('admin/templates/topbar');
+    $this->load->view('admin/anggota/anggota_riwayat', $data);
+    $this->load->view('admin/templates/footer');
+    $this->load->view('admin/templates/js');
+  }
 }

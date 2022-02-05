@@ -155,7 +155,9 @@
             </div> -->
           </div>
         </div>
-        <div class="row">
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
           <!-- Disini -->
           <div class="card border-primary">
             <div class="card-header">
@@ -182,9 +184,9 @@
                       <td class="text-center">
                         <?php $file_gambar = './assets/img/buku/' . $b['gambar_buku'];
                         if (file_exists($file_gambar)) : ?>
-                          <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="40%" alt="">
-                        <?php else : ?>
                           <img src="<?= base_url('assets/img/buku/') . $b['gambar_buku'] ?>" width="40%" alt="">
+                        <?php else : ?>
+                          <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="40%" alt="">
                         <?php endif; ?>
                       </td>
                       <td><?= $b['judul_buku'] ?></td>
@@ -205,6 +207,7 @@
           </div>
         </div>
       </div>
+
 
     </div>
     <div class="col-lg-3">
