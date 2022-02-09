@@ -26,10 +26,9 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Tautan Terkait</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Beranda</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Absen Kunjungan</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Berita</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Koleksi Buku</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url(); ?>">Beranda</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url('dashboard/absenpengunjung'); ?>">Absen Kunjungan</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url('buku/koleksi'); ?>">Koleksi Buku</a></li>
             </ul>
           </div>
 

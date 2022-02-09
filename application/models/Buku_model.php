@@ -16,6 +16,25 @@ class Buku_model extends CI_Model
     return $this->db->get('buku')->num_rows();
   }
 
+  public function countBukuKategori($where)
+  {
+    $this->db->where('id_kategoribuku', $where);
+    return $this->db->get('buku')->num_rows();
+  }
+
+  public function countBukuCari($katakunci, $pilihan)
+  {
+    if ($katakunci == "") { //jika tidak pilih berdasarkan
+      $this->db->like($pilihan, $katakunci, 'both');
+      return $this->db->get('buku')->num_rows();
+    } else {
+      $this->db->like('judul_buku', $katakunci, 'both');
+      $this->db->or_like('pengarang', $katakunci, 'both');
+      $this->db->or_like('penerbit', $katakunci, 'both');
+      return $this->db->get('buku')->num_rows();
+    }
+  }
+
   public function getJoin2($limit, $offset)
   {
     $this->db->select('*');
@@ -41,7 +60,7 @@ class Buku_model extends CI_Model
     return $this->db->get()->result_array();
   }
 
-  public function getCari($katakunci, $pilihan)
+  public function getCari($katakunci, $pilihan, $limit, $offset)
   {
     if ($katakunci == "") { //jika tidak pilih berdasarkan
       $this->db->select('*');
@@ -52,6 +71,7 @@ class Buku_model extends CI_Model
       $this->db->join('kategori_buku', 'buku.id_kategoribuku = kategori_buku.id_kategoribuku');
       $this->db->like($pilihan, $katakunci, 'both');
       $this->db->order_by('judul_buku', 'ASC');
+      $this->db->limit($limit, $offset);
       return $this->db->get()->result_array();
     } else {
       $this->db->select('*');
@@ -64,6 +84,7 @@ class Buku_model extends CI_Model
       $this->db->or_like('pengarang', $katakunci, 'both');
       $this->db->or_like('penerbit', $katakunci, 'both');
       $this->db->order_by('judul_buku', 'ASC');
+      $this->db->limit($limit, $offset);
       return $this->db->get()->result_array();
     }
   }
@@ -76,7 +97,7 @@ class Buku_model extends CI_Model
     $this->db->join('klasifikasi_ddc', 'buku.id_ddc = klasifikasi_ddc.id_ddc');
     $this->db->join('jenis_buku', 'buku.id_jenisbuku = jenis_buku.id_jenisbuku');
     $this->db->join('kategori_buku', 'buku.id_kategoribuku = kategori_buku.id_kategoribuku');
-    $this->db->limit(15);
+    $this->db->limit(10);
     $this->db->order_by('buku.id_buku', 'DESC');
     return $this->db->get()->result_array();
   }
@@ -99,7 +120,7 @@ class Buku_model extends CI_Model
     return $topbuku = $this->db->query($sql)->result_array();
   }
 
-  public function getBukuKategori($where)
+  public function getBukuKategori($where, $limit, $offset)
   {
     $this->db->select('*');
     $this->db->from('buku');
@@ -109,6 +130,7 @@ class Buku_model extends CI_Model
     $this->db->join('kategori_buku', 'buku.id_kategoribuku = kategori_buku.id_kategoribuku');
     $this->db->where('buku.id_kategoribuku', $where);
     $this->db->order_by('judul_buku', 'ASC');
+    $this->db->limit($limit, $offset);
     return $this->db->get()->result_array();
   }
 

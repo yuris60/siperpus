@@ -19,7 +19,18 @@
 
 <!-- AOS -->
 <script src="<?= base_url('assets/') ?>vendor/aos/aos.js"></script>
+
+<!-- Load Zooming library -->
+<script src="https://unpkg.com/zooming/build/zooming.min.js"></script>
+
 <script>
+  // Listen to images after DOM content is fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    new Zooming({
+      // options...
+    }).listen('.img-zoomable')
+  })
+
   // AOS
   AOS.init({
     // Global settings:
@@ -50,6 +61,7 @@
       loop: true,
       margin: 10,
       nav: true,
+      autoWidth: true,
       responsive: {
         0: {
           items: 3

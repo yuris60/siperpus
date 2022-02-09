@@ -104,26 +104,76 @@
       <section style="margin-top: -80px;">
         <div class="row">
           <?php foreach ($buku as $b) : ?>
-            <div class="col-lg-6 col-6 mb-4 text-center" style="max-width: 190px;">
-              <?php if (file_exists(base_url('assets/img/buku/') . $b['gambar_buku'])) : ?>
-                ok
-              <?php else : ?>
-                <img src="<?= base_url('assets/img/contoh.jpg') ?>" class="mx-auto" width="100%" alt="">
-              <?php endif; ?>
-              <small><?= substr($b['pengarang'], 0, 15); ?> ...</small>
-              <h6 style="font-weight: 800;"><?= $b['judul_buku']; ?></h6>
-              <span class="badge bg-success">Stok : <?= $b['stok_buku']; ?></span>
-              <span class="badge bg-secondary">Rak : <?= $b['rak_buku']; ?></span>
+            <div class="col-lg-3 g-4">
+              <div class="card h-100">
+                <div class="card-content">
+                  <div class="card-header bg-secondary">
+                    <span data-bs-toggle="modal" data-bs-target="#modalBukuKeseluruhan<?= $b['id_buku']; ?>">
+                      <button class="position-absolute btn-sm top-2 start-5 btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Detail Buku"><i class="fas fa-info-circle"></i></button>
+                    </span>
+                    <?php $file_gambar = './assets/img/buku/' . $b['gambar_buku'];
+                    if (file_exists($file_gambar)) : ?>
+                      <img src="<?= base_url('assets/img/buku/') . $b['gambar_buku'] ?>" class="img-zoomable mx-auto" height="150px" alt="">
+                    <?php else : ?>
+                      <img src="<?= base_url('assets/img/contoh.jpg') ?>" class="mx-auto" height="150px" alt="">
+                    <?php endif; ?>
 
-              <a href="" id="pilih" data-bs-toggle="modal" data-bs-target="#exampleModal" data-judul_buku="<?= $b['judul_buku'] ?>" data-pengarang="<?= $b['pengarang'] ?>" data-penerbit="<?= $b['penerbit'] ?>" data-thn_terbit="<?= $b['thn_terbit'] ?>" data-isbn="<?= $b['isbn'] ?>" data-kode_ddc="<?= $b['kode_ddc'] . " - " .  $b['kategori_ddc'] ?>" data-kategori_buku="<?= $b['nm_kategoribuku'] ?>" data-stok_buku="<?= $b['stok_buku'] ?>" data-rak_buku="<?= $b['rak_buku'] ?>">
-                <div class="d-grid gap-2 mt-2">
-                  <button type="button" class="btn btn-primary btn-sm btn-block">Detail</button>
+                  </div>
+                  <div class="card-body my-0">
+                    <!-- <small><?= substr($b['pengarang'], 0, 15); ?> ...</small> -->
+                    <h5 class="text-center my-0" style="font-weight: 800;"><?= $b['judul_buku']; ?></h5>
+
+                  </div>
                 </div>
-              </a>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" style="font-size: 11pt;" data-bs-toggle="tooltip" data-bs-placement="left" title="Pengarang"><i class="fas fa-user-edit"></i> <?= $b['pengarang']; ?></li>
+                  <li class="list-group-item" style="font-size: 11pt;" data-bs-toggle="tooltip" data-bs-placement="left" title="Penerbit"><i class="fa-solid fa-upload"></i> <?= $b['penerbit']; ?></li>
+                  <li class="list-group-item" style="font-size: 11pt;" data-bs-toggle="tooltip" data-bs-placement="left" title="Tahun Terbit"><i class="fas fa-calendar-day"></i> <?= $b['thn_terbit']; ?></li>
+                  <li class="list-group-item text-center">
+                    <?php if ($b['stok_buku'] > 0) : ?>
+                      <div class="badge bg-success text-white">Stok : <?= $b['stok_buku']; ?></div>
+                    <?php else : ?>
+                      <div class="badge bg-danger text-white">Stok : <?= $b['stok_buku']; ?></div>
+                    <?php endif; ?>
+                    <span class="badge bg-secondary">Rak : <?= $b['rak_buku']; ?></span>
+                  </li>
+                </ul>
+                <!-- <ul class="list-group list-group-flush">
+                  <a href="#">
+                    <li class="list-group-item bg-primary text-white text-center"><i class="fas fa-info-circle"></i> Detail Buku</li>
+                  </a>
+                </ul> -->
+              </div>
             </div>
           <?php endforeach; ?>
 
         </div>
+
+        <!-- Tombol Navigasi -->
+        <p class="text-center mt-4 mb-1">Tombol Navigasi</p>
+        <p class="my-0"><?= $pagelinks ?></p>
+        <p class="text-center mt-0">
+          <?php
+          if ($total_rows  == 0) {
+            $datasaatini = 0;
+            $datasampai = 0;
+          } else {
+            $datasaatini = $this->uri->segment(3);
+            $datasampai = $datasaatini + $limit;
+            if (empty($datasaatini)) {
+              $datasaatini = 1;
+            } else {
+              $datasaatini += 1;
+            }
+
+            if ($datasampai > $total_rows) {
+              $datasampai = $total_rows;
+            }
+          }
+          ?>
+          Data buku tampil : <?= $datasaatini . " - " . $datasampai ?> dari <?= $total_rows; ?>
+        </p>
+        <!-- End of Tombol Navigasi -->
       </section>
 
       <section class="pt-5 pb-5">
