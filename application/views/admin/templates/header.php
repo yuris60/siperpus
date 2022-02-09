@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= $title; ?></title>
+  <title><?= $title; ?> | Admin SIPERPUS</title>
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/fontawesome/all.min.css">
   <link rel="stylesheet" href="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/css/app.css">
   <link rel="shortcut icon" href="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/images/favicon.svg" type="image/x-icon">
+
+  <!-- Favicons -->
+  <link href="<?= base_url('assets/img/Logo SIPERPUS favicon2.png') ?>" rel="icon">
 
   <!-- Datatables -->
   <link rel="stylesheet" href="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/jquery-datatables/jquery.dataTables.bootstrap5.min.css">

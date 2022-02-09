@@ -23,11 +23,35 @@ class Dashboard_model extends CI_Model
     return $this->db->get('buku')->result_array();
   }
 
+  public function getAnggotaAll()
+  {
+    $this->db->select('*');
+    $this->db->from('anggota');
+    $this->db->join('kelas', 'anggota.id_kelas = kelas.id_kelas');
+    $this->db->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan');
+    $this->db->order_by('anggota.id_kelas', 'ASC');
+    $this->db->order_by('anggota.nm_anggota', 'ASC');
+    return $this->db->get()->result_array();
+  }
+
   public function savePengunjung()
   {
     $jam = date("Y-m-d H:i:s");
     $data = [
       'nisn' => htmlspecialchars($this->input->post('nisn', true)),
+      'jam_kunjungan' => $jam
+    ];
+
+    $this->db->insert('pengunjung', $data);
+
+    // echo $this->input->post('nisn', true);
+  }
+
+  public function savePengunjungManual($where)
+  {
+    $jam = date("Y-m-d H:i:s");
+    $data = [
+      'nisn' => $where,
       'jam_kunjungan' => $jam
     ];
 
@@ -45,5 +69,33 @@ class Dashboard_model extends CI_Model
     $this->db->join('jenis_buku', 'buku.id_jenisbuku = jenis_buku.id_jenisbuku');
     $this->db->order_by('buku.id_buku', 'DESC');
     return $this->db->get()->result_array();
+  }
+
+  public function getJumlahAnggota()
+  {
+    $this->db->select('*');
+    $this->db->from('anggota');
+    return $this->db->get()->num_rows();
+  }
+
+  public function getJumlahJudulBuku()
+  {
+    $this->db->select('*');
+    $this->db->from('buku');
+    return $this->db->get()->num_rows();
+  }
+
+  public function getEksemplarBuku()
+  {
+    $this->db->select_sum('jml_eksemplar');
+    $result = $this->db->get('buku')->row();
+    return $result->jml_eksemplar;
+  }
+
+  public function getJumlahAdmin()
+  {
+    $this->db->select('*');
+    $this->db->from('admin');
+    return $this->db->get()->num_rows();
   }
 }

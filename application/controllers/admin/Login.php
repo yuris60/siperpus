@@ -35,7 +35,7 @@ class Login extends CI_Controller
 
   public function logout()
   {
+    $this->session->set_flashdata('success', 'Logout');
     $this->login_model->logout();
-    $this->session->set_flashdata('flash', 'Terimakasih');
   }
 }

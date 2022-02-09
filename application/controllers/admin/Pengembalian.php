@@ -13,7 +13,7 @@ class Pengembalian extends CI_Controller
   public function index()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Pengembalian Buku| SIPERPUS";
+    $data['title'] = "Pengembalian Buku";
     $data['menu'] = "Pengembalian Buku";
     $data['icon'] = "bi bi-book-half";
 
@@ -30,7 +30,7 @@ class Pengembalian extends CI_Controller
   public function detail($where)
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Detail Pengembalian | SIPERPUS";
+    $data['title'] = "Detail Pengembalian";
     $data['menu'] = "Pengembalian Buku";
     $data['submenu'] = "Detail";
     $data['icon'] = "bi bi-book-half";

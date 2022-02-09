@@ -15,7 +15,7 @@ class klasifikasiddc extends CI_Controller
   public function index()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Klasifikasi DDC | SIPERPUS";
+    $data['title'] = "Klasifikasi DDC";
     $data['menu'] = "Klasifikasi DDC";
     $data['icon'] = "bi bi-list-ol";
 
@@ -32,7 +32,7 @@ class klasifikasiddc extends CI_Controller
   public function create()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Tambah Klasifikasi DDC | SIPERPUS";
+    $data['title'] = "Tambah Klasifikasi DDC";
     $data['menu'] = "Klasifikasi DDC";
     $data['submenu'] = "Tambah Data";
     $data['icon'] = "bi bi-list-ol";
@@ -57,7 +57,7 @@ class klasifikasiddc extends CI_Controller
   public function update($where)
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Perbarui Klasifikasi DDC | SIPERPUS";
+    $data['title'] = "Perbarui Klasifikasi DDC";
     $data['menu'] = "Klasifikasi DDC";
     $data['submenu'] = "Perbarui Data";
     $data['icon'] = "bi bi-list-ol";

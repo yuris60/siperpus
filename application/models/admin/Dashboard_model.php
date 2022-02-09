@@ -395,7 +395,7 @@ class Dashboard_model extends CI_Model
         LEFT JOIN detail_peminjaman USING(id_buku)
         GROUP BY id_buku
         ORDER BY qty_pinjam DESC
-        LIMIT 10";
+        LIMIT 5";
     return $topbuku = $this->db->query($sql)->result_array();
   }
 }

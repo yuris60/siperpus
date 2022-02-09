@@ -64,9 +64,9 @@
                 </li>
                 <!-- <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i> Settings</a></li>
                 <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-wallet me-2"></i> Wallet</a></li> -->
-                <hr class="dropdown-divider">
+                <hr class="dropdown-divider mb-0">
                 </li>
-                <li><a class="dropdown-item" href="<?= base_url('admin/login/logout') ?>"><i class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                <li><a href="<?= base_url('admin/login/logout') ?>"><button class="btn btn-danger btn-block"><i class="bi bi-box-arrow-right"></i> Logout</button></a></li>
               </ul>
             </div>
           </div>

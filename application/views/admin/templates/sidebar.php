@@ -3,7 +3,7 @@
     <!-- <img src="<?= base_url('assets/img/sidebar.jpg'); ?>" width="100%" class="" alt=""> -->
     <div class="sidebar-menu">
       <ul class="menu">
-        <!-- <li style="margin-left: -10px;"><img src="<?= base_url('assets/img/sidebar.jpg'); ?>" width="100%" class="" alt=""></li> -->
+        <li class="text-center sidebar-item"><a href="<?= base_url("admin/dashboard") ?>"><img src="<?= base_url('assets/img/Logo SIPERPUS +Text.png'); ?>" width="90%" class="" alt=""></a></li>
         <li class="sidebar-title">Menu</li>
 
         <li class="sidebar-item <?php if ($this->uri->segment(2) == 'dashboard' || $this->uri->segment(2) == '') {

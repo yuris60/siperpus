@@ -16,7 +16,7 @@ class laporanpengunjung extends CI_Controller
   public function index()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Laporan Pengunjung | SIPERPUS";
+    $data['title'] = "Laporan Pengunjung";
     $data['menu'] = "Laporan Pengunjung";
     $data['icon'] = "bi bi-book-half";
 

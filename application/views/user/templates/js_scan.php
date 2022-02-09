@@ -1,6 +1,7 @@
 <!-- Vendor JS Files -->
 <script src="<?= base_url('assets/') ?>vendor/jquery/jquery.min.js"></script>
-<script src="<?= base_url('assets/vendor/sailor/') ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="<?= base_url('assets/vendor/sailor/') ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+<script src="<?= base_url('assets/') ?>js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url('assets/vendor/sailor/') ?>assets/vendor/glightbox/js/glightbox.min.js"></script>
 <script src="<?= base_url('assets/vendor/sailor/') ?>assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="<?= base_url('assets/vendor/sailor/') ?>assets/vendor/swiper/swiper-bundle.min.js"></script>
@@ -12,8 +13,15 @@
 <script type="text/javascript" src="<?= base_url('assets/vendor/'); ?>instascan/vue.min.js"></script>
 <script type="text/javascript" src="<?= base_url('assets/vendor/'); ?>instascan/instascan.min.js"></script>
 
+<!-- Font Awesome -->
+<script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/fontawesome/all.min.js"></script>
+
 <!-- Instascan JS -->
 <script src="<?= base_url('assets/js/myinstascan_absen.js') ?>"></script>
+
+<!-- Datatables -->
+<script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/jquery-datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/jquery-datatables/custom.jquery.dataTables.bootstrap5.min.js"></script>
 
 <!-- AOS -->
 <script src="<?= base_url('assets/') ?>vendor/aos/aos.js"></script>
@@ -40,6 +48,16 @@
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
   });
+
+  // Jquery Datatable
+  $(document).ready(function() {
+    $('.datatables').DataTable();
+  });
+  // Tooltip
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
 </script>
 
 <!-- Template Main JS File -->

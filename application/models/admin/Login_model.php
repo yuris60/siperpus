@@ -18,11 +18,11 @@ class Login_model extends CI_Model
           'username' => $admin['username']
         ];
         $this->session->set_userdata($data); //simpan SESSION admin
-        $this->session->set_flashdata('flash-login', $admin['akses']); //membuat alert selamat datang
+        $this->session->set_flashdata('success', '!'); //membuat alert selamat datang
         redirect('admin/dashboard');
       }
     } else {
-      $this->session->set_flashdata('flash', 'Ditemukan');
+      $this->session->set_flashdata('gagallogin', 'Ditemukan');
       redirect('admin/login');
     }
   }

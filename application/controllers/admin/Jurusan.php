@@ -15,7 +15,7 @@ class Jurusan extends CI_Controller
   public function index()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Jurusan | SIPERPUS";
+    $data['title'] = "Jurusan";
     $data['menu'] = "Jurusan";
     $data['icon'] = "bi bi-journal-bookmark";
 

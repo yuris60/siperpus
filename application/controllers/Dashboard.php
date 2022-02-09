@@ -18,6 +18,11 @@ class Dashboard extends CI_Controller
     $data['menu'] = "Beranda";
     $data['icon'] = "home";
 
+    $data['jumlahanggota'] = $this->dashboard_model->getJumlahAnggota();
+    $data['jumlahjudulbuku'] = $this->dashboard_model->getJumlahJudulBuku();
+    $data['jumlaheksemplarbuku'] = $this->dashboard_model->getEksemplarBuku();
+    $data['jumlahadmin'] = $this->dashboard_model->getJumlahAdmin();
+
     $this->load->view('user/templates/header', $data);
     $this->load->view('user/templates/navbar');
     $this->load->view('user/templates/carousel');
@@ -34,6 +39,7 @@ class Dashboard extends CI_Controller
     $data['icon'] = "home";
 
     $data['pengunjung'] = $this->dashboard_model->getPengunjung();
+    $data['anggota'] = $this->dashboard_model->getAnggotaAll();
 
     $this->form_validation->set_rules('nisn', 'NISN', 'required|trim');
 
@@ -51,39 +57,11 @@ class Dashboard extends CI_Controller
     }
   }
 
-  public function koleksibuku()
+  public function absenPengunjungManual($where)
   {
-    // $data['user'] = $this->login_model->getSession();
-    $data['title'] = "Koleksi Buku | SIPERPUS";
-    $data['menu'] = "Koleksi Buku";
-    $data['icon'] = "bi bi-bool-fill";
-
-    $data['pengunjung'] = $this->dashboard_model->getPengunjung();
-    $data['buku'] = $this->dashboard_model->getBukuAll();
-
-    $this->form_validation->set_rules('nisn', 'NISN', 'required|trim');
-
-    if ($this->form_validation->run() == FALSE) {
-      $this->load->view('user/templates/header', $data);
-      $this->load->view('user/templates/navbar');
-      $this->load->view('user/templates/carousel2');
-      $this->load->view('user/koleksi_buku', $data);
-      $this->load->view('user/templates/footer');
-      $this->load->view('user/templates/js');
-    } else {
-      $this->dashboard_model->savePengunjung();
-      $this->session->set_flashdata('success', 'Disimpan');
-      redirect('dashboard/absenpengunjung');
-    }
-  }
-
-  public function index2()
-  {
-    // $data['user'] = $this->login_model->getSession();
-    $data['title'] = "Beranda | SIPERPUS";
-    $data['menu'] = "Beranda";
-    $data['icon'] = "home";
-
-    $this->load->view('index2', $data);
+    $where = $this->uri->segment(3);
+    $this->dashboard_model->savePengunjungManual($where);
+    $this->session->set_flashdata('success', 'Disimpan');
+    redirect('dashboard/absenpengunjung');
   }
 }

@@ -1,4 +1,5 @@
 const flashDataSuccess = $('.flash-data-success').data('flashdata');
+const flashDataGagalLogin = $('.flash-data-gagal-login').data('flashdata');
 const flashDataGagalPinjam = $('.flash-data-gagal-pinjam').data('flashdata');
 const flashDataGagalPinjamBuku = $('.flash-data-gagal-pinjam-buku').data('flashdata');
 const flashDataGagalBukuKurang = $('.flash-data-gagal-buku-kurang').data('flashdata');
@@ -14,6 +15,19 @@ if (flashDataSuccess) {
     })
   }
   document.getElementById("ToastBtnSuccess").click(); // Click on the checkbox
+}
+
+else if (flashDataGagalLogin) {
+  var toastTriggerGagalLogin = document.getElementById('ToastBtnGagalLogin')
+  var toastGagalLogin = document.getElementById('ToastGagalLogin')
+  if (toastTriggerGagalLogin) {
+    toastTriggerGagalLogin.addEventListener('click', function() {
+      var toastgagallogin = new bootstrap.Toast(toastGagalLogin)
+      
+      toastgagallogin.show()
+    })
+  }
+  document.getElementById("ToastBtnGagalLogin").click(); // Click on the checkbox
 }
 
 else if (flashDataGagalPinjam) {

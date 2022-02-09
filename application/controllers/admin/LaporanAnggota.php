@@ -17,7 +17,7 @@ class laporananggota extends CI_Controller
   public function index()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Laporan Anggota | SIPERPUS";
+    $data['title'] = "Laporan Anggota";
     $data['menu'] = "Laporan Anggota";
     $data['icon'] = "bi bi-person-circle";
 

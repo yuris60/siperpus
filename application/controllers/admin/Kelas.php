@@ -15,7 +15,7 @@ class Kelas extends CI_Controller
   public function index()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Kelas | SIPERPUS";
+    $data['title'] = "Kelas";
     $data['menu'] = "Kelas";
     $data['icon'] = "bi bi-journal-check";
 
@@ -32,7 +32,7 @@ class Kelas extends CI_Controller
   public function create()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Kelas | SIPERPUS";
+    $data['title'] = "Kelas";
     $data['menu'] = "Kelas";
     $data['submenu'] = "Tambah Data";
     $data['icon'] = "bi bi-journal-check";

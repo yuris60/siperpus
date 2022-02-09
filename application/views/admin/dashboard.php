@@ -3,6 +3,18 @@
 error_reporting(0)
 ?>
 
+<div class="flash-data-success" data-flashdata="<?= $this->session->flashdata('success'); ?>"></div>
+
+<!-- Toast Berhasil logout -->
+<button type="button" class="btn btn-primary" style="display: none;" id="ToastBtnSuccess">Show live toast</button>
+<div class="position-fixed bottom-0 start-50 pb-3" style="z-index: 11">
+  <div id="ToastSuccess" class="toast bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body">
+      <i class="fas fa-check"></i> Selamat Datang, <b><?= $admin['nm_admin'] ?></b> <?= $this->session->flashdata('success'); ?>
+    </div>
+  </div>
+</div>
+
 <!-- Breadcrumb -->
 <div class="page-title">
   <div class="row">
@@ -118,7 +130,7 @@ error_reporting(0)
                   <div class="recent-message d-flex px-4 pb-3">
                     <?php $file_gambar = './assets/img/anggota/' . $p['foto_anggota'];
                     if (file_exists($file_gambar)) : ?>
-                      <img src="<?= base_url('assets/img/anggota/') . $p['foto_anggota'] ?>" width="50px" alt="">
+                      <img src="<?= base_url('assets/img/anggota/') . $p['foto_anggota'] ?>" width="50px" alt="" class="img-zoomable">
                     <?php else : ?>
                       <img src="<?= base_url('assets/img/no_photo.jpg') ?>" width="50px" alt="">
                     <?php endif; ?>
@@ -170,7 +182,7 @@ error_reporting(0)
                               <td>
                                 <?php $file_gambar = './assets/img/anggota/' . $ps['foto_anggota'];
                                 if (file_exists($file_gambar)) : ?>
-                                  <img src="<?= base_url('assets/img/anggota/') . $ps['foto_anggota'] ?>" width="50px" alt="">
+                                  <img src="<?= base_url('assets/img/anggota/') . $ps['foto_anggota'] ?>" width="50px" alt="" class="img-zoomable">
                                 <?php else : ?>
                                   <img src="<?= base_url('assets/img/no_photo.jpg') ?>" width="50px" alt="">
                                 <?php endif; ?>
@@ -230,7 +242,7 @@ error_reporting(0)
                               <td>
                                 <?php $file_gambar = './assets/img/anggota/' . $pbl['foto_anggota'];
                                 if (file_exists($file_gambar)) : ?>
-                                  <img src="<?= base_url('assets/img/anggota/') . $pbl['foto_anggota'] ?>" width="50px" alt="">
+                                  <img src="<?= base_url('assets/img/anggota/') . $pbl['foto_anggota'] ?>" width="50px" alt="" class="img-zoomable">
                                 <?php else : ?>
                                   <img src="<?= base_url('assets/img/no_photo.jpg') ?>" width="50px" alt="">
                                 <?php endif; ?>
@@ -290,7 +302,7 @@ error_reporting(0)
                               <td>
                                 <?php $file_gambar = './assets/img/anggota/' . $pl['foto_anggota'];
                                 if (file_exists($file_gambar)) : ?>
-                                  <img src="<?= base_url('assets/img/anggota/') . $pl['foto_anggota'] ?>" width="50px" alt="">
+                                  <img src="<?= base_url('assets/img/anggota/') . $pl['foto_anggota'] ?>" width="50px" alt="" class="img-zoomable">
                                 <?php else : ?>
                                   <img src="<?= base_url('assets/img/no_photo.jpg') ?>" width="50px" alt="">
                                 <?php endif; ?>
@@ -368,10 +380,8 @@ error_reporting(0)
                         $file_gambar = './assets/img/buku/' . $bt['gambar_buku'];
                         if (file_exists($file_gambar)) : ?>
                           <img src="<?= base_url('assets/img/buku/') . $bt['gambar_buku'] ?>" class="img-zoomable" width="70px" alt="">
-                          <!-- Gambar Ada -->
                         <?php else : ?>
-                          <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="70px" class="img-zoomable" alt="">
-                          <!-- Gambar Tidak Ada -->
+                          <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="70px" alt="">
                         <?php endif; ?>
                       </td>
                       <td><?= $bt['judul_buku']; ?></td>

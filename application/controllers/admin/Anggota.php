@@ -16,7 +16,7 @@ class Anggota extends CI_Controller
   public function index()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Anggota | SIPERPUS";
+    $data['title'] = "Anggota";
     $data['menu'] = "Anggota";
     $data['icon'] = "bi bi-person-circle";
 
@@ -33,7 +33,7 @@ class Anggota extends CI_Controller
   public function create()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Tambah Anggota | SIPERPUS";
+    $data['title'] = "Tambah Anggota";
     $data['menu'] = "Anggota";
     $data['submenu'] = "Tambah Data";
     $data['icon'] = "bi bi-person-circle";
@@ -79,7 +79,7 @@ class Anggota extends CI_Controller
   {
     $where = $this->uri->segment(4);
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Perbarui Anggota | SIPERPUS";
+    $data['title'] = "Perbarui Anggota";
     $data['menu'] = "Anggota";
     $data['submenu'] = "Perbarui Data";
     $data['icon'] = "bi bi-person-circle";
@@ -136,7 +136,7 @@ class Anggota extends CI_Controller
   {
     $where = $this->uri->segment(4);
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Riwayat Peminjaman Anggota | SIPERPUS";
+    $data['title'] = "Riwayat Peminjaman Anggota";
     $data['menu'] = "Anggota";
     $data['submenu'] = "Riwayat Peminjaman";
     $data['icon'] = "bi bi-person-circle";

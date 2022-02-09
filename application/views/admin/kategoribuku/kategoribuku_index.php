@@ -32,32 +32,13 @@
 <div class="flash-data-success" data-flashdata="<?= $this->session->flashdata('success'); ?>"></div>
 
 <button type="button" class="btn btn-primary" style="display: none;" id="ToastBtnSuccess">Show live toast</button>
-<div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+<div class="position-fixed bottom-0 start-50 pb-3" style="z-index: 11">
   <div id="ToastSuccess" class="toast bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-body">
       <i class="fas fa-check"></i> <b>Selamat, </b>Data Berhasil <?= $this->session->flashdata('success'); ?>
     </div>
   </div>
 </div>
-
-<!-- Flexbox container for aligning the toasts -->
-<div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100" style="display: none;">
-  <button type="button" class="btn btn-primary" style="display: none;" id="ToastBtnDelete">Show live toast</button>
-
-  <!-- Then put toasts within -->
-  <div id="ToastBtnDelete" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="display: none;">
-    <div class="toast-header">
-      <img src="..." class="rounded me-2" alt="...">
-      <strong class="me-auto">Bootstrap</strong>
-      <small>11 mins ago</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body">
-      Hello, world! This is a toast message.
-    </div>
-  </div>
-</div>
-<!-- End of Toastr -->
 
 <!-- Container -->
 <section class="section">

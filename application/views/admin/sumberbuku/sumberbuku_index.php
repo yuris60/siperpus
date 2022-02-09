@@ -32,7 +32,7 @@
 <div class="flash-data-success" data-flashdata="<?= $this->session->flashdata('success'); ?>"></div>
 
 <button type="button" class="btn btn-primary" style="display: none;" id="ToastBtnSuccess">Show live toast</button>
-<div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+<div class="position-fixed end-0 top-0 p-3" style="z-index: 11">
   <div id="ToastSuccess" class="toast bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-body">
       <i class="fas fa-check"></i> <b>Selamat, </b>Data Berhasil <?= $this->session->flashdata('success'); ?>

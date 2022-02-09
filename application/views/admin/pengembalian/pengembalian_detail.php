@@ -34,7 +34,7 @@
 
 <!-- Toast Berhasil Pinjam -->
 <button type="button" class="btn btn-primary" style="display: none;" id="ToastBtnSuccess">Show live toast</button>
-<div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+<div class="position-fixed bottom-0 start-50 pb-3" style="z-index: 11">
   <div id="ToastSuccess" class="toast bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-body">
       <i class="fas fa-check"></i> <b>Selamat, </b>Data Berhasil <?= $this->session->flashdata('success'); ?>
@@ -44,7 +44,7 @@
 
 <!-- Toast Gagal Pinjam -->
 <button type="button" class="btn btn-danger" style="display: none;" id="ToastBtnGagalPinjam">Show live toast</button>
-<div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+<div class="position-fixed bottom-0 start-50 pb-3" style="z-index: 11">
   <div id="ToastGagalPinjam" class="toast bg-danger text-white" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-body">
       <i class="fas fa-times"></i> <b>Maaf, </b>Data Buku Tidak <?= $this->session->flashdata('gagal-pinjam'); ?>
@@ -54,7 +54,7 @@
 
 <!-- Toast Gagal Pinjam Buku -->
 <button type="button" class="btn btn-danger" style="display: none;" id="ToastBtnGagalPinjamBuku">Show live toast</button>
-<div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+<div class="position-fixed bottom-0 start-50 pb-3" style="z-index: 11">
   <div id="ToastGagalPinjamBuku" class="toast bg-danger text-white" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-body">
       <i class="fas fa-times"></i> <b>Maaf, </b>Buku Sudah <?= $this->session->flashdata('gagal-pinjam-buku'); ?>

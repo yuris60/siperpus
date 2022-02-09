@@ -58,14 +58,14 @@
       <div class="card-header">
         <h4 class="card-title"><i class="fas fa-database"></i> Data
           <!-- <a href="<?= base_url('admin/buku/create') ?>" class="float-end"><button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah Data"><i class="fas fa-plus"></i></button></a> -->
-          <button type="submit" class="btn btn-success float-end" name="submit_label_buku" data-bs-toggle="tooltip" data-bs-placement="top" title="Cetak Label Buku Pilihan"><i class="fas fa-tags"></i></button>
+          <!-- <button type="submit" class="btn btn-success float-end" name="submit_label_buku" data-bs-toggle="tooltip" data-bs-placement="top" title="Cetak Label Buku Pilihan"><i class="fas fa-tags"></i></button> -->
         </h4>
       </div>
       <div class="card-body">
         <table class="table table-striped table-hover" id="table1">
           <thead>
             <tr class="table-secondary">
-              <th></th>
+              <!-- <th></th> -->
               <th>No</th>
               <th>QR Code</th>
               <th>Judul Buku</th>
@@ -73,13 +73,14 @@
               <th>Penerbit</th>
               <th>Tahun Terbit</th>
               <th>Gambar Buku</th>
+              <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
             <?php $no = 1;
             foreach ($buku as $b) : ?>
               <tr>
-                <td><input type="checkbox" id="checkbox1" class="form-check-input" name="cid_buku[]" value="<?= $b['id_buku'] ?>"></td>
+                <!-- <td><input type="checkbox" id="checkbox1" class="form-check-input" name="cid_buku[]" value="<?= $b['id_buku'] ?>"></td> -->
                 <td><?= $no; ?></td>
                 <td>
                   <?php
@@ -102,6 +103,9 @@
                   <?php else : ?>
                     <img src="<?= base_url('assets/img/buku/') . $dp['gambar_buku'] ?>" width="30%" alt="">
                   <?php endif; ?>
+                </td>
+                <td>
+                  <a target="_blank" href="<?= base_url('admin/laporanbuku/cetakLabelBukuByID/') . $b['id_buku'] ?>"><button type="button" class="btn btn-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Cetak Label Buku <?= $b['judul_buku'] ?>"><i class="fas fa-tags"></i></button></a>
                 </td>
               </tr>
             <?php $no++;

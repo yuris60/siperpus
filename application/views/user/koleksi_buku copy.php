@@ -282,9 +282,8 @@
             <tbody style="font-size: 14px;">
               <tr>
                 <td colspan="3">
-                  <?php $file_gambar = './assets/img/buku/' . $b['gambar_buku'];
-                  if (file_exists($file_gambar)) : ?>
-                    <img src="<?= base_url('assets/img/buku/') . $b['gambar_buku'] ?>" class="img-zoomable" width="80px" alt="">
+                  <?php if (file_exists(base_url('assets/img/buku/') . $bt['gambar_buku'])) : ?>
+                    ok
                   <?php else : ?>
                     <img src="<?= base_url('assets/img/contoh.jpg') ?>" class="mx-auto" width="80px" alt="">
                   <?php endif; ?>
@@ -358,7 +357,6 @@
         var item_kategori_buku = $(this).data('kategori_buku');
         var item_stok_buku = $(this).data('stok_buku');
         var item_rak_buku = $(this).data('rak_buku');
-        var item_jml_halaman = $(this).data('jml_halaman');
         document.getElementById("judul_buku").innerHTML = item_judul_buku;
         document.getElementById("pengarang").innerHTML = item_pengarang;
         document.getElementById("penerbit").innerHTML = item_penerbit;
@@ -368,7 +366,6 @@
         document.getElementById("kategori_buku").innerHTML = item_kategori_buku;
         document.getElementById("stok_buku").innerHTML = item_stok_buku;
         document.getElementById("rak_buku").innerHTML = item_rak_buku;
-        document.getElementById("jml_halaman").innerHTML = item_jml_halaman;
       })
     })
   </script>

@@ -9,8 +9,17 @@ class laporanbuku_model extends CI_Model
   {
     $this->db->select('*');
     $this->db->from('buku');
-    $this->db->order_by('id_buku', 'DESC');
+    $this->db->order_by('judul_buku', 'ASC');
     return $this->db->get()->result_array();
+  }
+
+  public function getById($where)
+  {
+    $this->db->select('*');
+    $this->db->from('buku');
+    $this->db->join('klasifikasi_ddc', 'buku.id_ddc = klasifikasi_ddc.id_ddc');
+    $this->db->where('id_buku', $where);
+    return $this->db->get()->row_array();
   }
 
   public function getAllJoin()

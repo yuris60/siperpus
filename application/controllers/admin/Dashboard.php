@@ -17,7 +17,7 @@ class Dashboard extends CI_Controller
   public function index()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Dashboard | SIPERPUS";
+    $data['title'] = "Dashboard";
     $data['menu'] = "Dashboard";
     $data['icon'] = "bi bi-house-door-fill";
 

@@ -13,7 +13,7 @@ class sumberbuku extends CI_Controller
   public function index()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Sumber Buku | SIPERPUS";
+    $data['title'] = "Sumber Buku";
     $data['menu'] = "Sumber Buku";
     $data['icon'] = "bi bi-journals";
 
@@ -30,7 +30,7 @@ class sumberbuku extends CI_Controller
   public function create()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Tambah Sumber Buku | SIPERPUS";
+    $data['title'] = "Tambah Sumber Buku";
     $data['menu'] = "Sumber Buku";
     $data['submenu'] = "Tambah Data";
     $data['icon'] = "bi bi-journals";
@@ -55,7 +55,7 @@ class sumberbuku extends CI_Controller
   public function update($where)
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Perbarui Sumber Buku | SIPERPUS";
+    $data['title'] = "Perbarui Sumber Buku";
     $data['menu'] = "Sumber Buku";
     $data['submenu'] = "Perbarui Data";
     $data['icon'] = "bi bi-journals";

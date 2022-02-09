@@ -39,3 +39,4 @@ assets/vendor/mazer/*
  smudge = git-lfs smudge -- %f
  process = git-lfs filter-process
 assets/vendor/mazer/
+assets/psd/

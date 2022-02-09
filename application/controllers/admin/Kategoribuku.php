@@ -15,7 +15,7 @@ class kategoribuku extends CI_Controller
   public function index()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Kategori Buku | SIPERPUS";
+    $data['title'] = "Kategori Buku";
     $data['menu'] = "Kategori Buku";
     $data['icon'] = "bi bi-bookmarks";
 
@@ -32,7 +32,7 @@ class kategoribuku extends CI_Controller
   public function create()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Tambah Kategori Buku | SIPERPUS";
+    $data['title'] = "Tambah Kategori Buku";
     $data['menu'] = "Kategori Buku";
     $data['submenu'] = "Tambah Data";
     $data['icon'] = "bi bi-bookmarks";
@@ -56,7 +56,7 @@ class kategoribuku extends CI_Controller
   public function update($where)
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Perbarui Kategori Buku | SIPERPUS";
+    $data['title'] = "Perbarui Kategori Buku";
     $data['menu'] = "Kategori Buku";
     $data['submenu'] = "Perbarui Data";
     $data['icon'] = "bi bi-bookmarks";

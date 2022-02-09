@@ -120,7 +120,7 @@
                 </div>
                 <div class="col-md-9">
                   <h6 class="font-semibold">Jumlah Anggota</h6>
-                  <h6 class="font-extrabold mb-0">183.000</h6>
+                  <h6 class="font-extrabold mb-0"><?= $jumlahanggota ?></h6>
                 </div>
               </div>
             </div>
@@ -137,7 +137,7 @@
                 </div>
                 <div class="col-md-9">
                   <h6 class="font-semibold">Jumlah Judul Buku</h6>
-                  <h6 class="font-extrabold mb-0">112.000</h6>
+                  <h6 class="font-extrabold mb-0"><?= $jumlahjudulbuku ?></h6>
                 </div>
               </div>
             </div>
@@ -154,7 +154,7 @@
                 </div>
                 <div class="col-md-9">
                   <h6 class="text-muted font-semibold">Jumlah Eksemplar</h6>
-                  <h6 class="font-extrabold mb-0">80.000</h6>
+                  <h6 class="font-extrabold mb-0"><?= $jumlaheksemplarbuku ?></h6>
                 </div>
               </div>
             </div>
@@ -171,7 +171,7 @@
                 </div>
                 <div class="col-md-9">
                   <h6 class="font-semibold">Jumlah Admin</h6>
-                  <h6 class="font-extrabold mb-0">80.000</h6>
+                  <h6 class="font-extrabold mb-0"><?= $jumlahadmin ?></h6>
                 </div>
               </div>
             </div>
