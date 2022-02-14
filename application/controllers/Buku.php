@@ -65,28 +65,28 @@ class Buku extends CI_Controller
     $pilihan = $this->input->post('pilih_berdasarkan');
     $katakunci = $this->input->post('cari');
 
-    $limit = 16;
-    $offset = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+    // $limit = 16;
+    // $offset = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
 
-    $config['base_url'] = site_url('buku/cari');
-    $config['total_rows'] = $this->buku_model->countBukuCari($katakunci, $pilihan);
-    $config['per_page'] = $limit;
-    $config['uri_segment'] = 4;
+    // $config['base_url'] = site_url('buku/cari/pilihan/katakunci/');
+    // $config['total_rows'] = $this->buku_model->countBukuCari($katakunci, $pilihan);
+    // $config['per_page'] = $limit;
+    // $config['uri_segment'] = 5;
 
-    // Kiri Kanan 2 Tombol
-    $config['num_links'] = 2;
+    // // Kiri Kanan 2 Tombol
+    // $config['num_links'] = 2;
 
-    // Custom with bootstrap
-    $config['full_tag_open'] = '<nav aria-label="Page navigation example"><ul class="pagination justify-content-center">';
-    $config['full_tag_close'] = '</ul></nav>';
-    $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
-    $config['cur_tag_close'] = '</a></li>';
+    // // Custom with bootstrap
+    // $config['full_tag_open'] = '<nav aria-label="Page navigation example"><ul class="pagination justify-content-center">';
+    // $config['full_tag_close'] = '</ul></nav>';
+    // $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
+    // $config['cur_tag_close'] = '</a></li>';
 
-    // Ubah class a href
-    $config['attributes'] = array('class' => 'page-link');
+    // // Ubah class a href
+    // $config['attributes'] = array('class' => 'page-link');
 
-    // Inisiasi
-    $this->pagination->initialize($config);
+    // // Inisiasi
+    // $this->pagination->initialize($config);
 
     $data['title'] = "Cari Buku | SIPERPUS";
     $data['menu'] = "Cari Buku";
@@ -94,11 +94,11 @@ class Buku extends CI_Controller
 
     $data['katakunci'] = $katakunci;
     $data['pilihan'] = $pilihan;
-    $data['buku'] = $this->buku_model->getCari($katakunci, $pilihan, $limit, $offset);
+    $data['buku'] = $this->buku_model->getCari($katakunci, $pilihan);
     $data['bukuterbaru'] = $this->buku_model->getBukuTerbaru();
-    $data['total_rows'] = $this->buku_model->countBukuCari($katakunci, $pilihan);
-    $data['limit'] = $limit;
-    $data['pagelinks'] = $this->pagination->create_links();
+    // $data['total_rows'] = $this->buku_model->countBukuCari($katakunci, $pilihan);
+    // $data['limit'] = $limit;
+    // $data['pagelinks'] = $this->pagination->create_links();
 
     $this->load->view('user/templates/header', $data);
     $this->load->view('user/templates/navbar');

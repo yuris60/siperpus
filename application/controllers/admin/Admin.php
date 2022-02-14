@@ -15,7 +15,7 @@ class Admin extends CI_Controller
   public function index()
   {
     $data['admin'] = $this->login_model->getSession();
-    $data['title'] = "Admin | SIPERPUS";
+    $data['title'] = "Admin";
     $data['menu'] = "Admin";
     $data['icon'] = "bi bi-person-badge";
 
@@ -27,5 +27,32 @@ class Admin extends CI_Controller
     $this->load->view('admin/admin/admin_index', $data);
     $this->load->view('admin/templates/footer');
     $this->load->view('admin/templates/js');
+  }
+
+  public function create()
+  {
+    $data['admin'] = $this->login_model->getSession();
+    $data['title'] = "Admin";
+    $data['menu'] = "Admin";
+    $data['submenu'] = "Tambah Data";
+    $data['icon'] = "bi bi-person-badge";
+
+    $this->form_validation->set_rules('nm_admin', 'Tempat Lahir', 'required|trim');
+    $this->form_validation->set_rules('username', 'Username', 'required|trim');
+    $this->form_validation->set_rules('password', 'Password', 'required|trim');
+    $this->form_validation->set_rules('passconf', 'Konfirmasi Password', 'required|trim|matches[password]');
+
+    if ($this->form_validation->run() == FALSE) {
+      $this->load->view('admin/templates/header', $data);
+      $this->load->view('admin/templates/sidebar');
+      $this->load->view('admin/templates/topbar');
+      $this->load->view('admin/admin/admin_create', $data);
+      $this->load->view('admin/templates/footer');
+      $this->load->view('admin/templates/js');
+    } else {
+      $this->admin_model->save();
+      $this->session->set_flashdata('success', 'disimpan');
+      redirect('admin/admin');
+    }
   }
 }

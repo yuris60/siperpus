@@ -25,6 +25,7 @@
 
 <!-- AOS -->
 <script src="<?= base_url('assets/') ?>vendor/aos/aos.js"></script>
+<script src="<?= base_url('assets/'); ?>js/myscript.js"></script>
 <script>
   AOS.init({
     // Global settings:

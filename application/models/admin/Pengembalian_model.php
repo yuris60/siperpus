@@ -66,14 +66,42 @@ class Pengembalian_model extends CI_Model
   {
 
     // update tabel detail pengembalian
-    $hariini = date('Y-m-d H:i:s');
+    $hariini = date('Y-m-d');
+    $hariiniwaktu = date('Y-m-d H:i:s');
     $data = [
-      'tgl_pengembalian' => $hariini,
+      'tgl_pengembalian' => $hariiniwaktu,
       'keterlambatan' => $keterlambatan,
       'status_buku' => 'Sudah Kembali',
     ];
     $this->db->where('id_detailpinjam', $id_detailpinjam);
     $this->db->update('detail_peminjaman', $data);
+
+    // cek denda
+    $dendaperhari = 3000;
+    if ($keterlambatan > 0) {
+      // cek table peminjaman dengan id_pinjam
+      $this->db->select('*');
+      $this->db->from('detail_peminjaman');
+      $this->db->where('id_pinjam', $id_pinjam);
+      $query = $this->db->get()->row_array();
+      $denda = $query['total_denda'];
+
+      // Hitung total denda
+      $total_denda = ($dendaperhari * $keterlambatan) + $denda;
+      $data = [
+        'total_denda' => $total_denda,
+      ];
+      $this->db->where('id_pinjam', $id_pinjam);
+      $this->db->update('peminjaman', $data);
+
+      // Masukkan ke table kas
+      $data = [
+        'tgl_penerimaan' => $hariini,
+        'sumber' => 'Denda Buku',
+        'nominal' => $total_denda
+      ];
+      $this->db->insert('kas', $data);
+    }
 
     // kembalikan qty buku sebelumnya
     $this->db->select('stok_buku');

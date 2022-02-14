@@ -67,6 +67,19 @@ class Dashboard extends CI_Controller
     $data['jumlahpeminjamannovember'] = $this->dashboard_model->getJumlahPeminjamanNovember();
     $data['jumlahpeminjamandesember'] = $this->dashboard_model->getJumlahPeminjamanDesember();
 
+    $data['jumlahkasjanuari'] = $this->dashboard_model->getJumlahKasJanuari();
+    $data['jumlahkasfebruari'] = $this->dashboard_model->getJumlahKasFebruari();
+    $data['jumlahkasmaret'] = $this->dashboard_model->getJumlahKasMaret();
+    $data['jumlahkasapril'] = $this->dashboard_model->getJumlahKasApril();
+    $data['jumlahkasmei'] = $this->dashboard_model->getJumlahKasMei();
+    $data['jumlahkasjuni'] = $this->dashboard_model->getJumlahKasJuni();
+    $data['jumlahkasjuli'] = $this->dashboard_model->getJumlahKasJuli();
+    $data['jumlahkasagustus'] = $this->dashboard_model->getJumlahKasAgustus();
+    $data['jumlahkasseptember'] = $this->dashboard_model->getJumlahKasSeptember();
+    $data['jumlahkasoktober'] = $this->dashboard_model->getJumlahKasOktober();
+    $data['jumlahkasnovember'] = $this->dashboard_model->getJumlahKasNovember();
+    $data['jumlahkasdesember'] = $this->dashboard_model->getJumlahKasDesember();
+
     // Buku Terfavorit
     $data['bukuterfavorit'] = $this->dashboard_model->getBukuTerfavorit();
 

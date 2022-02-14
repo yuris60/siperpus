@@ -375,6 +375,115 @@ class Dashboard_model extends CI_Model
     return $this->db->get()->num_rows();
   }
 
+  // Kas
+  public function getJumlahKasJanuari()
+  {
+    $tahun = date('Y');
+    $this->db->select_sum('nominal');
+    $this->db->where('MONTH(kas.tgl_penerimaan)=01');
+    $this->db->where('YEAR(kas.tgl_penerimaan)=', $tahun);
+    return $query = $this->db->get('kas')->row();
+  }
+
+  public function getJumlahKasFebruari()
+  {
+    $tahun = date('Y');
+    $this->db->select_sum('nominal');
+    $this->db->where('MONTH(kas.tgl_penerimaan)=02');
+    $this->db->where('YEAR(kas.tgl_penerimaan)=', $tahun);
+    return $query = $this->db->get('kas')->row();
+  }
+
+  public function getJumlahKasMaret()
+  {
+    $tahun = date('Y');
+    $this->db->select_sum('nominal');
+    $this->db->where('MONTH(kas.tgl_penerimaan)=03');
+    $this->db->where('YEAR(kas.tgl_penerimaan)=', $tahun);
+    return $query = $this->db->get('kas')->row();
+  }
+
+  public function getJumlahKasApril()
+  {
+    $tahun = date('Y');
+    $this->db->select_sum('nominal');
+    $this->db->where('MONTH(kas.tgl_penerimaan)=04');
+    $this->db->where('YEAR(kas.tgl_penerimaan)=', $tahun);
+    return $query = $this->db->get('kas')->row();
+  }
+
+  public function getJumlahKasMei()
+  {
+    $tahun = date('Y');
+    $this->db->select_sum('nominal');
+    $this->db->where('MONTH(kas.tgl_penerimaan)=05');
+    $this->db->where('YEAR(kas.tgl_penerimaan)=', $tahun);
+    return $query = $this->db->get('kas')->row();
+  }
+
+  public function getJumlahKasJuni()
+  {
+    $tahun = date('Y');
+    $this->db->select_sum('nominal');
+    $this->db->where('MONTH(kas.tgl_penerimaan)=06');
+    $this->db->where('YEAR(kas.tgl_penerimaan)=', $tahun);
+    return $query = $this->db->get('kas')->row();
+  }
+
+  public function getJumlahKasJuli()
+  {
+    $tahun = date('Y');
+    $this->db->select_sum('nominal');
+    $this->db->where('MONTH(kas.tgl_penerimaan)=07');
+    $this->db->where('YEAR(kas.tgl_penerimaan)=', $tahun);
+    return $query = $this->db->get('kas')->row();
+  }
+
+  public function getJumlahKasAgustus()
+  {
+    $tahun = date('Y');
+    $this->db->select_sum('nominal');
+    $this->db->where('MONTH(kas.tgl_penerimaan)=08');
+    $this->db->where('YEAR(kas.tgl_penerimaan)=', $tahun);
+    return $query = $this->db->get('kas')->row();
+  }
+
+  public function getJumlahKasSeptember()
+  {
+    $tahun = date('Y');
+    $this->db->select_sum('nominal');
+    $this->db->where('MONTH(kas.tgl_penerimaan)=09');
+    $this->db->where('YEAR(kas.tgl_penerimaan)=', $tahun);
+    return $query = $this->db->get('kas')->row();
+  }
+
+  public function getJumlahKasOktober()
+  {
+    $tahun = date('Y');
+    $this->db->select_sum('nominal');
+    $this->db->where('MONTH(kas.tgl_penerimaan)=10');
+    $this->db->where('YEAR(kas.tgl_penerimaan)=', $tahun);
+    return $query = $this->db->get('kas')->row();
+  }
+
+  public function getJumlahKasNovember()
+  {
+    $tahun = date('Y');
+    $this->db->select_sum('nominal');
+    $this->db->where('MONTH(kas.tgl_penerimaan)=11');
+    $this->db->where('YEAR(kas.tgl_penerimaan)=', $tahun);
+    return $query = $this->db->get('kas')->row();
+  }
+
+  public function getJumlahKasDesember()
+  {
+    $tahun = date('Y');
+    $this->db->select_sum('nominal');
+    $this->db->where('MONTH(kas.tgl_penerimaan)=12');
+    $this->db->where('YEAR(kas.tgl_penerimaan)=', $tahun);
+    return $query = $this->db->get('kas')->row();
+  }
+
   // Buku Terfavorit
   public function getBukuTerfavorit()
   {

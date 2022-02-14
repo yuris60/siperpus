@@ -37,7 +37,7 @@
 <div class="position-fixed bottom-0 start-50 pb-3" style="z-index: 11">
   <div id="ToastSuccess" class="toast bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-body">
-      <i class="fas fa-check"></i> <b>Selamat, </b>Data Berhasil <?= $this->session->flashdata('success'); ?>
+      <i class="fas fa-check"></i> <b>Selamat, </b>Buku Berhasil <?= $this->session->flashdata('success'); ?>
     </div>
   </div>
 </div>

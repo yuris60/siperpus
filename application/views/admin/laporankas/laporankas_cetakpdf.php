@@ -1,9 +1,3 @@
-<?php
-// Skrip berikut ini adalah skrip yang bertugas untuk meng-export data tadi ke excell
-header("Content-type: application/vnd-ms-excel");
-header("Content-Disposition: attachment; filename=Laporan Kas.xls");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,10 +45,9 @@ header("Content-Disposition: attachment; filename=Laporan Kas.xls");
 <body>
   <center>
     <div>
-      <!-- <img src="<?= base_url('assets/img/logo.png') ?>" width="100px" style="margin-top: 10px;"> -->
+      <img src="<?= base_url('assets/img/logo.png') ?>" width="100px" style="margin-top: 10px;">
       <h3 style="margin-top: 0px;">Laporan Kas Perpustakaan SMK Soedirman</h3>
       <p style="margin-top: -10px;">
-        <?php error_reporting(0) ?>
         <?php if (!empty($periode_bulanan)) : ?>
           Periode Bulan : <?= date('M Y', strtotime($periode_bulanan)) ?>
         <?php elseif (!empty($periode_tahunan)) : ?>
@@ -62,7 +55,6 @@ header("Content-Disposition: attachment; filename=Laporan Kas.xls");
         <?php else : ?>
           Periode : <?= date('d M Y', strtotime($custom_start)) . " - " . date('d M Y', strtotime($custom_end)) ?>
         <?php endif; ?>
-
     </div>
   </center>
 
@@ -93,7 +85,6 @@ header("Content-Disposition: attachment; filename=Laporan Kas.xls");
         <td class="text-end"><strong><?= rupiah($total); ?></strong></td>
       </tr>
     </tbody>
-  </table>
   </table>
 
   <!-- <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.min.js') ?>"></script> -->

@@ -52,8 +52,6 @@ class Dashboard extends CI_Controller
       $this->load->view('user/templates/js_scan');
     } else {
       $this->dashboard_model->savePengunjung();
-      $this->session->set_flashdata('success', 'Disimpan');
-      redirect('dashboard/absenpengunjung');
     }
   }
 

@@ -17,7 +17,8 @@
 <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/js/mazer.js"></script>
 
 <!-- Font Awesome -->
-<script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/fontawesome/all.min.js"></script>
+<!-- <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/fontawesome/all.min.js"></script> -->
+<script src="<?= base_url('assets/vendor/'); ?>/fontawesome/js/all.min.js"></script>
 
 <!-- Datatables -->
 <script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/jquery-datatables/jquery.dataTables.min.js"></script>

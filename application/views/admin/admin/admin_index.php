@@ -45,7 +45,7 @@
   <div class="card">
     <div class="card-header">
       <h4 class="card-title"><i class="fas fa-database"></i> Data
-        <!-- <a href="<?= base_url('admin/admin/create') ?>" class="float-end"><button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah Data"><i class="fas fa-plus"></i></button></a> -->
+        <a href="<?= base_url('admin/admin/create') ?>" class="float-end"><button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah Data"><i class="fas fa-plus"></i></button></a>
       </h4>
     </div>
     <div class="card-body">

@@ -26,7 +26,8 @@
 
   <!-- Vendor CSS Files -->
   <link href="<?= base_url('assets/vendor/sailor/') ?>assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="<?= base_url('assets/'); ?>css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="<?= base_url('assets/'); ?>css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="<?= base_url('assets/vendor/sailor/') ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?= base_url('assets/vendor/sailor/') ?>assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="<?= base_url('assets/vendor/sailor/') ?>assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="<?= base_url('assets/vendor/sailor/') ?>assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">

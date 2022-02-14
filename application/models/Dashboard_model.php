@@ -36,15 +36,26 @@ class Dashboard_model extends CI_Model
 
   public function savePengunjung()
   {
-    $jam = date("Y-m-d H:i:s");
-    $data = [
-      'nisn' => htmlspecialchars($this->input->post('nisn', true)),
-      'jam_kunjungan' => $jam
-    ];
+    $nisn = htmlspecialchars($this->input->post('nisn', true));
+    $this->db->select('*');
+    $this->db->from('anggota');
+    $this->db->where('anggota.nisn', $nisn);
+    $query = $this->db->get()->row_array();
 
-    $this->db->insert('pengunjung', $data);
+    if ($query['nisn'] == $nisn) {
+      $jam = date("Y-m-d H:i:s");
+      $data = [
+        'nisn' => $nisn,
+        'jam_kunjungan' => $jam
+      ];
 
-    // echo $this->input->post('nisn', true);
+      $this->db->insert('pengunjung', $data);
+      $this->session->set_flashdata('success', 'Disimpan');
+      redirect('dashboard/absenpengunjung');
+    } else {
+      $this->session->set_flashdata('gagallogin', 'Ditemukan');
+      redirect('dashboard/absenpengunjung');
+    }
   }
 
   public function savePengunjungManual($where)

@@ -7,7 +7,7 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(<?= base_url('assets/vendor/sailor/') ?>assets/img/slide/slide-1.jpg)">
+        <div class="carousel-item active" style="background-image: url(<?= base_url('assets/') ?>/img/carousel/1.jpg);">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Selamat Datang <br>Di <span>Perpustakaan SMK Soedirman Purbalingga</span></h2>
@@ -18,7 +18,7 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(<?= base_url('assets/vendor/sailor/') ?>assets/img/slide/slide-2.jpg)">
+        <div class="carousel-item" style="background-image: url(<?= base_url('assets/') ?>/img/carousel/4.jpg)">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Selalu Isi Kehadiran Saat Berkunjung</h2>
@@ -29,7 +29,7 @@
         </div>
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(<?= base_url('assets/vendor/sailor/') ?>assets/img/slide/slide-3.jpg)">
+        <div class="carousel-item" style="background-image: url(<?= base_url('assets/') ?>/img/carousel/5.jpg)">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Patuhi Selalu Protokol Kesehatan 5M</h2>

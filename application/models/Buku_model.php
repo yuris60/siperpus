@@ -60,7 +60,7 @@ class Buku_model extends CI_Model
     return $this->db->get()->result_array();
   }
 
-  public function getCari($katakunci, $pilihan, $limit, $offset)
+  public function getCari($katakunci, $pilihan)
   {
     if ($katakunci == "") { //jika tidak pilih berdasarkan
       $this->db->select('*');
@@ -71,7 +71,6 @@ class Buku_model extends CI_Model
       $this->db->join('kategori_buku', 'buku.id_kategoribuku = kategori_buku.id_kategoribuku');
       $this->db->like($pilihan, $katakunci, 'both');
       $this->db->order_by('judul_buku', 'ASC');
-      $this->db->limit($limit, $offset);
       return $this->db->get()->result_array();
     } else {
       $this->db->select('*');
@@ -84,7 +83,6 @@ class Buku_model extends CI_Model
       $this->db->or_like('pengarang', $katakunci, 'both');
       $this->db->or_like('penerbit', $katakunci, 'both');
       $this->db->order_by('judul_buku', 'ASC');
-      $this->db->limit($limit, $offset);
       return $this->db->get()->result_array();
     }
   }

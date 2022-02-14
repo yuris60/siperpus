@@ -78,7 +78,7 @@
         </div>
         <div class="col-lg-7 d-none d-lg-block">
           <div id="auth-right">
-            <!-- <img src="<?= base_url('assets/img/sekolah.jpg') ?>" height="100%" alt=""> -->
+            <img src="<?= base_url('assets/img/sekolah.jpg') ?>" height="100%" alt="">
           </div>
         </div>
       </div>

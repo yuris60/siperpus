@@ -3,6 +3,7 @@ const flashDataGagalLogin = $('.flash-data-gagal-login').data('flashdata');
 const flashDataGagalPinjam = $('.flash-data-gagal-pinjam').data('flashdata');
 const flashDataGagalPinjamBuku = $('.flash-data-gagal-pinjam-buku').data('flashdata');
 const flashDataGagalBukuKurang = $('.flash-data-gagal-buku-kurang').data('flashdata');
+const flashDataGagalUsername = $('.flash-data-gagal-username').data('flashdata');
 
 if (flashDataSuccess) {
   var toastTriggerSuccess = document.getElementById('ToastBtnSuccess')
@@ -67,6 +68,19 @@ else if (flashDataGagalBukuKurang) {
     })
   }
   document.getElementById("ToastBtnGagalBukuKurang").click(); // Click on the checkbox
+}
+
+else if (flashDataGagalUsername) {
+  var toastTriggerGagalUsername = document.getElementById('ToastBtnGagalUsername')
+  var toastGagalUsername = document.getElementById('ToastGagalUsername')
+  if (flashDataGagalUsername) {
+    flashDataGagalUsername.addEventListener('click', function() {
+      var toastgagalUsername = new bootstrap.Toast(toastGagalUsername)
+      
+      toastgagalUsername.show()
+    })
+  }
+  document.getElementById("ToastBtnGagalUsername").click(); // Click on the checkbox
 }
 
 // //tombol-hapus

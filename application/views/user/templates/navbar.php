@@ -2,7 +2,7 @@
   <header id="header" class="fixed-top d-flex align-items-center bg-primary">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">SIPERPUS</a></h1>
+      <h1 class="logo me-auto"><a href="<?= base_url() ?>">SIPERPUS</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -22,17 +22,17 @@
                             echo 'active';
                           } ?>" href="<?= base_url('tentang/visimisi') ?>">Visi Misi</a>
               </li>
-              <li><a href="testimonials.html">Struktur Organisasi</a></li>
-              <li><a href="testimonials.html">Keanggotaan Perpustakaan</a></li>
+              <li><a href="#">Struktur Organisasi</a></li>
+              <li><a href="#">Keanggotaan Perpustakaan</a></li>
               <li>
                 <a class="<?php if ($this->uri->segment(2) == 'saranaprasarana') {
                             echo 'active';
                           } ?>" href="<?= base_url('tentang/saranaprasarana') ?>">Sarana & Prasarana
                 </a>
               </li>
-              <li><a href="testimonials.html">Foto Perpustakaan</a></li>
-              <li><a href="testimonials.html">Staf Perpustakaan</a></li>
-              <li><a href="testimonials.html">Alamat Perpustakaan</a></li>
+              <li><a href="#">Foto Perpustakaan</a></li>
+              <li><a href="#">Staf Perpustakaan</a></li>
+              <li><a href="#">Alamat Perpustakaan</a></li>
 
               <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>

@@ -8,7 +8,7 @@
 <script src="<?= base_url('assets/vendor/sailor/') ?>assets/vendor/php-email-form/validate.js"></script>
 
 <!-- Font Awesome -->
-<script src="<?= base_url('assets/vendor/mazer/dist/'); ?>assets/vendors/fontawesome/all.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>/fontawesome/js/all.min.js"></script>
 
 <!-- Owl Carousel -->
 <script src="<?= base_url('assets/vendor/owl-carousel/dist/') ?>assets/owl.carousel.min.js"></script>

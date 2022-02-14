@@ -20,7 +20,7 @@
                     </select>
                   </div>
                   <div class="col-lg-9">
-                    <div class="search"> <i class="fa fa-search"></i> <input type="text" name="cari" class="form-control" placeholder="Ketikkan kata kunci disini ..." autofocus> <button class="btn btn-primary">Cari</button> </div>
+                    <div class="search"> <i class="fa fa-search" style="position: absolute; margin-left: 15px; margin-top: 20px;"></i> <input type="text" name="cari" class="form-control" placeholder="Ketikkan kata kunci disini ..." autofocus required> <button class="btn btn-primary">Cari</button> </div>
                   </div>
                 </div>
               </div>

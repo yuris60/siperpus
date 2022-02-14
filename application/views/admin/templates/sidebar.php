@@ -3,7 +3,7 @@
     <!-- <img src="<?= base_url('assets/img/sidebar.jpg'); ?>" width="100%" class="" alt=""> -->
     <div class="sidebar-menu">
       <ul class="menu">
-        <li class="text-center sidebar-item"><a href="<?= base_url("admin/dashboard") ?>"><img src="<?= base_url('assets/img/Logo SIPERPUS +Text.png'); ?>" width="90%" class="" alt=""></a></li>
+        <li class="text-center sidebar-item"><a href="<?= base_url("admin/dashboard") ?>"><img src="<?= base_url('assets/img/Logo SIPERPUS +Text.png'); ?>" width="75%" class="" alt=""></a></li>
         <li class="sidebar-title">Menu</li>
 
         <li class="sidebar-item <?php if ($this->uri->segment(2) == 'dashboard' || $this->uri->segment(2) == '') {
@@ -125,6 +125,14 @@
           <a href="<?= base_url('admin/laporanbuku') ?>" class='sidebar-link'>
             <i class="bi bi-book-half"></i>
             <span>Laporan Buku</span>
+          </a>
+        </li>
+        <li class="sidebar-item <?php if ($this->uri->segment(2) == 'laporankas') {
+                                  echo 'active';
+                                } ?>">
+          <a href="<?= base_url('admin/laporankas') ?>" class='sidebar-link'>
+            <i class="fa-solid fa-money-bill-wave"></i>
+            <span>Laporan Kas</span>
           </a>
         </li>
         <li class="sidebar-item <?php if ($this->uri->segment(2) == 'laporanpengunjung') {

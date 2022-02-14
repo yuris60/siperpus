@@ -66,6 +66,56 @@ $qtydesember = 0;
 foreach ($jumlahqtydesember as $peminjamandesember) {
   $qtydesember += $peminjamandesember;
 }
+
+//peminjaman kas
+$kasjanuari = 0;
+foreach ($jumlahkasjanuari as $uangkasjanuari) {
+  $kasjanuari += $uangkasjanuari;
+}
+$kasfebruari = 0;
+foreach ($jumlahkasfebruari as $uangkasfebruari) {
+  $kasfebruari += $uangkasfebruari;
+}
+$kasmaret = 0;
+foreach ($jumlahkasmaret as $uangkasmaret) {
+  $kasmaret += $uangkasmaret;
+}
+$kasapril = 0;
+foreach ($jumlahkasapril as $uangkasapril) {
+  $kasapril += $uangkasapril;
+}
+$kasmei = 0;
+foreach ($jumlahkasmei as $uangkasmei) {
+  $kasmei += $uangkasmei;
+}
+$kasjuni = 0;
+foreach ($jumlahkasjuni as $uangkasjuni) {
+  $kasjuni += $uangkasjuni;
+}
+$kasjuli = 0;
+foreach ($jumlahkasjuli as $uangkasjuli) {
+  $kasjuli += $uangkasjuli;
+}
+$kasagustus = 0;
+foreach ($jumlahkasagustus as $uangkasagustus) {
+  $kasagustus += $uangkasagustus;
+}
+$kasseptember = 0;
+foreach ($jumlahkasseptember as $uangkasseptember) {
+  $kasseptember += $uangkasseptember;
+}
+$kasoktober = 0;
+foreach ($jumlahkasoktober as $uangkasoktober) {
+  $kasoktober += $uangkasoktober;
+}
+$kasnovember = 0;
+foreach ($jumlahkasnovember as $uangkasnovember) {
+  $kasnovember += $uangkasnovember;
+}
+$kasdesember = 0;
+foreach ($jumlahkasdesember as $uangkasdesember) {
+  $kasdesember += $uangkasdesember;
+}
 ?>
 
 </div>
@@ -191,6 +241,37 @@ foreach ($jumlahqtydesember as $peminjamandesember) {
     }
   }
 
+  let optionkas = {
+    annotations: {
+      position: 'back'
+    },
+    dataLabels: {
+      enabled: false
+    },
+    chart: {
+      type: 'line',
+      height: 300
+    },
+    series: [{
+      name: "Kas",
+      data: [<?= $kasjanuari; ?>, <?= $kasfebruari; ?>, <?= $kasmaret; ?>, <?= $kasapril; ?>, <?= $kasmei; ?>, <?= $kasjuni; ?>, <?= $kasjuli; ?>, <?= $kasagustus; ?>, <?= $kasseptember; ?>, <?= $kasoktober; ?>, <?= $kasnovember; ?>, <?= $kasdesember; ?>]
+    }],
+    plotOptions: {},
+    xaxis: {
+      categories: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"],
+    },
+    theme: {
+      mode: 'light',
+      palette: 'palette2',
+      monochrome: {
+        enabled: false,
+        color: '#255aee',
+        shadeTo: 'light',
+        shadeIntensity: 0.65
+      },
+    },
+  };
+
   var areaOptions = {
     series: [{
         name: "Peminjaman",
@@ -240,11 +321,13 @@ foreach ($jumlahqtydesember as $peminjamandesember) {
 
   // var chartProfileVisit = new ApexCharts(document.querySelector("#chart-profile-visit"), areaOptions);
   var chartProfileVisit = new ApexCharts(document.querySelector("#chart-profile-visit"), optionsProfileVisit);
+  var chartKas = new ApexCharts(document.querySelector("#kas"), optionkas)
   var chartPengunjungHariIni = new ApexCharts(document.getElementById('pengunjung-hariini'), optionsPengunjungHariini)
   var chartPengunjungKeseluruhan = new ApexCharts(document.getElementById('pengunjung-keseluruhan'), optionsPengunjungKeseluruhan)
 
 
   chartProfileVisit.render();
+  chartKas.render()
   chartPengunjungHariIni.render()
   chartPengunjungKeseluruhan.render()
 </script>

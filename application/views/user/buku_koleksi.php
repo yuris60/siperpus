@@ -6,7 +6,7 @@
       <div class="row height d-flex justify-content-center align-items-center">
         <div class="col-lg-12">
 
-          <form action="<?= base_url('buku/cari') ?>" method="POST" autocomplete="off">
+          <form action="<?= base_url('buku/cari/pilihan/katakunci') ?>" method="POST" autocomplete="off">
             <div class="card">
               <div class="card-body">
                 <h4 class="mb-4" style="font-weight: 800;">Cari buku apa? yuk bisa cari langsung disini ... </h4>
@@ -20,7 +20,7 @@
                     </select>
                   </div>
                   <div class="col-lg-9">
-                    <div class="search"> <i class="fa fa-search"></i> <input type="text" name="cari" class="form-control" placeholder="Ketikkan kata kunci disini ..." autofocus required> <button class="btn btn-primary">Cari</button> </div>
+                    <div class="search"> <i class="fa fa-search" style="position: absolute; margin-left: 15px; margin-top: 20px;"></i> <input type="text" name="cari" class="form-control" placeholder="Ketikkan kata kunci disini ..." autofocus required> <button class="btn btn-primary">Cari</button> </div>
                   </div>
                 </div>
               </div>

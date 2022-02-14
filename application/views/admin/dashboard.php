@@ -119,7 +119,21 @@ error_reporting(0)
         </div>
 
         <div class="row">
+          <div class="col-12 col-xl-12 col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"><i class="bi bi-graph-up"></i> Grafik Kas</h4>
+              </div>
+              <div class="card-body">
+                <div id="kas"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
           <div class="col-12 col-xl-5 col-md-5">
+
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title"><i class="bi bi-person-square"></i> 5 Pengunjung Terakhir</h4>

@@ -4,12 +4,23 @@
     <div class="container">
 
       <div class="flash-data-success" data-flashdata="<?= $this->session->flashdata('success'); ?>"></div>
+      <div class="flash-data-gagal-login" data-flashdata="<?= $this->session->flashdata('gagallogin'); ?>"></div>
 
       <button type="button" class="btn btn-primary" style="display: none;" id="ToastBtnSuccess">Show live toast</button>
       <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
         <div id="ToastSuccess" class="toast bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true">
           <div class="toast-body">
             <i class="fas fa-check"></i> <b>Selamat, </b>Data Kunjungan Berhasil <?= $this->session->flashdata('success'); ?>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast Gagal Login -->
+      <button type="button" class="btn btn-primary" style="display: none;" id="ToastBtnGagalLogin">Show live toast</button>
+      <div class="position-fixed end-0 top-0 p-3" style="z-index: 11">
+        <div id="ToastGagalLogin" class="toast bg-danger text-white" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-body">
+            <i class="fas fa-times"></i> <b>Maaf, </b>Data Anggota Tidak <?= $this->session->flashdata('gagallogin'); ?>
           </div>
         </div>
       </div>

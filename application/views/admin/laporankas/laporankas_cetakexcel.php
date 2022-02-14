@@ -1,7 +1,7 @@
 <?php
 // Skrip berikut ini adalah skrip yang bertugas untuk meng-export data tadi ke excell
 header("Content-type: application/vnd-ms-excel");
-header("Content-Disposition: attachment; filename=Laporan Kas.xls");
+header("Content-Disposition: attachment; filename=Laporan Pengunjung.xls");
 ?>
 
 <!DOCTYPE html>
@@ -42,17 +42,13 @@ header("Content-Disposition: attachment; filename=Laporan Kas.xls");
   .text-center {
     text-align: center;
   }
-
-  .text-end {
-    text-align: right;
-  }
 </style>
 
 <body>
   <center>
     <div>
       <!-- <img src="<?= base_url('assets/img/logo.png') ?>" width="100px" style="margin-top: 10px;"> -->
-      <h3 style="margin-top: 0px;">Laporan Kas Perpustakaan SMK Soedirman</h3>
+      <h3 style="margin-top: 0px;">Laporan Pengunjung Perpustakaan SMK Soedirman</h3>
       <p style="margin-top: -10px;">
         <?php error_reporting(0) ?>
         <?php if (!empty($periode_bulanan)) : ?>
@@ -70,30 +66,38 @@ header("Content-Disposition: attachment; filename=Laporan Kas.xls");
     <thead>
       <tr class="text-center">
         <th class="text-center">No</th>
-        <th class="text-center">Tanggal Penerimaan</th>
-        <th class="text-center">Sumber</th>
-        <th class="text-center">Nominal</th>
+        <!-- <th class="text-center">NISN</th> -->
+        <th class="text-center">Nama Anggota</th>
+        <th class="text-center">Kelas</th>
+        <th class="text-center">Tgl Kunjungan</th>
+        <th class="text-center">Keperluan</th>
       </tr>
     </thead>
     <tbody>
-      <?php $total = 0;
-      $no = 1;
-      foreach ($laporankas as $lk) : ?>
-        <tr class="text-center">
+      <?php $no = 1;
+      foreach ($pengunjung as $p) : ?>
+        <tr>
           <td class="text-center"><?= $no; ?></td>
-          <td class="text-center"><?= tgl_indo($lk['tgl_penerimaan']); ?></td>
-          <td class="text-center"><?= $lk['sumber']; ?></td>
-          <td class="text-end"><?= rupiah($lk['nominal']); ?></td>
+          <!-- <td class="text-center"><?= $p['nisn']; ?></td> -->
+          <td><?= $p['nm_anggota']; ?></td>
+          <td>
+            <?php
+            if ($p['tingkatan_kelas'] == 1) {
+              $tingkatan_kelas = "X";
+            } elseif ($p['tingkatan_kelas'] == 2) {
+              $tingkatan_kelas = "XI";
+            } else {
+              $tingkatan_kelas = "XII";
+            }
+            echo $tingkatan_kelas . " " . $p['nm_jurusan'] . " " . $p['nomor_kelas']
+            ?>
+          </td>
+          <td><?= tgl_indo($p['jam_kunjungan']); ?></td>
+          <td class="text-center"><?= $p['keperluan']; ?></td>
         </tr>
       <?php $no++;
-        $total += $lk['nominal'];
       endforeach; ?>
-      <tr>
-        <td colspan="3" class="text-center"><strong>TOTAL NOMINAL KAS</strong></td>
-        <td class="text-end"><strong><?= rupiah($total); ?></strong></td>
-      </tr>
     </tbody>
-  </table>
   </table>
 
   <!-- <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.min.js') ?>"></script> -->
