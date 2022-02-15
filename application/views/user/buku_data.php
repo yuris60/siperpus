@@ -5,7 +5,7 @@
         <?php if (file_exists(base_url('assets/img/buku/') . $b['gambar_buku'])) : ?>
           ok
         <?php else : ?>
-          <img src="<?= base_url('assets/img/contoh.jpg') ?>" class="mx-auto" width="100%" alt="">
+          <img src="<?= base_url('assets/img/no_book.jpg') ?>" class="mx-auto" width="100%" alt="">
         <?php endif; ?>
         <small><?= substr($b['pengarang'], 0, 15); ?> ...</small>
         <h6 style="font-weight: 800;"><?= $b['judul_buku']; ?></h6>

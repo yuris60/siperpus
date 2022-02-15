@@ -44,7 +44,7 @@
 
     <div class="container">
       <div class="copyright">
-        Perpustakaan SMK Soedirman Purbalingga &copy; <?= date('Y') ?>
+        Copyright &copy; <?= date('Y') ?> Sistem Informasi Perpustakaan (SIPERPUS) SMK Soedirman Purbalingga
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->

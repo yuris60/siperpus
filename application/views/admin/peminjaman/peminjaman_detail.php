@@ -120,7 +120,7 @@
                         if (file_exists($file_gambar)) : ?>
                           <img src="<?= base_url('assets/img/buku/') . $dp['gambar_buku'] ?>" class="img-zoomable" width="80%" alt="">
                         <?php else : ?>
-                          <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="80%" alt="">
+                          <img src="<?= base_url('assets/img/no_book.jpg') ?>" width="80%" alt="">
                         <?php endif; ?>
                       </td>
                       <td><?= $dp['judul_buku'] ?></td>
@@ -186,7 +186,7 @@
                         if (file_exists($file_gambar)) : ?>
                           <img src="<?= base_url('assets/img/buku/') . $b['gambar_buku'] ?>" width="40%" alt="">
                         <?php else : ?>
-                          <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="40%" alt="">
+                          <img src="<?= base_url('assets/img/no_book.jpg') ?>" width="40%" alt="">
                         <?php endif; ?>
                       </td>
                       <td><?= $b['judul_buku'] ?></td>

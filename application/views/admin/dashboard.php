@@ -395,7 +395,7 @@ error_reporting(0)
                         if (file_exists($file_gambar)) : ?>
                           <img src="<?= base_url('assets/img/buku/') . $bt['gambar_buku'] ?>" class="img-zoomable" width="70px" alt="">
                         <?php else : ?>
-                          <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="70px" alt="">
+                          <img src="<?= base_url('assets/img/no_book.jpg') ?>" width="70px" alt="">
                         <?php endif; ?>
                       </td>
                       <td><?= $bt['judul_buku']; ?></td>

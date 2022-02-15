@@ -89,7 +89,7 @@
                   <img src="<?= base_url('assets/img/buku/') . $b['gambar_buku'] ?>" class="img-zoomable" width="45px" alt="">
                   <!-- Gambar Ada -->
                 <?php else : ?>
-                  <img src="<?= base_url('assets/img/contoh.jpg') ?>" width="45px" class="img-zoomable" alt="">
+                  <img src="<?= base_url('assets/img/no_book.jpg') ?>" width="45px" class="img-zoomable" alt="">
                   <!-- Gambar Tidak Ada -->
                 <?php endif; ?>
               </td>

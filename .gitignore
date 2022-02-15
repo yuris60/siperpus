@@ -40,3 +40,4 @@ assets/vendor/mazer/*
  process = git-lfs filter-process
 assets/vendor/mazer/
 assets/psd/
+assets/engineer/

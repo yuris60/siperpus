@@ -6,7 +6,7 @@
           <a href="#" class="burger-btn d-block text-white">
             <i class="bi bi-justify fs-3"></i>
           </a>
-          <h3 class="text-white mt-3 ms-3 d-none d-xl-block d-xxl-none">
+          <h3 class="text-white mt-3 ms-3 d-none d-lg-block d-xl-block">
             <p class="">
               <?= tgl_indo(date('Y-m-d')); ?>, Pukul
               <span id="clock"></span>
