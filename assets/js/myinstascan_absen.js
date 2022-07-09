@@ -16,7 +16,7 @@ Instascan.Camera.getCameras().then(function(cameras) {
 });
 
 scanner.addListener('scan', function(c) {
-  document.getElementById('nisn').value = c;
+  document.getElementById('id_anggota').value = c;
   document.forms[0].submit();
 })
 
