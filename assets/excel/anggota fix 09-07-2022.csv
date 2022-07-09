@@ -1,0 +1,330 @@
+id_anggota,nisn,id_kelas,nama_anggota,jk_anggota,tempatlahir_anggota,tgllahir_anggota,nik_anggota,agama_anggota,alamat_anggota,rt,rw,dusun,kelurahan,kecamatan,nama_ayah,nama_ibu,foto_anggota
+,0068707382,3,Adila Salsabila Putri,P,Banyumas,2006-03-15,3302265503060001,Islam,Cluster Ciberem Indah Blok A/4 ,7,1,,Ciberem,Kec. Sumbang,,Indriyanti,no_photo
+,0062438464,3,Alfin Helmi Baihaki,L,Pemalang,2006-07-20,3327032007060003,Islam,Belik,21,5,Pekutukan,Beluk,Kec. Belik,Sartoro,Nurul Hayati ,no_photo
+,0038891880,3,Aman Fajar Satryaji,L,Banyumas,2003-06-02,3303080403050343,Islam,Mangunegara,,,,Mangunegara,Kec. Mrebet,,Aminah,no_photo
+,0058663615,3,Amar Finatul Rohmah,P,Purbalingga ,2006-03-05,3303080815070442,Islam,Jalan 43,0,0,,Desa43,Kec. Mrebet,Miswanto,Sarpiyah,no_photo
+,0038891881,3,Amin Fajar Setyawan,L,Banyumas,2003-06-02,3303080409030002,Islam,Mangunegara,,,,Mangunegara,Kec. Mrebet,,Aminah,no_photo
+,0069501846,3,Andika Dwi Cahyo,L,Purbalingga,2006-03-11,3303080607730002,Islam,Tangkisan,2,7,,Tangkisan,Kec. Mrebet,Khadimin,Tukiah,no_photo
+,0061754607,3,Anggi Yuliani Tiwi,P,Pemalang ,2006-11-27,3327146711060001,Islam,Jl. Ds Karangmalang,2,8,Pulasari,Karangmalang,Kec. Bobotsari,Tumadi,Titi Mudnah,no_photo
+,0068658461,3,Anis Nur Rokhmah,P,Purbalingga,2006-09-25,3303046509060002,Islam,Jalan Raya Langgar,3,8,,Langgar,Kec. Kejobong,Mugiono,Puri Astuti,no_photo
+,0069463874,3,Arlia Ananda,P,Banyumas,2006-09-12,3302175209060003,Islam,Panusupan ,6,3,Legok,Panusupan,Kec. Cilongok,SOIM,Warsini,no_photo
+,0066056471,3,Ataya Razia Rafiq,L,Purbalingga,2006-01-01,3303130101060005,Islam,Ardi Lawet,1,3,,Panusupan,Kec. Rembang,Turnomo Nur Iman,Sulistiowati,no_photo
+,3055925437,3,Ayu Natalia,P,Purbalingga,2005-12-24,3303146912050001,Islam,Jalan Kolonel Sugiri No. 88 Bobotsari,3,2,,Bojongsari,Kec. Bojongsari,,Sutrisni,no_photo
+,0067101037,3,Bunga Wahyuni,P,Purbalingga,2006-03-30,3303097003060004,Islam,Karangmalang,2,4,Karangmalang,Karangmalang,Kec. Bobotsari,Samingin,Suweni,no_photo
+,0071292209,3,Elisa Dwi Cahyani,P,Pemalang ,2007-02-15,3327035502070008,Islam,Belik,31,7,Krajan,Beluk,Kec. Belik,Suratno,Tri Antep,no_photo
+,0051081151,3,Eva Mualifah,P,Pemalang,2005-06-25,3327045509060002,Islam,Tundagan ,7,1,,Tundagan,Kec. Watukumpul,,Mutiah,no_photo
+,3064291766,3,Fara Zuliana,P,Purbalingga,2006-01-07,3303144107060009,Islam,Patemon ,1,8,,Patemon ,Kec. Bojongsari,,Tuti,no_photo
+,0066406704,3,Haerul Anam,L,Purbalingga,2006-10-05,3303090510060004,Islam,Jalan Raya Banjarsari,2,5,,Banjarsari,Kec. Bobotsari,Nurihsan Sutrisno,Tuminah,no_photo
+,0064944313,3,Kiki Nur Arifin,L,Pemalang,2006-03-05,3327030503060003,Islam,Mendelem ,1,9,,Mendelem ,Kec. Belik,,Mutri,no_photo
+,0009262784,3,Lilis Setiawati,P,Purbalingga,2006-01-25,3303096501060001,Islam,Gunungkarang,1,4,,Gunungkarang,Kec. Bobotsari,Wahid,Kantinah,no_photo
+,0061146658,3,Mila Kurniawati,P,Pemalang,2006-11-19,3327035911060002,Islam,Kuta,10,3,Kuta Kidul,Kuta,Kec. Belik,Caman,Kurniati,no_photo
+,0063049568,3,Mutia Dwi Amanda,P,Purbalingga,2006-12-15,3303115512060001,Islam,Jalan Raya Buara,2,3,,Buara,Kec. Karanganyar,Miswadi,Rochyati,no_photo
+,0054542567,3,Novel Linda Suciana,P,Pemalang,2005-11-02,3327034211050005,Islam,Mendelem,1,8,Mendelem,Mendelem,Kec. Belik,Andiono,Ihwatun,no_photo
+,0064783057,3,Nurul Lailatunisa,P,Purbalingga,2006-06-15,3303105506060001,Islam,Serang,2,4,Serang,Serang,Kec. Karangreja,Marsono Tarsid,Sartem,no_photo
+,0068486913,3,Puspita Setyaningtias,P,Purbalingga,2006-08-07,3303034708060005,Islam,Nangkasawit,1,1,,Nangkasawit,Kec. Kejobong,Tri Atmoko,Titin Hartanti ,no_photo
+,0068450151,3,Ria Finola Putri Juanda,P,Purbalingga,2006-07-21,3674036107060006,Islam,Pengalusan,5,3,,Pengalusan,Kec. Mrebet,Agus Salim,Rofiah,no_photo
+,0061585049,3,Rosa Prahastiwi,P,Purbalingga,2006-06-16,3303085606060001,Islam,Cipaku,2,7,,Cipaku,Kec. Mrebet,Suwitno,Paini,no_photo
+,0068378761,3,Silfiani Agustin,P,Purbalingga,2006-08-09,3303144908060001,Islam,Patemon,2,7,patemon,Patemon,Kec. Bojongsari,Gianto,Tri Hartini,no_photo
+,0067410907,3,Siti Dira Ayunda,P,Purbalingga,2006-07-29,3303146907060001,Islam,Beji ,12,6,,Beji,Kec. Bojongsari,,Ida Marlina,no_photo
+,0057061968,3,Syarifatul Auliya,P,Purbalingga,2005-08-16,3303125608050002,Islam,Majingklak  Tamansri Karangmoncol,2,19,Majingklak,Majingklak,Kec. Karangmoncol,,Emi Mustafidah,no_photo
+,0047289871,3,Tri Anggun Cahyani,P,Purbalingga,2004-04-28,3303088804040003,Islam,Binangun,3,2,Binangun,Mrebet,Kec. Mrebet,Yatno,Nagimah ,no_photo
+,0065855685,3,"Wulan Setyaningru,",P,Purbalingga,2006-09-16,3303095609060001,Islam,Talagening,1,3,,Talagening,Kec. Bobotsari,Kasmono,Dwi Lestiani Sari,no_photo
+,0006595914,3,Yuli Nurohmawati,P,Purbalingga,2003-07-09,3303094907030001,Islam,Gunungkarang,1,1,,Gunungkarang,Kec. Bobotsari,Kharis Saartono,Ropiah,no_photo
+,0063292907,3,Zalzabila Rahma Nur Fitria,P,Purbalingga,2006-10-24,,Islam,Sangkanayu ,12,4,,Sangkanayu,Kec. Mrebet,,Wigiyanti,no_photo
+,0062502408,4,Alika Putri Rahmadania,P,Purbalingga,2006-10-06,3303144610070001,Islam,Patemon,1,8,Patemon,Patemon,Kec. Bojongsari,Aji Sutrisno,Eti Haryati,no_photo
+,0073600974,4,Ananda Zaskia,P,Purbalingga,2007-02-14,3303085402070001,Islam,Sangkanayu,11,4,Kadus 2,Sangkanayu,Kec. Mrebet,Sunar,Jurmiyah,no_photo
+,0053460722,4,Anastasia Dwi Sonita Salma,P,Purbalingga,2005-01-24,3173016401050014,Islam,Karangpetir,1,11,,Cipaku,Kec. Mrebet,Uut Septianto,Yenni,no_photo
+,0056060042,4,Angga Huntoro,L,Purbalingga,2005-11-14,3303081411050002,Islam,Sindang,2,7,SALAM,SINDANG,Kec. Mrebet,Turyanto,Sartiah,no_photo
+,0062057187,4,Anggun Agustin,P,Purbalingga,2006-08-27,3303146708060004,Islam,Jl. Raya Pekalongan,2,3,Satu,Pekalongan,Kec. Bojongsari,Sitin,Satini,no_photo
+,0064766935,4,Arina Khusna Aini,P,Purbalingga,2006-03-24,3303106403060001,Islam,Pratin kutabawa,6,2,,kutabawa,Kec. Karangreja,,Neni Nuryati,no_photo
+,0062400500,4,Artika Septiana,P,Purbalingga,2005-09-05,3303084509050003,Islam,Cipaku,3,7,,Cipaku,Kec. Mrebet,Supangat,Wahyani,no_photo
+,0057393113,4,Aulia Nur Fadillah,P,Purbalingga,2005-09-06,3303144609050001,Islam,Beji,16,8,,Beji,Kec. Bojongsari,Mad Riyanto Al Amad,Sarinah,no_photo
+,0051496105,4,Brina Luvita Asani,P,Tegal,2005-08-09,3327034908050005,Islam,Belik,7,2,BELIK,Belik,Kec. Belik,Wastoyo,Suefih,no_photo
+,3065114774,4,Edison Dilga Pramana,L,Purbalingga,2006-07-29,3303132907060006,Islam,Panusupan ,1,10,Pagelaran,Panusupan,Kec. Rembang,Erwin Mulgiono,Runita,no_photo
+,0079151886,4,Emi Aulia,P,Purbalingga,2007-05-08,,Islam,Karangjengkol Kutasari Purbalingga,14,4,,Karangjengkol,Kec. Kutasari,,Misem,no_photo
+,0065313948,4,Fadillah Agustin,P,Purbalingga,2006-08-18,3303095808060001,Islam,Bobotsari,1,10,Bobotsari,Bobotsari,Kec. Bobotsari,Masruhi,Endah Suprianti,no_photo
+,0077322902,4,Fildzah Amelia Putri,P,Purbalingga,2007-02-01,3303074102070004,Islam,Jalan Karangjengkol,8,3,,Karangjengkol,Kec. Kutasari,Jumin,Mumun,no_photo
+,0061831438,4,Kharisma Evelyne Eka Susanto,P,Pemalang,2006-11-03,3327074311060005,Kristen,Jln. Kol. Sugiri No.36,1,7,Bobotsari,Bobotsari,Kec. Bobotsari,Arif Susanto,Suzana Nur Maya,no_photo
+,0053952829,4,Kiki Walihwan,L,Purbalingga,2005-07-24,3303132407050002,Islam,Buret Kalikarang,5,3,Buret Kalikarang,Tanalum,Kec. Rembang,Sugiono,Tarmi,no_photo
+,0065322572,4,Mela Novita Sri Rahayu,P,Purbalingga,2006-11-01,3303094111060002,Islam,Banjarsari,3,5,Banjarsari,Banjarsari,Kec. Bobotsari,Sri Hartono,Satiti Rahayu,no_photo
+,0063744707,4,Munasifatul Khoeriah,P,Purbalingga,2006-03-22,3303126203060001,Islam,"Baleraksa, karang miri ",1,9,,Baleraksa,Kec. Karangmoncol,,Rumiyati,no_photo
+,0074189715,4,Niken Ayu Cahyaningtyas,P,Purbalingga,2007-01-12,3303085201070002,Islam,Jl. Ds Tangkisan,1,4,Tangkisan,Tangkisan ,Kec. Mrebet,Muhamad Soleh,Miswati,no_photo
+,0074222577,4,Nur Adnan Sawaludin,L,Purbalingga,2005-11-07,3303090711050002,Islam,Bobotasari,1,12,,Bobotsari,Kec. Bobotsari,Nasirun,Ratini,no_photo
+,0061923669,4,Pramila Rahma Fajriyah,P,Purbalingga,2006-07-14,3303105407060001,Islam,Serang ,6,8,,Serang ,Kec. Karangreja,,Kismiyatun,no_photo
+,0052555621,4,Reziana Monica,P,Pemalang,2005-09-24,3327036409050001,Islam,Mendelem,2,9,Tampol,Mendelem,Kec. Belik,Harmoko,Tarniti,no_photo
+,0064307256,4,Safinatul Khafidzah,P,Purbalingga,2006-12-13,3303121312060003,Islam,"Baleraksa, karang miri ",1,9,,Baleraksa,Kec. Karangmoncol,,Irawati,no_photo
+,0061590168,4,Shafana Azzahra,P,Purbalingga,2006-04-26,33030002180130  ,Islam,Buara ,1,2,,Buara,Kec. Karanganyar,,Sri Fakhatun ,no_photo
+,3076797809,4,Siti Kholiyah,P,Purbalingga,2007-05-08,,Islam,Serang Karangreja Purbalingga,6,2,,Serang,Kec. Karangreja,,Wasmirah,no_photo
+,0069488617,4,Szuliyana Aszahro,P,Purbalingga,2006-06-08,3303094806060002,Islam,Banjarsari,1,2,Banjarsari,Banjarsari,Kec. Bobotsari,Sutrisno,Turyanti,no_photo
+,0046330911,4,Viki Ardi Pratama,L,Pemalang,2005-12-12,3327031212050003,Islam,Dusun Jurang Jero,4,4,Jurang Jero,Badak,Kec. Belik,Edi Suwarno,Suparti,no_photo
+,0052721475,4,Youmi Vikri Griyanti,P,Purbalingga,2005-12-15,3303105512050002,Islam,Tlahablor,1,6,,Tlahablor,Kec. Karangreja,Tarso Arsowiyadi,Kusjarliyah,no_photo
+,0069813341,4,Zalfa Adinda Tazkia,P,Pemalang ,2006-02-28,3327046802060003,Islam,Watukumpul,4,4,,Watukumpul,Kec. Watukumpul,Junaedi,Tuti Widiani,no_photo
+,,4,Inayatul Khodijah,P,,,,,,,,,,,,,no_photo
+,0072389617,9,Adellia,P,Pemalang,2007-07-07,3327034707070008,Islam,Belik ,1,2,,Belik,Kec. Belik,,Kurniati,no_photo
+,0045287125,9,Alan Setiaji,L,Purbalingga,2004-02-01,3303140102040001,Islam,Gembong,6,3,,Gembong,Kec. Bojongsari,,Kuati,no_photo
+,0079100534,9,Andini Aprilia,P,Purbalingga,2007-04-01,3303084104070001,Islam,Tangkisan,1,3,,Tangkisan,Kec. Mrebet,Sudiyanto,Tugimah,no_photo
+,0041586451,9,Aprilia Wilujeng,P,Purbalingga,2004-04-24,3302266404040007,Islam,Tunjungmuli,2,1,Desa Utara,Tunjungmuli,Kec. Karangmoncol,Sugeng Supangkat,Sofiyatun,no_photo
+,0062998324,9,Aulia Diah Saputri,P,Purbalingga,2006-05-11,3303075105060002,Islam,Meri,7,3,Meri,Meri,Kec. Kutasari,Rasiman,Dasimah,no_photo
+,0067165021,9,Azah Nur Rahayu,P,Purbalingga,2006-11-26,3303146611060002,Islam,Metenggeng,4,2,,Metenggeng,Kec. Bojongsari,Suwarto,Tursini,no_photo
+,0043141385,9,Cahyo Utomo,L,Purbalingga,2004-08-08,3303180808040001,Islam,Langkap ,6,1,,Langkap,Kec. Kertanegara,Basor,Mistiyah,no_photo
+,0064159364,9,Defa Cika Febriani,P,Purbalingga,2006-02-17,3303095702060001,Islam,Dagan,1,6,,Dagan,Kec. Bobotsari,Taryono,Ernawati,no_photo
+,0064264601,9,Deni Alvina,P,Purbalingga,2006-06-28,3303096006060001,Islam,Limbasari,3,3,Limbasari,Limbasari,Kec. Bobotsari,Sugiarto,Khadiyah,no_photo
+,0059224722,9,Eka Febrianti,P,Purbalingga,2006-02-25,3303086502060001,Islam,Sangkanayu,12,4,Dusun 2,Sangkanayu,Kec. Mrebet,Surahman,Siti Baro'Ah,no_photo
+,0052333409,9,Erisa Rahmadani,P,Purbalingga,2005-11-02,3303080211050000,Islam,Pengalusan,4,2,Pengalusan,Pengalusan,Kec. Mrebet,Tongat,Sumiati,no_photo
+,0061293141,9,Fadela Tri Anggraeni,P,Purbalingga,2006-09-25,3303086509060000,Islam,Kradenan,1,3,,Kradenan,Kec. Mrebet,Paijo,Mutonah,no_photo
+,0061100510,9,Fransiska Dwi Apriliana,P,Purbalingga,2006-04-20,3303136004060003,Islam,Jl. Raya Serang,5,5,,Kutabawa,Kec. Karangreja,Darningsih,Darningsih,no_photo
+,0065945006,9,Icha Febri Ristiantika ,P,Purbalingga,2006-02-06,3303084602060003,Islam,Tangkisan,2,7,,Tangkisan,Kec. Mrebet,Wahyono,Turiah,no_photo
+,0068650975,9,Isnatun Nuraeni,P,Pemalang ,2006-04-18,3327045804060002,Islam,Cikadu,12,2,,Cikadu,Kec. Watukumpul,Dahuri,Tusri,no_photo
+,0067024684,9,Januar Eka Nurhidayah,P,Purbalingga,2006-01-14,3303185401060001,Islam,Karangtengah,10,3,,Karangtengah,Kec. Kertanegara,Agung Barokah,Nasiti,no_photo
+,0055035836,9,Khoerun Nisa,P,Pemalang,2005-03-04,3327044403050008,Islam,Tundagan,3,4,,Tundagan,Kec. Watukumpul,Suminto,Sutiah,no_photo
+,0066988026,9,Luthfi Lustiyani,P,Purbalingga,2006-01-22,3303096201060001,Islam,Dagan,2,3,,Dagan,Kec. Bobotsari,Sutaryo,Supriah,no_photo
+,0088442950,9,Maulida Nurohmah,P,Purbalingga,2008-04-02,3303084204080003,Islam,Pengalusan,3,1,,Pengalusan,Kec. Mrebet,Narwono,Sumiati,no_photo
+,0067791943,9,Mila Nur Aini,P,Purbalingga,2006-07-24,3303126407060002,Islam,Celeleng Karangsari,2,5,,Karangsari,Kec. Karangmoncol,,Niken Sutrisni,no_photo
+,0069246264,9,Najwa Salsabila,P,Purbalingga,2006-01-15,3303125501060003,Islam,Baleraksa ,3,3,,Baleraksa,Kec. Karangmoncol,,Siti Aniroh,no_photo
+,0063736458,9,Nia Okta Ramadhani,P,Purbalingga,2006-10-06,3303084610060007,Islam,Tangkisan,1,5,Tangkisan ,Tangkisan,Kec. Mrebet,Ali Muntorid,Rohyatun,no_photo
+,0067690118,9,Oktaviana Rahmadhani,P,Purbalingga,2006-10-16,3303075610060003,Islam,Candiwulan,15,6,,Candiwulan,Kec. Kutasari,Manto,W. Winarti,no_photo
+,0055057266,9,Revalina Saputri,P,Purbalingga,2005-09-15,3303145509050001,Islam,Majapura,1,5,Majapura,Majapura,Kec. Bobotsari,Romi Abdulah,Dwi Susanti,no_photo
+,0069321072,9,Rindika Olivia Rolida Annafi,P,Purbalingga,2006-06-25,3303056506060001,Islam,Jalan Onje ,1,6,Onje,Purbalingga Lor,Kec. Purbalingga,Tri Haryanto,Yuliana,no_photo
+,0062526406,9,Rochellina Ruista,P,Purbalingga,2006-10-23,3303076310060001,Islam,-,0,0,Surau,Sokoagung,Kec. Bagelen,Rismono,Rubiyati,no_photo
+,0065743209,9,Roro Musfikasari,P,Purbalingga,2006-09-11,3303125109060001,Islam,"Serang, desa tunjungmuli",,,Serang ,Tunjungmuli,Kec. Karangmoncol,,Khopsiyah,no_photo
+,0065343901,9,Sofi Tri Yulihasanah,P,Purbalingga,2006-07-03,3303084307060002,Islam,Karanggan Muda,3,2,Dusun 1,Karanggan,Kec. Gunungputri,Karyono,Rohimah,no_photo
+,0077841683,9,Takhiya Rahmanisya,P,Purbalingga,2007-05-01,3303114105070004,Islam,Maribaya,4,3,,Maribaya,Kec. Karanganyar,,Sairah,no_photo
+,0053332186,9,Tri Anjali,P,Purbalingga,2005-09-21,3303116109050002,Islam,Bangun Reksa Indah,1,10,,Karang Tengah,Kec. Karang Tengah,Sutarwo,Tusiyah,no_photo
+,0067232497,9,Winda Indriani,P,Purbalingga,2006-03-23,3303076303060001,Islam,Karangcegak,4,2,Karangcaegak ,Karangcegak,Kec. Kutasari,Kholidin Al Wachirun,Tursiati,no_photo
+,0073817360,10,Aghnia Sabila Najwa,P,Purbalingga,2007-01-26,3303116601070003,Islam,Kalijaran,2,4,,Kalijaran,Kec. Karanganyar,,Ulwiyatun Choerotun Nisa,no_photo
+,0067627582,10,Andri Kurniawan,L,Purbalingga,2006-09-08,3303120809060003,Islam,Baleraksa,4,6,,Baleraksa,Kec. Karangmoncol,Hendra,Khusmiyati,no_photo
+,0069197355,10,Apriyana Wardatul Nur Arofah,P,Purbalingga,2006-04-15,3303038550460001,Islam,Onje ,1,7,,Onje,Kec. Mrebet,,Sodiyah,no_photo
+,0053103559,10,Ayu Wulan Dari,P,Jakarta,2005-08-03,1502084308050003,Islam,Jalan Onje,1,6,,Purbalingga Lor,Kec. Purbalingga,Mujiyo,Sumarni,no_photo
+,0044438720,10,Bela Puspita Sari,P,Purbalingga,2004-01-28,1810046801040002,Islam,Tanjung Rusia,2,1,,Tanjung Rusia,Kec. Pardasuka,Sumeh,Rosita,no_photo
+,0056079444,10,Dea Nur Rahmawati,P,Purbalingga,2005-09-30,3303107009050001,Islam,Bayeman Kidul,2,10,,Tlahab Lor,Kec. Karangreja,Nur Iman,Watirah,no_photo
+,0063246267,10,Desi Ayu Lestari,P,Bekasi,2006-01-29,1802046901060002,Islam,Jl. Raya Cipaku,3,5,Siwadas,Cipaku,Kec. Mrebet,Dede Burhanudin,Ana Ashyva,no_photo
+,0059807196,10,Devi Setyawati,P,Purbalingga,2006-02-09,3303064902060003,Islam,Blater,1,3,Blater,Blater,Kec. Kalimanah,Sukarso,Kustini,no_photo
+,0064972673,10,Eka Sari,P,Purbalingga,2006-04-08,3303134804060001,Islam,Tanalum,4,2,,Tanalum,Kec. Rembang,Khamto,Sulasmi,no_photo
+,0057281284,10,Ekarani Saputri,P,Purbalingga,2005-01-24,3303132401040001,Islam,Tanalum,3,1,,Tanalum,Kec. Rembang,Rustami,Nenti,no_photo
+,0056903851,10,Fadila Novel Fitriah,P,Purbalingga,2005-11-18,3303145811050002,Islam,Banjaran,25,12,Sawangan,Banjaran,Kec. Bojongsari,Sudarto,Dwi Haryanti,no_photo
+,0069890796,10,Hizi Nurfariza,P,Purbalingga,2006-10-29,3303086810060004,Islam,Serayu Karanganyar,4,3,Serayu Karanganyar,Serayu Karanganyar,Kec. Mrebet,Teguh Subagyo,Antin Kristianingsih,no_photo
+,0018123595,10,Indah Choirun Nisa,P,Purbalingga,2005-10-18,3303185810050002,Islam,Condong,3,2,,Condong,Kec. Kertanegara,,Sitinah,no_photo
+,0068986668,10,Iyan Novita Sari,P,Purbalingga,2006-11-24,3303126411060001,Islam,Tunjungmuli,,,,Tunjungmuli,Kec. Karangmoncol,Makmur,Suwarni,no_photo
+,0067358881,10,Kheizka Kairana Zahira Putri,P,Purbalingga,2006-05-09,3303184905060003,Islam,Darma ,1,2,,Darma,Kec. Kertanegara,,Cahya Kurniyati,no_photo
+,0054732231,10,Luri Novisyah,P,Purbalingga,2005-06-10,3303145006050001,Islam,Bojongsari,2,8,Banyumudal,Bojongsari,Kec. Bojongsari,Murito,Partini Tri Prasetya,no_photo
+,0056612820,10,Mahmudah Febriani,P,Purbalingga,2005-02-11,3303085102050006,Islam,Cipaku,2,3,,Cipaku,Kec. Mrebet,Supratin,Istingadah,no_photo
+,0062753650,10,Maya Karina Candra,P,Purbalingga,2006-11-21,3303096111060001,Islam,Bobotsari,1,10,Bobotsari,Bobotsari,Kec. Bobotsari,Teguh Supriyanto,Nur Fitriani,no_photo
+,0051392804,10,Monika Nanda Larasati,P,Purbalingga,2005-01-17,3303085701050002,Islam,jalan desa,2,6,,Cipaku,Kec. Mrebet,Sudarto,Eni Afriani,no_photo
+,0062218304,10,Naura Zahira Nabighoh,P,Pemalang,2006-02-08,3327034802060001,Islam,DK. Sodong,3,2,Dk. Sodong,Sikasur,Kec. Belik,Tarino,Rini,no_photo
+,0054900223,10,Nur Khalisa,P,Purbalingga,2005-08-15,3303115508050001,Islam,Brakas,3,1,Brakas,Brakas,Kec. Karanganyar,Soim,Wasirah,no_photo
+,0062693578,10,Pangestika Tri Rahayu,P,Purbalingga,2006-07-23,3303056307060002,Islam,Sirongge,3,3,,Kembaran Kulon,Kec. Purbalingga,Lujeng Ismail,Mintarsih,no_photo
+,0069710537,10,Ricardo Arya Bayu,L,Purbalingga,2006-03-23,3303182303060001,Islam,Banjarsari,1,2,,Banjarsari,Kec. Bantarbolang,Prayitno,Kasiyah,no_photo
+,0078732188,10,Rizky Dani Abdillah,L,Tangerang,2007-08-17,3674061708070002,Islam,Karangasem,4,5,,Karangasem,Kec. Kertanegara,Dasiman,Saripah,no_photo
+,0064196471,10,Safitri Noviana,P,Purbalingga,2006-11-03,3303114311060002,Islam,Brakas,2,1,Brakas,Brakas,Kec. Karanganyar,Muhidin,Warsiti,no_photo
+,0066278510,10,Sri Ayu Astuti,P,Purbalingga,2006-11-11,3303145111060003,Islam,Beji,18,8,,Beji,Kec. Bojongsari,Kasdi,Puji Sunarsih,no_photo
+,0048051139,10,Tatik Setiani,P,Purbalingga,2004-05-04,3303094405040002,Islam,Talagening ,,,,Talagening,Kec. Bobotsari,,Sawinah,no_photo
+,0057244528,10,Umi Laellatul Rohmah,P,Purbalingga,2005-08-04,3303134408050001,Islam,JL. Curug,5,1,,Tanalum,Kec. Rembang,Ali Prianto,Jamiah,no_photo
+,0069748839,10,Yodha Setyawan,L,Purbalingga,2006-04-25,3303082504060004,Islam,Sindang,3,6,Sindang,Sindang,Kec. Mrebet,Risno,Turnafsiyah,no_photo
+,0053653003,5,Ananda Ayu Lestari,P,Purbalingga,2005-01-28,3303106801050002,Islam,Serang,4,2,,Serang,Kec. Karangreja,Karyono,Sri Rahayu,no_photo
+,0046726492,5,Andini Desiana Fadilla,P,Purbalingga,2004-12-20,3303126012040003,Islam,Gunung Tugel ,11,21,,Tunjungmuli ,Kec. Karangmoncol,Jajang,Waryati,no_photo
+,0052689551,5,Anindito Saputro,L,Purbalingga,2005-05-12,3303101205050001,Islam,Gondang,2,1,,Gondang ,Kec. Karangreja,Jayadi Martin,Suyati,no_photo
+,0055414951,5,Annisa Wahyu Hidayah,P,Purbalingga,2005-01-03,3303094301050002,Islam,Pakuncen,2,4,Pakuncen,Pakuncen,Kec. Bobotsari,Suyono,Eti Hidayati,no_photo
+,3033277259,5,Arif Bachtiar Luthfi,L,Purbalingga,2003-07-06,3303140607030004,Islam,Gembong ,3,2,,Gembong,Kec. Bojongsari,Rasmo,Nurhikmah,no_photo
+,0058119133,5,Asah Bintang Tri Pawelas,P,Purbalingga,2005-03-10,3303090406000002,Islam,Limbasari,1,4,Limbasari,Limbasari,Kec. Bobotsari,M. Pringgo Suwono,Supriyati,no_photo
+,0051003869,5,Bita Nuraini,P,Purbalingga,2005-11-07,3303184711050001,Islam,Patemon,2,8,,Patemon,Kec. Bojongsari,Sarwono Adi Santosa,Miswati,no_photo
+,0053455691,5,Dewi Annisya Maysun Nabila,P,Purbalingga,2005-03-10,3303115003050003,Islam,Kaliori,13,3,Pengaripan,Kaliori,Kec. Karanganyar,Chaderi,Susanti,no_photo
+,0059860354,5,Dina Saputri,P,Purbalingga,2005-04-20,3303096003050002,Islam,Tlaga,2,3,Tlagayasa,Tlagayasa,Kec. Bobotsari,Jiman,Tuspirah,no_photo
+,0058095548,5,Dwi Ratna Wulandari,P,Tanggerang,2005-05-14,3303085405050004,Islam,Guyung Kedungrejo ,2,4,,Guyung Kedungrejo,Kec. Gerih,Puji Manfaat,Darni,no_photo
+,0059700324,5,Elsa Nanda Pratama,P,Purbalingga,2005-09-26,3303086609050005,Islam,Ki Tepus Rumput,2,3,,Onje,Kec. Mrebet,Muhammad Riki Riyan,Murniyati,no_photo
+,0006214793,5,Ernia Saputri,P,Purbalingga,2004-08-14,3303145408040002,Islam,Bumisari,15,3,,bumisari,Kec. Bojongsari,Miswanto,Miskem,no_photo
+,0047801855,5,Fiolin Fio Fenturini,P,Purbalingga,2004-10-01,3303121607070160,Islam,Pungkuran,3,10,Dusun V,Pekiringan,Kec. Karangmoncol,Wendianto,Haryati,no_photo
+,0053455687,5,Hendri Wido Seno,L,Purbalingga,2005-08-18,3393110311950002,Islam,Kaliori ,14,3,,Kaliori,Kec. Karanganyar,Sairin,Misnem,no_photo
+,0051567166,5,Ishak Ardiansyah,L,Purbalingga,2005-08-25,3303092508050001,Islam,Penisihan,2,2,Penisihan,Palumbungan,Kec. Bobotsari,Marduki,Nahwati,no_photo
+,0054485893,5,Lovina Angely,P,Purbalingga,2005-01-10,3303075001050003,Kristen,Candinata,1,1,Candinata,Candinata,Kec. Kutasari,Yf Suyono,Quinella Findi Setiyati,no_photo
+,3053088182,5,Mahendra Hibban Ulinuha,L,purbalingga,2005-05-01,3303140105050001,Islam,Gembong ,2,1,,Gembong,Kec. Bojongsari,Slamet Sumardono,Siti Khamdiyah,no_photo
+,0057768267,5,Melly Rahmawati,P,purbalingga,2005-05-28,3303146805050002,Islam,Bojongsari ,1,11,,Bojongsari,Kec. Bojongsari,Parsito,Purwati,no_photo
+,0057006235,5,Nayla Nabilla Sukrisna,P,Yogyakarta,2005-12-19,3303115912060001,Islam,Karanganyar ,1,2,,Karanganyar,Kec. Karanganyar,Tony Sukrisna,May Martin,no_photo
+,0065206205,5,Nur Farchatul Fuada ,P,purbalingga,2006-02-12,3303115202060001,Islam,Kalijaran,2,1,,Sokawera ,Kec. Karanganyar,Sumadi,Umiyati,no_photo
+,3052324047,5,Prima Dina Lestari,P,purbalingga,2005-05-04,3303124405050001,Islam,Bantarwaru ,1,17,,Tamansari,Kec. Karangmoncol,Sutarno,Muslimah,no_photo
+,3053473349,5,Rahayu Irianti,P,purbalingga,2005-05-08,3303054805050001,Islam,Karanglewas ,10,5,,Karanglewas,Kec. Kutasari,Budiyono,Umi Sukirah,no_photo
+,0048975285,5,Rina Aryani,P,Purbalingga,2004-03-03,3303094304040001,Islam,Karangtalun ,4,3,Karangtalun,Karangtalun,Kec. Bobotsari,Nasirun,Riyati,no_photo
+,0055317157,5,Salsabila Khairunnisa,P,Purbalingga,2005-05-12,3303145205050001,Islam,Patemon,1,6,,Patemon,Kec. Bojongsari,Suwito,Susiah,no_photo
+,3040320018,5,Selfiatun Saputri,P,purbalingga,2004-12-21,3303146112040002,Islam,Bumisari,1,1,,Bumisari,Kec. Bojongsari,Turyanto Karjono,Turyinah,no_photo
+,0056830176,5,Sovi Rahmadani,P,Purbalingga,2005-10-30,3303097011050002,Islam,Palumbungan,1,4,Palumbungan,Palumbungan,Kec. Bobotsari,Mukmin,Haliyah,no_photo
+,0054329093,5,Sukma Naila Syafaah Hannan,P,Pemalang,2005-02-21,3327046102050007,Islam,Majakerta,2,1,,MAJAKERTA,Kec. Watukumpul,Wahnan,Indah Purwanti,no_photo
+,0054302082,5,Syahwa Aditia Putri Priandoyo,P,Purbalingga,2005-03-10,3303125003050005,Islam,Jln Serma Salamun,1,7,Dusun IV ,Pekiringan,Kec. Karangmoncol,Pamuji Priyandoyo,Yuyun,no_photo
+,3058898543,5,Syifa Azizah Saputri,P,purbalingga,2005-11-03,3303144311050003,Islam,Patemon ,1,8,,Patemon,Kec. Bojongsari,Suprianto,Ana Rosanti,no_photo
+,0057206553,5,Tiana Nur Afifah,P,Purbalingga,2005-01-26,3303126601050001,Islam,Tajug,3,3,,Tajug,Kec. Karangmoncol,Andi Sutarno,Neni Indriyani,no_photo
+,0009002403,5,Vini Freminisa Fatihah,P,Purbalingga,2005-09-27,3303146709050003,Islam,Bumisari,7,4,,Bumisari,Kec. Bojongsari,Kato Riyono,Mujiati,no_photo
+,0044133742,5,Wildan Hamada,L,purbalingga,2004-05-24,3303142405040002,Islam,Gembong ,3,2,,Gembong,Kec. Bojongsari,Mudiarso Sunarso,Mutiroh,no_photo
+,0043823858,5,Wulan Astuti,P,purbalingga,2004-12-26,3303086612040004,Islam,Binngun ,6,3,Dukuhliru,Binangun ,Kec. Mrebet,Karsid,Marlina,no_photo
+,0046510237,5,Yolanda Ribka Saputri,P,Purbalingga,2004-06-07,3303144706040004,Islam,Kajongan,2,7,,Kajongan,Kec. Bojongsari,Afiat Riyanto,Siti Priatin,no_photo
+,0046493545,6,Anggun Roro Ayu,P,Pemalang,2004-08-30,3327037008040002,Islam,Kuta Lor,6,2,Kuta,Kuta,Kec. Belik,Wahono,Yuliarti,no_photo
+,0068506998,6,Aprizia Bunga Khalawah,P,purbalingga,2006-04-09,3303114404060001,Islam,Maribaya ,1,3,,Maribaya,Kec. Karanganyar,Hadi Prayitno,Markamah ,no_photo
+,0042925589,6,Arzila Artikasari,P,Purbalingga,2004-07-05,3303084507040004,Islam,Selaganggeng,4,1,,Selaganggeng,Kec. Mrebet,Waskito,Susilowati,no_photo
+,0053438294,6,Astrid Silviana Mukti,P,Purbalingga,2005-09-21,3303096109050001,Islam,Limbasari,4,1,Limbasari,Limbasari,Kec. Bobotsari,Sutrisno,Yunensih,no_photo
+,3057803082,6,Denis Anggraeni Setiya Ningrum,P,Purbalingga,2005-09-22,3303086209050001,Islam,Pengalusan,7,1,,Pengalusan ,Kec. Mrebet,Kadis ,Setiyani ,no_photo
+,0046116776,6,Destriana Khikmatul Azizah,P,purbalingga,2004-12-17,3303185712040002,Islam,Karangtengah ,5,2,,Karangtengah,Kec. Kertanegara,Rokib,Musriyati,no_photo
+,0076056733,6,Dimas Tri Prabowo,L,Purbalingga,2004-12-30,3303093012040001,Islam,Pakuncen ,4,1,Pakuncen ,Pakuncen,Kec. Bobotsari,Jono Sapto Prabowo,Sujatmi,no_photo
+,0055530467,6,Dinu Afriana Riza,P,Purbalingga,2005-04-03,3303144304050001,Islam,Beji,16,8,,Beji,Kec. Bojongsari,Riswanto,Misyati,no_photo
+,0059626458,6,Eli Sholihah,P,Purbalingga,2005-02-06,3303124602050001,Islam,Jl. Raya Grugul,22,8,Mergasa,Rajawana,Kec. Karangmoncol,Daryo Muktiarto,Daimah,no_photo
+,0054755882,6,Endah Setiani,P,Purbalingga,2005-09-12,3303131209050002,Islam,Malang Sumampir,8,5,,Sumampir,Kec. Rembang,Akhir Kholimansyah,Rukheni Widiastuti,no_photo
+,0053549502,6,Farah As Sifa,P,purbalingga,2005-08-02,3303144208050003,Islam,Matenggeng ,4,2,,Matenggeng ,Kec. Bojongsari,Misdar,Ruci,no_photo
+,0056820970,6,Firman Noval Ardiansyah,L,Purbalingga,2005-09-07,3303080709050002,Islam,Cipaku,2,7,,Cipaku,Kec. Mrebet,Sofan Hamdani Yasin,Ika Purmiati,no_photo
+,0056278683,6,Habib Damai Faturrahman,L,Purbalingga,2004-09-10,3303091009040001,Islam,Tlagayasa,2,4,Tlagayasa,Tlagayasa,Kec. Bobotsari,Sutaryo,Maryatun,no_photo
+,0054245633,6,Heni Ramadani,P,purbalingga,2005-11-12,3303144110050002,Islam,Kajongan ,1,7,,Kajongan,Kec. Bojongsari,Sakim,Sunarti,no_photo
+,0054495863,6,Isya Syakila Putri,P,purbalingga,2005-08-10,3301215008050004,Islam,Limbasari ,1,4,,Limbasari,Kec. Bobotsari,Udinoto,Sumirah,no_photo
+,0059056246,6,Maharani Nur Cahyaning,P,Purbalingga,2005-06-14,3303075406050002,Islam,Karanglewas,7,3,,Karanglewas,Kec. Kutasari,Suharyati,Suharyati,no_photo
+,0057222253,6,Mei Agustin,P,Purbalingga,2005-05-13,3303125305050002,Islam,Karangmiri,1,9,Karangmiri,Baleraksa,Kec. Karangmoncol,Agus Tiawan,Marfungah,no_photo
+,0049978657,6,Nafisyah Nur Ramadani,P,Purbalingga,2004-10-28,,Islam,Dagan,4,2,,Dagan,Kec. Bobotsari,Kuswanto,Suratmi,no_photo
+,3046094999,6,Noviyanti,P,purbalingga,2004-11-06,3303084611030002,Islam,Selaganggeng,3,1,,Selaganggeng,Kec. Mrebet,Bekti Susanto,Rustianti,no_photo
+,0069941596,6,Nur Fidiya Putri,P,Purbalingga,2006-01-25,3303116501060001,Islam,Maribaya,2,2,,Maribaya,Kec. Karanganyar,Nasirwan,Sopiyah,no_photo
+,0044644893,6,Pujja Puspita Ayudia,P,Purbalingga,2004-08-28,3303136808040008,Islam,Tanalum,2,1,,Tanalum,Kec. Rembang,Surakhmat,Siti Indaryani,no_photo
+,0059369663,6,Rahayu Setiani,P,Purbalingga,2005-04-04,3303144404050002,Islam,Beji,19,8,,Beji,Kec. Bojongsari,Susmianto Aswin,Kaswati,no_photo
+,0026242368,6,Ruri Delvi Triana,P,purbalingga,2002-12-11,3303145112020004,Islam,bumisari,16,8,,bumisari,Kec. Bojongsari,Gayat Tri lasnowo ,Lasmiati,no_photo
+,0056219816,6,Selfi,P,purbalingga,2005-11-16,3303145611050001,Islam,Bojongsari,,,,Bojongsari,Kec. Bojongsari,Rasmo,Ariyati,no_photo
+,0053699514,6,Selviana Dewi Astuti,P,Purbalingga,2005-01-29,3303136901050001,Islam,Bawahan,4,6,,Gunung Wuled,Kec. Rembang,Sarjono,Jarmini,no_photo
+,0054964082,6,Sri Endah Lestari,P,purbalingga,2005-03-29,3303146903050001,Islam,Pekalongan ,,,,Pekalongan,Kec. Bojongsari,Hermanto Misman,Marwati,no_photo
+,0055805765,6,Sulfi Dea Nur Kholifatullah,P,Purbalingga,2005-11-24,3303146411050001,Islam,Pekalongan,3,10,,Pekalongan,Kec. Bojongsari,Ahmad Nurhaerin Sarkim,Alfiah,no_photo
+,0054339719,6,Syifa Ade Saputri,P,purbalingga,2005-03-08,3303184803050001,Islam,Karang Tengah  ,1,1,,Karangtengah ,Kec. Kertanegara,Saryono Alfan Azizi,Kusmiati,no_photo
+,0043817589,6,Tasya Amalina,P,Tanggerang,2004-06-24,3303086406040002,Islam,Mangunegara ,6,2,,Mangunegara,Kec. Mrebet,Zulfadi,Titik Puspaeni ,no_photo
+,0053256833,6,Uli Agustinasari,P,Purbalingga,2005-08-16,3303125608050001,Islam,Tamansari,1,17,,Tamansari,Kec. Karangmoncol,Iwan Munandar,Dewi Rusanti,no_photo
+,0028362774,6,Vita Anggraeni,P,Purbalingga,2005-03-15,3303095503050001,Islam,Karangtalun ,4,3,BAK,Karangtalun ,Kec. Bobotsari,Dahono Hadi Trisnanto,Sudiyah ,no_photo
+,0046816234,6,Wisnu,L,Purbalingga,2004-08-22,3303142208040001,Islam,Banjaran,23,12,Sawangan,Banjaran,Kec. Bojongsari,Sakimin,Marsinah,no_photo
+,0057413205,6,Yesi Agustin,P,Purbalingga,2005-08-17,3303185708050001,Islam,Karangpule,4,1,Karangpule,Karangpucung,Kec. Kertanegara,Eko Purwanto,Sri Pamuji,no_photo
+,0057741545,6,Yulia Wulansari,P,Purbalingga,2005-07-06,3303061607050002,Islam,Cipaku,1,6,Siwadas,Cipaku,Kec. Mrebet,Sarikun ,Sulasih,no_photo
+,9999027115,11,Adinda Efriliana,P,Purbalingga,2006-04-24,3303086404060003,Islam,Serayukaranganyar,5,3,,Serayukaranganyar,Kec. Mrebet,Kusisno,Enti Sukesih,no_photo
+,0052978231,11,Anggi Dwi Nurrohmah,P,Purbalingga,2005-06-14,3303141407050001,Islam,Bumisari,13,6,,Bumisari,Kec. Bojongsari,suratno,sri suratmi,no_photo
+,0063938699,11,Anisa,P,purbalingga,2006-04-24,3303116404060001,Islam,Kabunderan ,4,1,,Kabunderan,Kec. Karanganyar,Miswadi,Ruminah ,no_photo
+,0052642801,11,Anita Aprilia,P,purbalingga,2006-04-15,3303095504060003,Islam,Karangtalun ,3,3,Karangtalun ,Karangtalun,Kec. Bobotsari,Sudarmo,Sainah ,no_photo
+,3042814090,11,Annisa Muktinti,P,Purbalingga,2004-11-22,3303146211040001,Islam,Karangbanjar ,20,8,Karangsempu,KarangBanjar,Kec. Bojongsari,Suparman,Wasiti,no_photo
+,0059422817,11,Atta Wahyu Pratama,P,Banjarnegara,2005-04-05,3304120504050003,Islam,Karangjambe,2,1,Karangjambe,Pandanarum,Kec. Pandanarum,Haerul,Sulisyati,no_photo
+,3059501526,11,Aulia Nur Amaliyana,P,Pemalang,2005-08-15,3327035509050003,Islam,Belik,,,,Belik,Kec. Belik,Karyono,Yatni,no_photo
+,0053019046,11,Cindy Oktaviani,P,Pemalang,2005-10-08,3327034810050005,Islam,Belik,2,4,Kepetek,Belik,Kec. Belik,Suritno,Aji Kurniasih,no_photo
+,0050811905,11,Deni Ferdiyanto,L,purbalingga,2005-02-18,3303101802050001,Islam,Karangreja ,1,3,,Karangreja,Kec. Karangreja,Isgianto,Karsini,no_photo
+,0052425503,11,Dhiya Ahza Mutie,P,Purbalingga,2005-04-01,3303144104050002,Islam,Kajongan,1,8,Kajongan,Kajongan,Kec. Bojongsari,Maman Supratman,Cubarti,no_photo
+,0055683971,11,Dwi Retno Asih,P,Purbalingga,2005-03-23,3303096303050003,Islam,Dagan,2,9,,Dagan,Kec. Bobotsari,Sarno Sumarjo,Miswati,no_photo
+,0059717915,11,Eka Septiani,P,Purbalingga,2005-09-03,3303084309050002,Islam,Binangun ,5,1,,BInangun,Kec. Mrebet,Sarwono,Katiaih ,no_photo
+,0052634324,11,Endah Wahyuningsih,P,Purbalingga,2005-06-04,330307446050001 ,Islam,JL. Raya Dawuan,10,4,Dawuan,Sumingkir,Kec. Kutasari,Ahmad Wahyudi,Heni Kuswanti,no_photo
+,0052750253,11,Faeha Nada Nur Barokah,P,Purbalingga,2005-06-01,3303084106050001,Islam,Mangunegara,5,2,,Mangunegara,Kec. Mrebet,Ifan Sunaryo,Nur Istiati,no_photo
+,0053093222,11,Gina Aprilia,P,Pemalang,2005-04-10,3327035004050007,Islam,Kuta Kidul,18,4,Kuta Kidul ,Kuta,Kec. Belik,Raminto,Muryati,no_photo
+,0052850040,11,Hana Rifa Pertiwi,P,Purbalingga,2005-03-04,3303104403050002,Islam,JL Raya Karangreja ,3,4,,Karangreja,Kec. Karangreja,Kundang Saputra,Wainah,no_photo
+,0052265832,11,Ika Triana,P,Purbalingga,2005-04-17,3303175704050001,Islam,Jalan Raya Karangjambu,19,6,Bandingan,Karangjambu,Kec. Karangjambu,Ratim Kusyadi ,Kusmini,no_photo
+,0046292900,11,Ilham Fauzan,L,Purbalingga,2004-07-28,3303102807040004,Islam,(tidak diisi),3,5,,Karangreja ,Kec. Karangreja,Pardi,Darsih,no_photo
+,0054867323,11,Irvan Galih Sutomo,L,Purbalingga,2004-08-28,3303112308040001,Islam,"Brakas,Karanganyar,Purbalingga",3,1,Brakas,Brakas,Kec. Karanganyar,Miarso,Kamiatun,no_photo
+,0051041491,11,Junani,P,Purbalingga,2005-12-11,3303105112050003,Islam,Kutabawa,17,5,Bambangan,Kutabawa,Kec. Karangreja,Nurochim,RATMI ,no_photo
+,0029784855,11,Melani Hermawati,P,Purbalingga,2002-10-20,3303086010020002,Islam,Jl. Bithing,2,3,Bithing,Pengalusan,Kec. Mrebet,Darman ,Triswati,no_photo
+,0053105025,11,Meli Wulandari,P,purbalingga,2005-05-21,3303146105050004,Islam,Pagedangan,,,,Pagedangan,Kec. Bojongsari,Romiarso,Sanginah,no_photo
+,0045988755,11,Muna Fadilah Kinanti,P,Cilacap,2004-11-28,3301146811040002,Islam,Jl. Dr. Soetomo,1,10,Jenang Utara,Jenang,Kec. Majenang,Wartono,Karwijah,no_photo
+,0045382225,11,Oktavia Labibah,P,purbalingga,2004-10-31,3303147110040002,Islam,Karangbanjar ,17,7,,Karangbanjar ,Kec. Bojongsari,Mislam,Fatimah,no_photo
+,0056201609,11,Qowiyyun Roufun,P,Pemalang,2004-06-10,3327035006040006,Islam,Beluk,33,8,Krajan,Beluk,Kec. Belik,Daryono,Sutriyati,no_photo
+,0043443119,11,Revi Erdiana,P,Purbalingga,2004-12-07,3303094712040001,Islam,Bobotsari,2,10,Bobotsari,Bobotsari,Kec. Bobotsari,Rohadi Hadi P,Suhamdi,no_photo
+,0053017334,11,Riski Dewiyanti,P,Pemalang,2005-06-24,3327036406050003,Islam,Mendelem ,2,8,,Mendelem ,Kec. Belik,Waryat,Sairah,no_photo
+,0048832947,11,Rita Rahmawati,P,Purbalingga,2004-12-28,3303116812040001,Islam,Brakas ,3,2,,Brakas ,Kec. Karanganyar,dayin,Rianti,no_photo
+,0054284633,11,Rohmah Nur Baiti,P,Banjarnegara,2005-03-24,3303116403050001,Islam,Kalijaran ,2,4,Kalijaran ,Kalijaran ,Kec. Karanganyar,Khadirin,Naryati,no_photo
+,0049229589,11,Sasi Amalia Ramadhani,P,Purbalingga,2004-10-18,3303185810040003,Islam,Karangasem,1,4,,Karangasem,Kec. Kertanegara,Ahmad Sohirin,Sumarti,no_photo
+,3059630693,11,Sekar Arum,P,Bekasi ,2005-06-02,3303084402050001,Islam,Binangun ,6,1,,BInangun,Kec. Mrebet,Puji Nugroho,Suryati,no_photo
+,0048594260,11,Sevianti,P,Purbalingga,2004-09-01,3303175201010001,Islam,Sanguwatang ,2,1,,Sanguwatang ,Kec. Karangjambu,Slamet Riyadi,Munjianti,no_photo
+,3909894533,11,Sherly N Pratama,P,purbalingga,2004-11-21,3303122111040001,Islam,Karangsari ,2,7,,Celeleng,Kec. Karangmoncol,Muldiyanto,Ida Farida,no_photo
+,3900307398,11,Syaifi Fadilla,P,Purbalingga,2005-01-27,3303181203080003,Islam,Karang tengah,,,,Karang tengah,Kec. Kertanegara,Ali Mahfud,Tasriah,no_photo
+,0041925631,11,Tata Irmadani,P,Purbalingga,2004-10-24,3303116410040002,Islam,Karanganyar,5,1,,Karanganyar,Kec. Karanganyar,Sudiyanto,Wakhyuni,no_photo
+,0047720503,11,Winda Istikomah,P,Purbalingga,2004-05-21,3303096105040001,Islam,Karangmalang ,2,8,,Karangmalang,Kec. Bobotsari,Aksan ,Entin Hartini ,no_photo
+,0053090536,12,Anggi Novita Sari,P,Pemalang,2005-06-15,3327035506050010,Islam,Sodong,2,1,Sodong ,Sikasur,Kec. Belik,Mulyanto,Kamirah,no_photo
+,3045240527,12,Anisa Irma,P,Purbalingga ,2004-09-05,3303114509040001,Islam,Kalijaran,2,4,,Kalijaran,Kec. Karanganyar,Kusnadi,Tusiyah,no_photo
+,0045072926,12,Anissa Novianti,P,Purbalingga,2004-11-11,3303115111040002,Islam,Kasih,5,3,kasih,Kasih,Kec. Kertanegara,Sahud Supendi,Sumeni,no_photo
+,0056536862,12,Annisa Salsabilla,P,Purbalingga,2005-05-20,3303086005050003,Islam,Bojong ,1,2,Purbalingga Lor,Purbalingga Lor,Kec. Purbalingga,Agus Sujarah,Indri Listyani,no_photo
+,0049882566,12,Astrit Triana,P,Purbalingga,2004-01-11,3303095101040002,Islam,Karangduren,2,5,Karangduren,Karangduren,Kec. Bobotsari,Sachudi,Ani Widiastuti,no_photo
+,0057009263,12,Azizah Insani,P,Purbalingga,2005-04-04,3303134404050001,Islam,Tanalum,1,3,,Tanalum,Kec. Rembang,Mustopo,Solikhatun,no_photo
+,0053568215,12,Choerul Isnan Nawawi,L,purbalingga,2005-04-19,3303081904050002,Islam,Onje ,1,1,,Onje,Kec. Mrebet,Nur Chosim,Nuruliyatun,no_photo
+,0053525299,12,Dahlia Widi Setiawati,P,Banjarnegara,2005-08-19,3304115908050001,Islam,Bandingan,3,2,,Bandingan,Kec. Rakit,Mukim,Endon Erowati,no_photo
+,0055480461,12,Dila Islami Putri,P,Purbalingga,2005-02-13,3303085302050001,Islam,Jl.Putut I,3,4,Putut I,Serayularangan,Kec. Mrebet,Kadikun,Setiani,no_photo
+,0068351090,12,Dwi Aulia Yulisa,P,Purbalingga,2006-01-26,3303086601060001,Islam,Sangkanayu,17,5,Kadus 3,Sangkanayu,Kec. Mrebet,Sugiono,Suryaningsih,no_photo
+,3057340498,12,Elsa Safitri,P,purbalingga,2005-07-30,3303127007030001,Islam,Kaliputih,,,,Karangsari,Kec. Karangmoncol,Akhmad Khamidin,Sartini,no_photo
+,3049619083,12,Elza Monita Nur Istiqomah Priyanto,P,purbalingga,2004-12-15,3303034111010001,Islam,Nangkasawit RT 01 RW 01,1,1,,Nangkasawit,Kec. Kejobong,Welas Priyanto,Suparti,no_photo
+,0059257133,12,Filda Dimas Santosa,L,Purbalingga,2005-06-27,3303122706050004,Islam,Tamansari,1,17,,Tamansari,Kec. Karangmoncol,Suwanto,Poniyah,no_photo
+,0056922281,12,Hanifah Novisari Mukti,P,Purbalingga,2005-11-24,3303116404050003,Islam,Gampingan,2,1,Gampingan,Buara,Kec. Karanganyar,Mujiono,Sukatmi,no_photo
+,0053323063,12,Idri Yani,P,purbalingga,2005-05-05,3303080505050007,Islam,Tangkisan RT 03 RW 06,3,5,,Tangkisan,Kec. Mrebet,Mistono,Mistiah,no_photo
+,0072359459,12,Iqlima Lulu Nadhiroh,P,purbalingga,2005-04-03,3303094304050001,Islam,Karangduren ,1,1,,KARANGDUREN,Kec. Bobotsari,Mufidin,Kasinah,no_photo
+,0056013935,12,Keisya Pinasti Yulaekha,P,purbalingga,2005-04-18,3303115804050002,Islam,Lumpang,1,1,,Lumpang,Kec. Karanganyar,Yulianto,Liza Endarwati,no_photo
+,0064014096,12,Livia Ayu Laraswati,P,Serang Banten,2006-01-01,3303094101060001,Islam,Talagening,3,6,Talagening,Talagening,Kec. Bobotsari,Suhim,Widanarti,no_photo
+,0053307690,12,Mistianingsih,P,Purbalingga,2005-05-05,3303044505050001,Islam,Sidareaj,12,5,Catutan,Sidareja,Kec. Kaligondang,Sunarsin,Jumiati,no_photo
+,0052950538,12,Muflikhun,L,Purbalingga,2005-02-11,3303171102050002,Islam,Sirandu,3,3,Sirandu,Sirandu,Kec. Karangjambu,Sodirin,Eryatun,no_photo
+,3043768339,12,Novita,P,Pemalang,2004-11-15,3327035511040006,Islam,Karangjambu,,,,Bandingan,Kec. Karangjambu,Dakim,Aisah,no_photo
+,0046492588,12,Okiyatun Muna,P,Pemalang,2005-07-14,3327035407050004,Islam,Bulakan ,3,7,,Bulakan,Kec. Belik,Pujianto,Daisah,no_photo
+,0049120296,12,Rafika Linda Istiqomah,P,Purbalingga,2004-04-13,3303055304040001,Islam,Gang Blumbang ,3,3,Blumbang ,Purbalingga Lor,Kec. Purbalingga,Solechan,Nur Hidayati,no_photo
+,0056494349,12,Rio Boydinda Tabah Anggara,L,Purbalingga,2005-02-27,3303122702050003,Islam,Karangwuni,2,2,Karangwuni,Tamansari,Kec. Karangmoncol,Sobar Hadi Sutrisno,Eni Kristiorini,no_photo
+,0052301310,12,Riska Cahya Aulia,P,Purbalingga,2005-02-05,3303134502050002,Islam,Datar,2,2,,Tanalum,Kec. Rembang,Kasno,Sumiati,no_photo
+,0057935269,12,Rismawanti Utami,P,Purbalingga,2005-01-02,3303084201050005,Islam,Dukuh Kecomberan,6,2,,Pengalusan,Kec. Mrebet,Herman,Subur Prianti,no_photo
+,0055147633,12,Rosdiana Olifia Saputri,P,Purbalingga,2005-10-02,3303074210050001,Islam,Kutasari,11,6,Dusun 3,Kutasari,Kec. Kutasari,Suyitno,Sri Martini,no_photo
+,0055603774,12,Sari,P,Ciamis,2005-02-17,3207275702050001,Islam,Cipsku ,30,12,Cipaku ,Cigugur,KEC. CIGUGUR,Selamet,Siti Maryati,no_photo
+,0056819378,12,Sela Oktaviani,P,Purbalingga,2005-10-17,3303145710050001,Islam,Pekalongan,2,7,,Pekalongan,Kec. Bojongsari,Misno,Watem,no_photo
+,0058527351,12,Selly Puspitasari,P,Purbalingga,2005-06-10,3303085006050004,Islam,Jalan 61 ,0,0,Desa61 ,Desa61,Kec. Mrebet,Rusman,Rohyati,no_photo
+,0047625917,12,Siti Nakhdiyatul Mega,P,Jakarta,2004-11-04,3303094411040001,Islam,Pakuncen Rt 2 Rw 5,2,5,,Dawuhan ,Kec. Bobotsari,Achmad Warsidin,Wahyati,no_photo
+,3043221609,12,Susi Yati Amin,P,Lampung Timur,2004-09-20,1807136009040002,Islam,Jln. Onje No 2,1,6,,Purbalingga lor,Kec. Purbalingga,Jumadi Anwar,Siti Komariyah,no_photo
+,0041183428,12,Tri Susanti,P,Purbalingga,2004-12-21,3303176112040001,Islam,-,0,0,Bandingan,Karangjambu,Kec. Karangjambu,Nur Afif Tarman,Rowanti,no_photo
+,0059507408,12,Vela Dwi Mareta,P,Purbalingga,2005-03-05,3303044503050001,Islam,Brecek,2,2,brecek,Brecek,Kec. Kaligondang,Yuli Masriman,Aryatin,no_photo
+,0031627753,12,Wulandari Deswindra,P,Purbalingga,2003-12-03,3303134312030002,Islam,Pandak,12,2,,Sumampir,Kec. Rembang,Indra Jayusman,Wiasih,no_photo
+,0054552365,12,Yessi Tri Agustin,P,Purbalingga,2005-08-14,3303085408050003,Islam,Serayularangan,1,1,,Serayularangan,Kec. Mrebet,Imam Subchi,Pawit Irwati,no_photo
+,0075177012,,Agus Prastian,L,Purbalingga,2007-08-23,,Kristen Katolik,Pengalusan,5,3,,,Mrebet,Imam Pamuji Sartono,Elina,no_photo
+,0068408617,,Alisa Wafiq Azizah,P,Purbalingga,2006-08-15,,Islam,Cipaku,2,3,,,Mrebet,Ujang Rusian,Ropingah,no_photo
+,,,Amelia,P,Purbalingga,2007-03-25,,Islam,Kalijaran,1,5,,,Karanganyar,Karmen,Salamah,no_photo
+,0073698464,,Anisa Widi Pratami,P,Purbalingga,2007-01-14,,Islam,Kajongan,3,8,,,Bojongsari,Rudianto,Siwi Oktiana,no_photo
+,0062761612,,Asaifah Hijriatun Kurniati,P,Purbalingga,2007-12-17,,Islam,Serang,6,2,,,karangreja,Sunardi Sularno,Sartiyah,no_photo
+,0089593205,,Asyifa As Zahra,P,Purbalingga,2008-04-08,,Islam,tangkisan,2,4,,,Mrebet,Karyanto,Khadirah,no_photo
+,0072768071,,Azahra Apriliana Putri,P,Jakarta,2007-04-07,,Islam,Karangbanjar,14,5,,,Bojongsari,Sunaryo,Surinah,no_photo
+,0073689527,,Delsa Cynthia Sari,P,Purbalingga,2007-12-19,,Islam,Mangunegara,7,1,,,Mrebet,Sarimin Thalif,Muhyati,no_photo
+,0075373758,,Derani Salsa  Nur Azizah,P,Purbalingga,2006-12-26,,Islam,Ponjen,3,3,,,Karanganyar,Achmad Yasin Soimun,Isah Nur Hidayat,no_photo
+,0076667326,,Dewi Sartika,P,Purbalingga,2007-08-18,,Islam,Karangturi,2,1,,,Mrebet,Ahmad Bajuri,Jariah,no_photo
+,,,Elvi Kirana Wati,P,Purbalingga,,,Islam,Bobotsari,1,12,,,Bobotsari,Kuswinarno,Sri Handayani,no_photo
+,,,Endah Maelani,P,Purbalingga,2006-05-29,,Islam,Tumanggal,10,3,,,Pengadegan,Jarmono,Amirah,no_photo
+,0079362587,,Etsa Dwi Maryam,P,Purbalingga,2007-05-20,,Islam,Tegalpingen,4,4,,,Pengadegan,Sukhaol Nur Suhada,Musrofah,no_photo
+,0062632750,,Fajar Saputra  R,L,Purbalingga,2006-10-19,,Islam,Gembong,6,3,,,Bojongsari,Suyitno,Dian Ristiani,no_photo
+,0072228732,,Febiana Tria Nandira,P,Purbalingga,2007-02-26,,Islam,Panusupan,4,5,,,Rembang,Imam Sutarno,Kusyati,no_photo
+,0076560753,,Fita Nurrohmah SH,P,Purbalingga,2007-07-27,,Islam,Jambu Desa,4,4,,,Karanganyar,Miswan,Lutfiah,no_photo
+,0088179947,,Hafna Ilmi Mukhola,P,Pemalang,2008-01-13,,Islam,Badak,2,5,,,Belik,Ruli Yanto,Tuti,no_photo
+,0072481279,,Haifa Farihatul Fatihah,P ,Purbalingga,2007-01-09,,Islam,Beluk Krajan,31,7,,,Belik,Arisro,Sis Tri Yayanti,no_photo
+,0066097336,,Hesti Nur harzani,P,Tegal,2006-10-31,,Islam,Karangjambu,1,1,,,Purbalingga,Munadzir,Harnati,no_photo
+,,,Icha Novia,P,Purbalingga,2006-11-30,,Islam,Tlagayasa,2,7,,,Bobotsari,Misrono,Darwati,no_photo
+,0075211187,,Inayatul Ulwi Awalia,P,Pemalang,2007-06-05,,Islam,Belik,,,,,Pemalang,Imanto,Siti Nur Hayati,no_photo
+,0088335387,,Inka Laura Sari,P,Purbalingga,2008-07-18,,Islam,Bojongsari,2,7,,,Bojongsari,Sartono,Nia Daniati,no_photo
+,0075593533,,Intan Anastasya,P,Purbalingga,2007-03-05,,Islam,Kalijaran,3,6,,,Karanganyar,Akhmad Sopandi,Ponirah,no_photo
+,,,Isnaeni Fatimatu Zahro,P,Purbalingga,2007-01-16,,Islam,Pakuncen,1,3,,,Bobotsari,Wardoyo,Sri Hamzati,no_photo
+,,,Lina Tuftakiyah,P,Purbalingga,2005-11-01,,Islam,Tegal Pingen,5,2,,,pengadegan,Edi Wahyanto,Wahyati,no_photo
+,0073448046,,Lulu Savira Indah,P,Purbalingga,2007-07-17,,Islam,Ponjen ,4,3,,,Karanganyar,Ach. Agus Widiyanto,Fitriana,no_photo
+,0077671022,,Lusiana Putri Pratiwi,P,Purbalingga,2007-03-07,,Islam,karangduren,3,1,,,Bobotsari,Slamet,Aprianti,no_photo
+,,,Lusiana Rahmawati,P,Purbalingga,2007-06-26,,Islam,Bumisari,6,4,,,Bojongsari,Nur Ikhsanudin,Sestri Wiyanti,no_photo
+,0068597735,,Lutfiana Usmanah,P,Purbalingga,2006-12-07,,Islam,Pekalongan,2,4,,,Bojongsari,Riswanto Alsuparmin,Miswati,no_photo
+,00733232696,,Malva Kayla Febriyani,P,Brebes,2007-02-15,,Islam,Tamansari,1,13,,,Karangmoncol,Sujono,Sri Mundiroh,no_photo
+,0074878624,,Meila Avdaera Vega,P,Purbalingga,2007-05-05,,Islam,Onje,2,8,,,Mrebet,Alm. Narso,Mistirah,no_photo
+,,,Meisya Ristianti,P,Pemalang,2007-05-08,,Islam,belik,3,7,,,Belik,Rusmanto,Kurniati,no_photo
+,0073628809,,Meita Silva,P,Purbalingga,2007-05-14,,Islam,Serayu Kr.Anyar,1,2,,,Mrebet,Ratin,Misni,no_photo
+,3078005962,,Meliana saputri,P,Banyumas,2007-07-01,,Islam,Gandotapa,1,1,,,kutasari,Tugiyono,Darsih,no_photo
+,,,Merlinda Nur Febriani,P,Purbalingga,2006-02-24,,Islam,Onje,2,1,,,Mrebet,Ridwan,almh. Khatinah,no_photo
+,,,Nabila Ibti Samah,P,Purbalingga,2007-03-02,,Islam,Beji,14,7,,,Bojongsari,Akh Sahri Kusdirin,Siti Khotijah,no_photo
+,3072478344,,Nadia Fika,P,Purbalingga,2007-09-09,,Islam,Langkap,5,3,,,Kertanegara,Yadi Prasetyo,Nani Haryani,no_photo
+,,,Naela Nabilatuz Zaqia,P,Purbalingga,2007-05-01,,Islam,Krangean,3,2,,,Kertanegara,kusminto,dian yayuk suseno,no_photo
+,0074656296,,Natasya Wulandari,P,Purbalingga,2007-07-03,,Islam,Pagerandong,2,2,,,Mrebet,Yatimin,Riyatun,no_photo
+,0071748060,,Nila Solihatin,P,Purbalingga,2007-05-14,,Islam,Kutabawa,3,1,,,Karangreja,Suritno Sudir,Miarti,no_photo
+,0063153486,,Nimatul Ngudma,P,Pemalang,2006-12-28,,Islam,Belik,,,,,Pemalang,Syaroni,Tasri,no_photo
+,0071748060,,Nita Solihatin,P,Purbalingga,2007-05-14,,Islam,Kutabawa,3,1,,,karangreja,Suritno Sudir,Minarti,no_photo
+,,,Nunik Safitri,P,Purbalingga,2005-10-19,,Islam,"Serang, Gunung Malang",5,7,,,Karangreja,Rismanto Kasmin,Rasti,no_photo
+,,,Pambayun Diva Nugraheni,P,Purbalingga,2005-12-18,,Islam,Bumisari,7,4,,,Bojongsari,Sudiarto Naryanto,Ulva Marhatin,no_photo
+,,,Putri Dian Septiani,P,Purbalingga,2005-09-22,,Islam,Tegalpingen,3,4,,,Pengadegan,Mugianto,Asri,no_photo
+,,,Raisya Ramadhani,P,Purbalingga,2007-10-09,,Islam,Karangduren,2,2,,,Bobotsari,Mugiono,Tarmiyah,no_photo
+,,,Refi Mariska ,P,Purbalingga,2007-05-09,,Islam,"Bumisari, RT 10 RW 05",10,5,,,Bojongsari,Sarno,Kalimah,no_photo
+,0074555055,,Revaliza Fibriani,P,Pemalang,2007-02-11,,Islam,Belik,2,4,,,Belik,Rokhidin,Roiyah,no_photo
+,0076089118,,Rifa Nur Anggraeni,P,Purbalingga,2008-05-07,,Islam,Karangjengkol,8,3,,,kutasari,Bahrowi tarmo,Narsiti,no_photo
+,,,Riska Adinda R,P,Purbalingga,2007-10-01,,Islam,Gembong,13,7,,,Bojongsari,Ahmad Minarto,Suryati,no_photo
+,0066851989,,Rizki Ramadana,L,Purbalingga,2006-05-15,,Islam,Sirau,11,4,,,Karangmoncol,Muslihin,Tarsimah,no_photo
+,,,Sashy Ramadhani,P,Purbalingga,2006-09-29,,Islam,Lambur,8,3,,,Mrebet,Adnan Heriyanto,Endah Puji Rahayu,no_photo
+,00730894661,,Sefi Rahma Romadon,P,Purbalingga,2007-09-20,,Islam,Karangpucung,6,3,,,Kertanegara,Nadiarjo Jarwo,Tuminah,no_photo
+,0074099898,,Sera Amelia,P,Purbalingga,2007-07-21,,Islam,Limbasari,4,2,,,Bobotsari,Tofik Hidayat,karmila,no_photo
+,0071004600,,Shera Kirana,P,Purbalingga,2007-10-20,,Islam,Metenggeng,13,7,,,Bojongsari,Abas Susanto,Susi,no_photo
+,,,Sigi Wimalista,P,Purbalingga,2007-09-29,,Islam,Lambur ,3,1,,,Mrebet,Suparno,Samrotun,no_photo
+,0071406090,,Sigit Maulana,P,Purbalingga,2007-12-03,,Islam,Wlahar ,1,2,,,Rembang,Kisno Nurdianto,Sumiati,no_photo
+,007,,Siti Nur Awaliyah,P,Purbalingga,2007-08-08,,Islam,Buara,2,2,,,Karanganyar,Dakir,Rusimah,no_photo
+,,,Syifa Syafiana,P,Purbalingga,2006-04-07,,Islam,Lambur,3,1,,,Mrebet,Isro Baharudin,Puji Rahayu,no_photo
+,,,Tazkira Amelia Putri,P,Purbalingga,2006-07-12,,Islam,Tanalum,3,2,,,Rembang,kasmawi,Nuryati,no_photo
+,0068181924,,Tiara Febriani Putri,P,Purbalingga,2006-02-14,,Islam,Galuh,12,6,,,PBG,Sugeng Romadhon,Aryanti,no_photo
+,0072003494,,Tiara Nur Anggraeni,P,Purbalingga,2007-04-17,,Islam,Karangpucung,4,1,,,Kertanegara,Ukat,Riyanti,no_photo
+,,,Toto Santoso,P,Purbalingga,2007-02-04,,ISlam,Kalikabong,2,2,,,Kalimanah,Romli,Asih marliyah,no_photo
+,0069592441,,Tri Ibnu Abdul Y,L,Purbalingga,2006-10-25,,Islam,Sokanegara,4,3,,,kejobong,Sahri,Ruwiyah,no_photo
+,,,Umi Hidayah,P,Purbalingga,2006-10-10,,Islam,Ponjen,3,2,,,Kranganyar,Fauzi Muslim,Sukiran,no_photo
+,,,Vivi Alviatun Najah,P,Purbalingga,2007-07-29,,Islam,tangkisan,2,6,,,Tangkisan,Sunarto,Khusnul Samisah,no_photo
+,,,Wiwit Mamia,P,Purbalingga,2007-05-19,,Islam,Cipaku,2,5,,,Mrebet,Sutaryo,Wadiah,no_photo
+,,,Yulianti Eka Ayu Saputri,P,Purbalingga,2007-07-06,,Islam,Banjaran,15,8,,,Bojongsari,Ali Rohman Tasmin,Nisah,no_photo
