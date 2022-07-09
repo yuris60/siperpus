@@ -42,7 +42,7 @@ class Dashboard_model extends CI_Model
     $this->db->from('peminjaman');
     $this->db->join('detail_peminjaman', 'detail_peminjaman.id_pinjam = peminjaman.id_pinjam');
     $this->db->join('buku', 'detail_peminjaman.id_buku = buku.id_buku');
-    $this->db->join('anggota', 'anggota.nisn = peminjaman.nisn');
+    $this->db->join('anggota', 'anggota.id_anggota = peminjaman.id_anggota');
     $this->db->group_by('peminjaman.id_pinjam');
     $this->db->limit(5);
     $this->db->order_by('peminjaman.id_pinjam', 'DESC');
@@ -55,7 +55,7 @@ class Dashboard_model extends CI_Model
     $this->db->from('peminjaman');
     $this->db->join('detail_peminjaman', 'detail_peminjaman.id_pinjam = peminjaman.id_pinjam');
     $this->db->join('buku', 'detail_peminjaman.id_buku = buku.id_buku');
-    $this->db->join('anggota', 'anggota.nisn = peminjaman.nisn');
+    $this->db->join('anggota', 'anggota.id_anggota = peminjaman.id_anggota');
     $this->db->where('peminjaman.status', 'Belum Lunas');
     $this->db->group_by('peminjaman.id_pinjam');
     $this->db->limit(5);
@@ -69,7 +69,7 @@ class Dashboard_model extends CI_Model
     $this->db->from('peminjaman');
     $this->db->join('detail_peminjaman', 'detail_peminjaman.id_pinjam = peminjaman.id_pinjam');
     $this->db->join('buku', 'detail_peminjaman.id_buku = buku.id_buku');
-    $this->db->join('anggota', 'anggota.nisn = peminjaman.nisn');
+    $this->db->join('anggota', 'anggota.id_anggota = peminjaman.id_anggota');
     $this->db->where('peminjaman.status', 'Lunas');
     $this->db->group_by('peminjaman.id_pinjam');
     $this->db->limit(5);
@@ -84,7 +84,7 @@ class Dashboard_model extends CI_Model
     $hariini = date('Y-m-d');
     $this->db->select('*');
     $this->db->from('pengunjung');
-    $this->db->join('anggota', 'pengunjung.nisn = anggota.nisn');
+    $this->db->join('anggota', 'pengunjung.id_anggota = anggota.id_anggota');
     $this->db->where('anggota.jk_anggota', 'L');
     $this->db->like('pengunjung.jam_kunjungan', $hariini, 'after');
     return $this->db->get()->num_rows();
@@ -95,7 +95,7 @@ class Dashboard_model extends CI_Model
     $hariini = date('Y-m-d');
     $this->db->select('*');
     $this->db->from('pengunjung');
-    $this->db->join('anggota', 'pengunjung.nisn = anggota.nisn');
+    $this->db->join('anggota', 'pengunjung.id_anggota = anggota.id_anggota');
     $this->db->where('anggota.jk_anggota', 'P');
     $this->db->like('pengunjung.jam_kunjungan', $hariini, 'after');
     return $this->db->get()->num_rows();
@@ -105,7 +105,7 @@ class Dashboard_model extends CI_Model
   {
     $this->db->select('*');
     $this->db->from('pengunjung');
-    $this->db->join('anggota', 'pengunjung.nisn = anggota.nisn');
+    $this->db->join('anggota', 'pengunjung.id_anggota = anggota.id_anggota');
     $this->db->where('anggota.jk_anggota', 'L');
     return $this->db->get()->num_rows();
   }
@@ -114,7 +114,7 @@ class Dashboard_model extends CI_Model
   {
     $this->db->select('*');
     $this->db->from('pengunjung');
-    $this->db->join('anggota', 'pengunjung.nisn = anggota.nisn');
+    $this->db->join('anggota', 'pengunjung.id_anggota = anggota.id_anggota');
     $this->db->where('anggota.jk_anggota', 'P');
     return $this->db->get()->num_rows();
   }
@@ -123,7 +123,7 @@ class Dashboard_model extends CI_Model
   {
     $this->db->select('*');
     $this->db->from('pengunjung');
-    $this->db->join('anggota', 'pengunjung.nisn = anggota.nisn');
+    $this->db->join('anggota', 'pengunjung.id_anggota = anggota.id_anggota');
     $this->db->limit(5);
     $this->db->order_by('pengunjung.id_pengunjung', 'DESC');
     return $this->db->get()->result_array();

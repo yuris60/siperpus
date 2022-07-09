@@ -20,7 +20,7 @@ class Peminjaman extends CI_Controller
     $data['menu'] = "Peminjaman";
     $data['icon'] = "bi bi-book-half";
 
-    $this->form_validation->set_rules('nisn', 'NISN', 'required|trim');
+    $this->form_validation->set_rules('id_anggota', 'ID Anggota', 'required|trim');
     $data['peminjaman'] = $this->peminjaman_model->getAll();
     $data['id_pinjam'] = $this->peminjaman_model->autonumber();
 

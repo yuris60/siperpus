@@ -9,7 +9,7 @@ class Peminjaman_model extends CI_Model
   {
     $this->db->select('*');
     $this->db->from('peminjaman');
-    $this->db->join('anggota', 'peminjaman.nisn = anggota.nisn');
+    $this->db->join('anggota', 'peminjaman.id_anggota = anggota.id_anggota');
     $this->db->join('kelas', 'anggota.id_kelas = kelas.id_kelas');
     $this->db->join('jurusan', 'kelas.id_jurusan = jurusan.id_jurusan');
     $this->db->order_by('peminjaman.tgl_pinjam', 'DESC');
@@ -25,7 +25,7 @@ class Peminjaman_model extends CI_Model
   {
     $this->db->select('*');
     $this->db->from('peminjaman');
-    $this->db->join('anggota', 'peminjaman.nisn = anggota.nisn');
+    $this->db->join('anggota', 'peminjaman.id_anggota = anggota.id_anggota');
     $this->db->join('kelas', 'anggota.id_kelas = kelas.id_kelas');
     $this->db->join('jurusan', 'kelas.id_jurusan = jurusan.id_jurusan');
     $this->db->where('peminjaman.id_pinjam', $where);
@@ -70,9 +70,9 @@ class Peminjaman_model extends CI_Model
 
   public function savePeminjaman()
   {
-    $this->db->select('nisn');
+    $this->db->select('id_anggota');
     $this->db->from('anggota');
-    $this->db->where('nisn', $this->input->post('nisn'));
+    $this->db->where('id_anggota', $this->input->post('id_anggota'));
     $query = $this->db->get();
 
     if ($query->num_rows() <> 0) {
@@ -80,7 +80,7 @@ class Peminjaman_model extends CI_Model
       $data = [
         'id_pinjam' => htmlspecialchars($this->input->post('id_pinjam', true)),
         'tgl_pinjam' => htmlspecialchars($this->input->post('tgl_pinjam', true)),
-        'nisn' => htmlspecialchars($this->input->post('nisn', true)),
+        'id_anggota' => htmlspecialchars($this->input->post('id_anggota', true)),
         'id_admin' => htmlspecialchars($this->input->post('id_admin', true)),
         'tgl_bataspinjam' => htmlspecialchars($this->input->post('tgl_bataspinjam', true)),
         'total_denda' => 0,

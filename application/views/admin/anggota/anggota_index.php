@@ -87,13 +87,13 @@
                 ?>
               </td>
               <td>
-                <a href="<?= base_url('admin/anggota/riwayatpeminjaman/') . $a['nisn']; ?>" data-bs-toggle="tooltip" data-bs-placement="top" title="Riwayat Peminjaman">
+                <a href="<?= base_url('admin/anggota/riwayatpeminjaman/') . $a['id_anggota']; ?>" data-bs-toggle="tooltip" data-bs-placement="top" title="Riwayat Peminjaman">
                   <button class="btn btn-sm btn-info"><i class="bi bi-cloud-arrow-up-fill"></i></button>
                 </a>
-                <a href="<?= base_url('admin/anggota/update/') . $a['nisn']; ?>">
+                <a href="<?= base_url('admin/anggota/update/') . $a['id_anggota']; ?>">
                   <button class="btn btn-sm btn-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
                 </a>
-                <a href="<?= base_url('admin/anggota/delete/') . $a['nisn']; ?>" class="tombol-hapus">
+                <a href="<?= base_url('admin/anggota/delete/') . $a['id_anggota']; ?>" class="tombol-hapus">
                   <button class="btn btn-sm btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></button>
                 </a>
               </td>

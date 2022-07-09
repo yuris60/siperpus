@@ -33,7 +33,7 @@ class Anggota_model extends CI_Model
     $this->db->from('anggota');
     $this->db->join('kelas', 'anggota.id_kelas = kelas.id_kelas');
     $this->db->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan');
-    $this->db->where('anggota.nisn', $where);
+    $this->db->where('anggota.id_anggota', $where);
     return $this->db->get()->row_array();
   }
 
@@ -41,8 +41,8 @@ class Anggota_model extends CI_Model
   {
     $this->db->select('*');
     $this->db->from('anggota');
-    $this->db->join('peminjaman', 'peminjaman.nisn = anggota.nisn');
-    $this->db->where('anggota.nisn', $where);
+    $this->db->join('peminjaman', 'peminjaman.id_anggota = anggota.id_anggota');
+    $this->db->where('anggota.id_anggota', $where);
     $this->db->order_by('id_pinjam', 'DESC');
     return $query = $this->db->get()->result_array();
   }

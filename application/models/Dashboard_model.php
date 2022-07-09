@@ -10,7 +10,7 @@ class Dashboard_model extends CI_Model
     $hariini = date('Y-m-d');
     $this->db->select('*');
     $this->db->from('pengunjung');
-    $this->db->join('anggota', 'pengunjung.nisn = anggota.nisn');
+    $this->db->join('anggota', 'pengunjung.id_anggota = anggota.id_anggota');
     $this->db->join('kelas', 'anggota.id_kelas = kelas.id_kelas');
     $this->db->join('jurusan', 'kelas.id_jurusan = jurusan.id_jurusan');
     $this->db->like('pengunjung.jam_kunjungan', $hariini, 'after');
@@ -36,16 +36,16 @@ class Dashboard_model extends CI_Model
 
   public function savePengunjung()
   {
-    $nisn = htmlspecialchars($this->input->post('nisn', true));
+    $id_anggota = htmlspecialchars($this->input->post('id_anggota', true));
     $this->db->select('*');
     $this->db->from('anggota');
-    $this->db->where('anggota.nisn', $nisn);
+    $this->db->where('anggota.id_anggota', $id_anggota);
     $query = $this->db->get()->row_array();
 
-    if ($query['nisn'] == $nisn) {
+    if ($query['id_anggota'] == $id_anggota) {
       $jam = date("Y-m-d H:i:s");
       $data = [
-        'nisn' => $nisn,
+        'id_anggota' => $id_anggota,
         'jam_kunjungan' => $jam
       ];
 
@@ -62,13 +62,13 @@ class Dashboard_model extends CI_Model
   {
     $jam = date("Y-m-d H:i:s");
     $data = [
-      'nisn' => $where,
+      'id_anggota' => $where,
       'jam_kunjungan' => $jam
     ];
 
     $this->db->insert('pengunjung', $data);
 
-    // echo $this->input->post('nisn', true);
+    // echo $this->input->post('id_anggota', true);
   }
 
   public function getBuku()

@@ -41,7 +41,7 @@ class Dashboard extends CI_Controller
     $data['pengunjung'] = $this->dashboard_model->getPengunjung();
     $data['anggota'] = $this->dashboard_model->getAnggotaAll();
 
-    $this->form_validation->set_rules('nisn', 'NISN', 'required|trim');
+    $this->form_validation->set_rules('id_anggota', 'ID Anggota', 'required|trim');
 
     if ($this->form_validation->run() == FALSE) {
       $this->load->view('user/templates/header', $data);

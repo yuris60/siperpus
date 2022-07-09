@@ -94,8 +94,8 @@
                 <?php endif; ?>
               </td>
               <td>
-                <a href="<?= base_url('admin/buku/detail/') . $b['id_buku']; ?>">
-                  <button class="btn btn-info btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Lihat Detail"><i class="fas fa-info-circle"></i></button>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#modalBuku<?= $b['id_buku']; ?>">
+                  <button class="btn btn-info btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Detail Buku"><i class="fas fa-info-circle"></i></button>
                 </a>
                 <a href="<?= base_url('admin/buku/update/') . $b['id_buku']; ?>">
                   <button class="btn btn-warning btn-sm text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Data"><i class="fas fa-edit"></i></button>
@@ -113,3 +113,85 @@
   </div>
 </section>
 <!-- End of Container -->
+
+<!-- Modal -->
+<?php foreach ($buku_join as $bj) : ?>
+  <div class="modal fade" id="modalBuku<?= $bj['id_buku']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-book"></i> Detail Buku</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-striped mb-0">
+            <tbody style="font-size: 14px;">
+              <tr>
+                <td colspan="3" class="bg-secondary text-center">
+                  <?php $file_gambar = './assets/img/buku/' . $bj['gambar_buku'];
+                  if (file_exists($file_gambar)) : ?>
+                    <img src="<?= base_url('assets/img/buku/') . $bj['gambar_buku'] ?>" class="mx-auto img-zoomable" width="80px" alt="">
+                  <?php else : ?>
+                    <img src="<?= base_url('assets/img/no_book.jpg') ?>" class="mx-auto" width="80px" alt="">
+                  <?php endif; ?>
+                </td>
+              </tr>
+              <tr>
+                <td>Judul Buku</td>
+                <td>:</td>
+                <td><?= $bj['judul_buku']; ?></td>
+              </tr>
+              <tr>
+                <td>Pengarang</td>
+                <td>:</td>
+                <td><?= $bj['pengarang']; ?></td>
+              </tr>
+              <tr>
+                <td>Penerbit</td>
+                <td>:</td>
+                <td><?= $bj['penerbit']; ?></td>
+              </tr>
+              <tr>
+                <td>Tahun Terbit</td>
+                <td>:</td>
+                <td><?= $bj['thn_terbit']; ?></td>
+              </tr>
+              <tr>
+                <td>ISBN</td>
+                <td>:</td>
+                <td><?= $bj['isbn']; ?></td>
+              </tr>
+              <tr>
+                <td>Kode DDC</td>
+                <td>:</td>
+                <td><?= $bj['kode_ddc'] . " - " . $bj['kategori_ddc']; ?></td>
+              </tr>
+              <tr>
+                <td>Kategori Buku</td>
+                <td>:</td>
+                <td><?= $bj['nm_kategoribuku']; ?></td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <h4 class="text-center">
+                    <?php if ($bj['stok_buku'] > 0) : ?>
+                      <div class="badge bg-success text-white">Stok : <?= $bj['stok_buku']; ?></div>
+                    <?php else : ?>
+                      <div class="badge bg-danger text-white">Stok : <?= $bj['stok_buku']; ?></div>
+                    <?php endif; ?>
+                    <div class="badge bg-secondary text-white">Rak : <?= $bj['rak_buku']; ?></div>
+                  </h4>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+<?php endforeach; ?>
+<!-- End Modal -->

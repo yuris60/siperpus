@@ -40,7 +40,7 @@
         </div>
         <div class="col-lg-8">
           <form action="" method="POST">
-            <input type="hidden" name="nisn" id="nisn" class="form-control" readonly>
+            <input type="hidden" name="id_anggota" id="id_anggota" class="form-control" readonly>
             <!-- <input type="submit" value="Simpan"> -->
           </form>
 

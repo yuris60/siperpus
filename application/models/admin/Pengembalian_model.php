@@ -9,7 +9,7 @@ class Pengembalian_model extends CI_Model
   {
     $this->db->select('*');
     $this->db->from('peminjaman');
-    $this->db->join('anggota', 'peminjaman.nisn = anggota.nisn');
+    $this->db->join('anggota', 'peminjaman.id_anggota = anggota.id_anggota');
     $this->db->join('kelas', 'anggota.id_kelas = kelas.id_kelas');
     $this->db->join('jurusan', 'kelas.id_jurusan = jurusan.id_jurusan');
     $this->db->order_by('peminjaman.tgl_pinjam', 'DESC');
@@ -25,7 +25,7 @@ class Pengembalian_model extends CI_Model
   {
     $this->db->select('*');
     $this->db->from('peminjaman');
-    $this->db->join('anggota', 'peminjaman.nisn = anggota.nisn');
+    $this->db->join('anggota', 'peminjaman.id_anggota = anggota.id_anggota');
     $this->db->join('kelas', 'anggota.id_kelas = kelas.id_kelas');
     $this->db->join('jurusan', 'kelas.id_jurusan = jurusan.id_jurusan');
     $this->db->where('peminjaman.id_pinjam', $where);

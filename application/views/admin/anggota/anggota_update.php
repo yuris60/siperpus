@@ -43,7 +43,7 @@
           <?php endif; ?>
         </div>
         <div class="card-footer text-center">
-          <code>Ukuran gambar 3x4</code>
+          <code>Ukuran foto 3x4</code>
         </div>
       </div>
     </div>

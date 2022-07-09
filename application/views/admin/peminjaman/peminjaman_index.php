@@ -66,7 +66,7 @@
           <button id="stop" class="btn btn-danger btn-block" onclick="stop()"><i class="bi bi-stop-circle"></i> Stop Camera</button>
 
           <form action="" method="POST">
-            <input type="hidden" name="nisn" id="nisn" class="form-control" readonly>
+            <input type="text" name="id_anggota" id="id_anggota" class="form-control" readonly>
             <?php
             date_default_timezone_set('Asia/Jakarta');
             $hariini = date('Y-m-d');

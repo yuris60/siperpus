@@ -82,7 +82,13 @@
             echo $jenis_kelamin;
             ?>
           </td>
-          <td><?= $a['tempatlahir_anggota'] . ", " . tgl_indo($a['tgllahir_anggota'])  ?></td>
+          <td>
+            <?php if ($a['tgllahir_anggota'] == "0000-00-00") : ?>
+              <?= $a['tempatlahir_anggota'] . ", " . ""  ?>
+            <?php else : ?>
+              <?= $a['tempatlahir_anggota'] . ", " . tgl_indo($a['tgllahir_anggota'])  ?>
+            <?php endif; ?>
+          </td>
         </tr>
       <?php $no++;
       endforeach; ?>

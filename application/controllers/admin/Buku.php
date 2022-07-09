@@ -22,6 +22,7 @@ class Buku extends CI_Controller
     $data['icon'] = "bi bi-book-half";
 
     $data['buku'] = $this->buku_model->getAll();
+    $data['buku_join'] = $this->buku_model->getJoin();
 
     $this->load->view('admin/templates/header', $data);
     $this->load->view('admin/templates/sidebar');
