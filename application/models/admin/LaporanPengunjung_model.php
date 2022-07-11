@@ -9,7 +9,7 @@ class Laporanpengunjung_model extends CI_Model
   {
     $this->db->select('*');
     $this->db->from('pengunjung');
-    $this->db->join('anggota', 'anggota.nisn = pengunjung.nisn');
+    $this->db->join('anggota', 'anggota.id_anggota = pengunjung.id_anggota');
     $this->db->join('kelas', 'kelas.id_kelas = anggota.id_kelas');
     $this->db->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan');
     $this->db->order_by('pengunjung.id_pengunjung', 'DESC');
@@ -21,7 +21,7 @@ class Laporanpengunjung_model extends CI_Model
     $pilihan = $this->input->post('bulanan');
     $this->db->select('*');
     $this->db->from('pengunjung');
-    $this->db->join('anggota', 'anggota.nisn = pengunjung.nisn');
+    $this->db->join('anggota', 'anggota.id_anggota = pengunjung.id_anggota');
     $this->db->join('kelas', 'kelas.id_kelas = anggota.id_kelas');
     $this->db->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan');
     $this->db->order_by('pengunjung.id_pengunjung', 'DESC');
@@ -34,7 +34,7 @@ class Laporanpengunjung_model extends CI_Model
     $pilihan = $this->input->post('tahunan');
     $this->db->select('*');
     $this->db->from('pengunjung');
-    $this->db->join('anggota', 'anggota.nisn = pengunjung.nisn');
+    $this->db->join('anggota', 'anggota.id_anggota = pengunjung.id_anggota');
     $this->db->join('kelas', 'kelas.id_kelas = anggota.id_kelas');
     $this->db->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan');
     $this->db->order_by('pengunjung.id_pengunjung', 'DESC');
@@ -48,7 +48,7 @@ class Laporanpengunjung_model extends CI_Model
     $custom_end = $this->input->post('custom_end');
     $this->db->select('*');
     $this->db->from('pengunjung');
-    $this->db->join('anggota', 'anggota.nisn = pengunjung.nisn');
+    $this->db->join('anggota', 'anggota.id_anggota = pengunjung.id_anggota');
     $this->db->join('kelas', 'kelas.id_kelas = anggota.id_kelas');
     $this->db->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan');
     $this->db->order_by('pengunjung.id_pengunjung', 'DESC');
