@@ -105,9 +105,13 @@ class LaporanBuku extends CI_Controller
     // $this->dompdf->stream("Laporan Pendapatan", array('Attachment' => 0));
   }
 
-  public function cetakLabelBukuByID($where)
+  public function cetakLabelBukuByID()
   {
-    $data['buku'] = $this->laporanbuku_model->getById($where);
+    $id_buku = $this->input->post('id_buku');
+    $qty = $this->input->post('qty');
+
+    $data['qty'] = $qty;
+    $data['buku'] = $this->laporanbuku_model->getById($id_buku);
     $data['title'] = "Cetak Label Buku | SIPERPUS";
 
     //load halaman
@@ -123,7 +127,8 @@ class LaporanBuku extends CI_Controller
     // $this->pdf->set_option('isRemoteEnabled', TRUE);
     $this->pdf->setPaper($paper_size, $orientation);
     $this->pdf->filename = "Cetak Label Buku | SIPERPUS";
-    $this->pdf->load_view('admin/laporanbuku/laporanbuku_cetaklabelbuku_ByID2', $data);
+    // $this->pdf->load_view('admin/laporanbuku/laporanbuku_cetaklabelbuku_ByID2', $data);
+    $this->pdf->load_view('admin/laporanbuku/laporanbuku_cetaklabelbuku_ByID', $data);
   }
 
   public function qrcode($where)

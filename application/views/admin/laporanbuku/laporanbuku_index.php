@@ -105,7 +105,8 @@
                   <?php endif; ?>
                 </td>
                 <td>
-                  <a target="_blank" href="<?= base_url('admin/laporanbuku/cetakLabelBukuByID/') . $b['id_buku'] ?>"><button type="button" class="btn btn-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Cetak Label Buku <?= $b['judul_buku'] ?>"><i class="fas fa-tags"></i></button></a>
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $b['id_buku'] ?>"><button type="button" class="btn btn-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Cetak Label Buku <?= $b['judul_buku'] ?>"><i class="fas fa-tags"></i></button></a>
+                  <!-- <a target="_blank" href="<?= base_url('admin/laporanbuku/cetakLabelBukuByID/') . $b['id_buku'] ?>" ><button type="button" class="btn btn-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Cetak Label Buku <?= $b['judul_buku'] ?>"><i class="fas fa-tags"></i></button></a> -->
                 </td>
               </tr>
             <?php $no++;
@@ -117,5 +118,33 @@
   </section>
 </form>
 
+<!-- Modal -->
+<?php foreach ($buku as $b) : ?>
+  <form action="<?= base_url('admin/laporanbuku/cetakLabelBukuByID/') ?>" method="POST" autocomplete="off">
+    <div class="modal fade" id="exampleModal<?= $b['id_buku'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Masukkan Jumlah Cetak</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <!-- Hidden Input -->
+              <input type="hidden" name="id_buku" id="" value="<?= $b['id_buku'] ?>">
+
+              <label class="form-label">Jumlah Cetak</label>
+              <input type="number" name="qty" class="form-control" min="1" value="1">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Tutup</button>
+            <button type="submit" class="btn btn-success"><i class="fas fa-tags"></i> Cetak Label</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+<?php endforeach; ?>
 
 <!-- End of Container -->
