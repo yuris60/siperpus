@@ -79,7 +79,8 @@ class Buku extends CI_Controller
           echo "Gambar Gagal Upload. Gambar harus bertipe jpg|jpeg";
         }
       } else { //jika tidak mengubah gambar
-        $this->buku_model->save();
+        $filesimpan = '';
+        $this->buku_model->save($filesimpan);
         $this->session->set_flashdata('success', 'Disimpan');
         redirect('admin/buku');
       }
