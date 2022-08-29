@@ -22,6 +22,7 @@ class Peminjaman extends CI_Controller
 
     $this->form_validation->set_rules('id_anggota', 'ID Anggota', 'required|trim');
     $data['peminjaman'] = $this->peminjaman_model->getAll();
+    $data['anggota'] = $this->peminjaman_model->getAnggotaAll();
     $data['id_pinjam'] = $this->peminjaman_model->autonumber();
 
     if ($this->form_validation->run() == FALSE) {
@@ -67,6 +68,15 @@ class Peminjaman extends CI_Controller
       $this->session->set_flashdata('success', 'Disimpan');
       redirect('admin/peminjaman/detail/' . $id_pinjam);
     }
+  }
+
+  public function savePeminjamanManual($id_anggota)
+  {
+    $id_pinjam = $this->input->post('id_pinjam');
+    $id_anggota = $this->uri->segment(4);
+    $this->peminjaman_model->savePeminjamanManual($id_anggota);
+    $this->session->set_flashdata('success', 'Disimpan');
+    redirect('admin/peminjaman/detail/' . $id_pinjam);
   }
 
   public function savePeminjamanBukuManual($id_pinjam, $id_buku)

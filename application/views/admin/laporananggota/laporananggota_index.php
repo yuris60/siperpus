@@ -222,7 +222,7 @@
                 ?>
               </td>
               <td>
-                <a href="<?= base_url('admin/laporananggota/cetakKartuByID/') . $a['nisn']; ?>" target="_blank">
+                <a href="<?= base_url('admin/laporananggota/cetakKartuByID/') . $a['id_anggota']; ?>" target="_blank">
                   <button class="btn btn-sm btn-info" data-bs-toggle="tooltip" data-bs-placement="top" title="Cetak Kartu <?= $a['nm_anggota'] ?>"><i class="fas fa-id-card"></i></button>
                 </a>
               </td>

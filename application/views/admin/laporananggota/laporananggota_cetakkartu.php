@@ -42,7 +42,7 @@
   }
 
   .berlaku {
-    margin-left: 250px;
+    margin-left: 242px;
     margin-top: -186px;
     font-family: 'Inter', sans-serif;
     font-weight: bolder;
@@ -63,7 +63,7 @@
       <p class="nama"><?= $a['nm_anggota'] ?></p>
       <img src="<?= site_url('admin/laporananggota/qrcode/') . $a['id_anggota'] ?>" class="qrcode" width="75px" alt="">
 
-      <p class="berlaku">21 Desember 2022</p>
+      <p class="berlaku">Selama Menjadi Siswa</p>
       <?php $file_gambar = './assets/img/anggota/' . $a['foto_anggota'];
       if (file_exists($file_gambar)) : ?>
         <img src="<?= base_url('assets/img/anggota/') . $a['foto_anggota'] ?>" class="foto" width="84px" alt="">

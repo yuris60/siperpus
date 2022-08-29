@@ -22,7 +22,7 @@ class Laporananggota_model extends CI_Model
     $this->db->from('anggota');
     $this->db->join('kelas', 'anggota.id_kelas = kelas.id_kelas');
     $this->db->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan');
-    $this->db->where('anggota.nisn', $where);
+    $this->db->where('anggota.id_anggota', $where);
     return $this->db->get()->result_array();
   }
 

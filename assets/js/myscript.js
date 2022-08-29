@@ -9,9 +9,9 @@ if (flashDataSuccess) {
   var toastTriggerSuccess = document.getElementById('ToastBtnSuccess')
   var toastSuccess = document.getElementById('ToastSuccess')
   if (toastTriggerSuccess) {
-    toastTriggerSuccess.addEventListener('click', function() {
+    toastTriggerSuccess.addEventListener('click', function () {
       var toastsuccess = new bootstrap.Toast(toastSuccess)
-      
+
       toastsuccess.show()
     })
   }
@@ -22,9 +22,9 @@ else if (flashDataGagalLogin) {
   var toastTriggerGagalLogin = document.getElementById('ToastBtnGagalLogin')
   var toastGagalLogin = document.getElementById('ToastGagalLogin')
   if (toastTriggerGagalLogin) {
-    toastTriggerGagalLogin.addEventListener('click', function() {
+    toastTriggerGagalLogin.addEventListener('click', function () {
       var toastgagallogin = new bootstrap.Toast(toastGagalLogin)
-      
+
       toastgagallogin.show()
     })
   }
@@ -35,9 +35,9 @@ else if (flashDataGagalPinjam) {
   var toastTriggerGagalPinjam = document.getElementById('ToastBtnGagalPinjam')
   var toastGagalPinjam = document.getElementById('ToastGagalPinjam')
   if (toastTriggerGagalPinjam) {
-    toastTriggerGagalPinjam.addEventListener('click', function() {
+    toastTriggerGagalPinjam.addEventListener('click', function () {
       var toastgagalpinjam = new bootstrap.Toast(toastGagalPinjam)
-      
+
       toastgagalpinjam.show()
     })
   }
@@ -48,9 +48,9 @@ else if (flashDataGagalPinjamBuku) {
   var toastTriggerGagalPinjamBuku = document.getElementById('ToastBtnGagalPinjamBuku')
   var toastGagalPinjamBuku = document.getElementById('ToastGagalPinjamBuku')
   if (toastTriggerGagalPinjamBuku) {
-    toastTriggerGagalPinjamBuku.addEventListener('click', function() {
+    toastTriggerGagalPinjamBuku.addEventListener('click', function () {
       var toastgagalpinjambuku = new bootstrap.Toast(toastGagalPinjamBuku)
-      
+
       toastgagalpinjambuku.show()
     })
   }
@@ -61,9 +61,9 @@ else if (flashDataGagalBukuKurang) {
   var toastTriggerGagalBukuKurang = document.getElementById('ToastBtnGagalBukuKurang')
   var toastGagalBukuKurang = document.getElementById('ToastGagalBukuKurang')
   if (toastTriggerGagalBukuKurang) {
-    toastTriggerGagalBukuKurang.addEventListener('click', function() {
+    toastTriggerGagalBukuKurang.addEventListener('click', function () {
       var toastgagalBukuKurang = new bootstrap.Toast(toastGagalBukuKurang)
-      
+
       toastgagalBukuKurang.show()
     })
   }
@@ -74,9 +74,9 @@ else if (flashDataGagalUsername) {
   var toastTriggerGagalUsername = document.getElementById('ToastBtnGagalUsername')
   var toastGagalUsername = document.getElementById('ToastGagalUsername')
   if (flashDataGagalUsername) {
-    flashDataGagalUsername.addEventListener('click', function() {
+    flashDataGagalUsername.addEventListener('click', function () {
       var toastgagalUsername = new bootstrap.Toast(toastGagalUsername)
-      
+
       toastgagalUsername.show()
     })
   }
@@ -94,7 +94,7 @@ else if (flashDataGagalUsername) {
 //   if (toastTriggerDelete) {
 //     toastTriggerDelete.addEventListener('click', function() {
 //       var toastDelete = new bootstrap.Toast(toastDelete)
-      
+
 //       toastDelete.show()
 //     })
 //     document.getElementById("ToastBtnDelete").click(); // Click on the checkbox
@@ -119,6 +119,28 @@ $('.tombol-hapus').on('click', function (e) {
     confirmButtonColor: '#435ebe',
     cancelButtonColor: '#6e7881',
     confirmButtonText: 'Hapus',
+    cancelButtonText: 'Batal'
+  }).then((result) => {
+    if (result.value) {
+      document.location.href = href;
+    }
+  })
+});
+
+//tombol-konfirmasi
+$('.tombol-peminjaman-anggota-manual').on('click', function (e) {
+
+  e.preventDefault();
+  const href = $(this).attr('href');
+
+  Swal.fire({
+    title: 'Konfirmasi!',
+    text: "Apakah anggota ini akan melakukan peminjaman?",
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#435ebe',
+    cancelButtonColor: '#6e7881',
+    confirmButtonText: 'Kembalikan',
     cancelButtonText: 'Batal'
   }).then((result) => {
     if (result.value) {

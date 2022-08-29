@@ -66,7 +66,7 @@
           <button id="stop" class="btn btn-danger btn-block" onclick="stop()"><i class="bi bi-stop-circle"></i> Stop Camera</button>
 
           <form action="" method="POST">
-            <input type="text" name="id_anggota" id="id_anggota" class="form-control" readonly>
+            <input type="hidden" name="id_anggota" id="id_anggota" class="form-control" readonly>
             <?php
             date_default_timezone_set('Asia/Jakarta');
             $hariini = date('Y-m-d');
@@ -125,6 +125,77 @@
                     <a href="<?= base_url('admin/peminjaman/delete/') . $p['id_pinjam']; ?>" class="tombol-hapus">
                       <button class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></button>
                     </a>
+                  </td>
+                </tr>
+              <?php $no++;
+              endforeach; ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-lg-12">
+      <div class="card border-primary">
+        <div class="card-header bg-primary text-white">
+          <h5><i class="fas fa-plus"></i> Pinjam Data Anggota Secara Manual</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped table-hover datatables2">
+            <thead>
+              <tr class="table-secondary">
+                <th>No</th>
+                <th>NISN</th>
+                <th>Nama Anggota</th>
+                <th>Jenis Kelamin</th>
+                <th>Kelas</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php $no = 1;
+              foreach ($anggota as $a) : ?>
+                <tr>
+                  <td><?= $no; ?></td>
+                  <td><?= $a['nisn']; ?></td>
+                  <td><?= $a['nm_anggota']; ?></td>
+                  <td>
+                    <?php if ($a['jk_anggota'] == 'L') : ?>
+                      Laki-Laki
+                    <?php else : ?>
+                      Perempuan
+                    <?php endif; ?>
+                  </td>
+                  <td>
+                    <?php
+                    if ($a['tingkatan_kelas'] == 1) {
+                      $tingkatan_kelas = "X";
+                    } elseif ($a['tingkatan_kelas'] == 2) {
+                      $tingkatan_kelas = "XI";
+                    } else {
+                      $tingkatan_kelas = "XII";
+                    }
+                    echo $tingkatan_kelas . " " . $a['nm_jurusan'] . " " . $a['nomor_kelas']
+                    ?>
+                  </td>
+                  <td>
+                    <form action="<?= base_url('admin/peminjaman/savePeminjamanManual/') . $a['id_anggota']; ?>" method="POST">
+                      <input type="hidden" name="id_anggota" id="id_anggota" class="form-control" readonly>
+                      <?php
+                      date_default_timezone_set('Asia/Jakarta');
+                      $hariini = date('Y-m-d');
+                      $bataspinjam = date('Y-m-d', strtotime('+7 days', strtotime($hariini))); //tambah tanggal sebanyak 6 bulan
+                      ?>
+
+                      <input type="hidden" name="id_anggota" value="<?= $a['id_anggota'] ?>">
+                      <input type="hidden" name="id_pinjam" value="<?= $id_pinjam ?>">
+                      <input type="hidden" name="tgl_pinjam" value="<?= date('Y-m-d H:i:s') ?>">
+                      <input type="hidden" name="id_admin" value="1">
+                      <input type="hidden" name="tgl_bataspinjam" value="<?= $bataspinjam ?>">
+                      <button type="submit" class="btn btn-sm btn-info" data-bs-toggle="tooltip" data-bs-placement="top" title="Pinjam Atas Nama <?= $a['nm_anggota'] ?>"><i class="fas fa-save"></i></button>
+                    </form>
                   </td>
                 </tr>
               <?php $no++;

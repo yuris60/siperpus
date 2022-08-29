@@ -68,7 +68,8 @@ class Anggota extends CI_Controller
           echo "Gambar Gagal Upload. Gambar harus bertipe jpg|jpeg";
         }
       } else { //jika tidak mengubah gambar
-        $this->anggota_model->save();
+        $filesimpan = '';
+        $this->anggota_model->save($filesimpan);
         $this->session->set_flashdata('success', 'Disimpan');
         redirect('admin/anggota');
       }

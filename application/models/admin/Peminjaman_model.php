@@ -21,6 +21,17 @@ class Peminjaman_model extends CI_Model
     return $this->db->get('buku')->result_array();
   }
 
+  public function getAnggotaAll()
+  {
+    $this->db->select('*');
+    $this->db->from('anggota');
+    $this->db->join('kelas', 'anggota.id_kelas = kelas.id_kelas');
+    $this->db->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan');
+    $this->db->order_by('anggota.id_kelas', 'ASC');
+    $this->db->order_by('anggota.nm_anggota', 'ASC');
+    return $this->db->get()->result_array();
+  }
+
   public function getAnggotaByID($where)
   {
     $this->db->select('*');
@@ -73,6 +84,32 @@ class Peminjaman_model extends CI_Model
     $this->db->select('id_anggota');
     $this->db->from('anggota');
     $this->db->where('id_anggota', $this->input->post('id_anggota'));
+    $query = $this->db->get();
+
+    if ($query->num_rows() <> 0) {
+      // echo "Anggota Terdaftar";
+      $data = [
+        'id_pinjam' => htmlspecialchars($this->input->post('id_pinjam', true)),
+        'tgl_pinjam' => htmlspecialchars($this->input->post('tgl_pinjam', true)),
+        'id_anggota' => htmlspecialchars($this->input->post('id_anggota', true)),
+        'id_admin' => htmlspecialchars($this->input->post('id_admin', true)),
+        'tgl_bataspinjam' => htmlspecialchars($this->input->post('tgl_bataspinjam', true)),
+        'total_denda' => 0,
+        'status' => 'Belum Lunas'
+      ];
+
+      $this->db->insert('peminjaman', $data);
+    } else {
+      $this->session->set_flashdata('gagal', 'Terdaftar');
+      redirect('admin/peminjaman');
+    }
+  }
+
+  public function savePeminjamanManual($id_anggota)
+  {
+    $this->db->select('id_anggota');
+    $this->db->from('anggota');
+    $this->db->where('id_anggota', $id_anggota);
     $query = $this->db->get();
 
     if ($query->num_rows() <> 0) {

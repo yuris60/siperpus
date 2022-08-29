@@ -247,6 +247,18 @@
   // Jquery Datatable
   let jquery_datatable = $("#table1").DataTable()
 
+  // Jquery Datatable
+  $(document).ready(function() {
+    $('.datatables2').DataTable();
+  });
+
+  $(document).ready(function() {
+    $('#datatable2').DataTable({
+      "lengthMenu": [10, 40, 80, 100],
+      "pageLength": 10,
+    });
+  });
+
   //waktu berjalan
   function tampilkanwaktu() { //fungsi ini akan dipanggil di bodyOnLoad dieksekusi tiap 1000ms = 1detik    
     var waktu = new Date(); //membuat object date berdasarkan waktu saat 
