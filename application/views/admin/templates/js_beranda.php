@@ -195,7 +195,7 @@ foreach ($jumlahkasdesember as $uangkasdesember) {
       name: 'peminjaman',
       data: [<?= $jumlahpeminjamanjanuari; ?>, <?= $jumlahpeminjamanfebruari; ?>, <?= $jumlahpeminjamanmaret; ?>, <?= $jumlahpeminjamanapril; ?>, <?= $jumlahpeminjamanmei; ?>, <?= $jumlahpeminjamanjuni; ?>, <?= $jumlahpeminjamanjuli; ?>, <?= $jumlahpeminjamanagustus; ?>, <?= $jumlahpeminjamanseptember; ?>, <?= $jumlahpeminjamanoktober; ?>, <?= $jumlahpeminjamannovember; ?>, <?= $jumlahpeminjamandesember; ?>]
     }],
-    colors: '#0d6efd',
+    colors: '#435ebe',
     xaxis: {
       categories: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"],
     },
@@ -203,7 +203,7 @@ foreach ($jumlahkasdesember as $uangkasdesember) {
   let optionsPengunjungHariini = {
     series: [<?= $pengunjunghariinilakilaki; ?>, <?= $pengunjunghariiniperempuan; ?>],
     labels: ['Laki-Laki', 'Perempuan'],
-    colors: ['#0d6efd', '#d63384'],
+    colors: ['#435ebe', '#d63384'],
     chart: {
       type: 'donut',
       width: '100%',
@@ -223,7 +223,7 @@ foreach ($jumlahkasdesember as $uangkasdesember) {
   let optionsPengunjungKeseluruhan = {
     series: [<?= $pengunjunglakilaki; ?>, <?= $pengunjungperempuan; ?>],
     labels: ['Laki-Laki', 'Perempuan'],
-    colors: ['#0d6efd', '#d63384'],
+    colors: ['#435ebe', '#d63384'],
     chart: {
       type: 'donut',
       width: '100%',
