@@ -2,7 +2,7 @@
 Sistem Informasi Perpustakaan (SIPERPUS)
 ########################################
 
-.. image:: assets/img/Logo SIPERPUS.png
+.. image:: assets/img/buku.jpg
    :height: 250
    :width: 250
    :alt: Siperpus Logo
@@ -33,6 +33,17 @@ sehingga siswa dapat dengan mudah mengetahui lokasi buku tersebut.
 Siswa juga dapat melihat informasi mengenai struktur organisasi, sejarah dan visi misi sekolah.
 Dan yang tidak kalah menarik siswa dapat melakukan absen kunjungan dengan menggunakan QR Code pada kartu perpustakaannya yang digenerate dari sisi Backend.
 
+---------------
+Hak Akses Siswa
+---------------
+====  =====
+No     Hak Akses
+====  =====
+1      Mencari Buku
+2      Melihat Informasi Perpustakaan
+3	    Melakukan Absen Kunjungan
+====  =====
+
 Berikut adalah beberapa screenshot aplikasinya:
 
 .. image:: assets/img/dokumentasi/siperpus_frontend_1.jpg
@@ -51,51 +62,44 @@ Back End
 
 Bagian ini diperuntukkan untuk petugas perpustakaan dalam mengelola data mulai dari data buku hingga peminjaman dan pengembalian.
 
---------------------------
-Hak Akses Customer Service
---------------------------
+------------------------------
+Hak Akses Petugas Perpustakaan
+------------------------------
 ====  =====
-No     Hak Akses CS
+No     Hak Akses
 ====  =====
-1      Mengelola Data Produk
-2      Mengelola Data Paket Produk
-3      Mengelola Data Treatment
-4      Mengelola Data Pelanggan
-5      Mengelola Data Penjualan
-6      Mengelola Data Dokter
-7      Mengelola Data Jadwal Dokter
-8      Mengelola Data Laporan Pelanggan
-9      Mengelola Data Laporan Produk
-10      Mengelola Data Laporan Penjualan
-11      Mencetak Struk Belanja
+1      Mengelola Data Anggota
+2      Mengelola Data Buku
+3      Mengelola Data Jenis Buku
+4      Mengelola Data Jurusan
+5      Mengelola Data Kategori Buku
+6      Mengelola Data Kelas
+7      Mengelola Data Klasifikasi DDC
+8      Mengelola Data Sumber Buku
+9      Mengelola Data Peminjaman
+10     Mengelola Data Pengembalian
+11     Mengelola Data Laporan Anggota
+12     Mengelola Data Laporan Buku
+13     Mengelola Data Laporan Kas
+14     Mencetak Kartu Perpustakaan Siswa
+15     Mencetak Kartu Label Buku
 ====  =====
 
-
----------------
-Hak Akses Owner
----------------
-====  =====
-No     Hak Akses Owner
-====  =====
-1      Mengelola Data Pembelian
-2      Menambahkan Akses CS
-3      Melihat Data Penjualan
-====  =====
 
 Berikut adalah beberapa screenshot aplikasinya:
 
-.. image:: assets/img/ss/nysfo_backend_1.jpg
+.. image:: assets/img/dokumentasi/siperpus_backend_1.jpg
    :alt: Front End 1
 
-.. image:: assets/img/ss/nysfo_backend_2.jpg
+.. image:: assets/img/dokumentasi/siperpus_backend_2.jpg
    :alt: Front End 2
 
-.. image:: assets/img/ss/nysfo_backend_3.jpg
+.. image:: assets/img/dokumentasi/siperpus_backend_3.jpg
    :alt: Front End 3
 
 ******************
 Ucapan Terimakasih
 ******************
 
-Saya menyadari project ini tidak akan selesai tanpa bantuan dari Bpk. Prastya Widjaja, SE dan Ibu dr. Lina Wijaya selaku owner.
-Maka dari itu saya ucapkan terimakasih atas kepercayaannya.
+Saya menyadari project ini tidak akan selesai tanpa bantuan dari Bpk. Sehartono selaku Kepala Perpustakaan SMK Soedirman Purbalingga
+dan Sdri Dila selaku Petugas Perpustakaan SMK Soedirman Purbalingga. Maka dari itu saya ucapkan terimakasih atas kepercayaannya.
