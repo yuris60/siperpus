@@ -2,7 +2,7 @@
 Sistem Informasi Perpustakaan (SIPERPUS)
 ########################################
 
-.. image:: assets/img/buku.jpg
+.. image:: assets/img/logo_siperpus.png
    :height: 250
    :width: 250
    :alt: Siperpus Logo
