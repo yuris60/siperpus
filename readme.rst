@@ -88,14 +88,14 @@ No     Hak Akses
 
 Berikut adalah beberapa screenshot aplikasinya:
 
-.. image:: assets/img/dokumentasi/siperpus_backend_1.jpg
-   :alt: Front End 1
+.. image:: assets/img/dokumentasi/siperpus_backend_1.png
+   :alt: Back End 1
 
-.. image:: assets/img/dokumentasi/siperpus_backend_2.jpg
-   :alt: Front End 2
+.. image:: assets/img/dokumentasi/siperpus_backend_2.png
+   :alt: Back End 2
 
-.. image:: assets/img/dokumentasi/siperpus_backend_3.jpg
-   :alt: Front End 3
+.. image:: assets/img/dokumentasi/siperpus_backend_3.png
+   :alt: Back End 3
 
 ******************
 Ucapan Terimakasih
